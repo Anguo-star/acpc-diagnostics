@@ -1,0 +1,2398 @@
+{
+  "family_plateau_summaries": {
+    "Cube": {
+      "gaussian_blur": {
+        "best_primary_stress_mean": 58.333333,
+        "mean_primary_stress_success": 57.166666500000005,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.0",
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 1.1666665000000016
+      },
+      "resize": {
+        "best_primary_stress_mean": 57.666667,
+        "mean_primary_stress_success": 57.0,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.0",
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 0.6666669999999968
+      }
+    },
+    "PushT": {
+      "gaussian_blur": {
+        "best_primary_stress_mean": 58.666667,
+        "mean_primary_stress_success": 55.0,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 3.666666999999997
+      },
+      "resize": {
+        "best_primary_stress_mean": 68.0,
+        "mean_primary_stress_success": 55.833333499999995,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 12.166666500000002
+      }
+    },
+    "Reacher": {
+      "gaussian_blur": {
+        "best_primary_stress_mean": 72.0,
+        "mean_primary_stress_success": 45.8333335,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 26.166666499999998
+      },
+      "resize": {
+        "best_primary_stress_mean": 78.333333,
+        "mean_primary_stress_success": 58.333332999999996,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 19.999999999999996
+      }
+    },
+    "TwoRoom": {
+      "gaussian_blur": {
+        "best_primary_stress_mean": 83.666667,
+        "mean_primary_stress_success": 65.666667,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 18.000000000000004
+      },
+      "resize": {
+        "best_primary_stress_mean": 84.666667,
+        "mean_primary_stress_success": 64.666667,
+        "n_checkpoints": 2,
+        "note": "Uses the strongest configured severity for each family; review only.",
+        "plateau_std_keys_within_5pct_of_best": [
+          "0.08"
+        ],
+        "population_std_primary_stress_success": 20.000000000000004
+      }
+    }
+  },
+  "metadata": {
+    "epoch": 10,
+    "eval_base_seed": 42,
+    "eval_seeds": 3,
+    "families": [
+      "gaussian_blur",
+      "resize"
+    ],
+    "num_eval": 300,
+    "root_note": "Root is a runtime prefix; use --root to rebuild on another machine.",
+    "schema_version": "paper1-unseen-perturbation-pilot-1.0",
+    "source_manifest": "assets/paper1_data/unseen_origin_vs_std008_strongest_s3073_manifest.json",
+    "status": "pilot artifact for review; do not cite in main text until manually audited",
+    "tasks": [
+      "PushT",
+      "TwoRoom",
+      "Reacher",
+      "Cube"
+    ],
+    "train_seed": 3073
+  },
+  "missing": [],
+  "results": {
+    "Cube": {
+      "0.0": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 65.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.942809,
+            "std": 1.632993,
+            "values": [
+              65.0,
+              63.0,
+              67.0
+            ]
+          },
+          "checkpoint_rel": "lewm-cube/ckpt/cube_lewm_baseline_seed3073/cube_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 65.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.942809,
+                "std": 1.632993,
+                "values": [
+                  65.0,
+                  63.0,
+                  67.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 56.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.247219,
+                "std": 2.160247,
+                "values": [
+                  57.0,
+                  58.0,
+                  53.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 66.66666666666667,
+              "n": 3,
+              "std": 2.6246692913372702,
+              "values": [
+                63.0,
+                69.0,
+                68.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 46.333333333333336,
+              "n": 3,
+              "std": 3.6817870057290873,
+              "values": [
+                46.0,
+                42.0,
+                51.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 47.0,
+              "n": 3,
+              "std": 6.377042156569663,
+              "values": [
+                52.0,
+                38.0,
+                51.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 56.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.247219,
+            "std": 2.160247,
+            "values": [
+              57.0,
+              58.0,
+              53.0
+            ]
+          },
+          "result_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results",
+          "subdir": "cube_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 65.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.942809,
+              "std": 1.632993,
+              "values": [
+                65.0,
+                63.0,
+                67.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 56.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.247219,
+              "std": 2.160247,
+              "values": [
+                57.0,
+                58.0,
+                53.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 56.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.247219,
+            "std": 2.160247,
+            "values": [
+              57.0,
+              58.0,
+              53.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 65.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.942809,
+            "std": 1.632993,
+            "values": [
+              65.0,
+              63.0,
+              67.0
+            ]
+          },
+          "checkpoint_rel": "lewm-cube/ckpt/cube_lewm_baseline_seed3073/cube_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 65.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.942809,
+                "std": 1.632993,
+                "values": [
+                  65.0,
+                  63.0,
+                  67.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 57.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.981307,
+                "std": 1.699673,
+                "values": [
+                  57.0,
+                  60.0,
+                  56.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 66.66666666666667,
+              "n": 3,
+              "std": 2.6246692913372702,
+              "values": [
+                63.0,
+                69.0,
+                68.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 46.333333333333336,
+              "n": 3,
+              "std": 3.6817870057290873,
+              "values": [
+                46.0,
+                42.0,
+                51.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 47.0,
+              "n": 3,
+              "std": 6.377042156569663,
+              "values": [
+                52.0,
+                38.0,
+                51.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 57.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              57.0,
+              60.0,
+              56.0
+            ]
+          },
+          "result_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results",
+          "subdir": "cube_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 65.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.942809,
+              "std": 1.632993,
+              "values": [
+                65.0,
+                63.0,
+                67.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 57.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.981307,
+              "std": 1.699673,
+              "values": [
+                57.0,
+                60.0,
+                56.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 57.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              57.0,
+              60.0,
+              56.0
+            ]
+          }
+        }
+      },
+      "0.08": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 65.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              68.0,
+              65.0,
+              64.0
+            ]
+          },
+          "checkpoint_rel": "lewm-cube/ckpt/cube_lewm_noise_0to008_p1_seed3073/cube_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 65.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.981307,
+                "std": 1.699673,
+                "values": [
+                  68.0,
+                  65.0,
+                  64.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 58.333333,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.655518,
+                "std": 2.867442,
+                "values": [
+                  58.0,
+                  55.0,
+                  62.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 62.333333333333336,
+              "n": 3,
+              "std": 1.247219128924647,
+              "values": [
+                61.0,
+                62.0,
+                64.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 60.333333333333336,
+              "n": 3,
+              "std": 0.9428090415820634,
+              "values": [
+                61.0,
+                61.0,
+                59.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 62.0,
+              "n": 3,
+              "std": 1.4142135623730951,
+              "values": [
+                64.0,
+                61.0,
+                61.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 58.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.655518,
+            "std": 2.867442,
+            "values": [
+              58.0,
+              55.0,
+              62.0
+            ]
+          },
+          "result_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results",
+          "subdir": "cube_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 65.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.981307,
+              "std": 1.699673,
+              "values": [
+                68.0,
+                65.0,
+                64.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 58.333333,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.655518,
+              "std": 2.867442,
+              "values": [
+                58.0,
+                55.0,
+                62.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 58.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.655518,
+            "std": 2.867442,
+            "values": [
+              58.0,
+              55.0,
+              62.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 65.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              68.0,
+              65.0,
+              64.0
+            ]
+          },
+          "checkpoint_rel": "lewm-cube/ckpt/cube_lewm_noise_0to008_p1_seed3073/cube_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 65.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.981307,
+                "std": 1.699673,
+                "values": [
+                  68.0,
+                  65.0,
+                  64.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 56.333333,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 3.311037,
+                "std": 5.734884,
+                "values": [
+                  57.0,
+                  49.0,
+                  63.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 62.333333333333336,
+              "n": 3,
+              "std": 1.247219128924647,
+              "values": [
+                61.0,
+                62.0,
+                64.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 60.333333333333336,
+              "n": 3,
+              "std": 0.9428090415820634,
+              "values": [
+                61.0,
+                61.0,
+                59.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 62.0,
+              "n": 3,
+              "std": 1.4142135623730951,
+              "values": [
+                64.0,
+                61.0,
+                61.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 56.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.311037,
+            "std": 5.734884,
+            "values": [
+              57.0,
+              49.0,
+              63.0
+            ]
+          },
+          "result_dir_rel": "lewm-cube/ckpt/cube_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results",
+          "subdir": "cube_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 65.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.981307,
+              "std": 1.699673,
+              "values": [
+                68.0,
+                65.0,
+                64.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 56.333333,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 3.311037,
+              "std": 5.734884,
+              "values": [
+                57.0,
+                49.0,
+                63.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 56.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.311037,
+            "std": 5.734884,
+            "values": [
+              57.0,
+              49.0,
+              63.0
+            ]
+          }
+        }
+      }
+    },
+    "PushT": {
+      "0.0": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 75.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 2.494438,
+            "std": 4.320494,
+            "values": [
+              71.0,
+              73.0,
+              81.0
+            ]
+          },
+          "checkpoint_rel": "lewm-pusht/ckpt/pusht_lewm_baseline_seed3073/pusht_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 75.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 2.494438,
+                "std": 4.320494,
+                "values": [
+                  71.0,
+                  73.0,
+                  81.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 51.333333,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.360828,
+                "std": 2.357023,
+                "values": [
+                  53.0,
+                  53.0,
+                  48.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 86.33333333333333,
+              "n": 3,
+              "std": 2.357022603955158,
+              "values": [
+                88.0,
+                83.0,
+                88.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 4.666666666666667,
+              "n": 3,
+              "std": 2.054804667656326,
+              "values": [
+                2.0,
+                7.000000000000001,
+                5.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 4.333333333333333,
+              "n": 3,
+              "std": 1.247219128924647,
+              "values": [
+                4.0,
+                6.0,
+                3.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 51.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.360828,
+            "std": 2.357023,
+            "values": [
+              53.0,
+              53.0,
+              48.0
+            ]
+          },
+          "result_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results",
+          "subdir": "pusht_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 75.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 2.494438,
+              "std": 4.320494,
+              "values": [
+                71.0,
+                73.0,
+                81.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 51.333333,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.360828,
+              "std": 2.357023,
+              "values": [
+                53.0,
+                53.0,
+                48.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 51.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.360828,
+            "std": 2.357023,
+            "values": [
+              53.0,
+              53.0,
+              48.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 75.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 2.054805,
+            "std": 3.559026,
+            "values": [
+              72.0,
+              73.0,
+              80.0
+            ]
+          },
+          "checkpoint_rel": "lewm-pusht/ckpt/pusht_lewm_baseline_seed3073/pusht_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 75.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 2.054805,
+                "std": 3.559026,
+                "values": [
+                  72.0,
+                  73.0,
+                  80.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 43.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.981307,
+                "std": 1.699673,
+                "values": [
+                  43.0,
+                  42.0,
+                  46.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 86.33333333333333,
+              "n": 3,
+              "std": 2.357022603955158,
+              "values": [
+                88.0,
+                83.0,
+                88.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 4.666666666666667,
+              "n": 3,
+              "std": 2.054804667656326,
+              "values": [
+                2.0,
+                7.000000000000001,
+                5.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 4.333333333333333,
+              "n": 3,
+              "std": 1.247219128924647,
+              "values": [
+                4.0,
+                6.0,
+                3.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 43.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              43.0,
+              42.0,
+              46.0
+            ]
+          },
+          "result_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results",
+          "subdir": "pusht_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 75.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 2.054805,
+              "std": 3.559026,
+              "values": [
+                72.0,
+                73.0,
+                80.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 43.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.981307,
+              "std": 1.699673,
+              "values": [
+                43.0,
+                42.0,
+                46.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 43.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              43.0,
+              42.0,
+              46.0
+            ]
+          }
+        }
+      },
+      "0.08": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 85.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.885618,
+            "std": 3.265986,
+            "values": [
+              85.0,
+              81.0,
+              89.0
+            ]
+          },
+          "checkpoint_rel": "lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3073/pusht_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 85.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.885618,
+                "std": 3.265986,
+                "values": [
+                  85.0,
+                  81.0,
+                  89.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 58.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.720082,
+                "std": 1.247219,
+                "values": [
+                  60.0,
+                  57.0,
+                  59.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 88.33333333333333,
+              "n": 3,
+              "std": 2.8674417556808756,
+              "values": [
+                88.0,
+                85.0,
+                92.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 85.33333333333333,
+              "n": 3,
+              "std": 2.6246692913372702,
+              "values": [
+                83.0,
+                84.0,
+                89.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 89.0,
+              "n": 3,
+              "std": 4.320493798938574,
+              "values": [
+                87.0,
+                85.0,
+                95.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 58.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.720082,
+            "std": 1.247219,
+            "values": [
+              60.0,
+              57.0,
+              59.0
+            ]
+          },
+          "result_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results",
+          "subdir": "pusht_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 85.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.885618,
+              "std": 3.265986,
+              "values": [
+                85.0,
+                81.0,
+                89.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 58.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.720082,
+              "std": 1.247219,
+              "values": [
+                60.0,
+                57.0,
+                59.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 58.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.720082,
+            "std": 1.247219,
+            "values": [
+              60.0,
+              57.0,
+              59.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 85.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.885618,
+            "std": 3.265986,
+            "values": [
+              85.0,
+              81.0,
+              89.0
+            ]
+          },
+          "checkpoint_rel": "lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3073/pusht_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 85.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.885618,
+                "std": 3.265986,
+                "values": [
+                  85.0,
+                  81.0,
+                  89.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 68.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 3.741657,
+                "std": 6.480741,
+                "values": [
+                  74.0,
+                  59.0,
+                  71.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 88.33333333333333,
+              "n": 3,
+              "std": 2.8674417556808756,
+              "values": [
+                88.0,
+                85.0,
+                92.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 85.33333333333333,
+              "n": 3,
+              "std": 2.6246692913372702,
+              "values": [
+                83.0,
+                84.0,
+                89.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 89.0,
+              "n": 3,
+              "std": 4.320493798938574,
+              "values": [
+                87.0,
+                85.0,
+                95.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 68.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.741657,
+            "std": 6.480741,
+            "values": [
+              74.0,
+              59.0,
+              71.0
+            ]
+          },
+          "result_dir_rel": "lewm-pusht/ckpt/pusht_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results",
+          "subdir": "pusht_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 85.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.885618,
+              "std": 3.265986,
+              "values": [
+                85.0,
+                81.0,
+                89.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 68.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 3.741657,
+              "std": 6.480741,
+              "values": [
+                74.0,
+                59.0,
+                71.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 68.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.741657,
+            "std": 6.480741,
+            "values": [
+              74.0,
+              59.0,
+              71.0
+            ]
+          }
+        }
+      }
+    },
+    "Reacher": {
+      "0.0": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 60.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.344426,
+            "std": 5.792716,
+            "values": [
+              53.0,
+              62.0,
+              67.0
+            ]
+          },
+          "checkpoint_rel": "lewm-reacher/ckpt/reacher_lewm_baseline_seed3073/reacher_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 60.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 3.344426,
+                "std": 5.792716,
+                "values": [
+                  53.0,
+                  62.0,
+                  67.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 19.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 3.138766,
+                "std": 5.436502,
+                "values": [
+                  24.0,
+                  12.0,
+                  23.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 58.666666666666664,
+              "n": 3,
+              "std": 1.2472191289246501,
+              "values": [
+                59.0,
+                56.99999999999999,
+                60.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 15.0,
+              "n": 3,
+              "std": 2.160246899469287,
+              "values": [
+                16.0,
+                12.0,
+                17.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 18.333333333333332,
+              "n": 3,
+              "std": 2.0548046676563256,
+              "values": [
+                21.0,
+                18.0,
+                16.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 19.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.138766,
+            "std": 5.436502,
+            "values": [
+              24.0,
+              12.0,
+              23.0
+            ]
+          },
+          "result_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results",
+          "subdir": "reacher_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 60.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 3.344426,
+              "std": 5.792716,
+              "values": [
+                53.0,
+                62.0,
+                67.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 19.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 3.138766,
+              "std": 5.436502,
+              "values": [
+                24.0,
+                12.0,
+                23.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 19.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.138766,
+            "std": 5.436502,
+            "values": [
+              24.0,
+              12.0,
+              23.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 60.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.344426,
+            "std": 5.792716,
+            "values": [
+              53.0,
+              62.0,
+              67.0
+            ]
+          },
+          "checkpoint_rel": "lewm-reacher/ckpt/reacher_lewm_baseline_seed3073/reacher_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 60.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 3.344426,
+                "std": 5.792716,
+                "values": [
+                  53.0,
+                  62.0,
+                  67.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 38.333333,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.720082,
+                "std": 1.247219,
+                "values": [
+                  40.0,
+                  37.0,
+                  38.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 58.666666666666664,
+              "n": 3,
+              "std": 1.2472191289246501,
+              "values": [
+                59.0,
+                56.99999999999999,
+                60.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 15.0,
+              "n": 3,
+              "std": 2.160246899469287,
+              "values": [
+                16.0,
+                12.0,
+                17.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 18.333333333333332,
+              "n": 3,
+              "std": 2.0548046676563256,
+              "values": [
+                21.0,
+                18.0,
+                16.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 38.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.720082,
+            "std": 1.247219,
+            "values": [
+              40.0,
+              37.0,
+              38.0
+            ]
+          },
+          "result_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results",
+          "subdir": "reacher_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 60.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 3.344426,
+              "std": 5.792716,
+              "values": [
+                53.0,
+                62.0,
+                67.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 38.333333,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.720082,
+              "std": 1.247219,
+              "values": [
+                40.0,
+                37.0,
+                38.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 38.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.720082,
+            "std": 1.247219,
+            "values": [
+              40.0,
+              37.0,
+              38.0
+            ]
+          }
+        }
+      },
+      "0.08": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 81.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 2.325383,
+            "std": 4.027682,
+            "values": [
+              84.0,
+              85.0,
+              76.0
+            ]
+          },
+          "checkpoint_rel": "lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1_seed3073/reacher_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 81.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 2.325383,
+                "std": 4.027682,
+                "values": [
+                  84.0,
+                  85.0,
+                  76.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 72.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.247219,
+                "std": 2.160247,
+                "values": [
+                  74.0,
+                  73.0,
+                  69.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 84.0,
+              "n": 3,
+              "std": 0.816496580927726,
+              "values": [
+                85.0,
+                84.0,
+                83.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 83.0,
+              "n": 3,
+              "std": 4.320493798938574,
+              "values": [
+                79.0,
+                89.0,
+                81.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 82.0,
+              "n": 3,
+              "std": 1.4142135623730951,
+              "values": [
+                83.0,
+                80.0,
+                83.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 72.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.247219,
+            "std": 2.160247,
+            "values": [
+              74.0,
+              73.0,
+              69.0
+            ]
+          },
+          "result_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results",
+          "subdir": "reacher_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 81.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 2.325383,
+              "std": 4.027682,
+              "values": [
+                84.0,
+                85.0,
+                76.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 72.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.247219,
+              "std": 2.160247,
+              "values": [
+                74.0,
+                73.0,
+                69.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 72.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.247219,
+            "std": 2.160247,
+            "values": [
+              74.0,
+              73.0,
+              69.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 81.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 2.325383,
+            "std": 4.027682,
+            "values": [
+              84.0,
+              85.0,
+              76.0
+            ]
+          },
+          "checkpoint_rel": "lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1_seed3073/reacher_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 81.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 2.325383,
+                "std": 4.027682,
+                "values": [
+                  84.0,
+                  85.0,
+                  76.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 78.333333,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.981307,
+                "std": 1.699673,
+                "values": [
+                  80.0,
+                  76.0,
+                  79.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 84.0,
+              "n": 3,
+              "std": 0.816496580927726,
+              "values": [
+                85.0,
+                84.0,
+                83.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 83.0,
+              "n": 3,
+              "std": 4.320493798938574,
+              "values": [
+                79.0,
+                89.0,
+                81.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 82.0,
+              "n": 3,
+              "std": 1.4142135623730951,
+              "values": [
+                83.0,
+                80.0,
+                83.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 78.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              80.0,
+              76.0,
+              79.0
+            ]
+          },
+          "result_dir_rel": "lewm-reacher/ckpt/reacher_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results",
+          "subdir": "reacher_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 81.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 2.325383,
+              "std": 4.027682,
+              "values": [
+                84.0,
+                85.0,
+                76.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 78.333333,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.981307,
+              "std": 1.699673,
+              "values": [
+                80.0,
+                76.0,
+                79.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 78.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.981307,
+            "std": 1.699673,
+            "values": [
+              80.0,
+              76.0,
+              79.0
+            ]
+          }
+        }
+      }
+    },
+    "TwoRoom": {
+      "0.0": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 94.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.186342,
+            "std": 2.054805,
+            "values": [
+              92.0,
+              94.0,
+              97.0
+            ]
+          },
+          "checkpoint_rel": "lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3073/tworoom_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 94.333333,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.186342,
+                "std": 2.054805,
+                "values": [
+                  92.0,
+                  94.0,
+                  97.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 47.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 0.720082,
+                "std": 1.247219,
+                "values": [
+                  49.0,
+                  48.0,
+                  46.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 94.0,
+              "n": 3,
+              "std": 3.559026084010437,
+              "values": [
+                91.0,
+                92.0,
+                99.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 50.0,
+              "n": 3,
+              "std": 1.4142135623730951,
+              "values": [
+                51.0,
+                48.0,
+                51.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 65.66666666666667,
+              "n": 3,
+              "std": 1.247219128924647,
+              "values": [
+                67.0,
+                64.0,
+                66.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 47.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.720082,
+            "std": 1.247219,
+            "values": [
+              49.0,
+              48.0,
+              46.0
+            ]
+          },
+          "result_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p0/eval_results",
+          "subdir": "tworoom_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 94.333333,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.186342,
+              "std": 2.054805,
+              "values": [
+                92.0,
+                94.0,
+                97.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 47.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 0.720082,
+              "std": 1.247219,
+              "values": [
+                49.0,
+                48.0,
+                46.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 47.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 0.720082,
+            "std": 1.247219,
+            "values": [
+              49.0,
+              48.0,
+              46.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 94.333333,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.186342,
+            "std": 2.054805,
+            "values": [
+              92.0,
+              94.0,
+              97.0
+            ]
+          },
+          "checkpoint_rel": "lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3073/tworoom_lewm_baseline_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 94.333333,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.186342,
+                "std": 2.054805,
+                "values": [
+                  92.0,
+                  94.0,
+                  97.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 44.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 2.125681,
+                "std": 3.681787,
+                "values": [
+                  49.0,
+                  40.0,
+                  45.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 94.0,
+              "n": 3,
+              "std": 3.559026084010437,
+              "values": [
+                91.0,
+                92.0,
+                99.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 50.0,
+              "n": 3,
+              "std": 1.4142135623730951,
+              "values": [
+                51.0,
+                48.0,
+                51.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 65.66666666666667,
+              "n": 3,
+              "std": 1.247219128924647,
+              "values": [
+                67.0,
+                64.0,
+                66.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 44.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 2.125681,
+            "std": 3.681787,
+            "values": [
+              49.0,
+              40.0,
+              45.0
+            ]
+          },
+          "result_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p0/eval_results",
+          "subdir": "tworoom_lewm_baseline_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 94.333333,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.186342,
+              "std": 2.054805,
+              "values": [
+                92.0,
+                94.0,
+                97.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 44.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 2.125681,
+              "std": 3.681787,
+              "values": [
+                49.0,
+                40.0,
+                45.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 44.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 2.125681,
+            "std": 3.681787,
+            "values": [
+              49.0,
+              40.0,
+              45.0
+            ]
+          }
+        }
+      },
+      "0.08": {
+        "gaussian_blur": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 97.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.247219,
+            "std": 2.160247,
+            "values": [
+              94.0,
+              98.0,
+              99.0
+            ]
+          },
+          "checkpoint_rel": "lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3073/tworoom_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/diagnostics_gaussian_blur",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 97.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.247219,
+                "std": 2.160247,
+                "values": [
+                  94.0,
+                  98.0,
+                  99.0
+                ]
+              }
+            },
+            "pixels_blur_ks15": {
+              "success_rate": {
+                "mean": 83.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 3.138766,
+                "std": 5.436502,
+                "values": [
+                  87.0,
+                  76.0,
+                  88.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 98.33333333333333,
+              "n": 3,
+              "std": 0.4714045207910317,
+              "values": [
+                99.0,
+                98.0,
+                98.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 98.66666666666667,
+              "n": 3,
+              "std": 0.9428090415820634,
+              "values": [
+                98.0,
+                98.0,
+                100.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 97.66666666666667,
+              "n": 3,
+              "std": 0.9428090415820634,
+              "values": [
+                97.0,
+                97.0,
+                99.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1",
+            "15"
+          ],
+          "primary_stress_group": "pixels_blur_ks15",
+          "primary_stress_success": {
+            "mean": 83.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.138766,
+            "std": 5.436502,
+            "values": [
+              87.0,
+              76.0,
+              88.0
+            ]
+          },
+          "result_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_gaussian_blur_std0p08/eval_results",
+          "subdir": "tworoom_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 97.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.247219,
+              "std": 2.160247,
+              "values": [
+                94.0,
+                98.0,
+                99.0
+              ]
+            },
+            "pixels_blur_ks15": {
+              "mean": 83.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 3.138766,
+              "std": 5.436502,
+              "values": [
+                87.0,
+                76.0,
+                88.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_blur_ks15",
+            "mean": 83.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 3.138766,
+            "std": 5.436502,
+            "values": [
+              87.0,
+              76.0,
+              88.0
+            ]
+          }
+        },
+        "resize": {
+          "apply_to": "1",
+          "best_success": {
+            "group": "origin",
+            "mean": 97.0,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.247219,
+            "std": 2.160247,
+            "values": [
+              94.0,
+              98.0,
+              99.0
+            ]
+          },
+          "checkpoint_rel": "lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3073/tworoom_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+          "diagnostics_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/diagnostics_resize",
+          "diagnostics_enabled": false,
+          "diagnostics_summary": null,
+          "eval": {
+            "origin": {
+              "success_rate": {
+                "mean": 97.0,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.247219,
+                "std": 2.160247,
+                "values": [
+                  94.0,
+                  98.0,
+                  99.0
+                ]
+              }
+            },
+            "pixels_rs_factor0.25": {
+              "success_rate": {
+                "mean": 84.666667,
+                "n_seeds": 3,
+                "seeds": "42,43,44",
+                "sem": 1.905159,
+                "std": 3.299832,
+                "values": [
+                  87.0,
+                  80.0,
+                  87.0
+                ]
+              }
+            }
+          },
+          "eval_summary_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results/eval_summary.csv",
+          "gaussian_reference": {
+            "clean": {
+              "mean": 98.33333333333333,
+              "n": 3,
+              "std": 0.4714045207910317,
+              "values": [
+                99.0,
+                98.0,
+                98.0
+              ]
+            },
+            "pixels_goal_std0.08": {
+              "mean": 98.66666666666667,
+              "n": 3,
+              "std": 0.9428090415820634,
+              "values": [
+                98.0,
+                98.0,
+                100.0
+              ]
+            },
+            "pixels_std0.08": {
+              "mean": 97.66666666666667,
+              "n": 3,
+              "std": 0.9428090415820634,
+              "values": [
+                97.0,
+                97.0,
+                99.0
+              ]
+            }
+          },
+          "magnitudes": [
+            "1.0",
+            "0.25"
+          ],
+          "primary_stress_group": "pixels_rs_factor0.25",
+          "primary_stress_success": {
+            "mean": 84.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.905159,
+            "std": 3.299832,
+            "values": [
+              87.0,
+              80.0,
+              87.0
+            ]
+          },
+          "result_dir_rel": "lewm-tworooms/ckpt/tworoom_paper1_unseen_origin_vs_std008_s3073_strongest_resize_std0p08/eval_results",
+          "subdir": "tworoom_lewm_noise_0to008_p1_seed3073",
+          "success_rate": {
+            "origin": {
+              "mean": 97.0,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.247219,
+              "std": 2.160247,
+              "values": [
+                94.0,
+                98.0,
+                99.0
+              ]
+            },
+            "pixels_rs_factor0.25": {
+              "mean": 84.666667,
+              "n_seeds": 3,
+              "seeds": "42,43,44",
+              "sem": 1.905159,
+              "std": 3.299832,
+              "values": [
+                87.0,
+                80.0,
+                87.0
+              ]
+            }
+          },
+          "worst_success": {
+            "group": "pixels_rs_factor0.25",
+            "mean": 84.666667,
+            "n_seeds": 3,
+            "seeds": "42,43,44",
+            "sem": 1.905159,
+            "std": 3.299832,
+            "values": [
+              87.0,
+              80.0,
+              87.0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

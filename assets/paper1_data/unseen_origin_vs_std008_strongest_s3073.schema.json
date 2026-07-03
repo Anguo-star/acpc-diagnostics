@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "family_plateau_summaries": {
+      "type": "object"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "missing": {
+      "type": "array"
+    },
+    "results": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "metadata",
+    "results",
+    "missing"
+  ],
+  "title": "Paper 1 unseen perturbation pilot artifact",
+  "type": "object"
+}

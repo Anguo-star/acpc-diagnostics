@@ -37,6 +37,10 @@ This branch also contains the code-facing Paper 1 robustness study release:
 - canonical result artifacts: `assets/paper1_data/`
 - generated reference figures: `assets/paper1_figs/`
 - training, eval, and diagnostics scripts: `run_trainer.sh`, `eval.py`, and `tools/`
+- unseen-perturbation reproduction launchers:
+  `run_paper1_unseen_origin_vs_std008_eval.sh`,
+  `run_paper1_unseen_origin_vs_std008_seeded.sh`, and
+  `run_paper1_unseen_phase0_acpc_subset.sh`
 
 The manuscript source, paper-facing documentation, and arXiv packaging files
 are intentionally not included in this public code branch.
@@ -46,6 +50,42 @@ are intentionally not included in this public code branch.
 uv venv --python=3.10
 source .venv/bin/activate
 uv pip install -r requirements.txt
+```
+
+**Released artifact checks:**
+```bash
+python -m tools.check_paper1_consistency
+```
+
+**Unseen perturbation eval reproduction:**
+```bash
+export DATA_ROOT=/path/to/world_model/quentinll
+
+# Seed-specific std=0.0 vs std=0.08 strongest-only blur/resize eval.
+TRAIN_SEED=3073 DRY_RUN=1 bash run_paper1_unseen_origin_vs_std008_seeded.sh
+TRAIN_SEED=3074 DRY_RUN=1 bash run_paper1_unseen_origin_vs_std008_seeded.sh
+
+# After running real eval jobs, rebuild the compact review artifact.
+python -m tools.build_paper1_unseen_eval_artifact \
+  --manifest assets/paper1_data/unseen_origin_vs_std008_strongest_s3073_manifest.json \
+  --out assets/paper1_data/unseen_origin_vs_std008_strongest_s3073.json \
+  --schema-out assets/paper1_data/unseen_origin_vs_std008_strongest_s3073.schema.json \
+  --root "$DATA_ROOT" \
+  --allow-missing
+```
+
+**Representative unseen Phase-0 ACPC subset:**
+```bash
+export DATA_ROOT=/path/to/world_model/quentinll
+DRY_RUN=1 bash run_paper1_unseen_phase0_acpc_subset.sh
+
+# Real run, then rebuild the joined summary artifact.
+bash run_paper1_unseen_phase0_acpc_subset.sh
+python -m tools.build_paper1_unseen_phase0_acpc_subset \
+  --raw-dir assets/paper1_data/unseen_phase0_acpc_subset_raw \
+  --out assets/paper1_data/unseen_phase0_acpc_subset.json \
+  --schema-out assets/paper1_data/unseen_phase0_acpc_subset.schema.json \
+  --seeds 3073 3074
 ```
 
 ## Data
