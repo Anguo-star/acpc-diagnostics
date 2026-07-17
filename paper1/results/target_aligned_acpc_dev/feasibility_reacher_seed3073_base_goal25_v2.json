@@ -1,0 +1,201 @@
+{
+  "blocks": [
+    {
+      "absolute_current_row": 393396,
+      "absolute_goal_row": 393421,
+      "block_index": 0,
+      "episode_id": 1957,
+      "start_step": 29
+    },
+    {
+      "absolute_current_row": 1712036,
+      "absolute_goal_row": 1712061,
+      "block_index": 1,
+      "episode_id": 8517,
+      "start_step": 109
+    },
+    {
+      "absolute_current_row": 1821584,
+      "absolute_goal_row": 1821609,
+      "block_index": 2,
+      "episode_id": 9062,
+      "start_step": 112
+    },
+    {
+      "absolute_current_row": 217417,
+      "absolute_goal_row": 217442,
+      "block_index": 3,
+      "episode_id": 1081,
+      "start_step": 126
+    }
+  ],
+  "checks": {
+    "candidate_endpoint_variation": true,
+    "candidate_goal_cost_variation": true,
+    "captured_vs_recomputed_cost_parity": true,
+    "five_candidate_steps_produce_five_predictions": true,
+    "identity_cost_parity": true,
+    "identity_prediction_parity": true,
+    "identity_response_zero": true,
+    "identity_winner_parity": true,
+    "logged_dataset_render_parity": true,
+    "logged_dataset_replay_parity": true,
+    "single_current_frame": true
+  },
+  "measurements": {
+    "action_coordinates": {
+      "count": 2000000,
+      "eval_population_std": [
+        [
+          0.5774140806845414,
+          0.577182679325366
+        ]
+      ],
+      "max_relative_scale_difference": 2.5000009377162447e-07,
+      "mean": [
+        [
+          3.5727661713243504e-05,
+          -0.0005056222437278677
+        ]
+      ],
+      "planner_inverse_transform": "eval_population_std",
+      "training_sample_std": [
+        [
+          0.5774142250381157,
+          0.57718282362109
+        ]
+      ]
+    },
+    "candidate_endpoint_spread_per_block": [
+      2.7810896482388983,
+      2.940937726820031,
+      1.9072816565587496,
+      1.9413649842158869
+    ],
+    "candidate_goal_distance_std_per_block": [
+      0.3566188493108611,
+      0.3113827019002168,
+      0.3573100083984953,
+      0.2620427665471221
+    ],
+    "candidate_raw_action_outside_env_bounds_fraction": 0.07625,
+    "candidate_shape": [
+      4,
+      8,
+      5,
+      10
+    ],
+    "captured_recomputed_cost_max_abs": 0.0,
+    "identity_cost_max_abs": 0.0,
+    "identity_prediction_max_abs": 0.0,
+    "identity_response_max_abs": 0.0,
+    "identity_winner_changes": 0,
+    "logged_render_mae": 2.577412507971939,
+    "logged_render_max_abs": 75,
+    "logged_render_nonzero_fraction": 0.8103296396683674,
+    "logged_render_psnr_db": 36.958948901142215,
+    "logged_render_rmse": 3.6190346012502794,
+    "logged_replay_error_max": 0.0,
+    "logged_replay_error_per_block_step": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "logged_replay_gate_error_max": 0.0,
+    "logged_replay_gate_error_per_block_step": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "prediction_shape": [
+      4,
+      8,
+      5,
+      192
+    ],
+    "render_mae_tolerance": 3.0,
+    "render_psnr_min_db": 35.0,
+    "replay_tolerance": 1e-05,
+    "state_gate_width": 4
+  },
+  "metadata": {
+    "behavior_labels_read": false,
+    "checkpoint": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_baseline_seed3073/reacher_lewm_baseline_seed3073_epoch_10_object.ckpt",
+    "checkpoint_sha256": "71f1d48add14061516630735d6624b6363e4bc7516670625a93e566ee0288b99",
+    "created_utc": "2026-07-12T16:21:21.751199+00:00",
+    "dataset": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/reacher.h5",
+    "dataset_full_hash_skipped": true,
+    "dataset_mtime_ns": 1773358764000000000,
+    "dataset_size_bytes": 98905882624,
+    "device": "cuda",
+    "primitive_schema_version": "paper1-target-aligned-acpc-0.1",
+    "purpose": "DEV correctness/feasibility only; not paper evidence",
+    "schema_version": "paper1-target-aligned-acpc-feasibility-0.2",
+    "status": "PASS",
+    "task": "Reacher",
+    "wall_time_seconds": 16.507475623860955
+  },
+  "semantics": {
+    "action_block": 5,
+    "candidate_contains_logged_history_prefix": false,
+    "candidate_steps": 5,
+    "logged_h8_and_candidate_h5_are_same_object": false,
+    "low_level_action_steps": 25,
+    "model_history_size_for_logged_track": 3,
+    "observation_steps": 1,
+    "planner_current_index_in_loaded_clip": 2,
+    "planner_goal_index_in_loaded_clip": 7,
+    "predicted_steps": 5,
+    "privileged_replay_state_key": "qpos+qvel"
+  }
+}

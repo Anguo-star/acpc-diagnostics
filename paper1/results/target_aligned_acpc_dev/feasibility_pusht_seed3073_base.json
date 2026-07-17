@@ -1,0 +1,163 @@
+{
+  "blocks": [
+    {
+      "absolute_current_row": 1010467,
+      "absolute_goal_row": 1010512,
+      "block_index": 0,
+      "episode_id": 8204,
+      "start_step": 64
+    },
+    {
+      "absolute_current_row": 369912,
+      "absolute_goal_row": 369957,
+      "block_index": 1,
+      "episode_id": 3048,
+      "start_step": 70
+    },
+    {
+      "absolute_current_row": 1952048,
+      "absolute_goal_row": 1952093,
+      "block_index": 2,
+      "episode_id": 15646,
+      "start_step": 0
+    },
+    {
+      "absolute_current_row": 140409,
+      "absolute_goal_row": 140454,
+      "block_index": 3,
+      "episode_id": 1141,
+      "start_step": 39
+    }
+  ],
+  "checks": {
+    "candidate_endpoint_variation": true,
+    "candidate_goal_cost_variation": true,
+    "captured_vs_recomputed_cost_parity": true,
+    "five_candidate_steps_produce_five_predictions": true,
+    "identity_cost_parity": true,
+    "identity_prediction_parity": true,
+    "identity_response_zero": true,
+    "identity_winner_parity": true,
+    "logged_dataset_render_parity": false,
+    "logged_dataset_replay_parity": false,
+    "single_current_frame": true
+  },
+  "measurements": {
+    "action_coordinates": {
+      "count": 2336736,
+      "eval_population_std": [
+        [
+          0.20846744284501714,
+          0.20674862637362224
+        ]
+      ],
+      "max_relative_scale_difference": 2.1397374814759315e-07,
+      "mean": [
+        [
+          -0.007812564379916172,
+          0.006860687229453032
+        ]
+      ],
+      "planner_inverse_transform": "eval_population_std",
+      "training_sample_std": [
+        [
+          0.20846748745157725,
+          0.20674867061240074
+        ]
+      ]
+    },
+    "candidate_endpoint_spread_per_block": [
+      124.5122378415924,
+      108.0064434550824,
+      91.71826521563743,
+      92.50251933720895
+    ],
+    "candidate_goal_distance_std_per_block": [
+      36.109104909171364,
+      43.39619614255609,
+      51.76958489489063,
+      40.19982752535454
+    ],
+    "candidate_raw_action_outside_env_bounds_fraction": 0.0,
+    "candidate_shape": [
+      4,
+      8,
+      5,
+      10
+    ],
+    "captured_recomputed_cost_max_abs": 0.0,
+    "identity_cost_max_abs": 0.0,
+    "identity_prediction_max_abs": 0.0,
+    "identity_response_max_abs": 0.0,
+    "identity_winner_changes": 0,
+    "logged_render_max_abs": 178,
+    "logged_render_nonzero_fraction": 0.12189492984693878,
+    "logged_replay_error_max": 18.641400989520594,
+    "logged_replay_error_per_block_step": [
+      [
+        1.7307130775743942,
+        2.6505734207326697,
+        5.580706851270238,
+        5.580705874767355,
+        5.5807080397457085
+      ],
+      [
+        0.6199612023623866,
+        0.6448585272509221,
+        0.6492379370639878,
+        0.6424411886440407,
+        0.6403074752308555
+      ],
+      [
+        1.9804605134808917,
+        1.9804604333953122,
+        1.9804593854129322,
+        1.9804607274298676,
+        18.641400989520594
+      ],
+      [
+        1.0990771486539823,
+        1.9689148248559392,
+        1.5252461156531327,
+        1.6793199329194815,
+        1.518903494168864
+      ]
+    ],
+    "prediction_shape": [
+      4,
+      8,
+      5,
+      192
+    ]
+  },
+  "metadata": {
+    "behavior_labels_read": false,
+    "checkpoint": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3073/pusht_lewm_baseline_seed3073_epoch_10_object.ckpt",
+    "checkpoint_sha256": "be0bdec81f1cd7ed2404f519924a6440d9b85dbbf1a1556dab996007d6c6d70b",
+    "created_utc": "2026-07-12T13:19:00.359869+00:00",
+    "dataset": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/pusht_expert_train.h5",
+    "dataset_full_hash_skipped": true,
+    "dataset_mtime_ns": 1775542943356880348,
+    "dataset_size_bytes": 46300921856,
+    "device": "cuda",
+    "primitive_schema_version": "paper1-target-aligned-acpc-0.1",
+    "purpose": "DEV correctness/feasibility only; not paper evidence",
+    "schema_version": "paper1-target-aligned-acpc-feasibility-0.2",
+    "status": "FAIL",
+    "task": "PushT",
+    "wall_time_seconds": 13.812926914542913
+  },
+  "semantics": {
+    "action_block": 5,
+    "candidate_contains_logged_history_prefix": false,
+    "candidate_steps": 5,
+    "logged_h8_and_candidate_h5_are_same_object": false,
+    "low_level_action_steps": 25,
+    "model_history_size_for_logged_track": 3,
+    "observation_steps": 1,
+    "planner_current_index_in_loaded_clip": 2,
+    "planner_goal_index_in_loaded_clip": -1,
+    "predicted_steps": 5,
+    "privileged_replay_state_key": "state"
+  }
+}

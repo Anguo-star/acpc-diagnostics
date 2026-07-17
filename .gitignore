@@ -37,7 +37,10 @@ paper1/*
 !paper1/scripts/
 !paper1/config/
 !paper1/results/
-paper1/results/target_aligned_acpc_dev/
+!paper1/tables/
+paper1/tables/*
+!paper1/tables/.gitkeep
+paper1/results/target_aligned_acpc_dev/cache/
 paper1/results/acpc_planner_stability_v1/
 paper1/results/acpc_planner_stability_v3/
 paper2/

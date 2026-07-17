@@ -1,0 +1,169 @@
+{
+  "blocks": [
+    {
+      "absolute_current_row": 1010467,
+      "absolute_goal_row": 1010492,
+      "block_index": 0,
+      "episode_id": 8204,
+      "start_step": 64
+    },
+    {
+      "absolute_current_row": 369912,
+      "absolute_goal_row": 369937,
+      "block_index": 1,
+      "episode_id": 3048,
+      "start_step": 70
+    },
+    {
+      "absolute_current_row": 1952048,
+      "absolute_goal_row": 1952073,
+      "block_index": 2,
+      "episode_id": 15646,
+      "start_step": 0
+    },
+    {
+      "absolute_current_row": 140409,
+      "absolute_goal_row": 140434,
+      "block_index": 3,
+      "episode_id": 1141,
+      "start_step": 39
+    }
+  ],
+  "checks": {
+    "candidate_endpoint_variation": true,
+    "candidate_goal_cost_variation": true,
+    "captured_vs_recomputed_cost_parity": true,
+    "five_candidate_steps_produce_five_predictions": true,
+    "identity_cost_parity": true,
+    "identity_prediction_parity": true,
+    "identity_response_zero": true,
+    "identity_winner_parity": true,
+    "logged_dataset_render_parity": true,
+    "logged_dataset_replay_parity": true,
+    "single_current_frame": true
+  },
+  "measurements": {
+    "action_coordinates": {
+      "count": 2336736,
+      "eval_population_std": [
+        [
+          0.20846744284501714,
+          0.20674862637362224
+        ]
+      ],
+      "max_relative_scale_difference": 2.1397374814759315e-07,
+      "mean": [
+        [
+          -0.007812564379916172,
+          0.006860687229453032
+        ]
+      ],
+      "planner_inverse_transform": "eval_population_std",
+      "training_sample_std": [
+        [
+          0.20846748745157725,
+          0.20674867061240074
+        ]
+      ]
+    },
+    "candidate_endpoint_spread_per_block": [
+      124.51419678733765,
+      108.01123819621655,
+      91.73910759297631,
+      92.56788033911842
+    ],
+    "candidate_goal_distance_std_per_block": [
+      29.6344892413016,
+      44.39919031126567,
+      45.72021510934357,
+      53.49846725475582
+    ],
+    "candidate_raw_action_outside_env_bounds_fraction": 0.0,
+    "candidate_shape": [
+      4,
+      8,
+      5,
+      10
+    ],
+    "captured_recomputed_cost_max_abs": 0.0,
+    "identity_cost_max_abs": 0.0,
+    "identity_prediction_max_abs": 0.0,
+    "identity_response_max_abs": 0.0,
+    "identity_winner_changes": 0,
+    "logged_render_mae": 0.40834562340561226,
+    "logged_render_max_abs": 122,
+    "logged_render_nonzero_fraction": 0.11943757971938776,
+    "logged_render_psnr_db": 40.42011602102049,
+    "logged_render_rmse": 2.4295977649013087,
+    "logged_replay_error_max": 0.00027230161351678514,
+    "logged_replay_error_per_block_step": [
+      [
+        2.8977533301548017e-05,
+        0.00027230161351678514,
+        0.00021598510489219394,
+        0.00021532689522376025,
+        0.00021626125656113752
+      ],
+      [
+        8.195744175366292e-05,
+        2.371404317133692e-05,
+        3.529628601709854e-05,
+        2.7844506754677798e-05,
+        3.8678405470561225e-05
+      ],
+      [
+        3.0930676052653096e-06,
+        1.5478738797195618e-05,
+        4.441481684376231e-06,
+        8.708315357607331e-06,
+        1.846526608471998e-05
+      ],
+      [
+        1.1682743208053362e-05,
+        1.8047672431180472e-05,
+        1.9310303731449984e-05,
+        1.9479939975592253e-05,
+        1.7990296008022932e-05
+      ]
+    ],
+    "prediction_shape": [
+      4,
+      8,
+      5,
+      192
+    ],
+    "render_mae_tolerance": 1.0,
+    "render_psnr_min_db": 35.0,
+    "replay_tolerance": 0.01
+  },
+  "metadata": {
+    "behavior_labels_read": false,
+    "checkpoint": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3073/pusht_lewm_baseline_seed3073_epoch_10_object.ckpt",
+    "checkpoint_sha256": "be0bdec81f1cd7ed2404f519924a6440d9b85dbbf1a1556dab996007d6c6d70b",
+    "created_utc": "2026-07-12T14:23:06.927372+00:00",
+    "dataset": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/pusht_expert_train.h5",
+    "dataset_full_hash_skipped": true,
+    "dataset_mtime_ns": 1775542943356880348,
+    "dataset_size_bytes": 46300921856,
+    "device": "cuda",
+    "primitive_schema_version": "paper1-target-aligned-acpc-0.1",
+    "purpose": "DEV correctness/feasibility only; not paper evidence",
+    "schema_version": "paper1-target-aligned-acpc-feasibility-0.2",
+    "status": "PASS",
+    "task": "PushT",
+    "wall_time_seconds": 12.545544560998678
+  },
+  "semantics": {
+    "action_block": 5,
+    "candidate_contains_logged_history_prefix": false,
+    "candidate_steps": 5,
+    "logged_h8_and_candidate_h5_are_same_object": false,
+    "low_level_action_steps": 25,
+    "model_history_size_for_logged_track": 3,
+    "observation_steps": 1,
+    "planner_current_index_in_loaded_clip": 2,
+    "planner_goal_index_in_loaded_clip": 7,
+    "predicted_steps": 5,
+    "privileged_replay_state_key": "state"
+  }
+}

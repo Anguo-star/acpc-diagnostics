@@ -1,0 +1,210 @@
+{
+  "blocks": [
+    {
+      "absolute_current_row": 393396,
+      "absolute_goal_row": 393421,
+      "block_index": 0,
+      "episode_id": 1957,
+      "start_step": 29
+    },
+    {
+      "absolute_current_row": 1712036,
+      "absolute_goal_row": 1712061,
+      "block_index": 1,
+      "episode_id": 8517,
+      "start_step": 109
+    },
+    {
+      "absolute_current_row": 1821584,
+      "absolute_goal_row": 1821609,
+      "block_index": 2,
+      "episode_id": 9062,
+      "start_step": 112
+    },
+    {
+      "absolute_current_row": 217417,
+      "absolute_goal_row": 217442,
+      "block_index": 3,
+      "episode_id": 1081,
+      "start_step": 126
+    }
+  ],
+  "checks": {
+    "candidate_endpoint_variation": true,
+    "candidate_goal_cost_variation": true,
+    "captured_vs_recomputed_cost_parity": true,
+    "five_candidate_steps_produce_five_predictions": true,
+    "identity_cost_parity": true,
+    "identity_prediction_parity": true,
+    "identity_response_zero": true,
+    "identity_winner_parity": true,
+    "logged_dataset_render_parity": true,
+    "logged_dataset_replay_parity": true,
+    "single_current_frame": true
+  },
+  "measurements": {
+    "action_coordinates": {
+      "count": 2000000,
+      "eval_population_std": [
+        [
+          0.2894198325506555,
+          0.39371697495490987,
+          0.6431365217957304,
+          0.3928016202283424,
+          0.2503073640045173
+        ]
+      ],
+      "max_relative_scale_difference": 2.500000938028399e-07,
+      "mean": [
+        [
+          0.0108846967805138,
+          -0.0031414329928013945,
+          0.0026465825646189004,
+          0.0004239286647865428,
+          0.15925256653030173
+        ]
+      ],
+      "planner_inverse_transform": "eval_population_std",
+      "training_sample_std": [
+        [
+          0.2894199049056408,
+          0.39371707338419054,
+          0.6431366825799212,
+          0.3928017184287843,
+          0.2503074265813818
+        ]
+      ]
+    },
+    "candidate_endpoint_spread_per_block": [
+      3.2331838189401787,
+      3.6009797452947265,
+      4.409269900981215,
+      3.0647155261786057
+    ],
+    "candidate_goal_distance_std_per_block": [
+      0.042468791452464294,
+      0.015147215394043406,
+      0.02296206572130015,
+      0.03729423506563346
+    ],
+    "candidate_raw_action_outside_env_bounds_fraction": 0.02825,
+    "candidate_shape": [
+      4,
+      8,
+      5,
+      25
+    ],
+    "captured_recomputed_cost_max_abs": 0.0,
+    "identity_cost_max_abs": 0.0,
+    "identity_prediction_max_abs": 0.0,
+    "identity_response_max_abs": 0.0,
+    "identity_winner_changes": 0,
+    "logged_render_mae": 0.22514249840561223,
+    "logged_render_max_abs": 104,
+    "logged_render_nonzero_fraction": 0.12951045652636053,
+    "logged_render_psnr_db": 45.53641008921155,
+    "logged_render_rmse": 1.3480924485708343,
+    "logged_replay_error_max": 0.221783393148152,
+    "logged_replay_error_per_block_step": [
+      [
+        0.0012943917797248947,
+        0.0009800909249657493,
+        0.0012160465914147548,
+        0.002027405584354589,
+        0.0012319433706104194
+      ],
+      [
+        0.0006061637019314616,
+        0.002671375237085989,
+        0.0005854973742184424,
+        0.0006160756286866985,
+        0.0005693775380061513
+      ],
+      [
+        0.0008688815766006024,
+        0.221783393148152,
+        0.008458624174264377,
+        0.0008475474327245983,
+        0.0006641504534639838
+      ],
+      [
+        0.02339760267610524,
+        0.0004011880836572953,
+        0.0004301370291564604,
+        0.0026207309977754954,
+        0.00035352251951891627
+      ]
+    ],
+    "logged_replay_gate_error_max": 0.00118091973635082,
+    "logged_replay_gate_error_per_block_step": [
+      [
+        0.0010802821738558034,
+        0.0008226613578525048,
+        0.0009406142953952291,
+        0.0011082830911324892,
+        0.00118091973635082
+      ],
+      [
+        0.000498217341131382,
+        0.0005133464764053474,
+        0.0005614611927897373,
+        0.0005250069909775393,
+        0.0005150560483555389
+      ],
+      [
+        0.0005688488897196303,
+        0.000578232138915587,
+        0.000556162617418344,
+        0.0005890579013253347,
+        0.0006067003912734449
+      ],
+      [
+        0.0003544300432306446,
+        0.00036295469070166483,
+        0.00038282957713701315,
+        0.0002472976303556905,
+        0.000220516659094274
+      ]
+    ],
+    "prediction_shape": [
+      4,
+      8,
+      5,
+      192
+    ],
+    "render_mae_tolerance": 3.0,
+    "render_psnr_min_db": 35.0,
+    "replay_tolerance": 0.005,
+    "state_gate_width": 21
+  },
+  "metadata": {
+    "behavior_labels_read": false,
+    "checkpoint": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_baseline_seed3073/cube_lewm_baseline_seed3073_epoch_10_object.ckpt",
+    "checkpoint_sha256": "7265463b5ab5d630309e6ce01b669068e2810b0d3acc53df705c2fb289cbc80a",
+    "created_utc": "2026-07-12T16:23:19.251030+00:00",
+    "dataset": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ogbench/cube_single_expert.h5",
+    "dataset_full_hash_skipped": true,
+    "dataset_mtime_ns": 1771470736000000000,
+    "dataset_size_bytes": 101942558720,
+    "device": "cuda",
+    "primitive_schema_version": "paper1-target-aligned-acpc-0.1",
+    "purpose": "DEV correctness/feasibility only; not paper evidence",
+    "schema_version": "paper1-target-aligned-acpc-feasibility-0.2",
+    "status": "PASS",
+    "task": "Cube",
+    "wall_time_seconds": 58.28346558846533
+  },
+  "semantics": {
+    "action_block": 5,
+    "candidate_contains_logged_history_prefix": false,
+    "candidate_steps": 5,
+    "logged_h8_and_candidate_h5_are_same_object": false,
+    "low_level_action_steps": 25,
+    "model_history_size_for_logged_track": 3,
+    "observation_steps": 1,
+    "planner_current_index_in_loaded_clip": 2,
+    "planner_goal_index_in_loaded_clip": 7,
+    "predicted_steps": 5,
+    "privileged_replay_state_key": "qpos+qvel"
+  }
+}

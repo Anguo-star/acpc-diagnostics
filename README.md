@@ -61,7 +61,7 @@ uv pip install -r requirements.txt
 python -m paper1.scripts.build_future_drift_reader_display
 python -m paper1.scripts.cross_task_selective_rule
 python -m paper1.scripts.build_cross_stressor_selective_transfer
-python paper1/scripts/build_acpc_submission_assets.py
+python -m paper1.scripts.build_acpc_submission_assets
 ```
 Artifact provenance (sources, seeds, and hashes) is documented in
 `DATA_MANIFEST.md`.
