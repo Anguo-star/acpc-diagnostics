@@ -1,0 +1,20 @@
+{
+  "schema_version": "paper1-target-aligned-acpc-cross-seed-addendum-1.0",
+  "parent_contract": "target_aligned_acpc_dev_adjudication_v1.json",
+  "parent_sha256": "05af4f11d64479c77b404c4080bfd0a4f6aa1e51e88fa332c61041ee16ed2076",
+  "frozen_before_seed3074_target_reveal": true,
+  "training_seed": 3074,
+  "tasks": ["TwoRoom", "PushT"],
+  "roles": ["base", "endpoint"],
+  "checkpoints": [
+    "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3074/tworoom_lewm_baseline_seed3074_epoch_10_object.ckpt",
+    "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3074/tworoom_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+    "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3074/pusht_lewm_baseline_seed3074_epoch_10_object.ckpt",
+    "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3074/pusht_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt"
+  ],
+  "settings": "identical to parent contract and seed3073 runs",
+  "reveal_rule": "Run all four artifacts, inspect correctness only, then summarize once",
+  "missing_seed3072_checkpoint_policy": "report unavailable; do not substitute or train",
+  "negative_result_policy": "retain",
+  "post_reveal_retuning": "forbidden"
+}

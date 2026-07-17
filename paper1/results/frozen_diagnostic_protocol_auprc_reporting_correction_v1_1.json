@@ -1,0 +1,37 @@
+{
+  "calibration": {
+    "absolute_difference": -0.04703292284991212,
+    "corrected_auprc": 0.7297108411994226,
+    "corrected_definition": "tie-aware stepwise Average Precision; exact joint_score ties enter each retrieval set together",
+    "legacy_definition": "row-order-dependent ungrouped Average Precision within exact score ties",
+    "legacy_reported_auprc": 0.7767437640493348,
+    "positive_count": 24,
+    "row_count": 36
+  },
+  "metadata": {
+    "correction_scope": "reporting_only",
+    "created_utc": "2026-07-10T11:02:44.267614+00:00",
+    "errors": [],
+    "external_rerun_required": "score/apply artifacts only; no model inference rerun",
+    "gate_decisions_changed": false,
+    "missing_rows": [],
+    "protocol_v1_sha256": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "protocol_v1_status": "immutable_and_unmodified",
+    "schema_version": "paper1-frozen-auprc-reporting-correction-1.0",
+    "script_path": "paper1/scripts/build_frozen_auprc_reporting_correction.py",
+    "script_sha256": "3b28d07966c0b16f56d5a3c2f1d35b0f5bcd396c17604f846dd74b8eb82fd14b",
+    "source_hashes": {
+      "calibration_audit": "cab32514eac7e0e109712f210df342051dbf9c19135ef93654955e089c35dcc3",
+      "protocol_v1": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+      "tie_aware_scorer": "dde3ab96d894f1591656c0d7096175fad1ef6e0a27f7502aeaeba1da5d447325"
+    },
+    "source_paths": {
+      "calibration_audit": "paper1/results/frozen_diagnostic_protocol_calibration.json",
+      "protocol_v1": "paper1/config/frozen_diagnostic_protocol_v1.json",
+      "tie_aware_scorer": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/scripts/frozen_external_validation.py"
+    },
+    "status": "complete",
+    "thresholds_changed": false
+  },
+  "protocol_note": "Protocol v1 thresholds, metric definitions, and all gate decisions remain authoritative. Only the descriptive CAL AUPRC field is superseded for reporting."
+}

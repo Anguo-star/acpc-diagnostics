@@ -1,0 +1,222 @@
+{
+  "analysis_commit_parent": "b99023376a2bc2a2a529afc1eea6cf56dd38e4ac",
+  "checkpoints": [
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3074/tworoom_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "4a536f39666d8b37a27dca953b4892a4a91c0a9c34a001fe145f7089848a7baf",
+      "task": "TwoRoom",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3074/tworoom_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "3cc9d3f0e63497e746f953a66a6da7bba23e1916661ba5c3348f2b99ef79f6a1",
+      "task": "TwoRoom",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3074/pusht_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "016f5b0fb429c1433ffe51a06736a69e3756665d97f6798939d9850b006c234b",
+      "task": "PushT",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3074/pusht_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "2ac94bcf12e966fefe83dd5352fe759febb50137a5832b93aae0233ef43f4648",
+      "task": "PushT",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_baseline_seed3074/reacher_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "09c947950af021000ed468aab1a2a205b305bf55d6ea534b2ef0e0b0cfe366a9",
+      "task": "Reacher",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1_seed3074/reacher_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "e69edf677e06926e3d5949a6e24bfbe8a5e1ec23415f408f4a805fbb5e4b9219",
+      "task": "Reacher",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_baseline_seed3074/cube_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "4749635cad50fb2f9e6174e17e3ba7ca5b2b757cfe1b539f8e376e0c950d7a26",
+      "task": "Cube",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to008_p1_seed3074/cube_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "1151853cca089b72e91857d1756bd8f4c49c57a295c54e743fe8959ffc883e5e",
+      "task": "Cube",
+      "training_seed": 3074
+    }
+  ],
+  "claim_adjudication": {
+    "adaptive_association_claim": "allowed only for responses meeting the frozen 5% and 3/4-task criterion; otherwise report the result and narrow the claim",
+    "bound_claim": "allowed only if every bound/certificate invariant passes",
+    "causal_claim": "forbidden",
+    "closed_loop_robustness_claim": "forbidden"
+  },
+  "estimands": {
+    "adaptive": "final first-action RMS and clean-history decision regret under common-random-number independently adapting CEM branches",
+    "fixed_pool": "candidate-wise H5 latent drift, exact squared-distance cost-drift bound, and top-1/elite stability on the same ordered K64 proposal",
+    "goal_handling": "history-only probe; goal branch fixed",
+    "independent_unit": "trajectory episode",
+    "short_horizon_comparator": "candidate-conditioned H1 latent drift on that identical proposal"
+  },
+  "execution": {
+    "full_budget_timeout_seconds": 7200,
+    "max_concurrent_jobs": 4,
+    "native_threads_per_job": 2,
+    "one_process_per_gpu": true,
+    "reduced_timeout_seconds": 3600,
+    "retry_policy": "retry only exact frozen arguments after infrastructure failure"
+  },
+  "execution_authorized": true,
+  "frozen_at_utc": "2026-07-13T17:09:20.887771+00:00",
+  "frozen_panel": {
+    "cem_seed": 1234,
+    "checkpoint_roles": [
+      "base",
+      "endpoint"
+    ],
+    "full_budget": {
+      "adaptive_steps": 30,
+      "candidate_count": 300,
+      "n_episode_blocks": 16,
+      "severities": [
+        0.0,
+        0.08
+      ],
+      "topk": 30
+    },
+    "probe_family": "additional Gaussian history noise",
+    "probe_seed": 20260713,
+    "reduced": {
+      "adaptive_steps": 8,
+      "candidate_count": 64,
+      "n_episode_blocks": 100,
+      "topk": 8
+    },
+    "severities": [
+      0.0,
+      0.02,
+      0.05,
+      0.08
+    ],
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_seed": 3074,
+    "trajectory_seed": 9101
+  },
+  "immutable": true,
+  "invariants": {
+    "certificate_false_positive_count": 0,
+    "identity_all_adaptive_updates_aligned": true,
+    "identity_first_action_rms_max": 1e-06,
+    "identity_h5_acpc_max": 1e-05,
+    "mse_bound_violation_count": 0
+  },
+  "mathematical_contract": {
+    "adaptive_induction": "with a common initial proposal and common random numbers, equal elite membership preserves the numerical CEM update; once updates diverge, later indices are diagnostic rather than shared candidates",
+    "elite_certificate": "minimum bounded non-elite cost exceeds maximum bounded elite cost",
+    "exact_bound": "|C(z,g)-C(z_tilde,g)| <= ||z-z_tilde||_2 (||z-g||_2+||z_tilde-g||_2)",
+    "planner_cost": "C(z,g)=||z-g||_2^2 at the final predicted latent",
+    "top1_certificate": "every clean competitor gap exceeds the sum of the winner and competitor candidate-specific cost bounds"
+  },
+  "predeclared_analysis": {
+    "full_budget_role": "transfer sensitivity; no reduced/full equivalence is assumed",
+    "incremental_model": {
+      "added_feature": "log1p candidate-H5 ACPC q90",
+      "baseline_features": [
+        "severity",
+        "endpoint indicator",
+        "log1p candidate-H1 ACPC q90",
+        "log1p nominal top1 margin"
+      ],
+      "metric": "equal-task mean held-out log1p MAE",
+      "report_regardless_of_threshold": true,
+      "responses": [
+        "max fixed-pool absolute cost drift",
+        "adaptive first-action RMS",
+        "positive clean decision regret"
+      ],
+      "ridge_alpha": 1.0,
+      "split": "leave-one-task-out",
+      "strong_association_threshold": "at least 5% equal-task MAE reduction and improvement on at least 3 of 4 held-out tasks"
+    },
+    "join_key": [
+      "task",
+      "checkpoint_role",
+      "trajectory_block_id",
+      "severity",
+      "draw_index"
+    ],
+    "primary_validation": [
+      "exact bound and certificate soundness on every row",
+      "identity invariants",
+      "descriptive task/role/severity curves"
+    ]
+  },
+  "protocol_id": "paper1-acpc-planner-stability-v1",
+  "provenance": {
+    "all_authorized_outcomes_reported": true,
+    "planner_panel_role": "prospective for the new fixed-pool/adaptive-CEM estimands and analysis code, retrospective with respect to checkpoint existence and previously observed model behavior",
+    "seed3074_role": "protocol-frozen replication for the earlier P1 endpoint analysis; not relabeled as a newly trained independent confirmatory seed"
+  },
+  "schema_version": "paper1-acpc-planner-stability-protocol-1.0",
+  "scientific_scope": {
+    "central_claim": "action-matched long-horizon ACPC adds held-out future-drift information beyond a same-pool H1 comparator and links that information to planner cost and decision stability",
+    "eligible_outputs": [
+      "exact ACPC-to-squared-distance cost bound",
+      "top-1 and elite-set margin certificates",
+      "same-pool candidate-conditioned H1 versus H5 ACPC",
+      "adaptive-CEM first-action RMS and clean decision regret",
+      "K300 x 30-step transfer sensitivity"
+    ],
+    "excluded_side_branches": [
+      "failed repair attempts",
+      "PLDM side branch",
+      "JVP/local-sensitivity branch",
+      "raw full-sweep row dump",
+      "behavior claims"
+    ]
+  },
+  "source_hashes": {
+    "config/eval/solver/cem.yaml": "797629f829c0d3ad3b9c4e42d46a87f08da0b3845bc433e353fd6274cb0574df",
+    "jepa.py": "46218b5b7ff69b5be810650271b4f1e76efb142809052a2be57a13a415b09563",
+    "paper1/docs/PAPER1_ACPC_SCIENTIFIC_REMEDIATION_PLAN_20260713.md": "e3f7d4d715c9786489235b46106abe79e4facc9f9a423fc3ab8ac9ae320fa485",
+    "paper1/scripts/freeze_acpc_planner_stability_protocol.py": "7aa6bc6179f76c9a3afd80493e9fe08a34d0cb11c38109422edbcd513ed54265",
+    "paper1/scripts/summarize_acpc_planner_stability.py": "2d37950715a5f4ca352b4304e3e24cfe5c0b8c4fc7dd99553f44a0c83f3974e3",
+    "tests/test_paper1_acpc_adaptive_cem.py": "a0883c21bb93f87abcbf2deb14176a30fb8ed0cbaa596fe3d9b1e309c69f9fa7",
+    "tests/test_paper1_acpc_frozen_protocols.py": "a9102a6bb3963f7dfe679822ed6f131f5a50023ba4dda38940a872e5818b3b78",
+    "tests/test_paper1_acpc_planner_stability.py": "3b6dfc838bb0c750e429043a44de40cf07647b65d3109d46022223f4fa1cd73f",
+    "tests/test_paper1_acpc_planner_summary.py": "3ad41807f2252d667d26bd0107406fe364ba9eb1d4691841bc47bb82c1d6e775",
+    "tools/paper1_acpc_adaptive_cem_audit.py": "34c779ea54c20c3845e0c8560463d2cd0709527569f642cfc9c16231d95a5c9a",
+    "tools/paper1_acpc_planner_stability_audit.py": "e6bf1c11daaa023e3bb0ca0e49cb72ef5ad58a0b72faf1d95eabf983ea87974d",
+    "tools/paper1_cem_trace_audit.py": "a25b9efbc49e2c66d184dc222278cc36c8bb9295f9b25d53b2ec89e523b599e4",
+    "tools/paper1_operational_protocol.py": "28133105706c7bc05f5846f20e01c116d2146ec1ebdb7e669f7e8c42fdd4ebd0",
+    "tools/paper1_phase0_acpc.py": "1f4f65590e7f91852467c6f3a0970dda15bf0b58dbf561e8c24a8a32659193ee",
+    "utils.py": "41bd920d5ca89a345387b753929506474b09e8833462e224dc9e16af01b549ea"
+  },
+  "status": "frozen_pre_execution"
+}

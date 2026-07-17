@@ -1,0 +1,5 @@
+task,recovery_band,diagnostic_proxy_interval,start_boundary_error_stdmax,end_boundary_error_stdmax,within_one_grid_tolerance,interpretation
+TwoRoom,0.01-0.08,0.02-0.08,+0.01,+0.00,yes,proxy misses the first recovery-band checkpoint; within one-grid tolerance
+PushT,0.03-0.08,0.02-0.08,-0.01,+0.00,yes,proxy fires one grid step early; acceptable early warning under discrete sweep uncertainty
+Reacher,0.02-0.08,0.04-0.08,+0.02,+0.00,partial,proxy is conservative by two grid steps; fixed-pool cost-margin proxy recovers later than behavior
+Cube,0.03-0.08,0.03-0.08,+0.00,+0.00,yes,proxy and recovery band align on the discrete grid

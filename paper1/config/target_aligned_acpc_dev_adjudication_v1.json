@@ -1,0 +1,102 @@
+{
+  "schema_version": "paper1-target-aligned-acpc-dev-adjudication-1.0",
+  "frozen_date_utc": "2026-07-12",
+  "purpose": "Outcome-frozen PushT adjudication after TwoRoom development",
+  "claim_status": "DEV_ONLY_NOT_SUBMISSION_PROTOCOL",
+  "provenance": {
+    "development_task_inspected": "TwoRoom",
+    "held_out_task_at_freeze": "PushT",
+    "pusht_feasibility_only_inspected": true,
+    "pusht_acpc_targets_inspected": false,
+    "public_v1_protocol_modified": false
+  },
+  "planner_query": {
+    "observation_steps": 1,
+    "plan_horizon": 5,
+    "action_block": 5,
+    "goal_offset_low_level_steps": 25,
+    "goal_index_rule": "current_index + plan_horizon * action_block / frameskip",
+    "candidate_pool": "actual CEM step-zero ordered proposal",
+    "candidate_count": 16,
+    "topk": 4,
+    "adaptive_cem_claim": false
+  },
+  "sampling": {
+    "episode_blocks": 16,
+    "trajectory_seed": 9101,
+    "cem_seed": 1234,
+    "probe_seed": 20260712,
+    "control_seed": 4701,
+    "probe_family": "gaussian_noise",
+    "severities": [0.0, 0.02, 0.05, 0.08],
+    "draws_per_severity": 2,
+    "grouped_cv": "leave-one-trajectory-block-out",
+    "ridge_alpha": 1.0
+  },
+  "candidate_targets": {
+    "signed_secondary": "probe_h5_error - nominal_h5_error",
+    "adverse_primary_harm": "max(probe_h5_error - nominal_h5_error, 0)",
+    "absolute_certificate_target": "abs(probe_h5_error - nominal_h5_error)",
+    "true_future": "same-state simulator-rendered candidate future",
+    "same_metric": "canonical uniform weighted-stacked L2"
+  },
+  "logged_targets": {
+    "support": "recorded dataset actions only",
+    "horizons": [1, 8],
+    "true_future": "held-out recorded future",
+    "pooled_with_candidate_track": false
+  },
+  "comparators": {
+    "shared_simple_features": [
+      "severity",
+      "encoder_response",
+      "candidate_action_rms",
+      "nominal_h1_displacement",
+      "nominal_h5_displacement",
+      "nominal_cost_margin",
+      "encoder_x_action_rms",
+      "encoder_x_nominal_h5_displacement"
+    ],
+    "nested_correct": ["correct_h1_response", "correct_h5_response"],
+    "destroyed_h5_controls": [
+      "action_zero_h5_response",
+      "candidate_shuffle_h5_response",
+      "time_shuffle_h5_response"
+    ],
+    "identical_non_acpc_covariates": true
+  },
+  "material_gate": {
+    "minimum_relative_mae_reduction_vs_h1": 0.05,
+    "minimum_relative_mae_reduction_vs_best_destroyed_h": 0.05,
+    "minimum_within_group_spearman_increment": 0.05,
+    "alternative_direction_rule": "strict majority of trajectory blocks plus both MAE reductions",
+    "internal_target_cannot_substitute_external_target": true,
+    "correct_bound_coverage_role": "mathematical invariant, not independent evidence"
+  },
+  "certificate_audit": {
+    "correct_h5_rule": "absolute H5 prediction-error drift <= correct-action H5 response",
+    "required_correct_h5_violation_rate": 0.0,
+    "pseudo_bounds_reported": [
+      "encoder_response",
+      "correct_h1_response",
+      "action_zero_h5_response",
+      "candidate_shuffle_h5_response",
+      "time_shuffle_h5_response"
+    ],
+    "report_tightness": ["mean_slack", "utilization_quantiles", "maximum_violation"]
+  },
+  "pusht_replay_gate": {
+    "hidden_state_recovery": "replay dense episode prefix, preserve recovered block velocity, snap exact visible current state",
+    "maximum_state_l2_error": 0.01,
+    "maximum_render_mae": 1.0,
+    "minimum_render_psnr_db": 35.0,
+    "candidate_endpoint_and_goal_cost_must_vary": true
+  },
+  "execution": {
+    "concurrency": 1,
+    "native_threads": 2,
+    "batch_size_matches_eval": 1,
+    "no_new_training": true,
+    "do_not_retune_after_pusht": true
+  }
+}

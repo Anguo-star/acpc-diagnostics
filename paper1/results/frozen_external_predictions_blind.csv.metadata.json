@@ -1,0 +1,52 @@
+{
+  "fields": [
+    "model_family",
+    "training_family_id",
+    "training_seed",
+    "task",
+    "training_rho",
+    "stressor_family",
+    "stressor_severity",
+    "atr_horizon_v2_q90",
+    "smpr",
+    "atr_threshold_margin",
+    "smpr_threshold_margin",
+    "joint_score",
+    "frozen_gate_pass",
+    "split_name",
+    "protocol_sha256",
+    "diagnostics_sha256"
+  ],
+  "metadata": {
+    "behavior_blind": true,
+    "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+    "created_utc": "2026-07-10T10:13:19.246237+00:00",
+    "errors": [],
+    "evaluation_seed_semantics": "seeds42/43/44 are conditional evaluation replicates, not training seeds",
+    "missing_rows": [],
+    "model_family": [
+      "LeWM"
+    ],
+    "protocol_hash": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "schema_version": "paper1-frozen-external-blind-predictions-1.0",
+    "script_path": "paper1/scripts/frozen_external_validation.py",
+    "script_sha256": "131b2fce4ec62bd2ed3f0fe09ae6c4f7279c7e75157b23eebadc718d2cf5eaa6",
+    "source_hashes": {
+      "blind_rows": "64195041cf271db350da028b58cb582f59d1807b685d8d8d1b6fe40dcc9caaec",
+      "diagnostics": "79f7c87810d8c05ecc23989e2ec0b46d6ba6fa21f21a3d1fdd9561c6624bd8c6",
+      "protocol": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21"
+    },
+    "source_paths": {
+      "blind_rows": "paper1/results/frozen_external_predictions_blind.csv",
+      "diagnostics": "paper1/results/external_validation/lewm_heldout_diagnostic_input_v2.json",
+      "protocol": "paper1/config/frozen_diagnostic_protocol_v1.json"
+    },
+    "status": "complete",
+    "status_counts": {
+      "ok": 72
+    },
+    "threshold_search_available": false,
+    "training_seed_semantics": "two independent held-out LeWM TEST training runs"
+  },
+  "row_count": 72
+}

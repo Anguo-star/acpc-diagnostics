@@ -1,0 +1,443 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "paper1-frozen-diagnostic-protocol-v1.schema.json",
+  "title": "Paper 1 Frozen Diagnostic Protocol v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "protocol_id",
+    "schema_version",
+    "immutable",
+    "created_utc",
+    "code_commit",
+    "model_family",
+    "training_seed_semantics",
+    "evaluation_seed_semantics",
+    "status",
+    "missing_rows",
+    "errors",
+    "protocol_hash_status",
+    "calibration_source",
+    "radius_metric",
+    "rollout_horizon",
+    "horizon_weights",
+    "atr_quantile",
+    "normalization",
+    "noise_draw_aggregation",
+    "smpr_pair_rule",
+    "smpr_local_quantile",
+    "smpr_margin_delta_normalized",
+    "smpr_radius_quantile",
+    "tau_atr",
+    "tau_smpr",
+    "joint_rule",
+    "calibration",
+    "behavior_evaluation",
+    "diagnostic_sampling",
+    "fixed_pool",
+    "threshold_selection",
+    "joint_score_definition",
+    "gaussian_behavior_label",
+    "external_behavior_label",
+    "external_severities",
+    "external_policy",
+    "calibration_metrics",
+    "calibration_commit",
+    "calibration_worktree_dirty",
+    "source_paths",
+    "source_hashes",
+    "calibration_audit_path",
+    "calibration_audit_sha256",
+    "frozen_at_utc"
+  ],
+  "properties": {
+    "protocol_id": {
+      "const": "paper1-public-v1"
+    },
+    "schema_version": {
+      "const": "paper1-frozen-diagnostic-protocol-1.0"
+    },
+    "immutable": {
+      "const": true
+    },
+    "created_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "code_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "model_family": {
+      "const": "LeWM"
+    },
+    "training_seed_semantics": {
+      "const": "CAL uses one independently trained LeWM checkpoint family at seed3072"
+    },
+    "evaluation_seed_semantics": {
+      "const": "seeds42/43/44 are conditional evaluation replicates, not training seeds"
+    },
+    "status": {
+      "const": "frozen"
+    },
+    "missing_rows": {
+      "const": []
+    },
+    "errors": {
+      "const": []
+    },
+    "protocol_hash_status": {
+      "const": "computed from final file bytes and recorded by every consumer"
+    },
+    "calibration_source": {
+      "const": "LeWM seed3072 Gaussian full sweep"
+    },
+    "radius_metric": {
+      "const": "horizon_weighted_stacked_l2_v2"
+    },
+    "rollout_horizon": {
+      "const": 8
+    },
+    "horizon_weights": {
+      "const": "uniform_1_over_H"
+    },
+    "atr_quantile": {
+      "const": 0.9
+    },
+    "normalization": {
+      "const": "per_anchor_observed_clean_transition_l2_q50_including_history_future_boundary"
+    },
+    "noise_draw_aggregation": {
+      "const": "per_anchor_mean_then_checkpoint_quantile"
+    },
+    "smpr_pair_rule": {
+      "const": "task_grounded_near_boundary_v2"
+    },
+    "smpr_local_quantile": {
+      "const": 0.35
+    },
+    "smpr_margin_delta_normalized": {
+      "const": 0.1
+    },
+    "smpr_radius_quantile": {
+      "const": 0.9
+    },
+    "tau_atr": {
+      "type": "number",
+      "minimum": 0
+    },
+    "tau_smpr": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "joint_rule": {
+      "const": "atr_and_smpr"
+    },
+    "calibration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_family",
+        "training_seeds",
+        "training_stressor",
+        "tasks",
+        "rho_grid",
+        "expected_rows",
+        "row_key",
+        "split_name"
+      ],
+      "properties": {
+        "model_family": {
+          "const": "LeWM"
+        },
+        "training_seeds": {
+          "const": [
+            3072
+          ]
+        },
+        "training_stressor": {
+          "const": "Gaussian input noise"
+        },
+        "tasks": {
+          "const": [
+            "TwoRoom",
+            "PushT",
+            "Reacher",
+            "Cube"
+          ]
+        },
+        "rho_grid": {
+          "const": [
+            0.0,
+            0.01,
+            0.02,
+            0.03,
+            0.04,
+            0.05,
+            0.06,
+            0.07,
+            0.08
+          ]
+        },
+        "expected_rows": {
+          "const": 36
+        },
+        "row_key": {
+          "const": [
+            "model_family",
+            "training_seed",
+            "task",
+            "training_rho"
+          ]
+        },
+        "split_name": {
+          "const": "CAL"
+        }
+      }
+    },
+    "diagnostic_sampling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "n_anchors",
+        "num_noise_draws",
+        "anchor_seed",
+        "noise_draw_seed_rule",
+        "evaluation_noise_std",
+        "corrupt_goal",
+        "embedding_space_policy"
+      ],
+      "properties": {
+        "n_anchors": {
+          "const": 100
+        },
+        "num_noise_draws": {
+          "const": 5
+        },
+        "anchor_seed": {
+          "const": 9101
+        },
+        "noise_draw_seed_rule": {
+          "const": "anchor_seed+1009+7919*draw_index"
+        },
+        "evaluation_noise_std": {
+          "const": 0.08
+        },
+        "corrupt_goal": {
+          "const": false
+        },
+        "embedding_space_policy": {
+          "const": "checkpoint_inference_cost_space"
+        }
+      }
+    },
+    "behavior_evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evaluation_seeds",
+        "trajectories_per_evaluation_seed",
+        "evaluation_seed_semantics"
+      ],
+      "properties": {
+        "evaluation_seeds": {
+          "const": [
+            42,
+            43,
+            44
+          ]
+        },
+        "trajectories_per_evaluation_seed": {
+          "const": 100
+        },
+        "evaluation_seed_semantics": {
+          "const": "conditional evaluation variability, not training-run replication"
+        }
+      }
+    },
+    "fixed_pool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_count",
+        "expert_candidate_count",
+        "random_candidate_count",
+        "candidate_seed_rule",
+        "pool_pairing"
+      ],
+      "properties": {
+        "candidate_count": {
+          "const": 65
+        },
+        "expert_candidate_count": {
+          "const": 1
+        },
+        "random_candidate_count": {
+          "const": 64
+        },
+        "candidate_seed_rule": {
+          "const": "anchor_seed+2027"
+        },
+        "pool_pairing": {
+          "const": "same ordered candidate pool for clean and corrupted branches"
+        }
+      }
+    },
+    "threshold_selection": {
+      "type": "object",
+      "required": [
+        "scope",
+        "candidate_rule",
+        "objective_lexicographic",
+        "comparators",
+        "external_recalibration"
+      ],
+      "properties": {
+        "scope": {
+          "const": "global_absolute_canonical_metrics"
+        },
+        "candidate_rule": {
+          "const": "sorted_unique_observed_CAL_values"
+        },
+        "objective_lexicographic": {
+          "type": "array",
+          "minItems": 6
+        },
+        "comparators": {
+          "type": "object"
+        },
+        "external_recalibration": {
+          "const": false
+        }
+      }
+    },
+    "joint_score_definition": {
+      "type": "object",
+      "required": [
+        "name",
+        "formula",
+        "higher_is_better"
+      ],
+      "properties": {
+        "name": {
+          "const": "minimum_normalized_threshold_margin"
+        },
+        "formula": {
+          "type": "string"
+        },
+        "higher_is_better": {
+          "const": true
+        }
+      }
+    },
+    "gaussian_behavior_label": {
+      "type": "object",
+      "required": [
+        "recovery_fraction",
+        "clean_tolerance_pp"
+      ],
+      "properties": {
+        "recovery_fraction": {
+          "const": 0.8
+        },
+        "clean_tolerance_pp": {
+          "const": 5.0
+        }
+      }
+    },
+    "external_behavior_label": {
+      "type": "object",
+      "required": [
+        "positive_delta_pp",
+        "neutral_band_pp",
+        "max_clean_drop_pp"
+      ],
+      "properties": {
+        "positive_delta_pp": {
+          "const": 5.0
+        },
+        "neutral_band_pp": {
+          "const": 5.0
+        },
+        "max_clean_drop_pp": {
+          "const": 5.0
+        }
+      }
+    },
+    "external_severities": {
+      "type": "object",
+      "required": [
+        "blur",
+        "resize"
+      ],
+      "properties": {
+        "blur": {
+          "type": "object"
+        },
+        "resize": {
+          "type": "object"
+        }
+      }
+    },
+    "external_policy": {
+      "type": "object",
+      "required": [
+        "threshold_search_allowed",
+        "protocol_write_allowed",
+        "forbidden_calibration_sources",
+        "heldout_lewm_training_seeds"
+      ],
+      "properties": {
+        "threshold_search_allowed": {
+          "const": false
+        },
+        "protocol_write_allowed": {
+          "const": false
+        },
+        "forbidden_calibration_sources": {
+          "type": "array"
+        },
+        "heldout_lewm_training_seeds": {
+          "const": [
+            3073,
+            3074
+          ]
+        }
+      }
+    },
+    "calibration_metrics": {
+      "type": "object"
+    },
+    "calibration_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "calibration_worktree_dirty": {
+      "type": "boolean"
+    },
+    "source_paths": {
+      "type": "object",
+      "minProperties": 4
+    },
+    "source_hashes": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "calibration_audit_path": {
+      "type": "string"
+    },
+    "calibration_audit_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "frozen_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

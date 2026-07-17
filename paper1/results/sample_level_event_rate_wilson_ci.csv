@@ -1,0 +1,31 @@
+task,split,metric,successes,n,rate,wilson_low,wilson_high,confidence_level,notes
+TwoRoom,fragile,cert-pass,35,400,0.0875,0.06358691021150324,0.11926073261429136,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+TwoRoom,fragile,top-1 flip,290,400,0.725,0.6792581922605757,0.7664612752889909,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+TwoRoom,fragile,top-1 flip | cert-pass,0,35,0.0,6.938893903907228e-18,0.09890099232440402,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+TwoRoom,recovered,cert-pass,1404,2300,0.6104347826086957,0.5903370279192021,0.6301642561665693,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+TwoRoom,recovered,top-1 flip,219,2300,0.09521739130434782,0.08388795570671904,0.10789670774267775,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+TwoRoom,recovered,top-1 flip | cert-pass,0,1404,0.0,2.168404344971009e-19,0.0027286160644196386,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+PushT,fragile,cert-pass,162,900,0.18,0.1562767579931952,0.20644333591403938,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+PushT,fragile,top-1 flip,468,900,0.52,0.48734439913842803,0.5524855949923698,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+PushT,fragile,top-1 flip | cert-pass,0,162,0.0,0.0,0.023163440842904465,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+PushT,recovered,cert-pass,1174,1800,0.6522222222222223,0.6299171811564626,0.6738789187282073,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+PushT,recovered,top-1 flip,100,1800,0.05555555555555555,0.045889124705298545,0.06711496322267295,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+PushT,recovered,top-1 flip | cert-pass,0,1174,0.0,0.0,0.003261439637674463,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+Reacher,fragile,cert-pass,98,900,0.10888888888888888,0.09017559903983122,0.13092673795789997,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Reacher,fragile,top-1 flip,492,900,0.5466666666666666,0.5140134324599165,0.5789232205119451,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Reacher,fragile,top-1 flip | cert-pass,0,98,0.0,3.469446951953614e-18,0.037719990121680605,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+Reacher,recovered,cert-pass,934,1800,0.5188888888888888,0.49579131011796174,0.5419060161450994,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Reacher,recovered,top-1 flip,57,1800,0.03166666666666667,0.024521761580877356,0.04080629607322262,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Reacher,recovered,top-1 flip | cert-pass,0,934,0.0,0.0,0.004096064195674008,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+Cube,fragile,cert-pass,383,1200,0.31916666666666665,0.29340485271506467,0.3460825591695911,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Cube,fragile,top-1 flip,566,1200,0.4716666666666667,0.44355784679025057,0.49995630991057105,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Cube,fragile,top-1 flip | cert-pass,0,383,0.0,0.0,0.009930318307673144,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+Cube,recovered,cert-pass,967,1500,0.6446666666666667,0.6201044826097947,0.6684897687684995,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Cube,recovered,top-1 flip,53,1500,0.035333333333333335,0.027114104896545657,0.045926479386076344,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+Cube,recovered,top-1 flip | cert-pass,0,967,0.0,0.0,0.003956834337668731,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+ALL,fragile,cert-pass,678,3400,0.19941176470588234,0.18632390297963133,0.21317809359450676,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+ALL,fragile,top-1 flip,1816,3400,0.5341176470588235,0.5173211822889184,0.5508371038142125,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+ALL,fragile,top-1 flip | cert-pass,0,678,0.0,0.0,0.0056339472629579794,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"
+ALL,recovered,cert-pass,4479,7400,0.6052702702702702,0.5940816989604101,0.6163496033122566,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+ALL,recovered,top-1 flip,429,7400,0.05797297297297297,0.052874286527363104,0.06353034796057888,0.95,Wilson interval over sampled fixed-pool audit anchors; not a calibrated theorem probability bound
+ALL,recovered,top-1 flip | cert-pass,0,4479,0.0,0.0,0.0008569249784944887,0.95,"Wilson interval over cert-pass anchors only; empirical conditional flip risk, not a theorem probability bound"

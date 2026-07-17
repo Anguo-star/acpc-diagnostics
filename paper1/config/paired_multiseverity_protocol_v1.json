@@ -1,0 +1,151 @@
+{
+  "schema_version": "paper1-paired-multiseverity-protocol-1.0",
+  "protocol_id": "paired-multiseverity-lewm-v1",
+  "status": "frozen_pre_execution",
+  "frozen_at_utc": "2026-07-12T01:41:29Z",
+  "analysis_commit_parent": "e8566ef63ab00cdf73d763f0d521669f57254eb4",
+  "purpose": "Prospective medium-severity extension of the locked strongest-severity blur/resize paired-change result.",
+  "scope": {
+    "primary_model_family": "LeWM",
+    "training_seeds": [3072, 3073, 3074],
+    "training_seed_semantics": "three independently trained LeWM checkpoint seeds",
+    "tasks": ["TwoRoom", "PushT", "Reacher", "Cube"],
+    "checkpoint_pair": {
+      "reference_std_key": "0.0",
+      "endpoint_std_key": "0.08"
+    },
+    "pldm_role": "optional exploratory second stage only after the complete LeWM grid; not part of the primary claim"
+  },
+  "stressors": {
+    "gaussian_blur": {
+      "implementation_parameter": "kernel_size",
+      "identity": 1,
+      "eval_magnitudes_with_identity": [1, 7, 11, 15],
+      "primary_nonidentity": [7, 11, 15],
+      "prospective_nonidentity": [7, 11],
+      "legacy_locked_nonidentity": [15],
+      "severity_order": "larger is stronger"
+    },
+    "resize": {
+      "implementation_parameter": "scale_factor",
+      "identity": 1.0,
+      "eval_magnitudes_with_identity": [1.0, 0.75, 0.5, 0.25],
+      "primary_nonidentity": [0.75, 0.5, 0.25],
+      "prospective_nonidentity": [0.75, 0.5],
+      "legacy_locked_nonidentity": [0.25],
+      "severity_order": "smaller is stronger"
+    }
+  },
+  "evaluation": {
+    "apply_to": "pixels_only",
+    "num_eval_total": 300,
+    "evaluation_seeds": [42, 43, 44],
+    "evaluation_seed_semantics": "conditional measurement replicates, not training seeds",
+    "save_video": false,
+    "resume": true,
+    "behavior_authority": "closed-loop stressed success rate"
+  },
+  "diagnostic": {
+    "base_protocol_path": "paper1/config/frozen_diagnostic_protocol_v1.json",
+    "base_protocol_sha256": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "anchor_count": 100,
+    "noise_draws": 5,
+    "anchor_seed": 9101,
+    "rollout_horizon": 8,
+    "radius_quantile": 0.9,
+    "embedding_space": "normalized",
+    "goal_corrupted": false,
+    "paired_rule": "select endpoint iff oriented endpoint-minus-reference diagnostic change is greater than zero",
+    "decision_threshold": 0.0,
+    "threshold_search_allowed": false,
+    "severity_search_allowed": false
+  },
+  "primary_analysis": {
+    "expected_pairs": 72,
+    "pair_count_formula": "3 training seeds x 4 tasks x 2 stressors x 3 nonidentity severities",
+    "primary_diagnostic": "joint_score",
+    "primary_binary_rule": "delta_joint_score > 0",
+    "primary_continuous_statistic": "Spearman(delta_behavior, delta_joint_score)",
+    "block_unit": "task x independently trained LeWM checkpoint seed",
+    "block_count": 12,
+    "stressors_and_severities_retained_within_block": true,
+    "block_bootstrap_repetitions": 5000,
+    "block_bootstrap_seed": 20260712,
+    "exact_randomization": "enumerate all 2^12 task-x-training-seed block sign flips",
+    "deletion_stability": [
+      "leave one task out",
+      "leave one training seed out",
+      "leave one severity out"
+    ],
+    "dose_response": {
+      "report_per_block_rank_association": true,
+      "report_nondecreasing_fraction": true,
+      "no_monotonicity_filtering": true
+    },
+    "selection_utility": {
+      "choice_accuracy": "select the checkpoint with higher stressed success",
+      "material_threshold_pp": 5.0,
+      "regret_pp": "higher stressed success minus selected stressed success"
+    },
+    "component_boundaries": [
+      "encoder q90",
+      "H1 q90",
+      "correct-action H8 q90",
+      "action-shuffled H8 q90",
+      "action-zeroed H8 q90",
+      "time-shuffled H8 q90",
+      "SMPR"
+    ]
+  },
+  "behavior_label": {
+    "positive": "delta_behavior >= +5pp and clean_score_drop <= 5pp",
+    "neutral": "-5pp < delta_behavior < +5pp and clean_score_drop <= 5pp",
+    "negative": "delta_behavior <= -5pp or clean_score_drop > 5pp",
+    "classification_is_secondary_to_continuous_and_selection_analyses": true
+  },
+  "execution": {
+    "max_concurrent_eval_jobs": 1,
+    "max_concurrent_diagnostic_jobs": 1,
+    "native_threads_per_job": 2,
+    "default_eval_timeout_seconds": 7200,
+    "default_diagnostic_timeout_seconds": 7200,
+    "smoke_diagnostic_timeout_seconds": 1800,
+    "kill_after_seconds": 60,
+    "behavior_runner": "paper1/scripts/run_paired_multiseverity_behavior.sh",
+    "atr_runner": "paper1/scripts/run_paired_multiseverity_atr.sh",
+    "result_root": "paper1/results/multiseverity_v1",
+    "smoke_first": {
+      "training_seed": 3072,
+      "task": "TwoRoom",
+      "stressor": "gaussian_blur",
+      "severity": 7
+    }
+  },
+  "failure_rules": [
+    "Do not alter this protocol after the first prospective output is created.",
+    "Do not tune the zero threshold or choose severities using prospective behavior.",
+    "Retain every attempted row, timeout, missing row, and diagnostic failure.",
+    "Do not promote partial smoke results to the primary 72-pair claim.",
+    "Do not start PLDM stage until the complete LeWM grid and aggregate are locked."
+  ],
+  "source_paths": {
+    "acpc_runner": "tools/paper1_phase0_acpc.py",
+    "smpr_runner": "paper1/scripts/smpr_sensitivity.py",
+    "canonical_metric": "tools/paper1_acpc_metrics.py",
+    "semantic_margin": "tools/paper1_semantic_margin.py",
+    "eval_grid": "tools/paper1_unseen_eval_grid.py",
+    "trainer_runner": "run_trainer.sh",
+    "behavior_runner": "paper1/scripts/run_paired_multiseverity_behavior.sh",
+    "atr_runner": "paper1/scripts/run_paired_multiseverity_atr.sh"
+  },
+  "source_hashes": {
+    "acpc_runner": "1f4f65590e7f91852467c6f3a0970dda15bf0b58dbf561e8c24a8a32659193ee",
+    "smpr_runner": "8f42f49fa4ab847437cec097cff6472a756342017dfdd4ce223051a7018c76fd",
+    "canonical_metric": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b",
+    "semantic_margin": "83893f10d41f8d602aa32245792ff8ea75800106b46810c18b9cd34bd7a4cc54",
+    "eval_grid": "60c82f47c4a7208a16c50538c90df488867e44ea74ced2e0c813e6056c64b32c",
+    "trainer_runner": "778895cf47a1e569000d3fb7a14172d45c60d6b257243e54e5b350dccf2174b3",
+    "behavior_runner": "0f9fab1257394ac358963da3f5c0be224fd1346d8f450ddc343c0d109faad48e",
+    "atr_runner": "38986f63cfce326a5987d676e9d4de81011c77b3396b6f86a08883aa535ec7ba"
+  }
+}

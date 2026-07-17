@@ -1,0 +1,685 @@
+{
+  "analysis_commit_parent": "a933c3bdbbdc11fbb78870f0a79783db62740c5f",
+  "checkpoints": [
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3074/tworoom_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "4a536f39666d8b37a27dca953b4892a4a91c0a9c34a001fe145f7089848a7baf",
+      "task": "TwoRoom",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3074/tworoom_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "3cc9d3f0e63497e746f953a66a6da7bba23e1916661ba5c3348f2b99ef79f6a1",
+      "task": "TwoRoom",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3074/pusht_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "016f5b0fb429c1433ffe51a06736a69e3756665d97f6798939d9850b006c234b",
+      "task": "PushT",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3074/pusht_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "2ac94bcf12e966fefe83dd5352fe759febb50137a5832b93aae0233ef43f4648",
+      "task": "PushT",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_baseline_seed3074/reacher_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "09c947950af021000ed468aab1a2a205b305bf55d6ea534b2ef0e0b0cfe366a9",
+      "task": "Reacher",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1_seed3074/reacher_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "e69edf677e06926e3d5949a6e24bfbe8a5e1ec23415f408f4a805fbb5e4b9219",
+      "task": "Reacher",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "base",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_baseline_seed3074/cube_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "4749635cad50fb2f9e6174e17e3ba7ca5b2b757cfe1b539f8e376e0c950d7a26",
+      "task": "Cube",
+      "training_seed": 3074
+    },
+    {
+      "checkpoint_role": "endpoint",
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to008_p1_seed3074/cube_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "provenance": "existing seed3074 checkpoint; model behavior predates this planner-stability freeze",
+      "sha256": "1151853cca089b72e91857d1756bd8f4c49c57a295c54e743fe8959ffc883e5e",
+      "task": "Cube",
+      "training_seed": 3074
+    }
+  ],
+  "claim_adjudication": {
+    "adaptive_association_claim": "allowed only for responses meeting the frozen 5% and 3/4-task criterion; otherwise report the result and narrow the claim",
+    "bound_claim": "allowed only if every bound/certificate invariant passes",
+    "causal_claim": "forbidden",
+    "closed_loop_robustness_claim": "forbidden"
+  },
+  "correction_history": {
+    "observed_before_v2_freeze": "all eight v1 fixed_reduced shards produced their 100 identity rows and rejected all three nonzero severities on the same float32 signed-gap identity; all sixteen adaptive shards completed",
+    "only_change": "evaluate signed-gap algebra and derived cost differences in float64 after the already-computed float32 costs; all frozen arguments, estimands, candidate pools, thresholds, checkpoints, and claim gates are unchanged",
+    "root_cause": "float32 cancellation in an algebraic identity guard at real cost scale; the candidate costs, candidate ordering, and exact winner are unchanged",
+    "supersedes_execution": {
+      "path": "paper1/config/acpc_planner_stability_execution_v1.json",
+      "sha256": "08a8a08a29db8984d3c1d1719bf2065b33a3d58b37f846851219a361676029ad"
+    },
+    "supersedes_protocol": {
+      "path": "paper1/config/acpc_planner_stability_protocol_v1.json",
+      "sha256": "236c1feaba5093d2778ff897c509fcbfb4410781838b78678ad220c7de6ea866"
+    },
+    "v1_attempts": [
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_tworoom_base_seed3074.json",
+        "sha256": "1707ba28cd7d4974b57e6b4fc96d85d3a832f18d1d7be4f3dfccc385c4327449",
+        "shard_id": "fixed_reduced_tworoom_base_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_tworoom_base_seed3074.json",
+        "sha256": "973d6c9e064187ca8b78714b9ee4e29fec6fb371fe027e786428799c1b774ba2",
+        "shard_id": "adaptive_reduced_tworoom_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_tworoom_base_seed3074.json",
+        "sha256": "14435fd6f0c5fcb4e83a9471d71f113999a450b87c3a8ff1416516f7f365d262",
+        "shard_id": "adaptive_full_tworoom_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_tworoom_endpoint_seed3074.json",
+        "sha256": "65219640592a087cc248afa16570efa7291ee54551d94b61d4209860d799d8c9",
+        "shard_id": "fixed_reduced_tworoom_endpoint_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_tworoom_endpoint_seed3074.json",
+        "sha256": "e5a9f59f621701616f3e4b8eb8c23817b0942cfa32ffc36deeb707dfd8a7b508",
+        "shard_id": "adaptive_reduced_tworoom_endpoint_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_tworoom_endpoint_seed3074.json",
+        "sha256": "9f1690b46bc75ece976d3a1627111e78f87ae639b852e56766b598e961b8ba82",
+        "shard_id": "adaptive_full_tworoom_endpoint_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_pusht_base_seed3074.json",
+        "sha256": "e706a8c50b9f4765cf2325b185dfa993eea0df1fc73b2db3ffad6212aec4821a",
+        "shard_id": "fixed_reduced_pusht_base_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_pusht_base_seed3074.json",
+        "sha256": "8cdd3ae8481a8a3f6cd833caa4171baa4027f891125ea4f4973b7a1efda17c13",
+        "shard_id": "adaptive_reduced_pusht_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_pusht_base_seed3074.json",
+        "sha256": "ff5416c53c2acd0a6323a14f1c0a0fb3f83d83dd7066de195c01e61a6951181d",
+        "shard_id": "adaptive_full_pusht_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_pusht_endpoint_seed3074.json",
+        "sha256": "78f0c0921c30a6ab2e3d2895f62970bb1fd49acb044706b2a5524c27aaa2bd76",
+        "shard_id": "fixed_reduced_pusht_endpoint_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_pusht_endpoint_seed3074.json",
+        "sha256": "6c4be146c648c2f7e704ff235e1b034ede17a9151d779b22db50c0c7fea435af",
+        "shard_id": "adaptive_reduced_pusht_endpoint_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_pusht_endpoint_seed3074.json",
+        "sha256": "9360a128bbebd6f1924fa2d5cc15adba23059c2f9872ec4f79ffed8f665e9a4c",
+        "shard_id": "adaptive_full_pusht_endpoint_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_reacher_base_seed3074.json",
+        "sha256": "fc533c31293a6c3d7ca26dd7f83b83a6898415d3fde2d33789da9e2a0d383d67",
+        "shard_id": "fixed_reduced_reacher_base_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_reacher_base_seed3074.json",
+        "sha256": "c2050f71dc7629e7c10a08c6b09c78167d15984d6c235acbdae8407c0b6b040a",
+        "shard_id": "adaptive_reduced_reacher_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_reacher_base_seed3074.json",
+        "sha256": "dd2dc6516002f9f21c2f9f6bf343ea17f3aa3bbade2f2fce8bf4506af4a61f1e",
+        "shard_id": "adaptive_full_reacher_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_reacher_endpoint_seed3074.json",
+        "sha256": "10b48b903b7c9805344517bf1c8ff12eb7c525d5f83928fa65d926cbe6451620",
+        "shard_id": "fixed_reduced_reacher_endpoint_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_reacher_endpoint_seed3074.json",
+        "sha256": "fb11d846fe841bff49bc9f43c640ff9d87e2bed3fdb819b841b75f97b4a1b84c",
+        "shard_id": "adaptive_reduced_reacher_endpoint_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_reacher_endpoint_seed3074.json",
+        "sha256": "b3c35a4bbee8246529282ff4db62c671c717c48f4253f919d4754119ee1594c6",
+        "shard_id": "adaptive_full_reacher_endpoint_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_cube_base_seed3074.json",
+        "sha256": "8689c46ba2c9830ca8f0127a1f0a31de73201991f7b545fcfca7bf36d5a92a6c",
+        "shard_id": "fixed_reduced_cube_base_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_cube_base_seed3074.json",
+        "sha256": "7a6e7a2e894111d9f371aed634eac4aab1c10a95ac33866f6e0bcb77775330e0",
+        "shard_id": "adaptive_reduced_cube_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_cube_base_seed3074.json",
+        "sha256": "b4234ccbe6a7276f7b53272961c1626a8385059f0867302a73c401286df143d8",
+        "shard_id": "adaptive_full_cube_base_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 100,
+        "analysis_role": "fixed_reduced",
+        "error_count": 3,
+        "errors": [
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.02,
+            "severity_index": 1
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.05,
+            "severity_index": 2
+          },
+          {
+            "draw_index": 0,
+            "error": "RuntimeError('signed perturbed-gap identity mismatch')",
+            "probe_family": "gaussian_noise",
+            "severity": 0.08,
+            "severity_index": 3
+          }
+        ],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/fixed_reduced_cube_endpoint_seed3074.json",
+        "sha256": "5f9baa286a362764f16d4c1e55216f1bbe020bc8097c12230ad33b4665b85a92",
+        "shard_id": "fixed_reduced_cube_endpoint_seed3074",
+        "status": "partial"
+      },
+      {
+        "actual_rows": 400,
+        "analysis_role": "adaptive_reduced",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 400,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_reduced_cube_endpoint_seed3074.json",
+        "sha256": "715c4e5cd2b7fa27606833d0de725b7279ee08f7c4ca6c3719abe81ad2ee0ecf",
+        "shard_id": "adaptive_reduced_cube_endpoint_seed3074",
+        "status": "complete"
+      },
+      {
+        "actual_rows": 32,
+        "analysis_role": "adaptive_full",
+        "error_count": 0,
+        "errors": [],
+        "expected_rows": 32,
+        "path": "paper1/results/acpc_planner_stability_v1/formal/adaptive_full_cube_endpoint_seed3074.json",
+        "sha256": "c5d064abebdca2579968aed86e8c47e4156ab03018485a37bd5bb350e5e8f127",
+        "shard_id": "adaptive_full_cube_endpoint_seed3074",
+        "status": "complete"
+      }
+    ],
+    "v1_results_must_be_retained": true
+  },
+  "estimands": {
+    "adaptive": "final first-action RMS and clean-history decision regret under common-random-number independently adapting CEM branches",
+    "fixed_pool": "candidate-wise H5 latent drift, exact squared-distance cost-drift bound, and top-1/elite stability on the same ordered K64 proposal",
+    "goal_handling": "history-only probe; goal branch fixed",
+    "independent_unit": "trajectory episode",
+    "short_horizon_comparator": "candidate-conditioned H1 latent drift on that identical proposal"
+  },
+  "execution": {
+    "full_budget_timeout_seconds": 7200,
+    "max_concurrent_jobs": 4,
+    "native_threads_per_job": 2,
+    "one_process_per_gpu": true,
+    "reduced_timeout_seconds": 3600,
+    "retry_policy": "retry only exact frozen arguments after infrastructure failure"
+  },
+  "execution_authorized": true,
+  "frozen_at_utc": "2026-07-13T18:07:46.918630+00:00",
+  "frozen_panel": {
+    "cem_seed": 1234,
+    "checkpoint_roles": [
+      "base",
+      "endpoint"
+    ],
+    "full_budget": {
+      "adaptive_steps": 30,
+      "candidate_count": 300,
+      "n_episode_blocks": 16,
+      "severities": [
+        0.0,
+        0.08
+      ],
+      "topk": 30
+    },
+    "probe_family": "additional Gaussian history noise",
+    "probe_seed": 20260713,
+    "reduced": {
+      "adaptive_steps": 8,
+      "candidate_count": 64,
+      "n_episode_blocks": 100,
+      "topk": 8
+    },
+    "severities": [
+      0.0,
+      0.02,
+      0.05,
+      0.08
+    ],
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_seed": 3074,
+    "trajectory_seed": 9101
+  },
+  "immutable": true,
+  "invariants": {
+    "certificate_false_positive_count": 0,
+    "identity_all_adaptive_updates_aligned": true,
+    "identity_first_action_rms_max": 1e-06,
+    "identity_h5_acpc_max": 1e-05,
+    "mse_bound_violation_count": 0
+  },
+  "mathematical_contract": {
+    "adaptive_induction": "with a common initial proposal and common random numbers, equal elite membership preserves the numerical CEM update; once updates diverge, later indices are diagnostic rather than shared candidates",
+    "elite_certificate": "minimum bounded non-elite cost exceeds maximum bounded elite cost",
+    "exact_bound": "|C(z,g)-C(z_tilde,g)| <= ||z-z_tilde||_2 (||z-g||_2+||z_tilde-g||_2)",
+    "planner_cost": "C(z,g)=||z-g||_2^2 at the final predicted latent",
+    "top1_certificate": "every clean competitor gap exceeds the sum of the winner and competitor candidate-specific cost bounds"
+  },
+  "predeclared_analysis": {
+    "full_budget_role": "transfer sensitivity; no reduced/full equivalence is assumed",
+    "incremental_model": {
+      "added_feature": "log1p candidate-H5 ACPC q90",
+      "baseline_features": [
+        "severity",
+        "endpoint indicator",
+        "log1p candidate-H1 ACPC q90",
+        "log1p nominal top1 margin"
+      ],
+      "metric": "equal-task mean held-out log1p MAE",
+      "report_regardless_of_threshold": true,
+      "responses": [
+        "max fixed-pool absolute cost drift",
+        "adaptive first-action RMS",
+        "positive clean decision regret"
+      ],
+      "ridge_alpha": 1.0,
+      "split": "leave-one-task-out",
+      "strong_association_threshold": "at least 5% equal-task MAE reduction and improvement on at least 3 of 4 held-out tasks"
+    },
+    "join_key": [
+      "task",
+      "checkpoint_role",
+      "trajectory_block_id",
+      "severity",
+      "draw_index"
+    ],
+    "primary_validation": [
+      "exact bound and certificate soundness on every row",
+      "identity invariants",
+      "descriptive task/role/severity curves"
+    ]
+  },
+  "protocol_id": "paper1-acpc-planner-stability-v2",
+  "provenance": {
+    "all_authorized_outcomes_reported": true,
+    "planner_panel_role": "prospective for the new fixed-pool/adaptive-CEM estimands and analysis code, retrospective with respect to checkpoint existence and previously observed model behavior",
+    "seed3074_role": "protocol-frozen replication for the earlier P1 endpoint analysis; not relabeled as a newly trained independent confirmatory seed",
+    "v1_results_retained": true,
+    "v2_role": "prospectively frozen numerical-correction replication of every v1 shard; no outcome-dependent parameter or threshold changes"
+  },
+  "schema_version": "paper1-acpc-planner-stability-protocol-2.0",
+  "scientific_scope": {
+    "central_claim": "action-matched long-horizon ACPC adds held-out future-drift information beyond a same-pool H1 comparator and links that information to planner cost and decision stability",
+    "eligible_outputs": [
+      "exact ACPC-to-squared-distance cost bound",
+      "top-1 and elite-set margin certificates",
+      "same-pool candidate-conditioned H1 versus H5 ACPC",
+      "adaptive-CEM first-action RMS and clean decision regret",
+      "K300 x 30-step transfer sensitivity"
+    ],
+    "excluded_side_branches": [
+      "failed repair attempts",
+      "PLDM side branch",
+      "JVP/local-sensitivity branch",
+      "raw full-sweep row dump",
+      "behavior claims"
+    ]
+  },
+  "source_hashes": {
+    "config/eval/solver/cem.yaml": "797629f829c0d3ad3b9c4e42d46a87f08da0b3845bc433e353fd6274cb0574df",
+    "jepa.py": "46218b5b7ff69b5be810650271b4f1e76efb142809052a2be57a13a415b09563",
+    "paper1/docs/PAPER1_ACPC_SCIENTIFIC_REMEDIATION_PLAN_20260713.md": "e3f7d4d715c9786489235b46106abe79e4facc9f9a423fc3ab8ac9ae320fa485",
+    "paper1/scripts/freeze_acpc_planner_stability_protocol.py": "7aa6bc6179f76c9a3afd80493e9fe08a34d0cb11c38109422edbcd513ed54265",
+    "paper1/scripts/freeze_acpc_planner_stability_protocol_v2.py": "9af7fa5d9fdaad4f665803fbc977b95d3ce3e204dbc34d9887bdd65cdc174a42",
+    "paper1/scripts/run_acpc_planner_stability_shards.py": "a9ef004f4afb49576c295edf870bb18fcaae7a8211e0253ba9502291731db89f",
+    "paper1/scripts/summarize_acpc_planner_stability.py": "2d37950715a5f4ca352b4304e3e24cfe5c0b8c4fc7dd99553f44a0c83f3974e3",
+    "tests/test_paper1_acpc_adaptive_cem.py": "a0883c21bb93f87abcbf2deb14176a30fb8ed0cbaa596fe3d9b1e309c69f9fa7",
+    "tests/test_paper1_acpc_frozen_protocols.py": "a9102a6bb3963f7dfe679822ed6f131f5a50023ba4dda38940a872e5818b3b78",
+    "tests/test_paper1_acpc_planner_protocol_v2.py": "ee70c5c6616d042f00f5676eae06005282aca005799caeaeac4473fc62c8a9c2",
+    "tests/test_paper1_acpc_planner_stability.py": "3b6dfc838bb0c750e429043a44de40cf07647b65d3109d46022223f4fa1cd73f",
+    "tests/test_paper1_acpc_planner_stability_v2.py": "73dc08c4728d3b6497209af02cf23418c024b84868ec520b3d9be8c9b9893506",
+    "tests/test_paper1_acpc_planner_summary.py": "3ad41807f2252d667d26bd0107406fe364ba9eb1d4691841bc47bb82c1d6e775",
+    "tools/paper1_acpc_adaptive_cem_audit.py": "34c779ea54c20c3845e0c8560463d2cd0709527569f642cfc9c16231d95a5c9a",
+    "tools/paper1_acpc_planner_stability_audit.py": "e6bf1c11daaa023e3bb0ca0e49cb72ef5ad58a0b72faf1d95eabf983ea87974d",
+    "tools/paper1_acpc_planner_stability_audit_v2.py": "6a23a3536348df98422cecc2862bc437270d72c522bb04c594e8464a2fd79925",
+    "tools/paper1_cem_trace_audit.py": "a25b9efbc49e2c66d184dc222278cc36c8bb9295f9b25d53b2ec89e523b599e4",
+    "tools/paper1_operational_protocol.py": "28133105706c7bc05f5846f20e01c116d2146ec1ebdb7e669f7e8c42fdd4ebd0",
+    "tools/paper1_phase0_acpc.py": "1f4f65590e7f91852467c6f3a0970dda15bf0b58dbf561e8c24a8a32659193ee",
+    "utils.py": "41bd920d5ca89a345387b753929506474b09e8833462e224dc9e16af01b549ea"
+  },
+  "status": "frozen_pre_execution"
+}

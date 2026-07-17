@@ -1,0 +1,210 @@
+{
+  "atr_quantile": 0.9,
+  "behavior_evaluation": {
+    "evaluation_seed_semantics": "conditional evaluation variability, not training-run replication",
+    "evaluation_seeds": [
+      42,
+      43,
+      44
+    ],
+    "trajectories_per_evaluation_seed": 100
+  },
+  "calibration": {
+    "expected_rows": 36,
+    "model_family": "LeWM",
+    "rho_grid": [
+      0.0,
+      0.01,
+      0.02,
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.08
+    ],
+    "row_key": [
+      "model_family",
+      "training_seed",
+      "task",
+      "training_rho"
+    ],
+    "split_name": "CAL",
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_seeds": [
+      3072
+    ],
+    "training_stressor": "Gaussian input noise"
+  },
+  "calibration_audit_path": "paper1/results/frozen_diagnostic_protocol_calibration.json",
+  "calibration_audit_sha256": "cab32514eac7e0e109712f210df342051dbf9c19135ef93654955e089c35dcc3",
+  "calibration_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+  "calibration_metrics": {
+    "actual_positive": 24,
+    "auprc": 0.7767437640493348,
+    "balanced_accuracy": 0.7916666666666667,
+    "f1": 0.9056603773584906,
+    "false_early": 1,
+    "false_late": 0,
+    "fn": 0,
+    "fp": 5,
+    "max_absolute_onset_error": 0.009999999999999998,
+    "mean_absolute_onset_error": 0.0024999999999999996,
+    "num_rows": 36,
+    "precision": 0.8275862068965517,
+    "predicted_positive": 29,
+    "recall": 1.0,
+    "specificity": 0.5833333333333334,
+    "tn": 7,
+    "tp": 24
+  },
+  "calibration_source": "LeWM seed3072 Gaussian full sweep",
+  "calibration_worktree_dirty": true,
+  "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+  "created_utc": "2026-07-10T09:33:21.985570+00:00",
+  "diagnostic_sampling": {
+    "anchor_seed": 9101,
+    "corrupt_goal": false,
+    "embedding_space_policy": "checkpoint_inference_cost_space",
+    "evaluation_noise_std": 0.08,
+    "n_anchors": 100,
+    "noise_draw_seed_rule": "anchor_seed+1009+7919*draw_index",
+    "num_noise_draws": 5
+  },
+  "errors": [],
+  "evaluation_seed_semantics": "seeds42/43/44 are conditional evaluation replicates, not training seeds",
+  "external_behavior_label": {
+    "max_clean_drop_pp": 5.0,
+    "neutral_band_pp": 5.0,
+    "positive_delta_pp": 5.0
+  },
+  "external_policy": {
+    "forbidden_calibration_sources": [
+      "LeWM training seeds 3073/3074",
+      "PLDM all checkpoints and evaluation results",
+      "blur/resize behavior or diagnostics",
+      "target-view/heteroscedastic/robust-CEM results",
+      "prospective PLDM training seeds"
+    ],
+    "heldout_lewm_training_seeds": [
+      3073,
+      3074
+    ],
+    "protocol_write_allowed": false,
+    "threshold_search_allowed": false
+  },
+  "external_severities": {
+    "blur": {
+      "implementation_parameter": "kernel_size",
+      "selection_basis": "physical kernel width, fixed before external results",
+      "supported_nonidentity": [
+        3,
+        7,
+        11,
+        15
+      ],
+      "v1_strongest": 15,
+      "v2_mild_medium_strong": [
+        3,
+        7,
+        15
+      ]
+    },
+    "resize": {
+      "implementation_parameter": "scale_factor",
+      "selection_basis": "physical downsampling factor, fixed before external results",
+      "supported_nonidentity": [
+        0.75,
+        0.5,
+        0.25
+      ],
+      "v1_strongest": 0.25,
+      "v2_mild_medium_strong": [
+        0.75,
+        0.5,
+        0.25
+      ]
+    }
+  },
+  "fixed_pool": {
+    "candidate_count": 65,
+    "candidate_seed_rule": "anchor_seed+2027",
+    "expert_candidate_count": 1,
+    "pool_pairing": "same ordered candidate pool for clean and corrupted branches",
+    "random_candidate_count": 64
+  },
+  "frozen_at_utc": "2026-07-10T09:33:21.985570+00:00",
+  "gaussian_behavior_label": {
+    "clean_tolerance_pp": 5.0,
+    "recovery_fraction": 0.8
+  },
+  "horizon_weights": "uniform_1_over_H",
+  "immutable": true,
+  "joint_rule": "atr_and_smpr",
+  "joint_score_definition": {
+    "formula": "min((tau_atr-atr)/(abs(tau_atr)+1e-12),(smpr-tau_smpr)/(abs(tau_smpr)+1e-12))",
+    "higher_is_better": true,
+    "name": "minimum_normalized_threshold_margin"
+  },
+  "missing_rows": [],
+  "model_family": "LeWM",
+  "noise_draw_aggregation": "per_anchor_mean_then_checkpoint_quantile",
+  "normalization": "per_anchor_observed_clean_transition_l2_q50_including_history_future_boundary",
+  "protocol_hash_status": "computed from final file bytes and recorded by every consumer",
+  "protocol_id": "paper1-public-v1",
+  "radius_metric": "horizon_weighted_stacked_l2_v2",
+  "rollout_horizon": 8,
+  "schema_version": "paper1-frozen-diagnostic-protocol-1.0",
+  "smpr_local_quantile": 0.35,
+  "smpr_margin_delta_normalized": 0.1,
+  "smpr_pair_rule": "task_grounded_near_boundary_v2",
+  "smpr_radius_quantile": 0.9,
+  "source_hashes": {
+    "calibration_atr": "59adfc1a82659379fd41438942380a50a814d496d1ac4e5b9d44c723e9f9164c",
+    "calibration_evals": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4",
+    "calibration_smpr": "2585f74f01b8dbf1ab780685014e22a43fd30d9a29bb65fd7106eb23f9d1a89e",
+    "canonical_metric": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b",
+    "freeze_builder": "bd85a859468492294e031c231d5cf1c1eccecaeabd512a064502555d96abd76b",
+    "protocol_schema": "507808ca66141543fa42ceb86d40a6ee98c50fb158c5015b88bdc0bedb2351e8",
+    "semantic_margin": "83893f10d41f8d602aa32245792ff8ea75800106b46810c18b9cd34bd7a4cc54",
+    "smpr_runner": "8f42f49fa4ab847437cec097cff6472a756342017dfdd4ce223051a7018c76fd"
+  },
+  "source_paths": {
+    "calibration_atr": "assets/paper1_data/acpc_horizon_v2_lewm.json",
+    "calibration_evals": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json",
+    "calibration_smpr": "assets/paper1_data/smpr_calibration_lewm_seed3072_v2.json",
+    "canonical_metric": "tools/paper1_acpc_metrics.py",
+    "freeze_builder": "paper1/scripts/freeze_diagnostic_protocol.py",
+    "protocol_schema": "paper1/config/frozen_diagnostic_protocol_v1.schema.json",
+    "semantic_margin": "tools/paper1_semantic_margin.py",
+    "smpr_runner": "paper1/scripts/smpr_sensitivity.py"
+  },
+  "status": "frozen",
+  "tau_atr": 1.1782760620117188,
+  "tau_smpr": 0.9508196115493774,
+  "threshold_selection": {
+    "candidate_rule": "sorted_unique_observed_CAL_values",
+    "comparators": {
+      "atr": "atr_horizon_v2_q90 <= tau_atr",
+      "joint": "atr AND smpr",
+      "smpr": "smpr >= tau_smpr"
+    },
+    "external_recalibration": false,
+    "objective_lexicographic": [
+      "calibration_f1_max",
+      "precision_max",
+      "recall_max",
+      "predicted_positive_count_max",
+      "tau_atr_min",
+      "tau_smpr_max"
+    ],
+    "scope": "global_absolute_canonical_metrics",
+    "tie_break_rationale": "when CAL classification metrics are identical, prefer the stricter lower ATR boundary and stricter higher SMPR boundary"
+  },
+  "training_seed_semantics": "CAL uses one independently trained LeWM checkpoint family at seed3072"
+}

@@ -1,0 +1,13 @@
+task,row_role,stdmax,q90_cost_drift,q50_clean_margin,proxy_gap_q50_minus_2q90,empirical_top1_agree,source_top1_disagree_maf_flip_rate,recovery_band_member,interpretation
+TwoRoom,base,0.00,180.33,94.14,-266.52,0.207,0.793,no,fragile no-noise checkpoint under eval sigma 0.08
+TwoRoom,recovery_onset,0.01,85.42,100.56,-70.28,0.510,0.490,yes,first closed-loop recovery-band checkpoint on the discrete sweep
+TwoRoom,std0.08_endpoint,0.08,6.00,65.46,53.46,0.960,0.040,yes,matched high-noise endpoint used in the endpoint diagnostic table
+PushT,base,0.00,163.82,129.21,-198.44,0.110,0.890,no,fragile no-noise checkpoint under eval sigma 0.08
+PushT,recovery_onset,0.03,18.16,143.29,106.96,0.937,0.063,yes,first closed-loop recovery-band checkpoint on the discrete sweep
+PushT,std0.08_endpoint,0.08,7.15,132.05,117.74,0.973,0.027,yes,matched high-noise endpoint used in the endpoint diagnostic table
+Reacher,base,0.00,217.30,17.29,-417.32,0.097,0.903,no,fragile no-noise checkpoint under eval sigma 0.08
+Reacher,recovery_onset,0.02,37.67,18.54,-56.80,0.810,0.190,yes,first closed-loop recovery-band checkpoint on the discrete sweep
+Reacher,std0.08_endpoint,0.08,4.24,20.08,11.59,0.983,0.017,yes,matched high-noise endpoint used in the endpoint diagnostic table
+Cube,base,0.00,198.70,82.76,-314.65,0.087,0.913,no,fragile no-noise checkpoint under eval sigma 0.08
+Cube,recovery_onset,0.03,39.48,82.95,3.99,0.923,0.077,yes,first closed-loop recovery-band checkpoint on the discrete sweep
+Cube,std0.08_endpoint,0.08,5.05,76.94,66.85,0.997,0.003,yes,matched high-noise endpoint used in the endpoint diagnostic table

@@ -1,0 +1,1170 @@
+{
+  "block_summaries": [
+    {
+      "coarse_cert_pass_n": 520,
+      "coarse_cert_pass_rate": 0.5777777777777777,
+      "flip_risk_upper95_from_sharp_coverage": 0.2733240565050662,
+      "flip_when_sharp_cert_fail_rate": 0.7366071428571429,
+      "n": 900,
+      "observed_flip_n": 165,
+      "observed_flip_rate": 0.18333333333333332,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.7266759434949338,
+      "sharp_cert_pass_n": 676,
+      "sharp_cert_pass_rate": 0.7511111111111111,
+      "task": "Cube",
+      "training_seed": 3072
+    },
+    {
+      "coarse_cert_pass_n": 415,
+      "coarse_cert_pass_rate": 0.46111111111111114,
+      "flip_risk_upper95_from_sharp_coverage": 0.343820306805139,
+      "flip_when_sharp_cert_fail_rate": 0.6643356643356644,
+      "n": 900,
+      "observed_flip_n": 190,
+      "observed_flip_rate": 0.2111111111111111,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.656179693194861,
+      "sharp_cert_pass_n": 614,
+      "sharp_cert_pass_rate": 0.6822222222222222,
+      "task": "Cube",
+      "training_seed": 3073
+    },
+    {
+      "coarse_cert_pass_n": 415,
+      "coarse_cert_pass_rate": 0.46111111111111114,
+      "flip_risk_upper95_from_sharp_coverage": 0.39007685839322326,
+      "flip_when_sharp_cert_fail_rate": 0.8073394495412844,
+      "n": 900,
+      "observed_flip_n": 264,
+      "observed_flip_rate": 0.29333333333333333,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6099231416067767,
+      "sharp_cert_pass_n": 573,
+      "sharp_cert_pass_rate": 0.6366666666666667,
+      "task": "Cube",
+      "training_seed": 3074
+    },
+    {
+      "coarse_cert_pass_n": 416,
+      "coarse_cert_pass_rate": 0.4622222222222222,
+      "flip_risk_upper95_from_sharp_coverage": 0.3619034282448428,
+      "flip_when_sharp_cert_fail_rate": 0.609271523178808,
+      "n": 900,
+      "observed_flip_n": 184,
+      "observed_flip_rate": 0.20444444444444446,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6380965717551572,
+      "sharp_cert_pass_n": 598,
+      "sharp_cert_pass_rate": 0.6644444444444444,
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "coarse_cert_pass_n": 457,
+      "coarse_cert_pass_rate": 0.5077777777777778,
+      "flip_risk_upper95_from_sharp_coverage": 0.36528940480844274,
+      "flip_when_sharp_cert_fail_rate": 0.6622950819672131,
+      "n": 900,
+      "observed_flip_n": 202,
+      "observed_flip_rate": 0.22444444444444445,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6347105951915573,
+      "sharp_cert_pass_n": 595,
+      "sharp_cert_pass_rate": 0.6611111111111111,
+      "task": "PushT",
+      "training_seed": 3073
+    },
+    {
+      "coarse_cert_pass_n": 463,
+      "coarse_cert_pass_rate": 0.5144444444444445,
+      "flip_risk_upper95_from_sharp_coverage": 0.3279625980270632,
+      "flip_when_sharp_cert_fail_rate": 0.6691176470588235,
+      "n": 900,
+      "observed_flip_n": 182,
+      "observed_flip_rate": 0.20222222222222222,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6720374019729368,
+      "sharp_cert_pass_n": 628,
+      "sharp_cert_pass_rate": 0.6977777777777778,
+      "task": "PushT",
+      "training_seed": 3074
+    },
+    {
+      "coarse_cert_pass_n": 398,
+      "coarse_cert_pass_rate": 0.44222222222222224,
+      "flip_risk_upper95_from_sharp_coverage": 0.2641734314379238,
+      "flip_when_sharp_cert_fail_rate": 0.7314814814814815,
+      "n": 900,
+      "observed_flip_n": 158,
+      "observed_flip_rate": 0.17555555555555555,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.7358265685620762,
+      "sharp_cert_pass_n": 684,
+      "sharp_cert_pass_rate": 0.76,
+      "task": "Reacher",
+      "training_seed": 3072
+    },
+    {
+      "coarse_cert_pass_n": 324,
+      "coarse_cert_pass_rate": 0.36,
+      "flip_risk_upper95_from_sharp_coverage": 0.33929292656603527,
+      "flip_when_sharp_cert_fail_rate": 0.6702127659574468,
+      "n": 900,
+      "observed_flip_n": 189,
+      "observed_flip_rate": 0.21,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6607070734339647,
+      "sharp_cert_pass_n": 618,
+      "sharp_cert_pass_rate": 0.6866666666666666,
+      "task": "Reacher",
+      "training_seed": 3073
+    },
+    {
+      "coarse_cert_pass_n": 310,
+      "coarse_cert_pass_rate": 0.34444444444444444,
+      "flip_risk_upper95_from_sharp_coverage": 0.3630322465130069,
+      "flip_when_sharp_cert_fail_rate": 0.6666666666666666,
+      "n": 900,
+      "observed_flip_n": 202,
+      "observed_flip_rate": 0.22444444444444445,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6369677534869931,
+      "sharp_cert_pass_n": 597,
+      "sharp_cert_pass_rate": 0.6633333333333333,
+      "task": "Reacher",
+      "training_seed": 3074
+    },
+    {
+      "coarse_cert_pass_n": 466,
+      "coarse_cert_pass_rate": 0.5177777777777778,
+      "flip_risk_upper95_from_sharp_coverage": 0.3006977721378733,
+      "flip_when_sharp_cert_fail_rate": 0.6854838709677419,
+      "n": 900,
+      "observed_flip_n": 170,
+      "observed_flip_rate": 0.18888888888888888,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6993022278621267,
+      "sharp_cert_pass_n": 652,
+      "sharp_cert_pass_rate": 0.7244444444444444,
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "coarse_cert_pass_n": 500,
+      "coarse_cert_pass_rate": 0.5555555555555556,
+      "flip_risk_upper95_from_sharp_coverage": 0.267606507700089,
+      "flip_when_sharp_cert_fail_rate": 0.7123287671232876,
+      "n": 900,
+      "observed_flip_n": 156,
+      "observed_flip_rate": 0.17333333333333334,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.732393492299911,
+      "sharp_cert_pass_n": 681,
+      "sharp_cert_pass_rate": 0.7566666666666667,
+      "task": "TwoRoom",
+      "training_seed": 3073
+    },
+    {
+      "coarse_cert_pass_n": 473,
+      "coarse_cert_pass_rate": 0.5255555555555556,
+      "flip_risk_upper95_from_sharp_coverage": 0.3052492103941806,
+      "flip_when_sharp_cert_fail_rate": 0.7261904761904762,
+      "n": 900,
+      "observed_flip_n": 183,
+      "observed_flip_rate": 0.20333333333333334,
+      "sharp_cert_invariant_flip_count": 0,
+      "sharp_cert_pass_lower95_wilson": 0.6947507896058194,
+      "sharp_cert_pass_n": 648,
+      "sharp_cert_pass_rate": 0.72,
+      "task": "TwoRoom",
+      "training_seed": 3074
+    }
+  ],
+  "count_contract": {
+    "checkpoint_rows": 108,
+    "k_sensitivity_rows": 432,
+    "risk_coverage_rows": 7,
+    "sample_rows": 10800
+  },
+  "hierarchical_block_bootstrap": {
+    "block_count": 12,
+    "interval": "percentile_95",
+    "metrics": {
+      "coarse_cert_pass_rate": {
+        "lower": 0.4383240740740741,
+        "upper": 0.5149120370370369
+      },
+      "flip_when_sharp_cert_fail_rate": {
+        "lower": 0.6643449450957112,
+        "upper": 0.7267438256440011
+      },
+      "observed_flip_rate": {
+        "lower": 0.19305324074074076,
+        "upper": 0.22685185185185186
+      },
+      "sharp_cert_pass_rate": {
+        "lower": 0.6790717592592592,
+        "upper": 0.7226875
+      }
+    },
+    "repetitions": 2000,
+    "seed": 9101,
+    "unit": "task_x_training_seed block"
+  },
+  "k_sensitivity_rows": 432,
+  "metadata": {
+    "adaptive_cem_or_closed_loop_guarantee": false,
+    "candidate_count": 65,
+    "claim_scope": "deterministic fixed-pool implication; flip|cert-pass=0 is an invariant check, not independent statistical evidence",
+    "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+    "created_utc": "2026-07-11T05:46:25.570177+00:00",
+    "errors": [],
+    "k_values": [
+      8,
+      16,
+      32,
+      65
+    ],
+    "missing_rows": [],
+    "n_sequences_per_checkpoint": 100,
+    "schema_version": "paper1-fixed-pool-sharp-certificate-1.0",
+    "source_hashes": {
+      "certificate_runner": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+      "checkpoint_Cube_seed3072_0.0": "b02607b296f8084b3bf5412ad8339e56b2378d4340e04d21418bca042963b352",
+      "checkpoint_Cube_seed3072_0.01": "9a3688094f3fd78b5e231a9fdd3b3a45660162f2985593345b11f5fe2a75b994",
+      "checkpoint_Cube_seed3072_0.02": "de8e88a833dcfbf2a25b310cc1dbd042ea3c89786d25ac9b0a3985bfb7a707d8",
+      "checkpoint_Cube_seed3072_0.03": "6f4342564852c37b8e1f0123f8d345fd158f8268a4ca39edca95c5a4f3278822",
+      "checkpoint_Cube_seed3072_0.04": "1c76d103feedab606dfe298e1b2769538ff7c98ec01660d20b6396b90d66974f",
+      "checkpoint_Cube_seed3072_0.05": "7fc4828dedb9fab793d3f5f7db782a24535c366b25f146f2f454a2a9beca493e",
+      "checkpoint_Cube_seed3072_0.06": "b7d17acfb046fdeba6b247111792f206b32b237a78e76c77d267d0ff03a4a490",
+      "checkpoint_Cube_seed3072_0.07": "0f12d13238c16958eee6a752d0605fa2f9cf52f3ddab59f933ba894b083b4324",
+      "checkpoint_Cube_seed3072_0.08": "4e86a5623d251fc3bd4f2c8e02a2089f2fc74f605d3ccfd48c808867274e6854",
+      "checkpoint_Cube_seed3073_0.0": "7265463b5ab5d630309e6ce01b669068e2810b0d3acc53df705c2fb289cbc80a",
+      "checkpoint_Cube_seed3073_0.01": "00992847d01f282f8af38e0b84200c22917ea9ab9a730ff99093b230e91a7da4",
+      "checkpoint_Cube_seed3073_0.02": "5d00c0c0f3104578ad45736438734100e65f731a3784e1fb228495c602e50d06",
+      "checkpoint_Cube_seed3073_0.03": "57cf6550c876d081223b23805cd9c14a813d1d506471b7f23a92c8942a0b780f",
+      "checkpoint_Cube_seed3073_0.04": "c57a94136aa036acbb2923f23dc3284eceda4f750b61319a0b8390f0078caa39",
+      "checkpoint_Cube_seed3073_0.05": "3fc995ea5faa322657b562592cf32f6a1ec6973a06a867c64aef150dec53e53d",
+      "checkpoint_Cube_seed3073_0.06": "4dce14902f8834f1cb852fc5e7599498dd0edb1328f11e911c79aadaf1fbdb4d",
+      "checkpoint_Cube_seed3073_0.07": "28c3eebf07bc9085632c2c51a4f062861c9d3461b830da8e05224c6a6b774606",
+      "checkpoint_Cube_seed3073_0.08": "b623cb54d09df98c4c38c00124249b4449801d55e6d7e7d8900d75dc39466712",
+      "checkpoint_Cube_seed3074_0.0": "4749635cad50fb2f9e6174e17e3ba7ca5b2b757cfe1b539f8e376e0c950d7a26",
+      "checkpoint_Cube_seed3074_0.01": "faeef90d5e29ffb3ae2e11586dcdb5870522dd360211de85c8111a5601056ff6",
+      "checkpoint_Cube_seed3074_0.02": "c47d90149eb39356f6126bb0220914972afebe998d5ec0f48405995e81df35f5",
+      "checkpoint_Cube_seed3074_0.03": "0162b1cdbd88d0b4543c35f07946e1af3e0886d5e7e039a3966324605edf02aa",
+      "checkpoint_Cube_seed3074_0.04": "cc57c629a9ef90c29840cb88b4257c4610336bdbdcbc3f03dfe118399305c856",
+      "checkpoint_Cube_seed3074_0.05": "de9ba83489b3cad12ced5795eec1f3543eccb1d731a2c4c05b2ae6f3b3e634e4",
+      "checkpoint_Cube_seed3074_0.06": "83212e3dc44a90d6f03a83e4cf5873257d9f17769e0a0c421ddd23c852c5fc22",
+      "checkpoint_Cube_seed3074_0.07": "e8be666dc6335e40b442d1f6a95c383a3633467610243492cfb3465f99087252",
+      "checkpoint_Cube_seed3074_0.08": "1151853cca089b72e91857d1756bd8f4c49c57a295c54e743fe8959ffc883e5e",
+      "checkpoint_PushT_seed3072_0.0": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "checkpoint_PushT_seed3072_0.01": "22d77209c8d2f3242c934b832f8409f509b2c8cfce583f1cd54b5e93226477b5",
+      "checkpoint_PushT_seed3072_0.02": "f488bacdeb822466fd1817a9d37b733d81c279dd815788a1ec3977ea69da69c4",
+      "checkpoint_PushT_seed3072_0.03": "8c921248224e6d13484d45b6b5347e05321dda802bf655f9a96e384bf4645cc3",
+      "checkpoint_PushT_seed3072_0.04": "a3f118434c5a8fe58af156a2300504325cb6de3c8979b60dbbfce6c16f3f2ab2",
+      "checkpoint_PushT_seed3072_0.05": "ba9cc9e530adf3da470a0386a7a7044d343d887a36147a5d8dbe88bfd5491549",
+      "checkpoint_PushT_seed3072_0.06": "8b2256fca0ca0776cf8f42bde8c0e8ec15c340d20c6d23c4ea6b386e06486905",
+      "checkpoint_PushT_seed3072_0.07": "ab3d57fb83ad8946c75ac3401a88657c6cde9f80813aa9e5fff3d1b83dc615b6",
+      "checkpoint_PushT_seed3072_0.08": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "checkpoint_PushT_seed3073_0.0": "be0bdec81f1cd7ed2404f519924a6440d9b85dbbf1a1556dab996007d6c6d70b",
+      "checkpoint_PushT_seed3073_0.01": "a77f24029eef1401318bbdb6d7f9002719db257b9ba12902d0e5b6d02e1c03d7",
+      "checkpoint_PushT_seed3073_0.02": "3b4b145cf198e71ce948533f0dd98ac0bd8eea8590b63f01aa81e443853f5428",
+      "checkpoint_PushT_seed3073_0.03": "9e0067c2b03b53c946f328ce0db9e24ec35c341888d312e6c30618efb5362be6",
+      "checkpoint_PushT_seed3073_0.04": "f8e4eef1899ba583d290072793984b8c26de182810c9a101016405b3a2f41e64",
+      "checkpoint_PushT_seed3073_0.05": "16affa017dbc4dae28c0229e977a96b02a5e801e113b56884cde221b8d2e803a",
+      "checkpoint_PushT_seed3073_0.06": "90005c3018a7d0a033080188c852a293db5f21e2f9de112fb5af087352b69eaf",
+      "checkpoint_PushT_seed3073_0.07": "59ab57a953c0cdc2fab12c3c66782a8a2ed208611568f80e2b3ee66a74ca441e",
+      "checkpoint_PushT_seed3073_0.08": "7544ec042eb38d0609457d67abf48cd9323f69f0e8d53715194c2c2f5c51f65d",
+      "checkpoint_PushT_seed3074_0.0": "016f5b0fb429c1433ffe51a06736a69e3756665d97f6798939d9850b006c234b",
+      "checkpoint_PushT_seed3074_0.01": "a5a27531199f341428f040fcd0911d93f5f49e72f04b376bc7cea6ba3a1f86f1",
+      "checkpoint_PushT_seed3074_0.02": "ae9458fb3698e72852099012e770ad1c08dd1d67b465759159a2f0b8a73e0e48",
+      "checkpoint_PushT_seed3074_0.03": "d7daba682b1db3284725a3539aac4a1ed160839cdd01506eaa2c33b2d24e13ac",
+      "checkpoint_PushT_seed3074_0.04": "c4c3c0a49f59e15842f2786e6765a1f75f203acdbd8470f5a18e27dee6b04d57",
+      "checkpoint_PushT_seed3074_0.05": "49d31e4732820ad6fc0bc3e5784705c7812b41124c2b79fd96864f1da6b0815c",
+      "checkpoint_PushT_seed3074_0.06": "d864538fb3c8fbb4e4ea218e9a9f58e0273c770c51dc5fe6869b787ee63e43d0",
+      "checkpoint_PushT_seed3074_0.07": "1d0524cb079b7214120879576ded3707dbc086b49e8a7a4f0f8d354b9b0b0877",
+      "checkpoint_PushT_seed3074_0.08": "2ac94bcf12e966fefe83dd5352fe759febb50137a5832b93aae0233ef43f4648",
+      "checkpoint_Reacher_seed3072_0.0": "3ec7a5b74482c9bfd2a4fa2f107321270f9e507f71909c278afd33f2262fe1a2",
+      "checkpoint_Reacher_seed3072_0.01": "0ece2e538254a47bc6b3804a177eed6a85b0fec3bffb2dc6796132f4ac990284",
+      "checkpoint_Reacher_seed3072_0.02": "3999c3aab785acead851b882407a5fe988b5c11f98f5335c5b19c2fe417f8ef2",
+      "checkpoint_Reacher_seed3072_0.03": "a3bd40fc3b53b2021dca2e65804487fad9abcec7117c119b1ac07767037b5f9f",
+      "checkpoint_Reacher_seed3072_0.04": "5ce6b094f659949d408f6611956c4e9725137253e24d894c607ab1120f4e6408",
+      "checkpoint_Reacher_seed3072_0.05": "2d6035b3233b1124fdd7cbfc8bb459505cf445282514295a2018fc186091b3d1",
+      "checkpoint_Reacher_seed3072_0.06": "419260c5114047795faca793e2eb784ff820da6ce19b5cb0d3704a2305f89eeb",
+      "checkpoint_Reacher_seed3072_0.07": "5d31b38737b6dc36f8782e798e24a189ed0b3ff066f64e8a3cdbaff51ab18c30",
+      "checkpoint_Reacher_seed3072_0.08": "de5cce2fbdcb2e9b9db55b6cac89e1e9acaecd66fa46d562f19564adaa571c15",
+      "checkpoint_Reacher_seed3073_0.0": "71f1d48add14061516630735d6624b6363e4bc7516670625a93e566ee0288b99",
+      "checkpoint_Reacher_seed3073_0.01": "37b65282c3ac70822c1420400cf3589e0c2c1c6d65bb28972d085c2441cbf5e5",
+      "checkpoint_Reacher_seed3073_0.02": "b875f54494278c189b554485e4cc0c253407c0859d397a262132604723378e77",
+      "checkpoint_Reacher_seed3073_0.03": "932c21996d87b181e4a300183d6f27c958c0bbe36590c18abcb7aca1ef54331b",
+      "checkpoint_Reacher_seed3073_0.04": "d6cf82936cef0eeae1736ca6f1fa2637b00499d5b30a76a68a081c2b403e2d32",
+      "checkpoint_Reacher_seed3073_0.05": "09e1cd50a64826c51f870daa2342ad207f8382556ddc8df737e7372af75a68e5",
+      "checkpoint_Reacher_seed3073_0.06": "d415f82ea4969e352dd7b3de041e275f70180b958e04c489969566d110cb1e9d",
+      "checkpoint_Reacher_seed3073_0.07": "9cc05d91d8393a4292599c13e57a3ec001b60f6f682d606ece11f4f1df51665a",
+      "checkpoint_Reacher_seed3073_0.08": "33896b3090db8d14c13428f3671e53fcdcf668782146858ab8adb91f88913071",
+      "checkpoint_Reacher_seed3074_0.0": "09c947950af021000ed468aab1a2a205b305bf55d6ea534b2ef0e0b0cfe366a9",
+      "checkpoint_Reacher_seed3074_0.01": "e31287158fd6558440dd2669e4a1b94d38d3e0fbafb938d271aadab06b5f68a9",
+      "checkpoint_Reacher_seed3074_0.02": "6ecc1c93df06a77748d6c3e2c59b2913f48a333dc0dc7804eb9d82be9fecda99",
+      "checkpoint_Reacher_seed3074_0.03": "7cd311ccb1446a946458b57bac70779c53d7d9037750a3eaf42d2b5d2ecde906",
+      "checkpoint_Reacher_seed3074_0.04": "f942a6333910b37e66056a56c1f1be0dcca451e2320d1c24c1dd8417e50baf4a",
+      "checkpoint_Reacher_seed3074_0.05": "7156be9cb05863bc3c53f452dd49adc0bf3a179b93fbbe06455534c7a5ac9f9b",
+      "checkpoint_Reacher_seed3074_0.06": "778156a23eeefe620191406ea45e7b906289b981c633d6890c07a554c5c5c6a9",
+      "checkpoint_Reacher_seed3074_0.07": "c261ee5a6e2d6547c7d1f31d172f17e110c750e48857d5c423d7b193eba846a3",
+      "checkpoint_Reacher_seed3074_0.08": "e69edf677e06926e3d5949a6e24bfbe8a5e1ec23415f408f4a805fbb5e4b9219",
+      "checkpoint_TwoRoom_seed3072_0.0": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "checkpoint_TwoRoom_seed3072_0.01": "7308b4b8e5e9c28461f991d5a5d01cb8a346c7cd67bd43608dbf7f00b6f6d701",
+      "checkpoint_TwoRoom_seed3072_0.02": "d0298e747ac475273d38b6657cd220bda18aa559e98c6848bd73a7df70df2068",
+      "checkpoint_TwoRoom_seed3072_0.03": "86f98bed3c7911c6f13d46894f54043386f050e099c7b33a84bc56fb31d023ec",
+      "checkpoint_TwoRoom_seed3072_0.04": "948df1e81dc3e5864515c4a82c3171aac716da0b58c5b504ff93ed0a3e459a4b",
+      "checkpoint_TwoRoom_seed3072_0.05": "eb851546eace2763473580d6ac0c3902b1118caf915032d1c47e26d96b828091",
+      "checkpoint_TwoRoom_seed3072_0.06": "6913652b1685a2ce187edee1e1636a4742c72ef9c6099eafc4b25c4bb7485985",
+      "checkpoint_TwoRoom_seed3072_0.07": "02e7c027d740ff17be87bef90d157efea9bc205795142ee8049c60c5585bd239",
+      "checkpoint_TwoRoom_seed3072_0.08": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "checkpoint_TwoRoom_seed3073_0.0": "c05b459e293b20a84be895cfe0506dfed205b5695dc27d05d1fea0d0a319ef5f",
+      "checkpoint_TwoRoom_seed3073_0.01": "7ecb71e35b6b64163ddee7b5007e66061d59744ecadffe09f30e3509a515c242",
+      "checkpoint_TwoRoom_seed3073_0.02": "ada480c589583595e7a95f063227ce58747e0fca7859477c9ba477b1786ca133",
+      "checkpoint_TwoRoom_seed3073_0.03": "f2f50f05026ec5ab2dd720dd7526e2348f2cf38ba7f2fbd28834fa08e49e2814",
+      "checkpoint_TwoRoom_seed3073_0.04": "aa0c59f09b09f63ca3302746a2e0229b0713476acff980709003aff957c98d80",
+      "checkpoint_TwoRoom_seed3073_0.05": "af84b85f73522b9c08dcefd8d684be5fc464aed808fec13f108f1af55bd946ff",
+      "checkpoint_TwoRoom_seed3073_0.06": "5fd41e73308ca5cb31041b91b688d5a7035b7a7fc516d71914586d79f5f1ef05",
+      "checkpoint_TwoRoom_seed3073_0.07": "f6269cdb3bb91bf6020c8204174b79833b26e1f3f19be8cdcfd9079e7e985e0e",
+      "checkpoint_TwoRoom_seed3073_0.08": "421206f8723f5a94e464484033109a4cd5f6997b29cda479bf25618513951b11",
+      "checkpoint_TwoRoom_seed3074_0.0": "4a536f39666d8b37a27dca953b4892a4a91c0a9c34a001fe145f7089848a7baf",
+      "checkpoint_TwoRoom_seed3074_0.01": "f6c68d551b399d3eb4fdb79be309b8a1804396dfaf0ecd9e21396229461c3525",
+      "checkpoint_TwoRoom_seed3074_0.02": "0cb5dabe23072dee8a6e473185e4eb2919a3bca74c46a085174d502cee627c7f",
+      "checkpoint_TwoRoom_seed3074_0.03": "c0bd53ac97f1840c33b8dfbfad5eace0b14c9d14962e986e73086ec4a993a54e",
+      "checkpoint_TwoRoom_seed3074_0.04": "b6ea0f66dc7a57ee786ca935ff2528eca68512d9ad2ecb89a6f9cb793a8944b4",
+      "checkpoint_TwoRoom_seed3074_0.05": "ca6a1b63d564a0173ee5317f2e52828aa574c0f47706909665e38416b1ae9e8e",
+      "checkpoint_TwoRoom_seed3074_0.06": "450f16c764bf8601f83b61fccb0d7ebf035ebe574662566ea1d60e70c0ffb01b",
+      "checkpoint_TwoRoom_seed3074_0.07": "11a1afba111905ae5a924e3f5446bf009e2762912619f4ffc80ad608143b06e7",
+      "checkpoint_TwoRoom_seed3074_0.08": "3cc9d3f0e63497e746f953a66a6da7bba23e1916661ba5c3348f2b99ef79f6a1",
+      "merge_builder": "83810fe1840b8c3dd96101247ae9adfd72141ba1ad758f3632dc74187bd6854c",
+      "shard_Cube_seed3072": "4b48bd01030e4b74415a30fe5c506792f875de846b8cdb4eb485950f114d7d9e",
+      "shard_Cube_seed3073": "9a6a9b915ce22bcf83dd9e075a1453fd7484491ded1c249acc6d53324941fe54",
+      "shard_Cube_seed3074": "d626a446bfb2e17968abbcd3d538759ae71ca97af4376626f198431dd385b321",
+      "shard_PushT_seed3072": "13abb2b0fa8aa9bfb96724ab6eb6edb2b24e7ad20836fb6e63d607b85d73208f",
+      "shard_PushT_seed3073": "69d507ba047a16a25097d2bdac33079161fc24c0d59d56967e35feb834dc8d66",
+      "shard_PushT_seed3074": "a5ad3abef4ddbef40efcf015ce34c9f36046da9683065fd89b60bafad6973a6b",
+      "shard_Reacher_seed3072": "20d8db9bf48ace2a0ffc618fa00c5d24046b9e39baddaa0e7f6fa73ba857ae55",
+      "shard_Reacher_seed3073": "583f38c33edbe94474ff73077637cfff6f90a0df84006e9e3d18eff74e93875e",
+      "shard_Reacher_seed3074": "dc11d8682be390138d8d825006d508b96911da460f18eea366dce50ad373fa20",
+      "shard_TwoRoom_seed3072": "92629febb8c1dc22e77475566fa491482be4f66d770caa6d848740ef20eee50b",
+      "shard_TwoRoom_seed3073": "4db295734e38ac6b1b499c334006cb678e82dbdb3be9924a3fadaa68806a05ea",
+      "shard_TwoRoom_seed3074": "e51c8dbb41314381dc21cf1ade1763a2f6eaf5434bc5cdcfafcac305e0da9209"
+    },
+    "source_metadata": {
+      "Cube_seed3072": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:58:40.101450+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3072
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3072_evals": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4"
+        },
+        "source_paths": {
+          "lewm_seed3072_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "Cube"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "Cube_seed3073": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T04:01:01.504886+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3073
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3073_evals": "03cfcf889825cf2022a3b0e3d54a67e1f70e412b8d704226609cbe89360b0b5b"
+        },
+        "source_paths": {
+          "lewm_seed3073_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "Cube"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "Cube_seed3074": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T04:03:22.740203+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3074
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3074_evals": "7a7dbd8c37992cf12f5b77bf1f7f841e9314c7e9eb31ddf67ce8afa4b5699316"
+        },
+        "source_paths": {
+          "lewm_seed3074_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "Cube"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "PushT_seed3072": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:45:49.410298+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3072
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3072_evals": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4"
+        },
+        "source_paths": {
+          "lewm_seed3072_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "PushT"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "PushT_seed3073": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:47:49.702252+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3073
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3073_evals": "03cfcf889825cf2022a3b0e3d54a67e1f70e412b8d704226609cbe89360b0b5b"
+        },
+        "source_paths": {
+          "lewm_seed3073_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "PushT"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "PushT_seed3074": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:49:48.075304+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3074
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3074_evals": "7a7dbd8c37992cf12f5b77bf1f7f841e9314c7e9eb31ddf67ce8afa4b5699316"
+        },
+        "source_paths": {
+          "lewm_seed3074_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "PushT"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "Reacher_seed3072": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:51:58.082806+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3072
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3072_evals": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4"
+        },
+        "source_paths": {
+          "lewm_seed3072_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "Reacher"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "Reacher_seed3073": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:54:13.965236+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3073
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3073_evals": "03cfcf889825cf2022a3b0e3d54a67e1f70e412b8d704226609cbe89360b0b5b"
+        },
+        "source_paths": {
+          "lewm_seed3073_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "Reacher"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "Reacher_seed3074": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:56:24.069773+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3074
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3074_evals": "7a7dbd8c37992cf12f5b77bf1f7f841e9314c7e9eb31ddf67ce8afa4b5699316"
+        },
+        "source_paths": {
+          "lewm_seed3074_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "Reacher"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "TwoRoom_seed3072": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:41:07.292293+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3072
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3072_evals": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4"
+        },
+        "source_paths": {
+          "lewm_seed3072_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "TwoRoom"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "TwoRoom_seed3073": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:42:24.351239+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3073
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3073_evals": "03cfcf889825cf2022a3b0e3d54a67e1f70e412b8d704226609cbe89360b0b5b"
+        },
+        "source_paths": {
+          "lewm_seed3073_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "TwoRoom"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      },
+      "TwoRoom_seed3074": {
+        "candidate_count": 65,
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "coverage_interval": "one-sided 95% Wilson lower bound",
+        "created_utc": "2026-07-11T03:43:42.593764+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; fixed checkpoint-local candidate pools",
+        "k_values": [
+          8,
+          16,
+          32,
+          65
+        ],
+        "missing_rows": [],
+        "n_sequences": 100,
+        "noise_std": 0.08,
+        "note": "Candidate-wise sharp and legacy coarse fixed-pool audit; closed-loop evaluation is not run.",
+        "schema_version": "paper1-sample-level-certificate-0.2",
+        "script_path": "tools/paper1_sample_level_certificate.py",
+        "script_sha256": "e47ccfd08929b3811b612d0ed21947b47a6fd937b43a06dd5f6844d3d3f911f6",
+        "seeds": [
+          3074
+        ],
+        "sharp_certificate": "min_{j!=j*}[Delta_j-d_j-d_{j*}] > 0",
+        "source_hashes": {
+          "lewm_seed3074_evals": "7a7dbd8c37992cf12f5b77bf1f7f841e9314c7e9eb31ddf67ce8afa4b5699316"
+        },
+        "source_paths": {
+          "lewm_seed3074_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 9
+        },
+        "std_keys": [
+          "0.0",
+          "0.01",
+          "0.02",
+          "0.03",
+          "0.04",
+          "0.05",
+          "0.06",
+          "0.07",
+          "0.08"
+        ],
+        "tasks": [
+          "TwoRoom"
+        ],
+        "training_seed_semantics": "independently trained checkpoint seeds"
+      }
+    },
+    "source_paths": {
+      "certificate_runner": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/tools/paper1_sample_level_certificate.py",
+      "checkpoint_Cube_seed3072_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_20260430/cube_lewm_20260430_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to001_p1/cube_lewm_noise_0to001_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to002_p1/cube_lewm_noise_0to002_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to003_p1/cube_lewm_noise_0to003_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to004_p1/cube_lewm_noise_0to004_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to005_p1/cube_lewm_noise_0to005_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to006_p1/cube_lewm_noise_0to006_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to007_p1/cube_lewm_noise_0to007_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3072_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to008_p1/cube_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_baseline_seed3073/cube_lewm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to001_p1_seed3073/cube_lewm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to002_p1_seed3073/cube_lewm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to003_p1_seed3073/cube_lewm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to004_p1_seed3073/cube_lewm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to005_p1_seed3073/cube_lewm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to006_p1_seed3073/cube_lewm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to007_p1_seed3073/cube_lewm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3073_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to008_p1_seed3073/cube_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_baseline_seed3074/cube_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to001_p1_seed3074/cube_lewm_noise_0to001_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to002_p1_seed3074/cube_lewm_noise_0to002_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to003_p1_seed3074/cube_lewm_noise_0to003_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to004_p1_seed3074/cube_lewm_noise_0to004_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to005_p1_seed3074/cube_lewm_noise_0to005_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to006_p1_seed3074/cube_lewm_noise_0to006_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to007_p1_seed3074/cube_lewm_noise_0to007_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Cube_seed3074_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to008_p1_seed3074/cube_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_20260430/pusht_lewm_20260430_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to001_p1/pusht_lewm_noise_0to001_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to002_p1/pusht_lewm_noise_0to002_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to003_p1/pusht_lewm_noise_0to003_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to004_p1/pusht_lewm_noise_0to004_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to005_p1/pusht_lewm_noise_0to005_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to006_p1/pusht_lewm_noise_0to006_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to007_p1/pusht_lewm_noise_0to007_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3072_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1/pusht_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3073/pusht_lewm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to001_p1_seed3073/pusht_lewm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to002_p1_seed3073/pusht_lewm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to003_p1_seed3073/pusht_lewm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to004_p1_seed3073/pusht_lewm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to005_p1_seed3073/pusht_lewm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to006_p1_seed3073/pusht_lewm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to007_p1_seed3073/pusht_lewm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3073_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3073/pusht_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3074/pusht_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to001_p1_seed3074/pusht_lewm_noise_0to001_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to002_p1_seed3074/pusht_lewm_noise_0to002_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to003_p1_seed3074/pusht_lewm_noise_0to003_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to004_p1_seed3074/pusht_lewm_noise_0to004_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to005_p1_seed3074/pusht_lewm_noise_0to005_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to006_p1_seed3074/pusht_lewm_noise_0to006_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to007_p1_seed3074/pusht_lewm_noise_0to007_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_PushT_seed3074_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3074/pusht_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_20260430/reacher_lewm_20260430_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to001_p1/reacher_lewm_noise_0to001_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to002_p1/reacher_lewm_noise_0to002_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to003_p1/reacher_lewm_noise_0to003_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to004_p1/reacher_lewm_noise_0to004_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to005_p1/reacher_lewm_noise_0to005_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to006_p1/reacher_lewm_noise_0to006_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to007_p1/reacher_lewm_noise_0to007_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3072_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1/reacher_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_baseline_seed3073/reacher_lewm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to001_p1_seed3073/reacher_lewm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to002_p1_seed3073/reacher_lewm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to003_p1_seed3073/reacher_lewm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to004_p1_seed3073/reacher_lewm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to005_p1_seed3073/reacher_lewm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to006_p1_seed3073/reacher_lewm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to007_p1_seed3073/reacher_lewm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3073_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1_seed3073/reacher_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_baseline_seed3074/reacher_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to001_p1_seed3074/reacher_lewm_noise_0to001_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to002_p1_seed3074/reacher_lewm_noise_0to002_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to003_p1_seed3074/reacher_lewm_noise_0to003_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to004_p1_seed3074/reacher_lewm_noise_0to004_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to005_p1_seed3074/reacher_lewm_noise_0to005_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to006_p1_seed3074/reacher_lewm_noise_0to006_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to007_p1_seed3074/reacher_lewm_noise_0to007_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_Reacher_seed3074_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1_seed3074/reacher_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_20260430/tworoom_lewm_20260430_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to001_p1/tworoom_lewm_noise_0to001_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to002_p1/tworoom_lewm_noise_0to002_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to003_p1/tworoom_lewm_noise_0to003_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to004_p1/tworoom_lewm_noise_0to004_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to005_p1/tworoom_lewm_noise_0to005_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to006_p1/tworoom_lewm_noise_0to006_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to007_p1/tworoom_lewm_noise_0to007_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3072_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1/tworoom_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3073/tworoom_lewm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to001_p1_seed3073/tworoom_lewm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to002_p1_seed3073/tworoom_lewm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to003_p1_seed3073/tworoom_lewm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to004_p1_seed3073/tworoom_lewm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to005_p1_seed3073/tworoom_lewm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to006_p1_seed3073/tworoom_lewm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to007_p1_seed3073/tworoom_lewm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3073_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3073/tworoom_lewm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.0": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3074/tworoom_lewm_baseline_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.01": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to001_p1_seed3074/tworoom_lewm_noise_0to001_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.02": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to002_p1_seed3074/tworoom_lewm_noise_0to002_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.03": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to003_p1_seed3074/tworoom_lewm_noise_0to003_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.04": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to004_p1_seed3074/tworoom_lewm_noise_0to004_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.05": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to005_p1_seed3074/tworoom_lewm_noise_0to005_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.06": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to006_p1_seed3074/tworoom_lewm_noise_0to006_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.07": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to007_p1_seed3074/tworoom_lewm_noise_0to007_p1_seed3074_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_seed3074_0.08": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3074/tworoom_lewm_noise_0to008_p1_seed3074_epoch_10_object.ckpt",
+      "merge_builder": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/scripts/fixed_pool_certificate_calibration.py",
+      "shard_Cube_seed3072": "paper1/results/remediation_phase3_certificate_sources/certificate_cube_seed3072_v2.json",
+      "shard_Cube_seed3073": "paper1/results/remediation_phase3_certificate_sources/certificate_cube_seed3073_v2.json",
+      "shard_Cube_seed3074": "paper1/results/remediation_phase3_certificate_sources/certificate_cube_seed3074_v2.json",
+      "shard_PushT_seed3072": "paper1/results/remediation_phase3_certificate_sources/certificate_pusht_seed3072_v2.json",
+      "shard_PushT_seed3073": "paper1/results/remediation_phase3_certificate_sources/certificate_pusht_seed3073_v2.json",
+      "shard_PushT_seed3074": "paper1/results/remediation_phase3_certificate_sources/certificate_pusht_seed3074_v2.json",
+      "shard_Reacher_seed3072": "paper1/results/remediation_phase3_certificate_sources/certificate_reacher_seed3072_v2.json",
+      "shard_Reacher_seed3073": "paper1/results/remediation_phase3_certificate_sources/certificate_reacher_seed3073_v2.json",
+      "shard_Reacher_seed3074": "paper1/results/remediation_phase3_certificate_sources/certificate_reacher_seed3074_v2.json",
+      "shard_TwoRoom_seed3072": "paper1/results/remediation_phase3_certificate_sources/certificate_tworoom_seed3072_v2.json",
+      "shard_TwoRoom_seed3073": "paper1/results/remediation_phase3_certificate_sources/certificate_tworoom_seed3073_v2.json",
+      "shard_TwoRoom_seed3074": "paper1/results/remediation_phase3_certificate_sources/certificate_tworoom_seed3074_v2.json"
+    },
+    "status": "complete",
+    "status_counts": {
+      "ok": 108
+    },
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_seed_semantics": "independently trained checkpoint seeds",
+    "training_seeds": [
+      3072,
+      3073,
+      3074
+    ]
+  },
+  "overall": {
+    "coarse_cert_pass_n": 5157,
+    "coarse_cert_pass_rate": 0.4775,
+    "flip_risk_upper95_from_sharp_coverage": 0.3069296396620227,
+    "flip_when_sharp_cert_fail_rate": 0.6937577255871447,
+    "n": 10800,
+    "observed_flip_n": 2245,
+    "observed_flip_rate": 0.20787037037037037,
+    "sharp_cert_invariant_flip_count": 0,
+    "sharp_cert_pass_lower95_wilson": 0.6930703603379773,
+    "sharp_cert_pass_n": 7564,
+    "sharp_cert_pass_rate": 0.7003703703703704
+  },
+  "risk_coverage": [
+    {
+      "coverage": 1.0,
+      "observed_flip_n": 2245,
+      "observed_flip_rate": 0.20787037037037037,
+      "scope": "all_108_checkpoints",
+      "selected_n": 10800,
+      "sharp_slack_threshold": -1239.2296327830811
+    },
+    {
+      "coverage": 0.9,
+      "observed_flip_n": 1215,
+      "observed_flip_rate": 0.125,
+      "scope": "all_108_checkpoints",
+      "selected_n": 9720,
+      "sharp_slack_threshold": -324.6523742675781
+    },
+    {
+      "coverage": 0.75,
+      "observed_flip_n": 178,
+      "observed_flip_rate": 0.02197530864197531,
+      "scope": "all_108_checkpoints",
+      "selected_n": 8100,
+      "sharp_slack_threshold": -8.247286796569824
+    },
+    {
+      "coverage": 0.7003703703703704,
+      "observed_flip_n": 0,
+      "observed_flip_rate": 0.0,
+      "scope": "all_108_checkpoints",
+      "selected_n": 7564,
+      "sharp_slack_threshold": 0.0
+    },
+    {
+      "coverage": 0.5,
+      "observed_flip_n": 0,
+      "observed_flip_rate": 0.0,
+      "scope": "all_108_checkpoints",
+      "selected_n": 5400,
+      "sharp_slack_threshold": 23.389076232910156
+    },
+    {
+      "coverage": 0.25,
+      "observed_flip_n": 0,
+      "observed_flip_rate": 0.0,
+      "scope": "all_108_checkpoints",
+      "selected_n": 2700,
+      "sharp_slack_threshold": 112.29127502441406
+    },
+    {
+      "coverage": 0.1,
+      "observed_flip_n": 0,
+      "observed_flip_rate": 0.0,
+      "scope": "all_108_checkpoints",
+      "selected_n": 1080,
+      "sharp_slack_threshold": 227.63490295410156
+    }
+  ]
+}

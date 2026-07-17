@@ -1,0 +1,54 @@
+{
+  "fields": [
+    "model_family",
+    "training_family_id",
+    "training_seed",
+    "task",
+    "training_rho",
+    "stressor_family",
+    "stressor_severity",
+    "atr_horizon_v2_q90",
+    "smpr",
+    "atr_threshold_margin",
+    "smpr_threshold_margin",
+    "joint_score",
+    "frozen_gate_pass",
+    "split_name",
+    "protocol_sha256",
+    "diagnostics_sha256"
+  ],
+  "metadata": {
+    "behavior_blind": true,
+    "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+    "created_utc": "2026-07-14T07:13:55.906286+00:00",
+    "errors": [],
+    "evaluation_seed_semantics": "conditional evaluation variability, not training-run replication",
+    "missing_rows": [],
+    "model_family": [
+      "PLDM"
+    ],
+    "operator_blinding": "not claimed; raw diagnostic runners consumed eval manifests, while this frozen-apply input contains no behavior fields",
+    "protocol_hash": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "schema_version": "paper1-frozen-external-blind-predictions-1.0",
+    "script_path": "paper1/scripts/frozen_external_validation.py",
+    "script_sha256": "5c54a2cb7e1c6c984eea0fd22f92ba3ce6d2b7447156485a675bf299729b1982",
+    "source_hashes": {
+      "blind_rows": "0a33736a821324ec900b4685a23a6bcd9d70462005fb1d66d86bb3bead230296",
+      "diagnostics": "624ecaeb0b807e0b7e6cb9d1ef44b889ee1eb54772f1c29f39c6b5fdd10fbeb8",
+      "protocol": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21"
+    },
+    "source_paths": {
+      "blind_rows": "paper1/results/external_validation/pldm_frozen_predictions_blind_v2.csv",
+      "diagnostics": "paper1/results/external_validation/pldm_canonical_diagnostic_input_v3.json",
+      "protocol": "paper1/config/frozen_diagnostic_protocol_v1.json"
+    },
+    "status": "complete",
+    "status_counts": {
+      "ok": 36
+    },
+    "strict_external_contract": "pldm_canonical_gaussian_e2_v1",
+    "threshold_search_available": false,
+    "training_seed_semantics": "one independently trained PLDM checkpoint family"
+  },
+  "row_count": 36
+}

@@ -1,0 +1,450 @@
+{
+  "benchmark_rows": [
+    {
+      "atr_horizon_v2_q90": 1.8760886192321777,
+      "audit": "paired_rollout_radius",
+      "checkpoint_type": "base",
+      "data_io_time": 3.2292299140244722,
+      "fixed_pool_time": 0.31314826384186745,
+      "horizon_radius_v2_unnormalized_q90": 21.21377944946289,
+      "jvp_time": null,
+      "model_family": "PLDM",
+      "model_load_time": 0.24443849921226501,
+      "n_sequences": 16,
+      "noise_draw_seeds": [
+        4081,
+        12000
+      ],
+      "num_noise_draws": 2,
+      "peak_gpu_memory": 1332154880,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": 2.6132354009896517,
+      "status": "ok",
+      "std_key": "0.0",
+      "stepwise_rollout_q90_compatibility_only": 22.226871490478516,
+      "task": "TwoRoom",
+      "training_seed": null,
+      "wall_time_per_row": 37.94172176718712
+    },
+    {
+      "atr_horizon_v2_q90": 0.1458214819431305,
+      "audit": "paired_rollout_radius",
+      "checkpoint_type": "endpoint",
+      "data_io_time": 2.072237802669406,
+      "fixed_pool_time": 0.24220607802271843,
+      "horizon_radius_v2_unnormalized_q90": 2.0160882472991943,
+      "jvp_time": null,
+      "model_family": "PLDM",
+      "model_load_time": 5.894950475543737,
+      "n_sequences": 16,
+      "noise_draw_seeds": [
+        4081,
+        12000
+      ],
+      "num_noise_draws": 2,
+      "peak_gpu_memory": 2101949440,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": 0.25332328863441944,
+      "status": "ok",
+      "std_key": "0.08",
+      "stepwise_rollout_q90_compatibility_only": 2.2881414890289307,
+      "task": "TwoRoom",
+      "training_seed": null,
+      "wall_time_per_row": 8.483239995315671
+    },
+    {
+      "atr_horizon_v2_q90": 2.0283710956573486,
+      "audit": "paired_rollout_radius",
+      "checkpoint_type": "base",
+      "data_io_time": 4.974740736186504,
+      "fixed_pool_time": 0.25727387703955173,
+      "horizon_radius_v2_unnormalized_q90": 20.083480834960938,
+      "jvp_time": null,
+      "model_family": "PLDM",
+      "model_load_time": 0.10875166393816471,
+      "n_sequences": 16,
+      "noise_draw_seeds": [
+        4081,
+        12000
+      ],
+      "num_noise_draws": 2,
+      "peak_gpu_memory": 1332154880,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": 0.9927757047116756,
+      "status": "ok",
+      "std_key": "0.0",
+      "stepwise_rollout_q90_compatibility_only": 21.68756675720215,
+      "task": "PushT",
+      "training_seed": null,
+      "wall_time_per_row": 43.93978596292436
+    },
+    {
+      "atr_horizon_v2_q90": 0.18413087725639343,
+      "audit": "paired_rollout_radius",
+      "checkpoint_type": "endpoint",
+      "data_io_time": 5.325264262035489,
+      "fixed_pool_time": 0.25172000005841255,
+      "horizon_radius_v2_unnormalized_q90": 2.0441043376922607,
+      "jvp_time": null,
+      "model_family": "PLDM",
+      "model_load_time": 0.09973452612757683,
+      "n_sequences": 16,
+      "noise_draw_seeds": [
+        4081,
+        12000
+      ],
+      "num_noise_draws": 2,
+      "peak_gpu_memory": 2101949440,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": 0.29284464195370674,
+      "status": "ok",
+      "std_key": "0.08",
+      "stepwise_rollout_q90_compatibility_only": 1.9864647388458252,
+      "task": "PushT",
+      "training_seed": null,
+      "wall_time_per_row": 5.994076712056994
+    },
+    {
+      "audit": "jvp_hutchinson",
+      "checkpoint_type": "base",
+      "composed_trace": 26183.20703125,
+      "data_io_time": 2.2307135313749313,
+      "encoder_trace": 187160.15625,
+      "fixed_pool_time": null,
+      "hutchinson_probes": 2,
+      "jvp_time": 2.2479984033852816,
+      "kappa_relative_isotropic": 3.596413838348228,
+      "kappa_submultiplicative": 0.00039023587655688237,
+      "model_family": "LeWM",
+      "model_load_time": 0.1380786281079054,
+      "n_sequences": 16,
+      "peak_gpu_memory": 1857850368,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": null,
+      "rollout_trace": 358.4942932128906,
+      "status": "ok",
+      "std_key": "0.00",
+      "task": "TwoRoom",
+      "training_seed": 3072,
+      "wall_time_per_row": 24.007350336760283
+    },
+    {
+      "audit": "jvp_hutchinson",
+      "checkpoint_type": "endpoint",
+      "composed_trace": 91.7164077758789,
+      "data_io_time": 7.164951531216502,
+      "encoder_trace": 559.6751708984375,
+      "fixed_pool_time": null,
+      "hutchinson_probes": 2,
+      "jvp_time": 1.4443066269159317,
+      "kappa_relative_isotropic": 2.8220449034763897,
+      "kappa_submultiplicative": 0.0003062114695612402,
+      "model_family": "LeWM",
+      "model_load_time": 0.12439682148396969,
+      "n_sequences": 16,
+      "peak_gpu_memory": 2046724096,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": null,
+      "rollout_trace": 535.1672668457031,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072,
+      "wall_time_per_row": 8.772337974980474
+    },
+    {
+      "audit": "jvp_hutchinson",
+      "checkpoint_type": "base",
+      "composed_trace": 20826.2001953125,
+      "data_io_time": 5.23918685130775,
+      "encoder_trace": 11783.001953125,
+      "fixed_pool_time": null,
+      "hutchinson_probes": 2,
+      "jvp_time": 2.212199319154024,
+      "kappa_relative_isotropic": 6.364232244432897,
+      "kappa_submultiplicative": 0.0006905633945782224,
+      "model_family": "LeWM",
+      "model_load_time": 0.13719106651842594,
+      "n_sequences": 16,
+      "peak_gpu_memory": 1857850368,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": null,
+      "rollout_trace": 2559.472900390625,
+      "status": "ok",
+      "std_key": "0.00",
+      "task": "PushT",
+      "training_seed": 3072,
+      "wall_time_per_row": 43.80386742576957
+    },
+    {
+      "audit": "jvp_hutchinson",
+      "checkpoint_type": "endpoint",
+      "composed_trace": 174.78497314453125,
+      "data_io_time": 5.326151475310326,
+      "encoder_trace": 228.61699676513672,
+      "fixed_pool_time": null,
+      "hutchinson_probes": 2,
+      "jvp_time": 1.478851307183504,
+      "kappa_relative_isotropic": 2.811459310701773,
+      "kappa_submultiplicative": 0.0003050628592341333,
+      "model_family": "LeWM",
+      "model_load_time": 0.07851563207805157,
+      "n_sequences": 16,
+      "peak_gpu_memory": 2046724096,
+      "peak_gpu_memory_unit": "bytes",
+      "prediction_time": null,
+      "rollout_trace": 2506.145263671875,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072,
+      "wall_time_per_row": 6.91685919649899
+    }
+  ],
+  "checks": {
+    "both_kappa_definitions_finite": true,
+    "canonical_horizon_v2_radius": true,
+    "jvp_map_aligned": true,
+    "legacy_stepwise_not_atr": true,
+    "profiling_complete": true,
+    "sixteen_anchors": true,
+    "strict_json_inputs": true,
+    "two_acpc_noise_draws": true,
+    "two_checkpoints_per_task_per_audit": true,
+    "two_tasks": true
+  },
+  "gate": "Gate 1",
+  "gate_status": "pass",
+  "metadata": {
+    "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+    "created_utc": "2026-07-10T08:45:46.206438+00:00",
+    "errors": [],
+    "evaluation_seed_semantics": "not a training seed; no closed-loop evaluation seeds are pooled into this checkpoint-local smoke audit",
+    "implementation_hashes": {
+      "acpc_runner": "1f4f65590e7f91852467c6f3a0970dda15bf0b58dbf561e8c24a8a32659193ee",
+      "canonical_metric": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b",
+      "jvp_runner": "9dd855b5b6effc9d57468a5248697a630c74bb98148325f7b5b820d13dae16af"
+    },
+    "implementation_paths": {
+      "acpc_runner": "tools/paper1_phase0_acpc.py",
+      "canonical_metric": "tools/paper1_acpc_metrics.py",
+      "jvp_runner": "tools/paper1_jvp_hutchinson_sensitivity_audit.py"
+    },
+    "missing_rows": [],
+    "model_family": [
+      "LeWM",
+      "PLDM"
+    ],
+    "protocol_hash": null,
+    "protocol_hash_status": "not_frozen_phase1_correctness_audit",
+    "schema_version": "paper1-remediation-phase1-smoke-1.0",
+    "script_path": "paper1/scripts/build_remediation_phase1_smoke_report.py",
+    "script_sha256": "cbb0ee673af3956ae01a41fefb1e395a223b1d3deddf30df5eb3c64c475f24d4",
+    "source_hashes": {
+      "acpc_0": "c5aff7e16a165ba3f9f8e7b6a4789fa1d23fd17396ea1cb272fc9f861e9c8171",
+      "acpc_1": "71d7849e3f6872b5a5fdc002006345e9925f92a1bb400a75e47cf0dfd91d97ef",
+      "jvp_0": "1fc64fd77d6457fae5c3abf0a550abe9944bed292a8bf03eefc022d1db4d3374",
+      "jvp_1": "b3cca2730a5a6e1aa4e60e76fbfe576ffd9c5b4d3eb7b995de3508d19cfb73f1"
+    },
+    "source_metadata": {
+      "acpc_0": {
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "created_utc": "2026-07-10T08:23:49.988476+00:00",
+        "dry_run": false,
+        "errors": [],
+        "methods": [
+          "PLDM"
+        ],
+        "metric_implementation_path": "tools/paper1_acpc_metrics.py",
+        "metric_implementation_sha256": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b",
+        "missing_rows": [],
+        "model_roots": [
+          "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms"
+        ],
+        "note": "ADM uses an action-distance latent proxy; it is a Phase-0 diagnostic and should not be treated as a task-oracle result.",
+        "protocol": {
+          "anchor_seed": 3072,
+          "atr_quantile": 0.9,
+          "fixed_pool_candidate_seed_rule": "seed+2027",
+          "horizon_weights": "uniform_1_over_H",
+          "legacy_stepwise_field": "stepwise_rollout_q90",
+          "legacy_stepwise_field_is_atr": false,
+          "noise_draw_aggregation": "per_anchor_mean_then_checkpoint_quantile",
+          "normalization": "per_anchor_observed_clean_transition_l2_q50_including_history_future_boundary",
+          "num_noise_draws": 2,
+          "radius_metric": "horizon_weighted_stacked_l2_v2",
+          "rollout_horizon": 8
+        },
+        "schema_version": "paper1-acpc-phase0-0.2",
+        "script_path": "tools/paper1_phase0_acpc.py",
+        "script_sha256": "3f1781c0d67c9472a77af5b0cd3075f1640b372cd3ae5c301277bf77dcc2d990",
+        "source_hashes": {
+          "LeWM": "394c21142311e628232e510d0087b17828ab78d973727cff6b049cb50ed98e1a",
+          "PLDM": "e9bf3a49b91f3d17151db2cd94c696cd56f53d8c2be9670351f059ebb671df7a"
+        },
+        "source_paths": {
+          "LeWM": "assets/paper1_data/canonical_evals_20260517.json",
+          "PLDM": "assets/paper1_data/canonical_evals_pldm_20260522.json"
+        },
+        "status_counts": {
+          "ok": 2
+        },
+        "std_keys": [
+          "0.0",
+          "0.08"
+        ],
+        "tasks": [
+          "TwoRoom"
+        ]
+      },
+      "acpc_1": {
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "created_utc": "2026-07-10T08:24:00.293578+00:00",
+        "dry_run": false,
+        "errors": [],
+        "methods": [
+          "PLDM"
+        ],
+        "metric_implementation_path": "tools/paper1_acpc_metrics.py",
+        "metric_implementation_sha256": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b",
+        "missing_rows": [],
+        "model_roots": [
+          "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht"
+        ],
+        "note": "ADM uses an action-distance latent proxy; it is a Phase-0 diagnostic and should not be treated as a task-oracle result.",
+        "protocol": {
+          "anchor_seed": 3072,
+          "atr_quantile": 0.9,
+          "fixed_pool_candidate_seed_rule": "seed+2027",
+          "horizon_weights": "uniform_1_over_H",
+          "legacy_stepwise_field": "stepwise_rollout_q90",
+          "legacy_stepwise_field_is_atr": false,
+          "noise_draw_aggregation": "per_anchor_mean_then_checkpoint_quantile",
+          "normalization": "per_anchor_observed_clean_transition_l2_q50_including_history_future_boundary",
+          "num_noise_draws": 2,
+          "radius_metric": "horizon_weighted_stacked_l2_v2",
+          "rollout_horizon": 8
+        },
+        "schema_version": "paper1-acpc-phase0-0.2",
+        "script_path": "tools/paper1_phase0_acpc.py",
+        "script_sha256": "3f1781c0d67c9472a77af5b0cd3075f1640b372cd3ae5c301277bf77dcc2d990",
+        "source_hashes": {
+          "LeWM": "394c21142311e628232e510d0087b17828ab78d973727cff6b049cb50ed98e1a",
+          "PLDM": "e9bf3a49b91f3d17151db2cd94c696cd56f53d8c2be9670351f059ebb671df7a"
+        },
+        "source_paths": {
+          "LeWM": "assets/paper1_data/canonical_evals_20260517.json",
+          "PLDM": "assets/paper1_data/canonical_evals_pldm_20260522.json"
+        },
+        "status_counts": {
+          "ok": 2
+        },
+        "std_keys": [
+          "0.0",
+          "0.08"
+        ],
+        "tasks": [
+          "PushT"
+        ]
+      },
+      "jvp_0": {
+        "anchor_sampling_seed_rule": "training_seed",
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "created_utc": "2026-07-10T08:39:46.637099+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; this is a checkpoint-local anchor/JVP audit",
+        "jvp_probe_seed_rule": "training_seed+round(std*10000)+7919",
+        "map_contract": {
+          "horizon_weights": "uniform alpha_k=1/H applied as sqrt(alpha_k)",
+          "normalization": "none inside JVP; canonical per-anchor transition scale is applied after this map",
+          "radius_metric": "horizon_weighted_stacked_l2_v2",
+          "rollout_projection": "identity in the selected embedding_space",
+          "rollout_vectorization": "batch-major canonical weighted stack of (H,D) into (H*D)"
+        },
+        "metric_implementation_path": "tools/paper1_acpc_metrics.py",
+        "metric_implementation_sha256": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b",
+        "missing_rows": [],
+        "model_family": "LeWM",
+        "protocol_hash": null,
+        "protocol_hash_status": "not_frozen_phase1_correctness_audit",
+        "schema_version": "paper1-jvp-hutchinson-sensitivity-0.2",
+        "script_path": "tools/paper1_jvp_hutchinson_sensitivity_audit.py",
+        "script_sha256": "9dd855b5b6effc9d57468a5248697a630c74bb98148325f7b5b820d13dae16af",
+        "source_hashes": {
+          "full_sweep": "888aab6b26cc2758b6c55b87edb5313aa9107429a58873f0d3af5f0155786368",
+          "lewm_seed3072_evals": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4"
+        },
+        "source_paths": {
+          "full_sweep": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/results/full_sweep_diagnostics.csv",
+          "lewm_seed3072_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 3
+        },
+        "training_seed_semantics": "independently trained checkpoint seed; never an evaluation seed"
+      },
+      "jvp_1": {
+        "anchor_sampling_seed_rule": "training_seed",
+        "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+        "created_utc": "2026-07-10T08:40:06.485007+00:00",
+        "errors": [],
+        "evaluation_seed_semantics": "not applicable; this is a checkpoint-local anchor/JVP audit",
+        "jvp_probe_seed_rule": "training_seed+round(std*10000)+7919",
+        "map_contract": {
+          "horizon_weights": "uniform alpha_k=1/H applied as sqrt(alpha_k)",
+          "normalization": "none inside JVP; canonical per-anchor transition scale is applied after this map",
+          "radius_metric": "horizon_weighted_stacked_l2_v2",
+          "rollout_projection": "identity in the selected embedding_space",
+          "rollout_vectorization": "batch-major canonical weighted stack of (H,D) into (H*D)"
+        },
+        "metric_implementation_path": "tools/paper1_acpc_metrics.py",
+        "metric_implementation_sha256": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b",
+        "missing_rows": [],
+        "model_family": "LeWM",
+        "protocol_hash": null,
+        "protocol_hash_status": "not_frozen_phase1_correctness_audit",
+        "schema_version": "paper1-jvp-hutchinson-sensitivity-0.2",
+        "script_path": "tools/paper1_jvp_hutchinson_sensitivity_audit.py",
+        "script_sha256": "9dd855b5b6effc9d57468a5248697a630c74bb98148325f7b5b820d13dae16af",
+        "source_hashes": {
+          "full_sweep": "888aab6b26cc2758b6c55b87edb5313aa9107429a58873f0d3af5f0155786368",
+          "lewm_seed3072_evals": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4"
+        },
+        "source_paths": {
+          "full_sweep": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/results/full_sweep_diagnostics.csv",
+          "lewm_seed3072_evals": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json"
+        },
+        "status": "complete",
+        "status_counts": {
+          "ok": 3
+        },
+        "training_seed_semantics": "independently trained checkpoint seed; never an evaluation seed"
+      }
+    },
+    "source_paths": {
+      "acpc_0": "paper1/results/remediation_phase1_smoke_sources/acpc_pldm_tworoom_v2.json",
+      "acpc_1": "paper1/results/remediation_phase1_smoke_sources/acpc_pldm_pusht_v2.json",
+      "jvp_0": "paper1/results/remediation_phase1_smoke_sources/jvp_lewm_seed3072_tworoom_v2.json",
+      "jvp_1": "paper1/results/remediation_phase1_smoke_sources/jvp_lewm_seed3072_pusht_v2.json"
+    },
+    "status": "pass",
+    "training_seed_semantics": "LeWM JVP uses independent training seed3072; PLDM canonical checkpoint selection comes from its source manifest"
+  },
+  "selected_protocol": {
+    "acpc_noise_draws": 2,
+    "checkpoint_types": [
+      "base",
+      "endpoint"
+    ],
+    "horizon_weights": "uniform_1_over_H",
+    "jvp_hutchinson_probes": 2,
+    "n_sequences": 16,
+    "radius_metric": "horizon_weighted_stacked_l2_v2",
+    "rollout_horizon": 8
+  },
+  "tasks": [
+    "PushT",
+    "TwoRoom"
+  ]
+}

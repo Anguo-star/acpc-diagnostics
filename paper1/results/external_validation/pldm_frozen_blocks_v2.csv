@@ -1,0 +1,5 @@
+model_family,training_family_id,training_seed,task,behavioral_onset,predicted_onset,onset_error,false_early,false_late,tp,tn,fp,fn,precision,recall,specificity,balanced_accuracy,f1,num_rows,actual_positive,predicted_positive,protocol_sha256
+PLDM,pldm_canonical_seed3072,3072,TwoRoom,0.01,0.01,0.0,0,0,8,1,0,0,1.0,1.0,1.0,1.0,1.0,9,8,8,edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21
+PLDM,pldm_canonical_seed3072,3072,PushT,0.03,0.03,0.0,0,0,3,3,3,0,0.5,1.0,0.5,0.75,0.6666666666666666,9,3,6,edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21
+PLDM,pldm_canonical_seed3072,3072,Reacher,0.03,0.0,-0.03,3,0,1,0,8,0,0.1111111111111111,1.0,0.0,0.5,0.19999999999999998,9,1,9,edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21
+PLDM,pldm_canonical_seed3072,3072,Cube,0.03,0.03,0.0,0,0,5,3,1,0,0.8333333333333334,1.0,0.75,0.875,0.9090909090909091,9,5,6,edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21

@@ -1,0 +1,127 @@
+{
+  "schema_version": "paper1-paired-multiseverity-execution-addendum-1.0",
+  "addendum_id": "paired-multiseverity-smpr-execution-v1",
+  "status": "frozen_after_adapter_validation_fix_before_smpr",
+  "frozen_at_utc": "2026-07-12T02:40:49Z",
+  "analysis_commit_parent": "e8566ef63ab00cdf73d763f0d521669f57254eb4",
+  "parent_protocol": {
+    "path": "paper1/config/paired_multiseverity_protocol_v1.json",
+    "sha256": "6712b4f595444d751d9c327262c288e37dbd80be7ddde9bb4fd336ed41119622"
+  },
+  "purpose": "Execution-only addendum for the SMPR reference adapter and serial wrapper omitted from the parent protocol execution section.",
+  "pre_smpr_revision": {
+    "revised_at_utc": "2026-07-12T02:45:28Z",
+    "previous_addendum_sha256": "0db50826880bbf690ddd96add024aea36a91e4dbcce732d05cc886fb6250abeb",
+    "previous_adapter_sha256": "3152d4a7be145341d79bbf18c073c8461a45da112a6e61dce0fd92607dac55bb",
+    "failed_attempt": "reference adapter rejected the audited legacy row representation of uniform horizon weights and normalization",
+    "fix_scope": "validate canonical semantics in metadata and the legacy numeric/list representation in rows, matching the published E3 builder",
+    "reference_or_smpr_output_created_before_fix": false
+  },
+  "non_blind_disclosure": {
+    "created_after_behavior_and_atr_smoke": true,
+    "behavior_outcomes_were_inspected_before_this_addendum": true,
+    "atr_outcomes_were_inspected_before_this_addendum": true,
+    "analysis_threshold_or_severity_changed": false,
+    "parent_protocol_modified": false,
+    "observed_smoke_scope": {
+      "training_seed": 3072,
+      "task": "TwoRoom",
+      "stressor": "gaussian_blur",
+      "severity": 7
+    },
+    "observed_behavior_success_rate_percent": {
+      "reference_std_0.0": {
+        "identity": 93.666667,
+        "kernel_7": 50.333333,
+        "kernel_11": 45.0,
+        "kernel_15_legacy": 41.0
+      },
+      "endpoint_std_0.08": {
+        "identity": 97.0,
+        "kernel_7": 97.0,
+        "kernel_11": 97.0,
+        "kernel_15_legacy": 96.666667
+      }
+    },
+    "observed_atr_horizon_v2_q90_at_kernel_7": {
+      "reference_std_0.0": 2.0391573905944824,
+      "endpoint_std_0.08": 0.6844772100448608
+    },
+    "pre_addendum_artifact_hashes": {
+      "atr_smoke": "c6441b7035705a69ae636cfde57f38221692ccd3bec0a97db6ddab4927dae559",
+      "behavior_manifest_reference": "1dac4c6f8223c8a3e49e5b4e581905920d6ed6723612189e83318e73ebf09047",
+      "behavior_manifest_endpoint": "7c7dee726a06216e0ab6514e48b50a6c670e4c093d5d43ae7088e563b91f1518"
+    }
+  },
+  "scientific_contract": {
+    "inherits_parent_analysis_without_change": true,
+    "decision_threshold": 0,
+    "threshold_search_allowed": false,
+    "severity_search_allowed": false,
+    "primary_severities_unchanged": {
+      "gaussian_blur": [7, 11, 15],
+      "resize": [0.75, 0.5, 0.25]
+    },
+    "base_diagnostic_protocol": {
+      "path": "paper1/config/frozen_diagnostic_protocol_v1.json",
+      "sha256": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21"
+    },
+    "smpr_parameters": {
+      "n_sequences": 100,
+      "num_noise_draws": 5,
+      "rollout_horizon": 8,
+      "radius_quantile": 0.9,
+      "local_quantile": 0.35,
+      "margin_delta_norm": 0.1,
+      "anchor_seed": 9101,
+      "embedding_space": "normalized",
+      "goal_corrupted": false,
+      "evaluation_seeds": [42, 43, 44]
+    }
+  },
+  "execution_only_sources": {
+    "atr_reference_adapter": {
+      "path": "paper1/scripts/build_paired_multiseverity_atr_reference.py",
+      "sha256": "e199ea9346a40837ee87d1ee9cc0d60a4f5320ab45394783dc17ee7c5a3e00ea",
+      "role": "validate and deterministically re-express an existing ATR raw shard in the schema consumed by the frozen SMPR implementation; no metric recomputation"
+    },
+    "smpr_serial_wrapper": {
+      "path": "paper1/scripts/run_paired_multiseverity_smpr.sh",
+      "sha256": "4ba75cdbe41ac428d74364ded0f846a784894931122229ac550a6310c5f8c3a8",
+      "role": "invoke the already hash-bound SMPR implementation serially with watchdog and valid-shard resume"
+    }
+  },
+  "bound_measurement_sources": {
+    "smpr_runner": {
+      "path": "paper1/scripts/smpr_sensitivity.py",
+      "sha256": "8f42f49fa4ab847437cec097cff6472a756342017dfdd4ce223051a7018c76fd"
+    },
+    "canonical_metric": {
+      "path": "tools/paper1_acpc_metrics.py",
+      "sha256": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b"
+    },
+    "semantic_margin": {
+      "path": "tools/paper1_semantic_margin.py",
+      "sha256": "83893f10d41f8d602aa32245792ff8ea75800106b46810c18b9cd34bd7a4cc54"
+    },
+    "acpc_runtime": {
+      "path": "tools/paper1_phase0_acpc.py",
+      "sha256": "1f4f65590e7f91852467c6f3a0970dda15bf0b58dbf561e8c24a8a32659193ee"
+    }
+  },
+  "execution_controls": {
+    "max_concurrent_smpr_jobs": 1,
+    "native_threads_per_job": 2,
+    "smoke_timeout_seconds": 1800,
+    "default_full_timeout_seconds": 7200,
+    "kill_after_seconds": 60,
+    "resume_requires_two_ok_rows_and_atr_reference_match": true
+  },
+  "failure_rules": [
+    "Do not edit the parent protocol or this addendum after the first SMPR output.",
+    "Do not change thresholds, severities, sampling, or SMPR parameters based on the observed smoke.",
+    "Retain any timeout, invalid reference, incomplete shard, or row error.",
+    "Do not count the smoke as a completed primary pair until behavior, ATR, and SMPR are all valid.",
+    "Do not promote partial rows to the 72-pair primary claim."
+  ]
+}

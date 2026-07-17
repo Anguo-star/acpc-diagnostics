@@ -1,0 +1,184 @@
+{
+  "schema_version": "paper1-target-aligned-acpc-four-task-contract-2.2",
+  "frozen_date_utc": "2026-07-12",
+  "purpose": "Four-task target-aligned theory evidence under the Paper1 three-pillar mainline",
+  "claim_status": "DEV_FREEZE_BEFORE_REACHER_CUBE_TARGET_RESULTS",
+  "mainline": {
+    "pillars": [
+      "claim-complete theory with target-aligned evidence",
+      "LeWM seed3072 calibration transferred without retuning to seeds3073 and 3074",
+      "Gaussian-frozen diagnostic rules transferred without retuning to blur and resize"
+    ],
+    "single_paper": true,
+    "adaptive_cem_claim": false,
+    "single_frame_behavior_certificate": false,
+    "cross_architecture_raw_threshold_claim": false
+  },
+  "provenance": {
+    "public_v1_protocol_modified": false,
+    "tworoom_seed3073_dev_results_inspected": true,
+    "pusht_seed3073_dev_results_inspected": true,
+    "seed3074_partial_artifacts_exist_but_are_not_four_task_main_results": true,
+    "reacher_target_aligned_results_inspected": false,
+    "cube_target_aligned_results_inspected": false,
+    "feasibility_only_revision": "Before any Reacher/Cube ACPC target result, one logged Reacher and one logged Cube episode showed exact/near-exact goal configuration and high-PSNR RGB parity; the common Gate was aligned to the RGB T2 target while full qvel remains reported.",
+    "support_only_revision": "Before inspecting Cube ACPC outcome metrics, the 16-block base run showed that 14/16 ordered pools varied in true cube-goal cost and 2/16 were natural non-contact neutral blocks. The all-block variation rule was replaced by one common 75% support-coverage rule; neutral blocks remain in all reports."
+  },
+  "tasks": [
+    {
+      "name": "TwoRoom",
+      "dataset_name": "tworoom",
+      "state_fields": ["proprio"],
+      "goal_fields": ["proprio"],
+      "replay_adapter": "exact_state_reset"
+    },
+    {
+      "name": "PushT",
+      "dataset_name": "pusht",
+      "state_fields": ["state"],
+      "goal_fields": ["state"],
+      "replay_adapter": "episode_prefix_hidden_velocity_recovery_then_visible_state_snap"
+    },
+    {
+      "name": "Reacher",
+      "dataset_name": "reacher",
+      "state_fields": ["qpos", "qvel"],
+      "goal_fields": ["qpos"],
+      "replay_adapter": "set_state_full_horizon_then_score_future_qpos"
+    },
+    {
+      "name": "Cube",
+      "dataset_name": "ogbench/cube_single_expert",
+      "state_fields": ["qpos", "qvel"],
+      "goal_fields": [
+        "privileged_block_0_pos",
+        "privileged_block_0_quat"
+      ],
+      "replay_adapter": "set_state_and_set_target_pos_with_early_termination_disabled"
+    }
+  ],
+  "equal_evidence_contract": {
+    "logged_only_substitution_allowed": false,
+    "same_targets": true,
+    "same_feature_sets": true,
+    "same_statistical_unit": true,
+    "same_material_gate": true,
+    "task_specific_code_limited_to_privileged_replay_adapter": true
+  },
+  "planner_query": {
+    "observation_steps": 1,
+    "plan_horizon": 5,
+    "action_block": 5,
+    "goal_offset_low_level_steps": 25,
+    "goal_index_rule": "current_index + plan_horizon * action_block / frameskip",
+    "candidate_pool": "actual CEM step-zero ordered proposal",
+    "candidate_count_feasibility": 8,
+    "candidate_count_main": 16,
+    "topk_feasibility": 2,
+    "topk_main": 4
+  },
+  "sampling": {
+    "episode_blocks_feasibility": 4,
+    "episode_blocks_main": 16,
+    "trajectory_seed": 9101,
+    "cem_seed": 1234,
+    "probe_seed": 20260712,
+    "control_seed": 4701,
+    "probe_family": "gaussian_noise",
+    "severities": [0.0, 0.02, 0.05, 0.08],
+    "draws_per_severity": 2,
+    "grouped_cv": "leave-one-trajectory-block-out",
+    "ridge_alpha": 1.0,
+    "concurrency": 1,
+    "native_threads": 2,
+    "batch_size_matches_eval": 1
+  },
+  "checkpoint_roles": {
+    "base": "rho=0",
+    "recovery_onset": "first rho satisfying the frozen public-v1 recovery rule in CAL seed3072, then reused for held-out seeds",
+    "endpoint": "rho=0.08",
+    "held_out_training_seeds": [3073, 3074],
+    "role_selection_may_not_use_target_aligned_results": true
+  },
+  "targets": {
+    "candidate_t2a": "max(probe_h5_error - nominal_h5_error, 0)",
+    "candidate_t2b": "abs(probe_h5_error - nominal_h5_error)",
+    "candidate_t3": "same-state simulator realized candidate goal progress and regret",
+    "candidate_true_future": "same-state simulator-rendered RGB future independent of model graph",
+    "logged_support": "recorded dataset actions only",
+    "logged_horizons": [1, 8],
+    "logged_and_candidate_tracks_pooled": false,
+    "metric": "canonical uniform weighted-stacked L2"
+  },
+  "comparators": {
+    "shared_simple_features": [
+      "severity",
+      "encoder_response",
+      "candidate_action_rms",
+      "nominal_h1_displacement",
+      "nominal_h5_displacement",
+      "nominal_cost_margin",
+      "encoder_x_action_rms",
+      "encoder_x_nominal_h5_displacement"
+    ],
+    "nested_correct": ["correct_h1_response", "correct_h5_response"],
+    "destroyed_h5_controls": [
+      "action_zero_h5_response",
+      "candidate_shuffle_h5_response",
+      "time_shuffle_h5_response"
+    ],
+    "identical_non_acpc_covariates": true
+  },
+  "material_gate": {
+    "minimum_relative_mae_reduction_vs_h1": 0.05,
+    "minimum_relative_mae_reduction_vs_best_destroyed_h": 0.05,
+    "minimum_within_group_spearman_increment": 0.05,
+    "alternative_direction_rule": "strict majority of trajectory blocks plus both MAE reductions",
+    "minimum_tasks_with_same_direction": 3,
+    "leave_one_task_out_required": true,
+    "all_per_task_results_reported": true,
+    "internal_target_cannot_substitute_external_target": true,
+    "correct_bound_coverage_role": "mathematical invariant, not independent evidence"
+  },
+  "replay_gate": {
+    "all_four_tasks_must_pass": true,
+    "goal_relevant_configuration_l2_error": {
+      "TwoRoom": 1e-05,
+      "PushT": 0.01,
+      "Reacher": 1e-05,
+      "Cube_qpos": 0.005
+    },
+    "full_qpos_qvel_error_reported": true,
+    "cube_qvel_contact_warm_start_is_descriptive_not_rgb_target_gate": true,
+    "maximum_render_mae_all_tasks": 3.0,
+    "minimum_render_psnr_db_all_tasks": 35.0,
+    "candidate_endpoint_must_vary": true,
+    "minimum_true_goal_cost_std": 0.001,
+    "minimum_informative_true_goal_block_fraction": 0.75,
+    "neutral_true_goal_cost_blocks_retained": true,
+    "identity_prediction_cost_and_winner_must_match": true
+  },
+  "threshold_transfer": {
+    "calibration_family": "LeWM",
+    "calibration_training_seed": 3072,
+    "calibration_tasks": ["TwoRoom", "PushT", "Reacher", "Cube"],
+    "held_out_training_seeds": [3073, 3074],
+    "same_lewm_threshold_pair_across_tasks": true,
+    "task_seed_or_stressor_retuning": false,
+    "pldm_uses_lewm_raw_thresholds": false
+  },
+  "cross_stressor": {
+    "calibration_stressor": "gaussian_noise",
+    "held_out_stressors": ["gaussian_blur", "resize"],
+    "same_four_task_panel": true,
+    "same_checkpoint_roles": true,
+    "same_thresholds": true,
+    "absolute_and_paired_estimands_reported_separately": true
+  },
+  "execution": {
+    "no_new_training": true,
+    "do_not_retune_after_reacher_or_cube": true,
+    "do_not_write_main_claim_before_four_task_summary": true,
+    "dino_wm_optional": true
+  }
+}

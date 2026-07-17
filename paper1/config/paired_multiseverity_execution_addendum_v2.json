@@ -1,0 +1,114 @@
+{
+  "schema_version": "paper1-paired-multiseverity-execution-addendum-2.0",
+  "addendum_id": "paired-multiseverity-smpr-task-bound-reference-v2",
+  "status": "frozen_after_v1_reference_path_failure_before_v2_output",
+  "frozen_at_utc": "2026-07-12T03:41:35Z",
+  "parent_protocol": {
+    "path": "paper1/config/paired_multiseverity_protocol_v1.json",
+    "sha256": "6712b4f595444d751d9c327262c288e37dbd80be7ddde9bb4fd336ed41119622"
+  },
+  "parent_execution_addendum": {
+    "path": "paper1/config/paired_multiseverity_execution_addendum_v1.json",
+    "sha256": "70ca8cb9a361f144ca047235ae5844e0859394dd350cb021eb8c5720845d44c2"
+  },
+  "failure_disclosure": {
+    "v1_wrapper_path": "paper1/scripts/run_paired_multiseverity_smpr.sh",
+    "v1_wrapper_sha256": "4ba75cdbe41ac428d74364ded0f846a784894931122229ac550a6310c5f8c3a8",
+    "root_cause": "the v1 ATR reference path was keyed by training seed and severity but omitted task, so a valid TwoRoom reference was reused for PushT",
+    "strict_gate_behavior": "PushT rows were computed but atr_reference_match was null; valid_smpr returned false and stopped the full runner",
+    "scientific_measurement_failed": false,
+    "reference_binding_failed": true,
+    "threshold_or_severity_changed": false,
+    "sampling_or_metric_changed": false,
+    "v1_outputs_before_failure": {
+      "valid_tworoom_shards": 4,
+      "unmatched_pusht_shards": 1,
+      "remaining_unattempted_shards": 43
+    },
+    "v1_smpr_artifact_hashes": {
+      "tworoom_blur_7": "73da06004db247d38d5330b51bc55d348529c836547065dc334010b791ca5bc3",
+      "tworoom_blur_11": "ca22afb6b56da5172bc4f5d8ebf157ba3e22928d09f945c05f63bd97075e361b",
+      "tworoom_resize_0.75": "662f505a3c320baa0f67e348d020fc2cb01b32127f129736c1195e36a07a3c8a",
+      "tworoom_resize_0.5": "0f825fdccbb07cde9091187b2e22163d9b9d156004d6ff9b9de71a9e4bffe16d",
+      "pusht_blur_7_unmatched": "a15b7292d5b7c15d293729bfdd7c1eabf6e2c516153e07289079fca3ba5f4762"
+    },
+    "v1_reference_artifact_hashes": {
+      "blur_7_tworoom_only": "6c7622ae2f78899b5e2f8e6ea5f2c4ae6455ae342aef1f64bfa080b8ced4a8e1",
+      "blur_11_tworoom_only": "3fd0649c022e0b60dab14dd4e4bfe3fc29be628805ca6fb6e3c1ad25f20db62b",
+      "resize_0.75_tworoom_only": "7638f7c7062c9fddc4373a7e63d0504e28c6ea2512da29043fd4bbf8d9818506",
+      "resize_0.5_tworoom_only": "c3af8826fd661c9829d8f93ccae728520f27db056c2725725f92624073fc2f21"
+    }
+  },
+  "v2_execution_contract": {
+    "reference_key": "training_seed x task x stressor_family x severity",
+    "reference_filename": "acpc_<task_slug>_horizon_v2_checkpoint_bound.json",
+    "valid_reference_requires": [
+      "exact training_seed, task, corruption_type, and severity metadata",
+      "source_sha256 equals the task-specific ATR raw shard",
+      "both reference rows match the same task and checkpoint pair"
+    ],
+    "valid_smpr_requires": [
+      "source reference path equals the task-specific v2 reference",
+      "source reference hash equals the current v2 reference hash",
+      "two ok rows",
+      "atr_reference_match true for both rows",
+      "atr_reference_abs_error <= 1e-6"
+    ],
+    "archive_policy": "retain every v1 or invalid SMPR artifact with a pre_v2_or_invalid UTC suffix before rerunning",
+    "max_concurrent_smpr_jobs": 1,
+    "native_threads_per_job": 2,
+    "smoke_timeout_seconds": 1800,
+    "full_timeout_seconds": 7200,
+    "kill_after_seconds": 60
+  },
+  "scientific_contract_unchanged": {
+    "decision_threshold": 0,
+    "threshold_search_allowed": false,
+    "severity_search_allowed": false,
+    "n_sequences": 100,
+    "num_noise_draws": 5,
+    "rollout_horizon": 8,
+    "radius_quantile": 0.9,
+    "local_quantile": 0.35,
+    "margin_delta_norm": 0.1,
+    "anchor_seed": 9101,
+    "embedding_space": "normalized",
+    "goal_corrupted": false,
+    "evaluation_seeds": [42, 43, 44]
+  },
+  "execution_sources": {
+    "smpr_v2_wrapper": {
+      "path": "paper1/scripts/run_paired_multiseverity_smpr_v2.sh",
+      "sha256": "5cfd8aa6e288bd27c25979bce5ffe991b61873e89b29361c53dd32e673de7c44"
+    },
+    "atr_reference_adapter": {
+      "path": "paper1/scripts/build_paired_multiseverity_atr_reference.py",
+      "sha256": "e199ea9346a40837ee87d1ee9cc0d60a4f5320ab45394783dc17ee7c5a3e00ea"
+    }
+  },
+  "bound_measurement_sources": {
+    "smpr_runner": {
+      "path": "paper1/scripts/smpr_sensitivity.py",
+      "sha256": "8f42f49fa4ab847437cec097cff6472a756342017dfdd4ce223051a7018c76fd"
+    },
+    "canonical_metric": {
+      "path": "tools/paper1_acpc_metrics.py",
+      "sha256": "96dcc017a6bddd630606aca6afeec6a65fb433877134e9dfc380a80fd8b9a48b"
+    },
+    "semantic_margin": {
+      "path": "tools/paper1_semantic_margin.py",
+      "sha256": "83893f10d41f8d602aa32245792ff8ea75800106b46810c18b9cd34bd7a4cc54"
+    },
+    "acpc_runtime": {
+      "path": "tools/paper1_phase0_acpc.py",
+      "sha256": "1f4f65590e7f91852467c6f3a0970dda15bf0b58dbf561e8c24a8a32659193ee"
+    }
+  },
+  "failure_rules": [
+    "Do not edit this addendum or the v2 wrapper after the first v2 SMPR output.",
+    "Do not change any scientific threshold, severity, sampling, or metric parameter.",
+    "Retain all v1 outputs and the unmatched PushT shard as failure provenance.",
+    "Rerun every v1-produced SMPR shard against a task-specific v2 reference.",
+    "Do not accept any row with null or false atr_reference_match."
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "count_contract": {
+    "expected_rows": 108,
+    "observed_rows": 108
+  },
+  "external_metrics": {
+    "E1": {
+      "balanced_accuracy": 0.8309090909090908,
+      "false_pass_rate": 0.3181818181818182,
+      "fn": 1,
+      "fp": 7,
+      "n": 72,
+      "positive_n": 50,
+      "precision": 0.875,
+      "recall": 0.98,
+      "specificity": 0.6818181818181818,
+      "tn": 15,
+      "tp": 49
+    },
+    "E1+E2": {
+      "balanced_accuracy": 0.7533673097925009,
+      "false_pass_rate": 0.4634146341463415,
+      "fn": 2,
+      "fp": 19,
+      "n": 108,
+      "positive_n": 67,
+      "precision": 0.7738095238095238,
+      "recall": 0.9701492537313433,
+      "specificity": 0.5365853658536586,
+      "tn": 22,
+      "tp": 65
+    },
+    "E2": {
+      "balanced_accuracy": 0.6547987616099071,
+      "false_pass_rate": 0.631578947368421,
+      "fn": 1,
+      "fp": 12,
+      "n": 36,
+      "positive_n": 17,
+      "precision": 0.5714285714285714,
+      "recall": 0.9411764705882353,
+      "specificity": 0.3684210526315789,
+      "tn": 7,
+      "tp": 16
+    }
+  },
+  "metadata": {
+    "created_utc": "2026-07-11T03:21:37.630220+00:00",
+    "errors": [],
+    "external_leaderboard_eligible": false,
+    "external_threshold_search_allowed": false,
+    "missing_rows": [],
+    "protocol_hash": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "schema_version": "paper1-gaussian-rho-confound-1.0",
+    "scope": "Gaussian training sweep only; undefined across repair families/stressors",
+    "source_hashes": {
+      "calibration": "cab32514eac7e0e109712f210df342051dbf9c19135ef93654955e089c35dcc3",
+      "lewm_external": "fc7af12027e00798f31fd2fdd1ba6da8d3d028306870eed023c2037ab6992a1b",
+      "pldm_external": "3ab2fa4d2a4f60769db911dfa3f892029ad7601e8930d2f9db3ee60a88a39498",
+      "protocol": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21"
+    },
+    "source_paths": {
+      "calibration": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/results/frozen_diagnostic_protocol_calibration.json",
+      "lewm_external": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/results/frozen_external_validation_rows_v3.csv",
+      "pldm_external": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/results/external_validation/pldm_frozen_rows_v2.csv",
+      "protocol": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/config/frozen_diagnostic_protocol_v1.json"
+    },
+    "status": "complete",
+    "threshold_search_split": "CAL only"
+  },
+  "threshold_selection": {
+    "calibration_metrics": {
+      "balanced_accuracy": 0.7708333333333334,
+      "false_pass_rate": 0.4166666666666667,
+      "fn": 1,
+      "fp": 5,
+      "n": 36,
+      "positive_n": 24,
+      "precision": 0.8214285714285714,
+      "recall": 0.9583333333333334,
+      "specificity": 0.5833333333333334,
+      "tn": 7,
+      "tp": 23
+    },
+    "candidate_threshold_count": 10,
+    "direction": "pass_if_training_rho_ge_threshold",
+    "selection_rule": "maximize balanced accuracy; tie-break lower false-pass rate, then higher rho",
+    "selection_split": "CAL",
+    "threshold": 0.015
+  }
+}

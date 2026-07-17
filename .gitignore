@@ -31,7 +31,15 @@ paper1/*.synctex.gz
 
 # Manuscript packaging and internal planning notes are intentionally excluded
 # from the public reproducibility code branch.
-paper1/
+# Manuscript, packaging, and internal paper materials stay out of the
+# public code branch; only the reproduction subdirectories are tracked.
+paper1/*
+!paper1/scripts/
+!paper1/config/
+!paper1/results/
+paper1/results/target_aligned_acpc_dev/
+paper1/results/acpc_planner_stability_v1/
+paper1/results/acpc_planner_stability_v3/
 paper2/
 assets/diagnostics/
 assets/figures/

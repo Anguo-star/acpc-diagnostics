@@ -1,0 +1,36 @@
+{
+  "all_seed_task_cells_pass": true,
+  "mean_reduction_vs_one_step": 0.5589057064173736,
+  "mean_reduction_vs_same_horizon_control": 0.5129276774853404,
+  "sample_sd_reduction_vs_one_step": 0.047338259788311327,
+  "sample_sd_reduction_vs_same_horizon_control": 0.03524693071442968,
+  "seed_summaries": [
+    {
+      "reduction_vs_control": 0.5136177413559059,
+      "reduction_vs_one_step": 0.5551508778767943,
+      "task_count": 4,
+      "tasks_passed": 4,
+      "training_seed": 3072
+    },
+    {
+      "reduction_vs_control": 0.5478245096278659,
+      "reduction_vs_one_step": 0.6080095622935983,
+      "task_count": 4,
+      "tasks_passed": 4,
+      "training_seed": 3073
+    },
+    {
+      "reduction_vs_control": 0.4773407814722494,
+      "reduction_vs_one_step": 0.5135566790817282,
+      "task_count": 4,
+      "tasks_passed": 4,
+      "training_seed": 3074
+    }
+  ],
+  "target": "absolute difference between nominal and perturbed eight-step latent prediction errors",
+  "training_seeds": [
+    3072,
+    3073,
+    3074
+  ]
+}

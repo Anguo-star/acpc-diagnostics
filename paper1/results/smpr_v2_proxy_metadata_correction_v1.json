@@ -1,0 +1,59 @@
+{
+  "schema_version": "paper1-smpr-v2-proxy-metadata-correction-1.0",
+  "created_utc": "2026-07-14T12:15:40Z",
+  "scope": "Description-only correction for SMPR-v2 artifacts generated with the listed semantic-margin implementation hash.",
+  "affected_implementation": {
+    "path": "tools/paper1_semantic_margin.py",
+    "sha256": "83893f10d41f8d602aa32245792ff8ea75800106b46810c18b9cd34bd7a4cc54"
+  },
+  "reference_frozen_artifact": {
+    "path": "assets/paper1_data/smpr_calibration_lewm_seed3072_v2.json",
+    "sha256": "2585f74f01b8dbf1ab780685014e22a43fd30d9a29bb65fd7106eb23f9d1a89e"
+  },
+  "numeric_rows_unchanged": true,
+  "pair_indices_unchanged": true,
+  "reason": "The legacy semantic_label_rule strings for Reacher and Cube described intended task semantics rather than the coordinate slices actually executed. This sidecar records the executable definitions without changing any frozen metric, pair, threshold, or result.",
+  "shared_pairing_protocol": {
+    "endpoint_index": "history_size + rollout_horizon - 1",
+    "rollout_horizon": 8,
+    "anchor_seed": 9101,
+    "state_standardization": "coordinate-wise full-dataset column normalizer",
+    "label_medians": "computed within the fixed 100-endpoint anchor batch",
+    "neighborhood": "one global q35 of all off-diagonal Euclidean distances among the 100 standardized endpoint states",
+    "selection": "nearest label-crossing neighbor whose distance is no greater than the global q35 radius",
+    "counterfactual_rollout": "after selection, both starting histories use the anchor action sequence"
+  },
+  "implemented_proxy_labels": {
+    "TwoRoom": {
+      "state_key": "pos_agent",
+      "state_dimension": 2,
+      "definition": "median split of standardized agent x coordinate",
+      "eligible_anchors": 61,
+      "skipped_anchors": 39
+    },
+    "PushT": {
+      "state_key": "state",
+      "state_dimension": 7,
+      "definition": "three median bits from standardized state[2:5] (block x, block y, block angle)",
+      "eligible_anchors": 98,
+      "skipped_anchors": 2
+    },
+    "Reacher": {
+      "state_key": "observation",
+      "state_dimension": 6,
+      "legacy_description": "target/end-effector relation quadrant plus distance bin",
+      "definition": "three median bits from standardized observation[4:6] (joint velocities) and their Euclidean norm",
+      "eligible_anchors": 100,
+      "skipped_anchors": 0
+    },
+    "Cube": {
+      "state_key": "observation",
+      "state_dimension": 28,
+      "legacy_description": "cube-pose/goal-relation cell from relation direction and distance",
+      "definition": "for standardized observation o, r=o[0:3]-o[25:28]; use median bits of r[0], r[1], and the Euclidean norm of r",
+      "eligible_anchors": 100,
+      "skipped_anchors": 0
+    }
+  },
+  "claim_boundary": "SMPR-v2 is a programmatic state-coordinate separation guard against constant representations on the tested proxies; it is not a semantic-validity or action-relevance certificate."
+}

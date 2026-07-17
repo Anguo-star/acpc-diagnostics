@@ -1,0 +1,5099 @@
+{
+  "P1": {
+    "candidate_fragile_base_bridge": {
+      "all_available_seeds_meet_three_task_gate": false,
+      "boundary": "candidate bridge is secondary; failure does not replace the four-task logged-future result",
+      "cells": [
+        {
+          "all_four_tasks_pass": false,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.0471449536425503,
+          "equal_task_mean_reduction_vs_h1": 0.09850414181103001,
+          "equal_task_minimum_reduction_vs_best_destroyed": 0.0029471819101490535,
+          "equal_task_minimum_reduction_vs_h1": 0.0074727762298659305,
+          "fail_tasks": [
+            "Cube",
+            "Reacher"
+          ],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.030120949215408893,
+              "mean_reduction_vs_h1": 0.07192102577836475,
+              "omitted_task": "TwoRoom",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.043562893801535364,
+              "mean_reduction_vs_h1": 0.09574138688273527,
+              "omitted_task": "PushT",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.06187754422001738,
+              "mean_reduction_vs_h1": 0.1288479303380847,
+              "omitted_task": "Reacher",
+              "pass_count": 2,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.053018427333239554,
+              "mean_reduction_vs_h1": 0.09750622424493532,
+              "omitted_task": "Cube",
+              "pass_count": 2,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": false,
+          "missing_tasks": [],
+          "pass_count": 2,
+          "pass_tasks": [
+            "PushT",
+            "TwoRoom"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 1.961627974246203,
+              "best_destroyed_name": "plus_action_zero_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 13,
+              "correct_mae": 1.7689628243825206,
+              "h1_mae": 2.152686750305373,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.09821696692397451,
+              "relative_mae_reduction_vs_h1": 0.17825348990902584,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+              "target": "absolute",
+              "task": "TwoRoom",
+              "track": "candidate",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 0.9337459105367923,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 10,
+              "correct_mae": 0.8796903016870771,
+              "h1_mae": 0.9848665732167667,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.05789113316559508,
+              "relative_mae_reduction_vs_h1": 0.10679240659591421,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+              "target": "absolute",
+              "task": "PushT",
+              "track": "candidate",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 0.8062846781304063,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 8,
+              "correct_mae": 0.80390841051259,
+              "h1_mae": 0.8099610683311317,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": 0.0029471819101490535,
+              "relative_mae_reduction_vs_h1": 0.0074727762298659305,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+              "target": "absolute",
+              "task": "Reacher",
+              "track": "candidate",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 1.028234619416071,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 10,
+              "correct_mae": 0.9978764729050235,
+              "h1_mae": 1.1106000384496235,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": 0.029524532570482546,
+              "relative_mae_reduction_vs_h1": 0.10149789450931408,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+              "target": "absolute",
+              "task": "Cube",
+              "track": "candidate",
+              "training_seed": 3073
+            }
+          ],
+          "role": "base",
+          "target": "absolute",
+          "task_count": 4,
+          "track": "candidate",
+          "training_seed": 3073
+        },
+        {
+          "all_four_tasks_pass": false,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.040687220176447866,
+          "equal_task_mean_reduction_vs_h1": 0.09480538752271396,
+          "equal_task_minimum_reduction_vs_best_destroyed": 0.0013696900067679996,
+          "equal_task_minimum_reduction_vs_h1": 0.013378136707958638,
+          "fail_tasks": [
+            "Cube",
+            "Reacher"
+          ],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.028182983761050644,
+              "mean_reduction_vs_h1": 0.07243640575124562,
+              "omitted_task": "TwoRoom",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.0356773544772257,
+              "mean_reduction_vs_h1": 0.09049904956804344,
+              "omitted_task": "PushT",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.05379306356634115,
+              "mean_reduction_vs_h1": 0.12194780446096574,
+              "omitted_task": "Reacher",
+              "pass_count": 2,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.045095478901173956,
+              "mean_reduction_vs_h1": 0.09433829031060108,
+              "omitted_task": "Cube",
+              "pass_count": 2,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": false,
+          "missing_tasks": [],
+          "pass_count": 2,
+          "pass_tasks": [
+            "PushT",
+            "TwoRoom"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 2.0784381590118084,
+              "best_destroyed_name": "plus_action_zero_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 12,
+              "correct_mae": 1.9159044416677642,
+              "h1_mae": 2.286042996138507,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.07819992942263951,
+              "relative_mae_reduction_vs_h1": 0.16191233283711903,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+              "target": "adverse",
+              "task": "TwoRoom",
+              "track": "candidate",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 0.9489764231245011,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 10,
+              "correct_mae": 0.8961024771598307,
+              "h1_mae": 1.0042888974578077,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.05571681727411433,
+              "relative_mae_reduction_vs_h1": 0.1077244013867256,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+              "target": "adverse",
+              "task": "PushT",
+              "track": "candidate",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 0.5112342013768432,
+              "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 9,
+              "correct_mae": 0.5105339690000993,
+              "h1_mae": 0.5174565737846218,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": 0.0013696900067679996,
+              "relative_mae_reduction_vs_h1": 0.013378136707958638,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+              "target": "adverse",
+              "task": "Reacher",
+              "track": "candidate",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 1.0474385411578513,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 9,
+              "correct_mae": 1.0186733188754848,
+              "h1_mae": 1.1271087043746304,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": 0.02746244400226959,
+              "relative_mae_reduction_vs_h1": 0.09620667915905262,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+              "target": "adverse",
+              "task": "Cube",
+              "track": "candidate",
+              "training_seed": 3073
+            }
+          ],
+          "role": "base",
+          "target": "adverse",
+          "task_count": 4,
+          "track": "candidate",
+          "training_seed": 3073
+        },
+        {
+          "all_four_tasks_pass": false,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.04132690176886511,
+          "equal_task_mean_reduction_vs_h1": 0.07304710691190835,
+          "equal_task_minimum_reduction_vs_best_destroyed": -0.004447837374587899,
+          "equal_task_minimum_reduction_vs_h1": -0.006338033970624224,
+          "fail_tasks": [
+            "Cube",
+            "Reacher"
+          ],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.03547203320311564,
+              "mean_reduction_vs_h1": 0.06535943742908269,
+              "omitted_task": "TwoRoom",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.02520098405436338,
+              "mean_reduction_vs_h1": 0.04906733809828414,
+              "omitted_task": "PushT",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.05658514815001611,
+              "mean_reduction_vs_h1": 0.09950882053941922,
+              "omitted_task": "Reacher",
+              "pass_count": 2,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.04804944166796531,
+              "mean_reduction_vs_h1": 0.07825283158084738,
+              "omitted_task": "Cube",
+              "pass_count": 2,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": false,
+          "missing_tasks": [],
+          "pass_count": 2,
+          "pass_tasks": [
+            "PushT",
+            "TwoRoom"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 1.8882025981977166,
+              "best_destroyed_name": "plus_action_zero_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 11,
+              "correct_mae": 1.7770035007884208,
+              "h1_mae": 1.9659513077712125,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.058891507466113525,
+              "relative_mae_reduction_vs_h1": 0.09611011536038534,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+              "target": "absolute",
+              "task": "TwoRoom",
+              "track": "candidate",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 0.7698501300989115,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 10,
+              "correct_mae": 0.7007909898441452,
+              "h1_mae": 0.8196255600945129,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.0897046549123703,
+              "relative_mae_reduction_vs_h1": 0.144986413352781,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+              "target": "absolute",
+              "task": "PushT",
+              "track": "candidate",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 0.8750923592998457,
+              "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 9,
+              "correct_mae": 0.8789846278017559,
+              "h1_mae": 0.873448680393823,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": -0.004447837374587899,
+              "relative_mae_reduction_vs_h1": -0.006338033970624224,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+              "target": "absolute",
+              "task": "Reacher",
+              "track": "candidate",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.0898188679418357,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 9,
+              "correct_mae": 1.0667590831081413,
+              "h1_mae": 1.1317557392799402,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": 0.021159282071564513,
+              "relative_mae_reduction_vs_h1": 0.05742993290509128,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+              "target": "absolute",
+              "task": "Cube",
+              "track": "candidate",
+              "training_seed": 3074
+            }
+          ],
+          "role": "base",
+          "target": "absolute",
+          "task_count": 4,
+          "track": "candidate",
+          "training_seed": 3074
+        },
+        {
+          "all_four_tasks_pass": false,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.027344361417647782,
+          "equal_task_mean_reduction_vs_h1": 0.07277228223390879,
+          "equal_task_minimum_reduction_vs_best_destroyed": -0.029647547681772905,
+          "equal_task_minimum_reduction_vs_h1": 0.02227013849923678,
+          "fail_tasks": [
+            "Cube",
+            "Reacher",
+            "TwoRoom"
+          ],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.023055186864343897,
+              "mean_reduction_vs_h1": 0.06891256968482835,
+              "omitted_task": "TwoRoom",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.00965964073476251,
+              "mean_reduction_vs_h1": 0.05288778158091293,
+              "omitted_task": "PushT",
+              "pass_count": 0,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.046341664450788016,
+              "mean_reduction_vs_h1": 0.08960633014546614,
+              "omitted_task": "Reacher",
+              "pass_count": 1,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.03032095362069671,
+              "mean_reduction_vs_h1": 0.07968244752442775,
+              "omitted_task": "Cube",
+              "pass_count": 1,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": false,
+          "missing_tasks": [],
+          "pass_count": 1,
+          "pass_tasks": [
+            "PushT"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 2.0060587707669475,
+              "best_destroyed_name": "plus_action_zero_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 10,
+              "correct_mae": 1.9253913660180368,
+              "h1_mae": 2.1027623564578932,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": 0.04021188507755944,
+              "relative_mae_reduction_vs_h1": 0.08435141988115011,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+              "target": "adverse",
+              "task": "TwoRoom",
+              "track": "candidate",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 0.8056713951533888,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 10,
+              "correct_mae": 0.7408966045840195,
+              "h1_mae": 0.8539864268496776,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.0803985234663036,
+              "relative_mae_reduction_vs_h1": 0.13242578419289638,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+              "target": "adverse",
+              "task": "PushT",
+              "track": "candidate",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 0.6385056151062827,
+              "best_destroyed_name": "plus_action_zero_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 3,
+              "correct_mae": 0.6574357407752259,
+              "h1_mae": 0.6724104138193111,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": -0.029647547681772905,
+              "relative_mae_reduction_vs_h1": 0.02227013849923678,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+              "target": "adverse",
+              "task": "Reacher",
+              "track": "candidate",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.1113625844941988,
+              "best_destroyed_name": "plus_time_shuffle_h5_control",
+              "block_count": 16,
+              "both_win_blocks": 9,
+              "correct_mae": 1.0908973039290355,
+              "h1_mae": 1.1507862775331414,
+              "pass": false,
+              "relative_mae_reduction_vs_best_destroyed": 0.018414584808500997,
+              "relative_mae_reduction_vs_h1": 0.0520417863623519,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+              "target": "adverse",
+              "task": "Cube",
+              "track": "candidate",
+              "training_seed": 3074
+            }
+          ],
+          "role": "base",
+          "target": "adverse",
+          "task_count": 4,
+          "track": "candidate",
+          "training_seed": 3074
+        }
+      ]
+    },
+    "cells": [
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.0471449536425503,
+        "equal_task_mean_reduction_vs_h1": 0.09850414181103001,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.0029471819101490535,
+        "equal_task_minimum_reduction_vs_h1": 0.0074727762298659305,
+        "fail_tasks": [
+          "Cube",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.030120949215408893,
+            "mean_reduction_vs_h1": 0.07192102577836475,
+            "omitted_task": "TwoRoom",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.043562893801535364,
+            "mean_reduction_vs_h1": 0.09574138688273527,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.06187754422001738,
+            "mean_reduction_vs_h1": 0.1288479303380847,
+            "omitted_task": "Reacher",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.053018427333239554,
+            "mean_reduction_vs_h1": 0.09750622424493532,
+            "omitted_task": "Cube",
+            "pass_count": 2,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 2,
+        "pass_tasks": [
+          "PushT",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 1.961627974246203,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 1.7689628243825206,
+            "h1_mae": 2.152686750305373,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.09821696692397451,
+            "relative_mae_reduction_vs_h1": 0.17825348990902584,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.9337459105367923,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.8796903016870771,
+            "h1_mae": 0.9848665732167667,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.05789113316559508,
+            "relative_mae_reduction_vs_h1": 0.10679240659591421,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.8062846781304063,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 8,
+            "correct_mae": 0.80390841051259,
+            "h1_mae": 0.8099610683311317,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.0029471819101490535,
+            "relative_mae_reduction_vs_h1": 0.0074727762298659305,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 1.028234619416071,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.9978764729050235,
+            "h1_mae": 1.1106000384496235,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.029524532570482546,
+            "relative_mae_reduction_vs_h1": 0.10149789450931408,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3073
+          }
+        ],
+        "role": "base",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.040687220176447866,
+        "equal_task_mean_reduction_vs_h1": 0.09480538752271396,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.0013696900067679996,
+        "equal_task_minimum_reduction_vs_h1": 0.013378136707958638,
+        "fail_tasks": [
+          "Cube",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.028182983761050644,
+            "mean_reduction_vs_h1": 0.07243640575124562,
+            "omitted_task": "TwoRoom",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.0356773544772257,
+            "mean_reduction_vs_h1": 0.09049904956804344,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.05379306356634115,
+            "mean_reduction_vs_h1": 0.12194780446096574,
+            "omitted_task": "Reacher",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.045095478901173956,
+            "mean_reduction_vs_h1": 0.09433829031060108,
+            "omitted_task": "Cube",
+            "pass_count": 2,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 2,
+        "pass_tasks": [
+          "PushT",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 2.0784381590118084,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 12,
+            "correct_mae": 1.9159044416677642,
+            "h1_mae": 2.286042996138507,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.07819992942263951,
+            "relative_mae_reduction_vs_h1": 0.16191233283711903,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.9489764231245011,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.8961024771598307,
+            "h1_mae": 1.0042888974578077,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.05571681727411433,
+            "relative_mae_reduction_vs_h1": 0.1077244013867256,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.5112342013768432,
+            "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.5105339690000993,
+            "h1_mae": 0.5174565737846218,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.0013696900067679996,
+            "relative_mae_reduction_vs_h1": 0.013378136707958638,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 1.0474385411578513,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 1.0186733188754848,
+            "h1_mae": 1.1271087043746304,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.02746244400226959,
+            "relative_mae_reduction_vs_h1": 0.09620667915905262,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3073
+          }
+        ],
+        "role": "base",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.034918550232356176,
+        "equal_task_mean_reduction_vs_h1": 0.08629191350372475,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.004563829669918098,
+        "equal_task_minimum_reduction_vs_h1": 0.0026725088292861078,
+        "fail_tasks": [
+          "Cube",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.02556392776384614,
+            "mean_reduction_vs_h1": 0.06782898950747489,
+            "omitted_task": "TwoRoom",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.028235092337298106,
+            "mean_reduction_vs_h1": 0.07915792812865277,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.048079343533114265,
+            "mean_reduction_vs_h1": 0.11416504839520429,
+            "omitted_task": "Reacher",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.03779583729516619,
+            "mean_reduction_vs_h1": 0.08401568798356705,
+            "omitted_task": "Cube",
+            "pass_count": 2,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 2,
+        "pass_tasks": [
+          "PushT",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 2.2628187839992364,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 2.1203009863065425,
+            "h1_mae": 2.4702939226330924,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.06298241763788628,
+            "relative_mae_reduction_vs_h1": 0.14168068549247434,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.9882278040360027,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.9339059850627596,
+            "h1_mae": 1.0466206084165321,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.054968923917530395,
+            "relative_mae_reduction_vs_h1": 0.10769386962894067,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 1.2929164851569621,
+            "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 4,
+            "correct_mae": 1.2988171357726477,
+            "h1_mae": 1.3022975374398131,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.004563829669918098,
+            "relative_mae_reduction_vs_h1": 0.0026725088292861078,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 1.0725639583158433,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 1.0443698030638722,
+            "h1_mae": 1.1516082420900955,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.02628668904392612,
+            "relative_mae_reduction_vs_h1": 0.09312059006419787,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3073
+          }
+        ],
+        "role": "base",
+        "target": "signed",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": true,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.5478245096278659,
+        "equal_task_mean_reduction_vs_h1": 0.6080095622935984,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.34529886314601194,
+        "equal_task_minimum_reduction_vs_h1": 0.3325526166546088,
+        "fail_tasks": [],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.5404210951093278,
+            "mean_reduction_vs_h1": 0.6009492960951278,
+            "omitted_task": "TwoRoom",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.6153330584551505,
+            "mean_reduction_vs_h1": 0.6998285441732616,
+            "omitted_task": "PushT",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.5010074456355851,
+            "mean_reduction_vs_h1": 0.5362523520898779,
+            "omitted_task": "Reacher",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.5345364393114002,
+            "mean_reduction_vs_h1": 0.595008056816126,
+            "omitted_task": "Cube",
+            "pass_count": 3,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": true,
+        "missing_tasks": [],
+        "pass_count": 4,
+        "pass_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 2.01470983238163,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 15,
+            "correct_mae": 0.866255210343637,
+            "h1_mae": 2.3361183717350733,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.5700347531834802,
+            "relative_mae_reduction_vs_h1": 0.6291903608890096,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 2.0077986072107636,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 1.3145080307147408,
+            "h1_mae": 1.9694556657427302,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.34529886314601194,
+            "relative_mae_reduction_vs_h1": 0.3325526166546088,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.7928537325679009,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 16,
+            "correct_mae": 0.24715177351481724,
+            "h1_mae": 1.3985595397416741,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.6882757016047082,
+            "relative_mae_reduction_vs_h1": 0.8232811929047595,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 1.2124338996050346,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.49990017236164985,
+            "h1_mae": 1.4162042796421659,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.5876887205772632,
+            "relative_mae_reduction_vs_h1": 0.6470140787260152,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3073
+          }
+        ],
+        "role": "base",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": true,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.5437320816346016,
+        "equal_task_mean_reduction_vs_h1": 0.6041359556436225,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.3259146606442725,
+        "equal_task_minimum_reduction_vs_h1": 0.3142713852117303,
+        "fail_tasks": [],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.5339596942754147,
+            "mean_reduction_vs_h1": 0.5948555522808351,
+            "omitted_task": "TwoRoom",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.6163378886313781,
+            "mean_reduction_vs_h1": 0.7007574791209198,
+            "omitted_task": "PushT",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.49555087497789946,
+            "mean_reduction_vs_h1": 0.5310875432232435,
+            "omitted_task": "Reacher",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.5290798686537145,
+            "mean_reduction_vs_h1": 0.5898432479494916,
+            "omitted_task": "Cube",
+            "pass_count": 3,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": true,
+        "missing_tasks": [],
+        "pass_count": 4,
+        "pass_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 2.005337470782741,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 15,
+            "correct_mae": 0.8561803497630303,
+            "h1_mae": 2.326432683085939,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.5730492437121627,
+            "relative_mae_reduction_vs_h1": 0.6319771657319849,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 2.070306988028145,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 12,
+            "correct_mae": 1.3955635885954862,
+            "h1_mae": 2.035154372296962,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.3259146606442725,
+            "relative_mae_reduction_vs_h1": 0.3142713852117303,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.7928537325679009,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 16,
+            "correct_mae": 0.24715177351481724,
+            "h1_mae": 1.3985595397416741,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.6882757016047082,
+            "relative_mae_reduction_vs_h1": 0.8232811929047595,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 1.2124338996050346,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.49990017236164985,
+            "h1_mae": 1.4162042796421659,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.5876887205772632,
+            "relative_mae_reduction_vs_h1": 0.6470140787260152,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3073
+          }
+        ],
+        "role": "base",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": true,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.5358114724632623,
+        "equal_task_mean_reduction_vs_h1": 0.5964129395677777,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.30121426230056675,
+        "equal_task_minimum_reduction_vs_h1": 0.2895441069701646,
+        "fail_tasks": [],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.525726228160846,
+            "mean_reduction_vs_h1": 0.5866131262003131,
+            "omitted_task": "TwoRoom",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.6140105425174941,
+            "mean_reduction_vs_h1": 0.6987025504336488,
+            "omitted_task": "PushT",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.484990062749447,
+            "mean_reduction_vs_h1": 0.5207901884554506,
+            "omitted_task": "Reacher",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.5185190564252621,
+            "mean_reduction_vs_h1": 0.5795458931816987,
+            "omitted_task": "Cube",
+            "pass_count": 3,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": true,
+        "missing_tasks": [],
+        "pass_count": 4,
+        "pass_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 2.0108317484966984,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 15,
+            "correct_mae": 0.8725658401548738,
+            "h1_mae": 2.331893929002112,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.5660672053705111,
+            "relative_mae_reduction_vs_h1": 0.6258123796701717,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 2.1527877471821815,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 12,
+            "correct_mae": 1.5043373740250017,
+            "h1_mae": 2.1174254289165666,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.30121426230056675,
+            "relative_mae_reduction_vs_h1": 0.2895441069701646,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.7928537325679009,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 16,
+            "correct_mae": 0.24715177351481724,
+            "h1_mae": 1.3985595397416741,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.6882757016047082,
+            "relative_mae_reduction_vs_h1": 0.8232811929047595,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 1.2124338996050346,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.49990017236164985,
+            "h1_mae": 1.4162042796421659,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.5876887205772632,
+            "relative_mae_reduction_vs_h1": 0.6470140787260152,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3073
+          }
+        ],
+        "role": "base",
+        "target": "signed",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.041947208081125495,
+        "equal_task_mean_reduction_vs_h1": 0.0571276646828205,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.027595569145479306,
+        "equal_task_minimum_reduction_vs_h1": 0.030741624847074742,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.03173323137104635,
+            "mean_reduction_vs_h1": 0.04026731306799464,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.0467310877263409,
+            "mean_reduction_vs_h1": 0.06592301129473575,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.044188834466155825,
+            "mean_reduction_vs_h1": 0.06392406225783628,
+            "omitted_task": "Reacher",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.04513567876095892,
+            "mean_reduction_vs_h1": 0.05839627211071533,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 1,
+        "pass_tasks": [
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.09694341851908372,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 0.08990637931351995,
+            "h1_mae": 0.10075900244804699,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.07258913821136294,
+            "relative_mae_reduction_vs_h1": 0.10770871952729809,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.08690911425605063,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 12,
+            "correct_mae": 0.08451080778422543,
+            "h1_mae": 0.08719120716485085,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.027595569145479306,
+            "relative_mae_reduction_vs_h1": 0.030741624847074742,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_endpoint_goal25_prefix_v2_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.046224826231651396,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 0.04459668019757138,
+            "h1_mae": 0.04629758263906952,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.0352223289260345,
+            "relative_mae_reduction_vs_h1": 0.036738471957773154,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.07325910670013651,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.07088684524878103,
+            "h1_mae": 0.0748795614218324,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.032381796041625235,
+            "relative_mae_reduction_vs_h1": 0.05332184239913601,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_endpoint_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3073
+          }
+        ],
+        "role": "endpoint",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.016942279028194722,
+        "equal_task_mean_reduction_vs_h1": 0.023723765353121855,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.0005835535801878682,
+        "equal_task_minimum_reduction_vs_h1": -0.005253146622295371,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.0052323603026787095,
+            "mean_reduction_vs_h1": 0.009031315820944722,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.022784223230988918,
+            "mean_reduction_vs_h1": 0.03338273601159426,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.021380351125715447,
+            "mean_reduction_vs_h1": 0.027134255444505397,
+            "omitted_task": "Reacher",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.018372181453395812,
+            "mean_reduction_vs_h1": 0.02534675413544304,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 1,
+        "pass_tasks": [
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.1113377651793916,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 0.10554018115135294,
+            "h1_mae": 0.11321637767506715,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.05207203520474277,
+            "relative_mae_reduction_vs_h1": 0.06780111394965325,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.09535194160884236,
+            "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.09540758457574607,
+            "h1_mae": 0.0949090136114676,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.0005835535801878682,
+            "relative_mae_reduction_vs_h1": -0.005253146622295371,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_endpoint_goal25_prefix_v2_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.05246955732789101,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 8,
+            "correct_mae": 0.052279194482194556,
+            "h1_mae": 0.05299420797365143,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.0036280627356325423,
+            "relative_mae_reduction_vs_h1": 0.013492295078971239,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.08201003885172405,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.0809724009507198,
+            "h1_mae": 0.08252845844702657,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.012652571752591454,
+            "relative_mae_reduction_vs_h1": 0.018854799006158298,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_endpoint_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3073
+          }
+        ],
+        "role": "endpoint",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": -0.001589190384097571,
+        "equal_task_mean_reduction_vs_h1": -0.0001779254059120362,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.011528268451785369,
+        "equal_task_minimum_reduction_vs_h1": -0.01259516690627238,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": -0.005066055158313795,
+            "mean_reduction_vs_h1": -0.0049955781512301236,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.00021201146306837394,
+            "mean_reduction_vs_h1": 0.003961155094208079,
+            "omitted_task": "PushT",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.0017238356384650288,
+            "mean_reduction_vs_h1": 0.0011529190184354236,
+            "omitted_task": "Reacher",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.002802530553473142,
+            "mean_reduction_vs_h1": -0.0008301975850615231,
+            "omitted_task": "Cube",
+            "pass_count": 0,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 0,
+        "pass_tasks": [],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.17545046918843302,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.17389924071912977,
+            "h1_mae": 0.1764176078631741,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.008841403938551104,
+            "relative_mae_reduction_vs_h1": 0.014275032830042226,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.136140735796054,
+            "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 8,
+            "correct_mae": 0.13691955979916026,
+            "h1_mae": 0.1352164855946165,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.005720727147185161,
+            "relative_mae_reduction_vs_h1": -0.01259516690627238,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_endpoint_goal25_prefix_v2_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.08629760969002209,
+            "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 2,
+            "correct_mae": 0.08729247170127606,
+            "h1_mae": 0.08692993400355002,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.011528268451785369,
+            "relative_mae_reduction_vs_h1": -0.004170458678954415,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.12868457213528348,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 5,
+            "correct_mae": 0.12842066193825064,
+            "h1_mae": 0.12864951542030828,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.002050830124029143,
+            "relative_mae_reduction_vs_h1": 0.0017788911315364244,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_endpoint_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3073
+          }
+        ],
+        "role": "endpoint",
+        "target": "signed",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.10593023111833981,
+        "equal_task_mean_reduction_vs_h1": 0.1559297169906998,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.04687306451094139,
+        "equal_task_minimum_reduction_vs_h1": 0.06521264966907034,
+        "fail_tasks": [
+          "PushT",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.06103581664724311,
+            "mean_reduction_vs_h1": 0.0926754367272351,
+            "omitted_task": "TwoRoom",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.1568646629947669,
+            "mean_reduction_vs_h1": 0.1821709900212886,
+            "omitted_task": "PushT",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.08937984591893983,
+            "mean_reduction_vs_h1": 0.1627037017830325,
+            "omitted_task": "Reacher",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.11644059891240943,
+            "mean_reduction_vs_h1": 0.18616873943124293,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 2,
+        "pass_tasks": [
+          "Cube",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.19559140839876998,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 11,
+            "correct_mae": 0.14852948003540692,
+            "h1_mae": 0.2270025838796965,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.2406134745316299,
+            "relative_mae_reduction_vs_h1": 0.3456925577810938,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.16523589061299582,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.17298100317322163,
+            "h1_mae": 0.18745352054089778,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.04687306451094139,
+            "relative_mae_reduction_vs_h1": 0.07720589789893334,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_endpoint_goal25_prefix_v2_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.042160751815305285,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 7,
+            "correct_mae": 0.035601323582868216,
+            "h1_mae": 0.041186537827453816,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.1555813867165398,
+            "relative_mae_reduction_vs_h1": 0.13560776261370164,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.06634941593435588,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.06141307726303805,
+            "h1_mae": 0.06569737731399215,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.07439912773613096,
+            "relative_mae_reduction_vs_h1": 0.06521264966907034,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_endpoint_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3073
+          }
+        ],
+        "role": "endpoint",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.06427879821790201,
+        "equal_task_mean_reduction_vs_h1": 0.051057509280074256,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.02009817816519608,
+        "equal_task_minimum_reduction_vs_h1": -0.015932341436012257,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.04441394590336839,
+            "mean_reduction_vs_h1": 0.03137230882480083,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.09240445701226806,
+            "mean_reduction_vs_h1": 0.07338745951876975,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.053813614136641874,
+            "mean_reduction_vs_h1": 0.044129808562060065,
+            "omitted_task": "Reacher",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.06648317581932973,
+            "mean_reduction_vs_h1": 0.055340460214666355,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 1,
+        "pass_tasks": [
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.23660626656362516,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 11,
+            "correct_mae": 0.207297054472152,
+            "h1_mae": 0.23294764419173722,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.12387335516150288,
+            "relative_mae_reduction_vs_h1": 0.1101131106458945,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.11141554640896656,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 3,
+            "correct_mae": 0.11365479591106664,
+            "h1_mae": 0.11187240653291586,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.02009817816519608,
+            "relative_mae_reduction_vs_h1": -0.015932341436012257,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_endpoint_goal25_prefix_v2_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.0458434987057107,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 8,
+            "correct_mae": 0.04145745174415085,
+            "h1_mae": 0.0446663065146683,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.09567435046168242,
+            "relative_mae_reduction_vs_h1": 0.07184061143411681,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.07828065795857533,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.07376655172837819,
+            "h1_mae": 0.07669704268508039,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.057665665413618825,
+            "relative_mae_reduction_vs_h1": 0.03820865647629795,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_endpoint_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3073
+          }
+        ],
+        "role": "endpoint",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.0025899695959088146,
+        "equal_task_mean_reduction_vs_h1": 0.002423630223330932,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.100373509089676,
+        "equal_task_minimum_reduction_vs_h1": -0.06314608245991044,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": -0.0065209617723297406,
+            "mean_reduction_vs_h1": -0.008376795652247438,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.03691112915777042,
+            "mean_reduction_vs_h1": 0.02428020111774472,
+            "omitted_task": "PushT",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.014642001318706395,
+            "mean_reduction_vs_h1": -0.0052415773954573265,
+            "omitted_task": "Reacher",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.005388287683099027,
+            "mean_reduction_vs_h1": -0.0009673071767162302,
+            "omitted_task": "Cube",
+            "pass_count": 0,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 0,
+        "pass_tasks": [],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.32027782736729665,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.31069422962043564,
+            "h1_mae": 0.32190452504152606,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.029922763700624477,
+            "relative_mae_reduction_vs_h1": 0.03482490785006604,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.23441872382357212,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 5,
+            "correct_mae": 0.2579481537300677,
+            "h1_mae": 0.24262719675665503,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.100373509089676,
+            "relative_mae_reduction_vs_h1": -0.06314608245991044,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_endpoint_goal25_prefix_v2_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.060927357181012075,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 7,
+            "correct_mae": 0.05761986183781146,
+            "h1_mae": 0.05912271714774937,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.05428588233975444,
+            "relative_mae_reduction_vs_h1": 0.025419253079695704,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_endpoint_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3073
+          },
+          {
+            "best_destroyed_mae": 0.10102049618845442,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 7,
+            "correct_mae": 0.09834095364762914,
+            "h1_mae": 0.0995955026625548,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.02652474143293234,
+            "relative_mae_reduction_vs_h1": 0.012596442423472418,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_endpoint_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3073
+          }
+        ],
+        "role": "endpoint",
+        "target": "signed",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3073
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.04132690176886511,
+        "equal_task_mean_reduction_vs_h1": 0.07304710691190835,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.004447837374587899,
+        "equal_task_minimum_reduction_vs_h1": -0.006338033970624224,
+        "fail_tasks": [
+          "Cube",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.03547203320311564,
+            "mean_reduction_vs_h1": 0.06535943742908269,
+            "omitted_task": "TwoRoom",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.02520098405436338,
+            "mean_reduction_vs_h1": 0.04906733809828414,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.05658514815001611,
+            "mean_reduction_vs_h1": 0.09950882053941922,
+            "omitted_task": "Reacher",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.04804944166796531,
+            "mean_reduction_vs_h1": 0.07825283158084738,
+            "omitted_task": "Cube",
+            "pass_count": 2,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 2,
+        "pass_tasks": [
+          "PushT",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 1.8882025981977166,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 11,
+            "correct_mae": 1.7770035007884208,
+            "h1_mae": 1.9659513077712125,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.058891507466113525,
+            "relative_mae_reduction_vs_h1": 0.09611011536038534,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.7698501300989115,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.7007909898441452,
+            "h1_mae": 0.8196255600945129,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.0897046549123703,
+            "relative_mae_reduction_vs_h1": 0.144986413352781,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.8750923592998457,
+            "best_destroyed_name": "plus_candidate_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.8789846278017559,
+            "h1_mae": 0.873448680393823,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.004447837374587899,
+            "relative_mae_reduction_vs_h1": -0.006338033970624224,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.0898188679418357,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 1.0667590831081413,
+            "h1_mae": 1.1317557392799402,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.021159282071564513,
+            "relative_mae_reduction_vs_h1": 0.05742993290509128,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3074
+          }
+        ],
+        "role": "base",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.027344361417647782,
+        "equal_task_mean_reduction_vs_h1": 0.07277228223390879,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.029647547681772905,
+        "equal_task_minimum_reduction_vs_h1": 0.02227013849923678,
+        "fail_tasks": [
+          "Cube",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.023055186864343897,
+            "mean_reduction_vs_h1": 0.06891256968482835,
+            "omitted_task": "TwoRoom",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.00965964073476251,
+            "mean_reduction_vs_h1": 0.05288778158091293,
+            "omitted_task": "PushT",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.046341664450788016,
+            "mean_reduction_vs_h1": 0.08960633014546614,
+            "omitted_task": "Reacher",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.03032095362069671,
+            "mean_reduction_vs_h1": 0.07968244752442775,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 1,
+        "pass_tasks": [
+          "PushT"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 2.0060587707669475,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 1.9253913660180368,
+            "h1_mae": 2.1027623564578932,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.04021188507755944,
+            "relative_mae_reduction_vs_h1": 0.08435141988115011,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.8056713951533888,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.7408966045840195,
+            "h1_mae": 0.8539864268496776,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.0803985234663036,
+            "relative_mae_reduction_vs_h1": 0.13242578419289638,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.6385056151062827,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 3,
+            "correct_mae": 0.6574357407752259,
+            "h1_mae": 0.6724104138193111,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.029647547681772905,
+            "relative_mae_reduction_vs_h1": 0.02227013849923678,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.1113625844941988,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 1.0908973039290355,
+            "h1_mae": 1.1507862775331414,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.018414584808500997,
+            "relative_mae_reduction_vs_h1": 0.0520417863623519,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3074
+          }
+        ],
+        "role": "base",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.018950478044651973,
+        "equal_task_mean_reduction_vs_h1": 0.062001798972263183,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.04115195207789339,
+        "equal_task_minimum_reduction_vs_h1": 0.0062268270823094005,
+        "fail_tasks": [
+          "Cube",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.015771935628568157,
+            "mean_reduction_vs_h1": 0.058816526135123746,
+            "omitted_task": "TwoRoom",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.0013885003373871434,
+            "mean_reduction_vs_h1": 0.04241240079264275,
+            "omitted_task": "PushT",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.03898462141883376,
+            "mean_reduction_vs_h1": 0.08059345626891445,
+            "omitted_task": "Reacher",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.01965685479381883,
+            "mean_reduction_vs_h1": 0.06618481269237181,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 1,
+        "pass_tasks": [
+          "PushT"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 2.199402167633614,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 2.136749765904963,
+            "h1_mae": 2.3014349690864173,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.028486105292903425,
+            "relative_mae_reduction_vs_h1": 0.07155761748368154,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.8517686099510402,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.7907509635899149,
+            "h1_mae": 0.8993675804442872,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.07163641116644646,
+            "relative_mae_reduction_vs_h1": 0.12076999351112448,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.3271006668426624,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 2,
+            "correct_mae": 1.381713449887112,
+            "h1_mae": 1.390371049995684,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.04115195207789339,
+            "relative_mae_reduction_vs_h1": 0.0062268270823094005,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.1443881941687377,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 1.1251265984577297,
+            "h1_mae": 1.1836619460047069,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.016831347797151397,
+            "relative_mae_reduction_vs_h1": 0.04945275781193732,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3074
+          }
+        ],
+        "role": "base",
+        "target": "signed",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": true,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.4773407814722494,
+        "equal_task_mean_reduction_vs_h1": 0.5135566790817282,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.21479540079595894,
+        "equal_task_minimum_reduction_vs_h1": 0.2460747877610463,
+        "fail_tasks": [],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.47866565182844845,
+            "mean_reduction_vs_h1": 0.5131191454064076,
+            "omitted_task": "TwoRoom",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.5648559083643462,
+            "mean_reduction_vs_h1": 0.6027173095219555,
+            "omitted_task": "PushT",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.3802322521666377,
+            "mean_reduction_vs_h1": 0.41360783438932697,
+            "omitted_task": "Reacher",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.4856093135295653,
+            "mean_reduction_vs_h1": 0.5247824270092228,
+            "omitted_task": "Cube",
+            "pass_count": 3,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": true,
+        "missing_tasks": [],
+        "pass_count": 4,
+        "pass_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 1.9111448269111388,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 1.006473519109462,
+            "h1_mae": 2.074643962626981,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.47336617040365236,
+            "relative_mae_reduction_vs_h1": 0.51486928010769,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.8325885446328432,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 1.4389569536943485,
+            "h1_mae": 1.9086202853211873,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.21479540079595894,
+            "relative_mae_reduction_vs_h1": 0.2460747877610463,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.1362692225201148,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 16,
+            "correct_mae": 0.26285728459702035,
+            "h1_mae": 1.4086913769898228,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.7686663693890846,
+            "relative_mae_reduction_vs_h1": 0.8134032131589322,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.0078346205366262,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.5517539937800248,
+            "h1_mae": 1.0608194161626143,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.45253518530030173,
+            "relative_mae_reduction_vs_h1": 0.4798794352992445,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3074
+          }
+        ],
+        "role": "base",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": true,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.45670077052375285,
+        "equal_task_mean_reduction_vs_h1": 0.4964955319516854,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.13700550057599828,
+        "equal_task_minimum_reduction_vs_h1": 0.1853396612644433,
+        "fail_tasks": [],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.45273568508846157,
+            "mean_reduction_vs_h1": 0.4928741032408734,
+            "omitted_task": "TwoRoom",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.5632658605063378,
+            "mean_reduction_vs_h1": 0.6002141555140993,
+            "omitted_task": "PushT",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.3527122375686423,
+            "mean_reduction_vs_h1": 0.3908596382159364,
+            "omitted_task": "Reacher",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.4580892989315699,
+            "mean_reduction_vs_h1": 0.5020342308358323,
+            "omitted_task": "Cube",
+            "pass_count": 3,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": true,
+        "missing_tasks": [],
+        "pass_count": 4,
+        "pass_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 1.9086587920354632,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 1.01426886551421,
+            "h1_mae": 2.0588431531705687,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.46859602682962687,
+            "relative_mae_reduction_vs_h1": 0.5073598180841214,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.8606713217430109,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 12,
+            "correct_mae": 1.6057491159002053,
+            "h1_mae": 1.9710657798715305,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.13700550057599828,
+            "relative_mae_reduction_vs_h1": 0.1853396612644433,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.1362692225201148,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 16,
+            "correct_mae": 0.26285728459702035,
+            "h1_mae": 1.4086913769898228,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.7686663693890846,
+            "relative_mae_reduction_vs_h1": 0.8134032131589322,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.0078346205366262,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.5517539937800248,
+            "h1_mae": 1.0608194161626143,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.45253518530030173,
+            "relative_mae_reduction_vs_h1": 0.4798794352992445,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3074
+          }
+        ],
+        "role": "base",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": true,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.44559405457970497,
+        "equal_task_mean_reduction_vs_h1": 0.4863590400377391,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.10447490168213086,
+        "equal_task_minimum_reduction_vs_h1": 0.15696612804878807,
+        "fail_tasks": [],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.44189215212383903,
+            "mean_reduction_vs_h1": 0.4834162588356549,
+            "omitted_task": "TwoRoom",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.5593004388788964,
+            "mean_reduction_vs_h1": 0.5961566773673894,
+            "omitted_task": "PushT",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.33790328297657846,
+            "mean_reduction_vs_h1": 0.37734431566400817,
+            "omitted_task": "Reacher",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.4432803443395061,
+            "mean_reduction_vs_h1": 0.48851890828390404,
+            "omitted_task": "Cube",
+            "pass_count": 3,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": true,
+        "missing_tasks": [],
+        "pass_count": 4,
+        "pass_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 1.9495843311257122,
+            "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 1.0592096312044077,
+            "h1_mae": 2.0982233741508214,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.4566997619473029,
+            "relative_mae_reduction_vs_h1": 0.4951873836439918,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 2.01743682084433,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 1.8066653073367078,
+            "h1_mae": 2.143051860010274,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.10447490168213086,
+            "relative_mae_reduction_vs_h1": 0.15696612804878807,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.1362692225201148,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 16,
+            "correct_mae": 0.26285728459702035,
+            "h1_mae": 1.4086913769898228,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.7686663693890846,
+            "relative_mae_reduction_vs_h1": 0.8134032131589322,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 1.0078346205366262,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.5517539937800248,
+            "h1_mae": 1.0608194161626143,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.45253518530030173,
+            "relative_mae_reduction_vs_h1": 0.4798794352992445,
+            "role": "base",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3074
+          }
+        ],
+        "role": "base",
+        "target": "signed",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.041964070426443296,
+        "equal_task_mean_reduction_vs_h1": 0.057974602222229096,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.01837611224070841,
+        "equal_task_minimum_reduction_vs_h1": 0.03718147988976425,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.027830453629982144,
+            "mean_reduction_vs_h1": 0.047952736884838275,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.04982672315502159,
+            "mean_reduction_vs_h1": 0.06490564299971739,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.045100389625844485,
+            "mean_reduction_vs_h1": 0.06340498867995135,
+            "omitted_task": "Reacher",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.04509871529492496,
+            "mean_reduction_vs_h1": 0.055635040324409406,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 1,
+        "pass_tasks": [
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.07136595459633722,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 14,
+            "correct_mae": 0.06534517148787135,
+            "h1_mae": 0.07165356560822081,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.08436492081582675,
+            "relative_mae_reduction_vs_h1": 0.08804019823440161,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_endpoint_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.08122816161893798,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 7,
+            "correct_mae": 0.07973550380392197,
+            "h1_mae": 0.08281467601474142,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.01837611224070841,
+            "relative_mae_reduction_vs_h1": 0.03718147988976425,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_endpoint_goal25_prefix_v3_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.04779352707265865,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 13,
+            "correct_mae": 0.04623760340634872,
+            "h1_mae": 0.048248778612166004,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.03255511282823971,
+            "relative_mae_reduction_vs_h1": 0.041683442849062356,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.08837789554256491,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 11,
+            "correct_mae": 0.08550029926012499,
+            "h1_mae": 0.09144351388614975,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.032560135820998315,
+            "relative_mae_reduction_vs_h1": 0.06499328791568819,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3074
+          }
+        ],
+        "role": "endpoint",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.01057329637010444,
+        "equal_task_mean_reduction_vs_h1": 0.021910799168924345,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.012064006267839135,
+        "equal_task_minimum_reduction_vs_h1": -0.004310840831119759,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.007529618752217363,
+            "mean_reduction_vs_h1": 0.02057971135303707,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.018119063916085632,
+            "mean_reduction_vs_h1": 0.030651345835605717,
+            "omitted_task": "PushT",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.006491413631742788,
+            "mean_reduction_vs_h1": 0.010906253226270176,
+            "omitted_task": "Reacher",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.010153089180371978,
+            "mean_reduction_vs_h1": 0.025505886260784427,
+            "omitted_task": "Cube",
+            "pass_count": 0,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 0,
+        "pass_tasks": [],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.07390089303698348,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.07244472551065247,
+            "h1_mae": 0.07437124284210776,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.019704329223765672,
+            "relative_mae_reduction_vs_h1": 0.025904062616586183,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_endpoint_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.09493654116516842,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 6,
+            "correct_mae": 0.09608185619283198,
+            "h1_mae": 0.09566944046259544,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.012064006267839135,
+            "relative_mae_reduction_vs_h1": -0.004310840831119759,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_endpoint_goal25_prefix_v3_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.05237901192639057,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 10,
+            "correct_mae": 0.05118377815581529,
+            "h1_mae": 0.0541583976557086,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.022818944585189398,
+            "relative_mae_reduction_vs_h1": 0.05492443699688686,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.10277263551823752,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.10155643258310892,
+            "h1_mae": 0.10269901435896872,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.011833917939301827,
+            "relative_mae_reduction_vs_h1": 0.011125537893344103,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3074
+          }
+        ],
+        "role": "endpoint",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": -0.005473324519459084,
+        "equal_task_mean_reduction_vs_h1": 0.0016276463559475709,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.015442130828242384,
+        "equal_task_minimum_reduction_vs_h1": -0.008177058356941064,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": -0.005875199355829505,
+            "mean_reduction_vs_h1": 0.002575279626866392,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.0021503890831979858,
+            "mean_reduction_vs_h1": 0.0044154642851008665,
+            "omitted_task": "PushT",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.006578514127005439,
+            "mean_reduction_vs_h1": -0.005376039748420758,
+            "omitted_task": "Reacher",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.00728919551180341,
+            "mean_reduction_vs_h1": 0.004895881260243783,
+            "omitted_task": "Cube",
+            "pass_count": 0,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 0,
+        "pass_tasks": [],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.12764533954328317,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 4,
+            "correct_mae": 0.1281900915601729,
+            "h1_mae": 0.12803449719486604,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.004267700010347826,
+            "relative_mae_reduction_vs_h1": -0.0012152534568088912,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_endpoint_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.13168774164916602,
+            "best_destroyed_name": "plus_action_zero_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 3,
+            "correct_mae": 0.13372128098418823,
+            "h1_mae": 0.1328265866745633,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.015442130828242384,
+            "relative_mae_reduction_vs_h1": -0.006735807431512316,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_endpoint_goal25_prefix_v3_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.0905349662411671,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 7,
+            "correct_mae": 0.09073031858033538,
+            "h1_mae": 0.09283191283895982,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.0021577556968200204,
+            "relative_mae_reduction_vs_h1": 0.022638704669052555,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "candidate",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.16550599444904626,
+            "best_destroyed_name": "plus_time_shuffle_h5_control",
+            "block_count": 16,
+            "both_win_blocks": 5,
+            "correct_mae": 0.16551024986344431,
+            "h1_mae": 0.1641678398566039,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -2.5711542426110218e-05,
+            "relative_mae_reduction_vs_h1": -0.008177058356941064,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "candidate",
+            "training_seed": 3074
+          }
+        ],
+        "role": "endpoint",
+        "target": "signed",
+        "task_count": 4,
+        "track": "candidate",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.1591338117213208,
+        "equal_task_mean_reduction_vs_h1": 0.1863464795650205,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.056137047199765006,
+        "equal_task_minimum_reduction_vs_h1": 0.043796583052308,
+        "fail_tasks": [
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.12162880585286528,
+            "mean_reduction_vs_h1": 0.13679738017583362,
+            "omitted_task": "TwoRoom",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.13291215722623229,
+            "mean_reduction_vs_h1": 0.14391609372046374,
+            "omitted_task": "PushT",
+            "pass_count": 2,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.1934660665618394,
+            "mean_reduction_vs_h1": 0.23386311173592467,
+            "omitted_task": "Reacher",
+            "pass_count": 3,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.1885282172443462,
+            "mean_reduction_vs_h1": 0.23080933262786,
+            "omitted_task": "Cube",
+            "pass_count": 2,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": true,
+        "missing_tasks": [],
+        "pass_count": 3,
+        "pass_tasks": [
+          "Cube",
+          "PushT",
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.11428450262987766,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 12,
+            "correct_mae": 0.08323925128028868,
+            "h1_mae": 0.1251706352407868,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.27164882932668727,
+            "relative_mae_reduction_vs_h1": 0.33499377773258115,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_endpoint_goal25_v2_16block.json",
+            "target": "absolute",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.15332870871441343,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 12,
+            "correct_mae": 0.11686732957811848,
+            "h1_mae": 0.17027059742045125,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.23779877520658632,
+            "relative_mae_reduction_vs_h1": 0.31363763709869086,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_endpoint_goal25_prefix_v3_16block.json",
+            "target": "absolute",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.03722951558941348,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 11,
+            "correct_mae": 0.03513956051554619,
+            "h1_mae": 0.0367490430307346,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.056137047199765006,
+            "relative_mae_reduction_vs_h1": 0.043796583052308,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.09812449675625938,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 8,
+            "correct_mae": 0.09116250531238829,
+            "h1_mae": 0.09626024785364391,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.07095059515224456,
+            "relative_mae_reduction_vs_h1": 0.05295792037650204,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "absolute",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3074
+          }
+        ],
+        "role": "endpoint",
+        "target": "absolute",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": 0.058974700447925674,
+        "equal_task_mean_reduction_vs_h1": 0.07400055857259596,
+        "equal_task_minimum_reduction_vs_best_destroyed": 0.021952086713627663,
+        "equal_task_minimum_reduction_vs_h1": 0.012783679594941363,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": 0.037265710397549556,
+            "mean_reduction_vs_h1": 0.0351962982314152,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.062389712284700916,
+            "mean_reduction_vs_h1": 0.07996018209536335,
+            "omitted_task": "PushT",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.07131557169269169,
+            "mean_reduction_vs_h1": 0.09440618489848081,
+            "omitted_task": "Reacher",
+            "pass_count": 1,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.06492780741676056,
+            "mean_reduction_vs_h1": 0.08643956906512446,
+            "omitted_task": "Cube",
+            "pass_count": 1,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 1,
+        "pass_tasks": [
+          "TwoRoom"
+        ],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.1162214911874206,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.10179820997154847,
+            "h1_mae": 0.1257409675213355,
+            "pass": true,
+            "relative_mae_reduction_vs_best_destroyed": 0.12410167059905405,
+            "relative_mae_reduction_vs_h1": 0.1904133395961382,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_endpoint_goal25_v2_16block.json",
+            "target": "adverse",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.12998528877412815,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 8,
+            "correct_mae": 0.12365114920534771,
+            "h1_mae": 0.1310032740808544,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.04872966493759999,
+            "relative_mae_reduction_vs_h1": 0.05612168800429378,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_endpoint_goal25_prefix_v3_16block.json",
+            "target": "adverse",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.038129143689313534,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.037292129420729354,
+            "h1_mae": 0.03777503334368323,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.021952086713627663,
+            "relative_mae_reduction_vs_h1": 0.012783679594941363,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.11517287700052499,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 7,
+            "correct_mae": 0.110437500449771,
+            "h1_mae": 0.11464301042910048,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.04111537954142101,
+            "relative_mae_reduction_vs_h1": 0.036683527095010465,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "adverse",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3074
+          }
+        ],
+        "role": "endpoint",
+        "target": "adverse",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3074
+      },
+      {
+        "all_four_tasks_pass": false,
+        "equal_task_mean_reduction_vs_best_destroyed": -0.0048453762641876095,
+        "equal_task_mean_reduction_vs_h1": 0.004420913942781225,
+        "equal_task_minimum_reduction_vs_best_destroyed": -0.05087094426943419,
+        "equal_task_minimum_reduction_vs_h1": -0.04336720016084272,
+        "fail_tasks": [
+          "Cube",
+          "PushT",
+          "Reacher",
+          "TwoRoom"
+        ],
+        "leave_one_task_out": [
+          {
+            "mean_reduction_vs_best_destroyed": -0.01827289609731751,
+            "mean_reduction_vs_h1": -0.01426791016974814,
+            "omitted_task": "TwoRoom",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": 0.010496479737561251,
+            "mean_reduction_vs_h1": 0.020350285310655872,
+            "omitted_task": "PushT",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.009191351590820768,
+            "mean_reduction_vs_h1": 0.00865773573441849,
+            "omitted_task": "Reacher",
+            "pass_count": 0,
+            "task_count": 3
+          },
+          {
+            "mean_reduction_vs_best_destroyed": -0.0024137371061734142,
+            "mean_reduction_vs_h1": 0.002943544895798674,
+            "omitted_task": "Cube",
+            "pass_count": 0,
+            "task_count": 3
+          }
+        ],
+        "minimum_three_of_four_tasks_pass": false,
+        "missing_tasks": [],
+        "pass_count": 0,
+        "pass_tasks": [],
+        "per_task": [
+          {
+            "best_destroyed_mae": 0.1621807538306337,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 8,
+            "correct_mae": 0.15643352473991434,
+            "h1_mae": 0.16650497551126783,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.035437183235202084,
+            "relative_mae_reduction_vs_h1": 0.060487386280369315,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_endpoint_goal25_v2_16block.json",
+            "target": "signed",
+            "task": "TwoRoom",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.20574220623170025,
+            "best_destroyed_name": "plus_action_zero_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 3,
+            "correct_mae": 0.2162085065387835,
+            "h1_mae": 0.20722187404918746,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.05087094426943419,
+            "relative_mae_reduction_vs_h1": -0.04336720016084272,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_endpoint_goal25_prefix_v3_16block.json",
+            "target": "signed",
+            "task": "PushT",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.060386468031116795,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 9,
+            "correct_mae": 0.059891748889615626,
+            "h1_mae": 0.05939935488228356,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": 0.008192549715711865,
+            "relative_mae_reduction_vs_h1": -0.00828955143213057,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Reacher",
+            "track": "logged",
+            "training_seed": 3074
+          },
+          {
+            "best_destroyed_mae": 0.14536506657601686,
+            "best_destroyed_name": "plus_time_shuffle_h8_control",
+            "block_count": 16,
+            "both_win_blocks": 6,
+            "correct_mae": 0.1471298411835271,
+            "h1_mae": 0.14844401921539443,
+            "pass": false,
+            "relative_mae_reduction_vs_best_destroyed": -0.012140293738230197,
+            "relative_mae_reduction_vs_h1": 0.008853021083728875,
+            "role": "endpoint",
+            "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_endpoint_goal25_v3_16block.json",
+            "target": "signed",
+            "task": "Cube",
+            "track": "logged",
+            "training_seed": 3074
+          }
+        ],
+        "role": "endpoint",
+        "target": "signed",
+        "task_count": 4,
+        "track": "logged",
+        "training_seed": 3074
+      }
+    ],
+    "certificate": {
+      "candidate_zero_violation_all_rows": true,
+      "logged_zero_violation_all_rows": true,
+      "rows": [
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "TwoRoom",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "TwoRoom",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "PushT",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "PushT",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "Reacher",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "Reacher",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "Cube",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "Cube",
+          "training_seed": 3073
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "TwoRoom",
+          "training_seed": 3074
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "TwoRoom",
+          "training_seed": 3074
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "PushT",
+          "training_seed": 3074
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "PushT",
+          "training_seed": 3074
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "Reacher",
+          "training_seed": 3074
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "Reacher",
+          "training_seed": 3074
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "base",
+          "task": "Cube",
+          "training_seed": 3074
+        },
+        {
+          "candidate_minimum_h5_slack": 0.0,
+          "logged_minimum_h8_slack": 0.0,
+          "role": "endpoint",
+          "task": "Cube",
+          "training_seed": 3074
+        }
+      ]
+    },
+    "metadata": {
+      "all_tasks_reported": true,
+      "created_utc": "2026-07-13T01:56:44.814435+00:00",
+      "equal_task_weight": true,
+      "minimum_tasks_for_empirical_increment": 3,
+      "schema_version": "paper1-target-aligned-acpc-four-task-meta-0.2",
+      "task_scale_pooling": false
+    },
+    "primary_logged_fragile_base": {
+      "all_available_seeds_meet_three_task_gate": true,
+      "all_available_seeds_pass_all_four_tasks": true,
+      "cells": [
+        {
+          "all_four_tasks_pass": true,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.5478245096278659,
+          "equal_task_mean_reduction_vs_h1": 0.6080095622935984,
+          "equal_task_minimum_reduction_vs_best_destroyed": 0.34529886314601194,
+          "equal_task_minimum_reduction_vs_h1": 0.3325526166546088,
+          "fail_tasks": [],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.5404210951093278,
+              "mean_reduction_vs_h1": 0.6009492960951278,
+              "omitted_task": "TwoRoom",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.6153330584551505,
+              "mean_reduction_vs_h1": 0.6998285441732616,
+              "omitted_task": "PushT",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.5010074456355851,
+              "mean_reduction_vs_h1": 0.5362523520898779,
+              "omitted_task": "Reacher",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.5345364393114002,
+              "mean_reduction_vs_h1": 0.595008056816126,
+              "omitted_task": "Cube",
+              "pass_count": 3,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": true,
+          "missing_tasks": [],
+          "pass_count": 4,
+          "pass_tasks": [
+            "Cube",
+            "PushT",
+            "Reacher",
+            "TwoRoom"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 2.01470983238163,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 15,
+              "correct_mae": 0.866255210343637,
+              "h1_mae": 2.3361183717350733,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.5700347531834802,
+              "relative_mae_reduction_vs_h1": 0.6291903608890096,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+              "target": "absolute",
+              "task": "TwoRoom",
+              "track": "logged",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 2.0077986072107636,
+              "best_destroyed_name": "plus_action_zero_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 13,
+              "correct_mae": 1.3145080307147408,
+              "h1_mae": 1.9694556657427302,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.34529886314601194,
+              "relative_mae_reduction_vs_h1": 0.3325526166546088,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+              "target": "absolute",
+              "task": "PushT",
+              "track": "logged",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 0.7928537325679009,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 16,
+              "correct_mae": 0.24715177351481724,
+              "h1_mae": 1.3985595397416741,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.6882757016047082,
+              "relative_mae_reduction_vs_h1": 0.8232811929047595,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+              "target": "absolute",
+              "task": "Reacher",
+              "track": "logged",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 1.2124338996050346,
+              "best_destroyed_name": "plus_action_zero_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 14,
+              "correct_mae": 0.49990017236164985,
+              "h1_mae": 1.4162042796421659,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.5876887205772632,
+              "relative_mae_reduction_vs_h1": 0.6470140787260152,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+              "target": "absolute",
+              "task": "Cube",
+              "track": "logged",
+              "training_seed": 3073
+            }
+          ],
+          "role": "base",
+          "target": "absolute",
+          "task_count": 4,
+          "track": "logged",
+          "training_seed": 3073
+        },
+        {
+          "all_four_tasks_pass": true,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.5437320816346016,
+          "equal_task_mean_reduction_vs_h1": 0.6041359556436225,
+          "equal_task_minimum_reduction_vs_best_destroyed": 0.3259146606442725,
+          "equal_task_minimum_reduction_vs_h1": 0.3142713852117303,
+          "fail_tasks": [],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.5339596942754147,
+              "mean_reduction_vs_h1": 0.5948555522808351,
+              "omitted_task": "TwoRoom",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.6163378886313781,
+              "mean_reduction_vs_h1": 0.7007574791209198,
+              "omitted_task": "PushT",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.49555087497789946,
+              "mean_reduction_vs_h1": 0.5310875432232435,
+              "omitted_task": "Reacher",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.5290798686537145,
+              "mean_reduction_vs_h1": 0.5898432479494916,
+              "omitted_task": "Cube",
+              "pass_count": 3,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": true,
+          "missing_tasks": [],
+          "pass_count": 4,
+          "pass_tasks": [
+            "Cube",
+            "PushT",
+            "Reacher",
+            "TwoRoom"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 2.005337470782741,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 15,
+              "correct_mae": 0.8561803497630303,
+              "h1_mae": 2.326432683085939,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.5730492437121627,
+              "relative_mae_reduction_vs_h1": 0.6319771657319849,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3073_base_goal25_v2_16block.json",
+              "target": "adverse",
+              "task": "TwoRoom",
+              "track": "logged",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 2.070306988028145,
+              "best_destroyed_name": "plus_action_zero_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 12,
+              "correct_mae": 1.3955635885954862,
+              "h1_mae": 2.035154372296962,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.3259146606442725,
+              "relative_mae_reduction_vs_h1": 0.3142713852117303,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3073_base_goal25_prefix_v2_16block.json",
+              "target": "adverse",
+              "task": "PushT",
+              "track": "logged",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 0.7928537325679009,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 16,
+              "correct_mae": 0.24715177351481724,
+              "h1_mae": 1.3985595397416741,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.6882757016047082,
+              "relative_mae_reduction_vs_h1": 0.8232811929047595,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3073_base_goal25_v2_16block.json",
+              "target": "adverse",
+              "task": "Reacher",
+              "track": "logged",
+              "training_seed": 3073
+            },
+            {
+              "best_destroyed_mae": 1.2124338996050346,
+              "best_destroyed_name": "plus_action_zero_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 14,
+              "correct_mae": 0.49990017236164985,
+              "h1_mae": 1.4162042796421659,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.5876887205772632,
+              "relative_mae_reduction_vs_h1": 0.6470140787260152,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3073_base_goal25_v3_16block.json",
+              "target": "adverse",
+              "task": "Cube",
+              "track": "logged",
+              "training_seed": 3073
+            }
+          ],
+          "role": "base",
+          "target": "adverse",
+          "task_count": 4,
+          "track": "logged",
+          "training_seed": 3073
+        },
+        {
+          "all_four_tasks_pass": true,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.4773407814722494,
+          "equal_task_mean_reduction_vs_h1": 0.5135566790817282,
+          "equal_task_minimum_reduction_vs_best_destroyed": 0.21479540079595894,
+          "equal_task_minimum_reduction_vs_h1": 0.2460747877610463,
+          "fail_tasks": [],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.47866565182844845,
+              "mean_reduction_vs_h1": 0.5131191454064076,
+              "omitted_task": "TwoRoom",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.5648559083643462,
+              "mean_reduction_vs_h1": 0.6027173095219555,
+              "omitted_task": "PushT",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.3802322521666377,
+              "mean_reduction_vs_h1": 0.41360783438932697,
+              "omitted_task": "Reacher",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.4856093135295653,
+              "mean_reduction_vs_h1": 0.5247824270092228,
+              "omitted_task": "Cube",
+              "pass_count": 3,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": true,
+          "missing_tasks": [],
+          "pass_count": 4,
+          "pass_tasks": [
+            "Cube",
+            "PushT",
+            "Reacher",
+            "TwoRoom"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 1.9111448269111388,
+              "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 13,
+              "correct_mae": 1.006473519109462,
+              "h1_mae": 2.074643962626981,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.47336617040365236,
+              "relative_mae_reduction_vs_h1": 0.51486928010769,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+              "target": "absolute",
+              "task": "TwoRoom",
+              "track": "logged",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.8325885446328432,
+              "best_destroyed_name": "plus_action_zero_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 13,
+              "correct_mae": 1.4389569536943485,
+              "h1_mae": 1.9086202853211873,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.21479540079595894,
+              "relative_mae_reduction_vs_h1": 0.2460747877610463,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+              "target": "absolute",
+              "task": "PushT",
+              "track": "logged",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.1362692225201148,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 16,
+              "correct_mae": 0.26285728459702035,
+              "h1_mae": 1.4086913769898228,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.7686663693890846,
+              "relative_mae_reduction_vs_h1": 0.8134032131589322,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+              "target": "absolute",
+              "task": "Reacher",
+              "track": "logged",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.0078346205366262,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 14,
+              "correct_mae": 0.5517539937800248,
+              "h1_mae": 1.0608194161626143,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.45253518530030173,
+              "relative_mae_reduction_vs_h1": 0.4798794352992445,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+              "target": "absolute",
+              "task": "Cube",
+              "track": "logged",
+              "training_seed": 3074
+            }
+          ],
+          "role": "base",
+          "target": "absolute",
+          "task_count": 4,
+          "track": "logged",
+          "training_seed": 3074
+        },
+        {
+          "all_four_tasks_pass": true,
+          "equal_task_mean_reduction_vs_best_destroyed": 0.45670077052375285,
+          "equal_task_mean_reduction_vs_h1": 0.4964955319516854,
+          "equal_task_minimum_reduction_vs_best_destroyed": 0.13700550057599828,
+          "equal_task_minimum_reduction_vs_h1": 0.1853396612644433,
+          "fail_tasks": [],
+          "leave_one_task_out": [
+            {
+              "mean_reduction_vs_best_destroyed": 0.45273568508846157,
+              "mean_reduction_vs_h1": 0.4928741032408734,
+              "omitted_task": "TwoRoom",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.5632658605063378,
+              "mean_reduction_vs_h1": 0.6002141555140993,
+              "omitted_task": "PushT",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.3527122375686423,
+              "mean_reduction_vs_h1": 0.3908596382159364,
+              "omitted_task": "Reacher",
+              "pass_count": 3,
+              "task_count": 3
+            },
+            {
+              "mean_reduction_vs_best_destroyed": 0.4580892989315699,
+              "mean_reduction_vs_h1": 0.5020342308358323,
+              "omitted_task": "Cube",
+              "pass_count": 3,
+              "task_count": 3
+            }
+          ],
+          "minimum_three_of_four_tasks_pass": true,
+          "missing_tasks": [],
+          "pass_count": 4,
+          "pass_tasks": [
+            "Cube",
+            "PushT",
+            "Reacher",
+            "TwoRoom"
+          ],
+          "per_task": [
+            {
+              "best_destroyed_mae": 1.9086587920354632,
+              "best_destroyed_name": "plus_candidate_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 13,
+              "correct_mae": 1.01426886551421,
+              "h1_mae": 2.0588431531705687,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.46859602682962687,
+              "relative_mae_reduction_vs_h1": 0.5073598180841214,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_tworoom_seed3074_base_goal25_v2_16block.json",
+              "target": "adverse",
+              "task": "TwoRoom",
+              "track": "logged",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.8606713217430109,
+              "best_destroyed_name": "plus_action_zero_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 12,
+              "correct_mae": 1.6057491159002053,
+              "h1_mae": 1.9710657798715305,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.13700550057599828,
+              "relative_mae_reduction_vs_h1": 0.1853396612644433,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_pusht_seed3074_base_goal25_prefix_v2_16block.json",
+              "target": "adverse",
+              "task": "PushT",
+              "track": "logged",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.1362692225201148,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 16,
+              "correct_mae": 0.26285728459702035,
+              "h1_mae": 1.4086913769898228,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.7686663693890846,
+              "relative_mae_reduction_vs_h1": 0.8134032131589322,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_reacher_seed3074_base_goal25_v3_16block.json",
+              "target": "adverse",
+              "task": "Reacher",
+              "track": "logged",
+              "training_seed": 3074
+            },
+            {
+              "best_destroyed_mae": 1.0078346205366262,
+              "best_destroyed_name": "plus_time_shuffle_h8_control",
+              "block_count": 16,
+              "both_win_blocks": 14,
+              "correct_mae": 0.5517539937800248,
+              "h1_mae": 1.0608194161626143,
+              "pass": true,
+              "relative_mae_reduction_vs_best_destroyed": 0.45253518530030173,
+              "relative_mae_reduction_vs_h1": 0.4798794352992445,
+              "role": "base",
+              "source": "paper1/results/target_aligned_acpc_dev/mve_cube_seed3074_base_goal25_v3_16block.json",
+              "target": "adverse",
+              "task": "Cube",
+              "track": "logged",
+              "training_seed": 3074
+            }
+          ],
+          "role": "base",
+          "target": "adverse",
+          "task_count": 4,
+          "track": "logged",
+          "training_seed": 3074
+        }
+      ],
+      "uncertainty": {
+        "absolute": {
+          "cluster_bootstrap": {
+            "cluster": "task x trajectory-block index; both held-out training seeds are retained inside each resampled cluster",
+            "equal_task_mean_reduction_vs_best_destroyed_ci95": [
+              0.4504557101001586,
+              0.5664558533240691
+            ],
+            "equal_task_mean_reduction_vs_h1_ci95": [
+              0.5107538560184414,
+              0.6123303940846202
+            ],
+            "repetitions": 5000,
+            "seed": 20260713,
+            "training_seed_scope": "conditional on two non-CAL model seeds; seed3073 includes DEV provenance and seed3074 is the fully frozen replication; trajectory bootstrap is not a population CI over model seeds"
+          },
+          "observed": {
+            "equal_task_mean_reduction_vs_best_destroyed": 0.5186090940019519,
+            "equal_task_mean_reduction_vs_h1": 0.5647927738475621,
+            "per_task": [
+              {
+                "best_destroyed_mae": 1.9763321725213499,
+                "best_destroyed_name": "plus_time_shuffle_h8_control",
+                "correct_mae": 0.9363643647265496,
+                "h1_mae": 2.2053811671810273,
+                "relative_reduction_vs_best_destroyed": 0.5262110399528831,
+                "relative_reduction_vs_h1": 0.5754183545860992,
+                "task": "TwoRoom"
+              },
+              {
+                "best_destroyed_mae": 1.9201935759218034,
+                "best_destroyed_name": "plus_action_zero_h8_control",
+                "correct_mae": 1.3767324922045447,
+                "h1_mae": 1.9390379755319587,
+                "relative_reduction_vs_best_destroyed": 0.2830241130540008,
+                "relative_reduction_vs_h1": 0.2899919910919487,
+                "task": "PushT"
+              },
+              {
+                "best_destroyed_mae": 0.9645614775440078,
+                "best_destroyed_name": "plus_time_shuffle_h8_control",
+                "correct_mae": 0.2550045290559188,
+                "h1_mae": 1.4036254583657486,
+                "relative_reduction_vs_best_destroyed": 0.7356264634316331,
+                "relative_reduction_vs_h1": 0.8183243773927964,
+                "task": "Reacher"
+              },
+              {
+                "best_destroyed_mae": 1.1177697068069803,
+                "best_destroyed_name": "plus_action_zero_h8_control",
+                "correct_mae": 0.5258270830708374,
+                "h1_mae": 1.2385118479023902,
+                "relative_reduction_vs_best_destroyed": 0.5295747595692905,
+                "relative_reduction_vs_h1": 0.575436372319404,
+                "task": "Cube"
+              }
+            ]
+          },
+          "paired_block_direction": {
+            "both_win_count": 57,
+            "cluster_count": 64,
+            "criterion": "seed-averaged correct H8 block MAE is below H1 and every destroyed-H8 control",
+            "one_sided_exact_sign_p_value": 3.819070672770111e-11
+          },
+          "target": "absolute"
+        },
+        "adverse": {
+          "cluster_bootstrap": {
+            "cluster": "task x trajectory-block index; both held-out training seeds are retained inside each resampled cluster",
+            "equal_task_mean_reduction_vs_best_destroyed_ci95": [
+              0.44049174871092955,
+              0.553035757735154
+            ],
+            "equal_task_mean_reduction_vs_h1_ci95": [
+              0.5013372120806356,
+              0.6018540410925007
+            ],
+            "repetitions": 5000,
+            "seed": 20260713,
+            "training_seed_scope": "conditional on two non-CAL model seeds; seed3073 includes DEV provenance and seed3074 is the fully frozen replication; trajectory bootstrap is not a population CI over model seeds"
+          },
+          "observed": {
+            "equal_task_mean_reduction_vs_best_destroyed": 0.5064272048684091,
+            "equal_task_mean_reduction_vs_h1": 0.5545170295060298,
+            "per_task": [
+              {
+                "best_destroyed_mae": 1.9648002390675066,
+                "best_destroyed_name": "plus_time_shuffle_h8_control",
+                "correct_mae": 0.9352246076386201,
+                "h1_mae": 2.192637918128254,
+                "relative_reduction_vs_best_destroyed": 0.5240103349730467,
+                "relative_reduction_vs_h1": 0.573470567161871,
+                "task": "TwoRoom"
+              },
+              {
+                "best_destroyed_mae": 1.965489154885578,
+                "best_destroyed_name": "plus_action_zero_h8_control",
+                "correct_mae": 1.5006563522478458,
+                "h1_mae": 2.003110076084247,
+                "relative_reduction_vs_best_destroyed": 0.23649726149966607,
+                "relative_reduction_vs_h1": 0.25083680115004764,
+                "task": "PushT"
+              },
+              {
+                "best_destroyed_mae": 0.9645614775440078,
+                "best_destroyed_name": "plus_time_shuffle_h8_control",
+                "correct_mae": 0.2550045290559188,
+                "h1_mae": 1.4036254583657486,
+                "relative_reduction_vs_best_destroyed": 0.7356264634316331,
+                "relative_reduction_vs_h1": 0.8183243773927964,
+                "task": "Reacher"
+              },
+              {
+                "best_destroyed_mae": 1.1177697068069803,
+                "best_destroyed_name": "plus_action_zero_h8_control",
+                "correct_mae": 0.5258270830708374,
+                "h1_mae": 1.2385118479023902,
+                "relative_reduction_vs_best_destroyed": 0.5295747595692905,
+                "relative_reduction_vs_h1": 0.575436372319404,
+                "task": "Cube"
+              }
+            ]
+          },
+          "paired_block_direction": {
+            "both_win_count": 57,
+            "cluster_count": 64,
+            "criterion": "seed-averaged correct H8 block MAE is below H1 and every destroyed-H8 control",
+            "one_sided_exact_sign_p_value": 3.819070672770111e-11
+          },
+          "target": "adverse"
+        }
+      }
+    }
+  },
+  "P2": {
+    "block_bootstrap": {
+      "block": "task x independently trained TEST seed; all nine rows retained",
+      "block_count": 8,
+      "metrics": {
+        "auprc": {
+          "ci95": [
+            0.9039354658150534,
+            1.0
+          ],
+          "observed": 0.965481359427651,
+          "valid_repetitions": 5000
+        },
+        "balanced_accuracy": {
+          "ci95": [
+            0.8926353149955635,
+            0.9905660377358491
+          ],
+          "observed": 0.9445454545454546,
+          "valid_repetitions": 5000
+        },
+        "precision": {
+          "ci95": [
+            0.9056603773584906,
+            1.0
+          ],
+          "observed": 0.9607843137254902,
+          "valid_repetitions": 5000
+        },
+        "recall": {
+          "ci95": [
+            0.9433962264150944,
+            1.0
+          ],
+          "observed": 0.98,
+          "valid_repetitions": 5000
+        },
+        "specificity": {
+          "ci95": [
+            0.8076923076923077,
+            1.0
+          ],
+          "observed": 0.9090909090909091,
+          "valid_repetitions": 5000
+        }
+      },
+      "repetitions": 5000,
+      "seed": 20260713
+    },
+    "by_task": {
+      "Cube": {
+        "auprc": 0.9023415977961433,
+        "balanced_accuracy": 0.9285714285714286,
+        "fn": 0,
+        "fp": 1,
+        "n": 18,
+        "positive_n": 11,
+        "precision": 0.9166666666666666,
+        "recall": 1.0,
+        "specificity": 0.8571428571428571,
+        "tn": 6,
+        "tp": 11
+      },
+      "PushT": {
+        "auprc": 1.0,
+        "balanced_accuracy": 1.0,
+        "fn": 0,
+        "fp": 0,
+        "n": 18,
+        "positive_n": 12,
+        "precision": 1.0,
+        "recall": 1.0,
+        "specificity": 1.0,
+        "tn": 6,
+        "tp": 12
+      },
+      "Reacher": {
+        "auprc": 1.0,
+        "balanced_accuracy": 0.9166666666666667,
+        "fn": 0,
+        "fp": 1,
+        "n": 18,
+        "positive_n": 12,
+        "precision": 0.9230769230769231,
+        "recall": 1.0,
+        "specificity": 0.8333333333333334,
+        "tn": 5,
+        "tp": 12
+      },
+      "TwoRoom": {
+        "auprc": 1.0,
+        "balanced_accuracy": 0.9666666666666667,
+        "fn": 1,
+        "fp": 0,
+        "n": 18,
+        "positive_n": 15,
+        "precision": 1.0,
+        "recall": 0.9333333333333333,
+        "specificity": 1.0,
+        "tn": 3,
+        "tp": 14
+      }
+    },
+    "by_training_seed": {
+      "3073": {
+        "auprc": 0.9928148774302621,
+        "balanced_accuracy": 0.9307692307692308,
+        "fn": 1,
+        "fp": 1,
+        "n": 36,
+        "positive_n": 26,
+        "precision": 0.9615384615384616,
+        "recall": 0.9615384615384616,
+        "specificity": 0.9,
+        "tn": 9,
+        "tp": 25
+      },
+      "3074": {
+        "auprc": 0.9411566297028253,
+        "balanced_accuracy": 0.9583333333333333,
+        "fn": 0,
+        "fp": 1,
+        "n": 36,
+        "positive_n": 24,
+        "precision": 0.96,
+        "recall": 1.0,
+        "specificity": 0.9166666666666666,
+        "tn": 11,
+        "tp": 24
+      }
+    },
+    "calibration": "LeWM seed3072 only",
+    "deletion_stability": {
+      "leave_one_task_out": {
+        "folds": [
+          {
+            "held_out": {
+              "auprc": 1.0,
+              "balanced_accuracy": 0.9666666666666667,
+              "fn": 1,
+              "fp": 0,
+              "n": 18,
+              "positive_n": 15,
+              "precision": 1.0,
+              "recall": 0.9333333333333333,
+              "specificity": 1.0,
+              "tn": 3,
+              "tp": 14
+            },
+            "held_out_value": "TwoRoom",
+            "remaining_after_deletion": {
+              "auprc": 0.9651902923331495,
+              "balanced_accuracy": 0.9473684210526316,
+              "fn": 0,
+              "fp": 2,
+              "n": 54,
+              "positive_n": 35,
+              "precision": 0.9459459459459459,
+              "recall": 1.0,
+              "specificity": 0.8947368421052632,
+              "tn": 17,
+              "tp": 35
+            }
+          },
+          {
+            "held_out": {
+              "auprc": 1.0,
+              "balanced_accuracy": 1.0,
+              "fn": 0,
+              "fp": 0,
+              "n": 18,
+              "positive_n": 12,
+              "precision": 1.0,
+              "recall": 1.0,
+              "specificity": 1.0,
+              "tn": 6,
+              "tp": 12
+            },
+            "held_out_value": "PushT",
+            "remaining_after_deletion": {
+              "auprc": 0.9479243692973534,
+              "balanced_accuracy": 0.924342105263158,
+              "fn": 1,
+              "fp": 2,
+              "n": 54,
+              "positive_n": 38,
+              "precision": 0.9487179487179487,
+              "recall": 0.9736842105263158,
+              "specificity": 0.875,
+              "tn": 14,
+              "tp": 37
+            }
+          },
+          {
+            "held_out": {
+              "auprc": 1.0,
+              "balanced_accuracy": 0.9166666666666667,
+              "fn": 0,
+              "fp": 1,
+              "n": 18,
+              "positive_n": 12,
+              "precision": 0.9230769230769231,
+              "recall": 1.0,
+              "specificity": 0.8333333333333334,
+              "tn": 5,
+              "tp": 12
+            },
+            "held_out_value": "Reacher",
+            "remaining_after_deletion": {
+              "auprc": 0.9591118720845175,
+              "balanced_accuracy": 0.955592105263158,
+              "fn": 1,
+              "fp": 1,
+              "n": 54,
+              "positive_n": 38,
+              "precision": 0.9736842105263158,
+              "recall": 0.9736842105263158,
+              "specificity": 0.9375,
+              "tn": 15,
+              "tp": 37
+            }
+          },
+          {
+            "held_out": {
+              "auprc": 0.9023415977961433,
+              "balanced_accuracy": 0.9285714285714286,
+              "fn": 0,
+              "fp": 1,
+              "n": 18,
+              "positive_n": 11,
+              "precision": 0.9166666666666666,
+              "recall": 1.0,
+              "specificity": 0.8571428571428571,
+              "tn": 6,
+              "tp": 11
+            },
+            "held_out_value": "Cube",
+            "remaining_after_deletion": {
+              "auprc": 0.9948811871888795,
+              "balanced_accuracy": 0.9538461538461538,
+              "fn": 1,
+              "fp": 1,
+              "n": 54,
+              "positive_n": 39,
+              "precision": 0.9743589743589743,
+              "recall": 0.9743589743589743,
+              "specificity": 0.9333333333333333,
+              "tn": 14,
+              "tp": 38
+            }
+          }
+        ],
+        "group_field": "task",
+        "interpretation": "deletion stability of the frozen seed3072 gate; no threshold or feature is fitted in a fold",
+        "remaining_metric_range": {
+          "auprc": [
+            0.9479243692973534,
+            0.9948811871888795
+          ],
+          "balanced_accuracy": [
+            0.924342105263158,
+            0.955592105263158
+          ],
+          "precision": [
+            0.9459459459459459,
+            0.9743589743589743
+          ],
+          "recall": [
+            0.9736842105263158,
+            1.0
+          ],
+          "specificity": [
+            0.875,
+            0.9375
+          ]
+        }
+      },
+      "leave_one_training_seed_out": {
+        "folds": [
+          {
+            "held_out": {
+              "auprc": 0.9928148774302621,
+              "balanced_accuracy": 0.9307692307692308,
+              "fn": 1,
+              "fp": 1,
+              "n": 36,
+              "positive_n": 26,
+              "precision": 0.9615384615384616,
+              "recall": 0.9615384615384616,
+              "specificity": 0.9,
+              "tn": 9,
+              "tp": 25
+            },
+            "held_out_value": 3073,
+            "remaining_after_deletion": {
+              "auprc": 0.9411566297028253,
+              "balanced_accuracy": 0.9583333333333333,
+              "fn": 0,
+              "fp": 1,
+              "n": 36,
+              "positive_n": 24,
+              "precision": 0.96,
+              "recall": 1.0,
+              "specificity": 0.9166666666666666,
+              "tn": 11,
+              "tp": 24
+            }
+          },
+          {
+            "held_out": {
+              "auprc": 0.9411566297028253,
+              "balanced_accuracy": 0.9583333333333333,
+              "fn": 0,
+              "fp": 1,
+              "n": 36,
+              "positive_n": 24,
+              "precision": 0.96,
+              "recall": 1.0,
+              "specificity": 0.9166666666666666,
+              "tn": 11,
+              "tp": 24
+            },
+            "held_out_value": 3074,
+            "remaining_after_deletion": {
+              "auprc": 0.9928148774302621,
+              "balanced_accuracy": 0.9307692307692308,
+              "fn": 1,
+              "fp": 1,
+              "n": 36,
+              "positive_n": 26,
+              "precision": 0.9615384615384616,
+              "recall": 0.9615384615384616,
+              "specificity": 0.9,
+              "tn": 9,
+              "tp": 25
+            }
+          }
+        ],
+        "group_field": "training_seed",
+        "interpretation": "deletion stability of the frozen seed3072 gate; no threshold or feature is fitted in a fold",
+        "remaining_metric_range": {
+          "auprc": [
+            0.9411566297028253,
+            0.9928148774302621
+          ],
+          "balanced_accuracy": [
+            0.9307692307692308,
+            0.9583333333333333
+          ],
+          "precision": [
+            0.96,
+            0.9615384615384616
+          ],
+          "recall": [
+            0.9615384615384616,
+            1.0
+          ],
+          "specificity": [
+            0.9,
+            0.9166666666666666
+          ]
+        }
+      }
+    },
+    "onset_error": {
+      "maximum_absolute": 0.01,
+      "mean_absolute": 0.0024999999999999996,
+      "unit": "training-noise rho"
+    },
+    "overall": {
+      "auprc": 0.965481359427651,
+      "balanced_accuracy": 0.9445454545454546,
+      "fn": 1,
+      "fp": 2,
+      "n": 72,
+      "positive_n": 50,
+      "precision": 0.9607843137254902,
+      "recall": 0.98,
+      "specificity": 0.9090909090909091,
+      "tn": 20,
+      "tp": 49
+    },
+    "protocol_sha256": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "test_scope": "LeWM seeds3073/3074 x four tasks x nine checkpoints",
+    "threshold_search_allowed": false
+  },
+  "P3": {
+    "absolute_single_checkpoint_screen": {
+      "auprc": 0.8558022526672411,
+      "balanced_accuracy": 0.7333333333333334,
+      "block_bootstrap": {
+        "block": "task x independently trained LeWM seed; blur and resize retained inside each resampled block",
+        "block_count": 12,
+        "metrics": {
+          "auprc": {
+            "ci95": [
+              0.5863655263783621,
+              0.9813218951941777
+            ],
+            "observed": 0.8558022526672412,
+            "valid_repetitions": 4990
+          },
+          "balanced_accuracy": {
+            "ci95": [
+              0.5714285714285714,
+              0.8947368421052632
+            ],
+            "observed": 0.7333333333333334,
+            "valid_repetitions": 4990
+          },
+          "coverage": {
+            "ci95": [
+              0.08333333333333333,
+              0.5416666666666666
+            ],
+            "observed": 0.2916666666666667,
+            "valid_repetitions": 5000
+          },
+          "precision": {
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "observed": 1.0,
+            "valid_repetitions": 4979
+          },
+          "recall": {
+            "ci95": [
+              0.14285714285714285,
+              0.7894736842105263
+            ],
+            "observed": 0.4666666666666667,
+            "valid_repetitions": 5000
+          },
+          "selective_false_pass_risk": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "observed": 0.0,
+            "valid_repetitions": 4979
+          },
+          "specificity": {
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "observed": 1.0,
+            "valid_repetitions": 4990
+          }
+        },
+        "repetitions": 5000,
+        "seed": 20260713
+      },
+      "coverage": {
+        "exact_two_sided_95_ci": [
+          0.12615208852369136,
+          0.5109478138578332
+        ],
+        "n": 24,
+        "observed": 0.2916666666666667,
+        "pass_count": 7
+      },
+      "evaluation_target": "pair-derived positive transfer: endpoint stressed success improves by at least 5pp over base while clean drop is at most 5pp",
+      "false_negative_rate": 0.5333333333333333,
+      "false_pass_rate": 0.0,
+      "fn": 8,
+      "fp": 0,
+      "n": 24,
+      "pearson_delta_behavior_vs_delta_joint_score": 0.8284982335880533,
+      "pearson_delta_behavior_vs_endpoint_joint_score": 0.6063810857667804,
+      "positive_n": 15,
+      "precision": 1.0,
+      "predicted_positive_n": 7,
+      "recall": 0.4666666666666667,
+      "scoring_input": "endpoint checkpoint only; no base score is used by the frozen gate",
+      "selective_false_pass_risk": {
+        "conditioning": "among absolute-gate passes",
+        "exact_one_sided_95_upper": 0.34816365513116077,
+        "false_pass_count": 0,
+        "observed": 0.0,
+        "pass_count": 7
+      },
+      "signed_agreement_comparable_n": 24,
+      "signed_agreement_delta_behavior_vs_delta_joint_score": 0.9166666666666666,
+      "spearman_delta_behavior_vs_delta_joint_score": 0.8641009119252958,
+      "spearman_delta_behavior_vs_endpoint_joint_score": 0.5298131240602315,
+      "specificity": 1.0,
+      "tn": 9,
+      "tp": 7,
+      "value": "LeWM"
+    },
+    "boundary": "the endpoint gate is reference-free at scoring time but is evaluated against a pair-derived improvement label, not an absolute stability label; the paired rule requires a reference checkpoint",
+    "calibration": "Gaussian only; unchanged LeWM gate",
+    "paired_reference_rule": {
+      "block_bootstrap": {
+        "block_count": 12,
+        "interval": "percentile 95% block-bootstrap interval",
+        "metrics": {
+          "auprc": {
+            "bootstrap_median": 0.97906162464986,
+            "ci95": [
+              0.8693029143475574,
+              1.0
+            ],
+            "observed": 0.9739334195216549,
+            "valid_repetitions": 5000
+          },
+          "balanced_accuracy": {
+            "bootstrap_median": 0.8888888888888888,
+            "ci95": [
+              0.7,
+              1.0
+            ],
+            "observed": 0.8888888888888888,
+            "valid_repetitions": 4988
+          },
+          "precision": {
+            "bootstrap_median": 0.8888888888888888,
+            "ci95": [
+              0.6921875000000001,
+              1.0
+            ],
+            "observed": 0.8823529411764706,
+            "valid_repetitions": 5000
+          },
+          "recall": {
+            "bootstrap_median": 1.0,
+            "ci95": [
+              1.0,
+              1.0
+            ],
+            "observed": 1.0,
+            "valid_repetitions": 5000
+          },
+          "signed_agreement_delta_behavior_vs_oriented_delta_score": {
+            "bootstrap_median": 0.9166666666666666,
+            "ci95": [
+              0.7916666666666666,
+              1.0
+            ],
+            "observed": 0.9166666666666666,
+            "valid_repetitions": 5000
+          },
+          "spearman_delta_behavior_vs_oriented_delta_score": {
+            "bootstrap_median": 0.8409090909090909,
+            "ci95": [
+              0.6411715871413971,
+              0.9319301469909482
+            ],
+            "observed": 0.8641009119252958,
+            "valid_repetitions": 5000
+          }
+        },
+        "repetitions": 5000,
+        "resampling_unit": "task x independently trained LeWM checkpoint seed",
+        "seed": 20260711,
+        "stressors_retained_within_block": [
+          "blur",
+          "resize"
+        ]
+      },
+      "by_stressor": {
+        "blur": {
+          "auprc": 0.9526289682539681,
+          "balanced_accuracy": 0.875,
+          "decision_rule": "oriented endpoint-minus-base diagnostic change > 0",
+          "decision_threshold": 0.0,
+          "false_negative_rate": 0.0,
+          "false_pass_rate": 0.25,
+          "fn": 0,
+          "fp": 1,
+          "higher_is_better_direction": 1.0,
+          "n": 12,
+          "paired_change_field": "delta_joint_score",
+          "pearson_delta_behavior_vs_oriented_delta_score": 0.8559295520511381,
+          "positive_n": 8,
+          "precision": 0.8888888888888888,
+          "predicted_positive_n": 9,
+          "recall": 1.0,
+          "signed_agreement_comparable_n": 12,
+          "signed_agreement_delta_behavior_vs_oriented_delta_score": 0.9166666666666666,
+          "spearman_delta_behavior_vs_oriented_delta_score": 0.8601398601398601,
+          "specificity": 0.75,
+          "tn": 3,
+          "tp": 8
+        },
+        "resize": {
+          "auprc": 1.0,
+          "balanced_accuracy": 0.9,
+          "decision_rule": "oriented endpoint-minus-base diagnostic change > 0",
+          "decision_threshold": 0.0,
+          "false_negative_rate": 0.0,
+          "false_pass_rate": 0.2,
+          "fn": 0,
+          "fp": 1,
+          "higher_is_better_direction": 1.0,
+          "n": 12,
+          "paired_change_field": "delta_joint_score",
+          "pearson_delta_behavior_vs_oriented_delta_score": 0.8939887340764,
+          "positive_n": 7,
+          "precision": 0.875,
+          "predicted_positive_n": 8,
+          "recall": 1.0,
+          "signed_agreement_comparable_n": 12,
+          "signed_agreement_delta_behavior_vs_oriented_delta_score": 0.9166666666666666,
+          "spearman_delta_behavior_vs_oriented_delta_score": 0.7622377622377622,
+          "specificity": 0.8,
+          "tn": 4,
+          "tp": 7
+        }
+      },
+      "deletion_stability": {
+        "leave_one_task_out": {
+          "folds": [
+            {
+              "held_out": {
+                "auprc": null,
+                "balanced_accuracy": null,
+                "choice_accuracy": 0.6666666666666666,
+                "mean_regret_pp": 0.5555555000000005,
+                "n": 6,
+                "signed_agreement": 0.6666666666666666,
+                "spearman": -0.2571428571428571
+              },
+              "held_out_value": "Cube",
+              "remaining_after_deletion": {
+                "auprc": 0.9739334195216549,
+                "balanced_accuracy": 0.6666666666666666,
+                "choice_accuracy": 1.0,
+                "mean_regret_pp": 0.0,
+                "n": 18,
+                "signed_agreement": 1.0,
+                "spearman": 0.74754785387991
+              }
+            },
+            {
+              "held_out": {
+                "auprc": 0.7555555555555555,
+                "balanced_accuracy": 0.6666666666666666,
+                "choice_accuracy": 1.0,
+                "mean_regret_pp": 0.0,
+                "n": 6,
+                "signed_agreement": 1.0,
+                "spearman": 0.550782483869826
+              },
+              "held_out_value": "PushT",
+              "remaining_after_deletion": {
+                "auprc": 1.0,
+                "balanced_accuracy": 1.0,
+                "choice_accuracy": 0.8888888888888888,
+                "mean_regret_pp": 0.18518516666666685,
+                "n": 18,
+                "signed_agreement": 0.8888888888888888,
+                "spearman": 0.8410732714138286
+              }
+            },
+            {
+              "held_out": {
+                "auprc": 1.0,
+                "balanced_accuracy": null,
+                "choice_accuracy": 1.0,
+                "mean_regret_pp": 0.0,
+                "n": 6,
+                "signed_agreement": 1.0,
+                "spearman": 0.8857142857142857
+              },
+              "held_out_value": "Reacher",
+              "remaining_after_deletion": {
+                "auprc": 0.9278138528138528,
+                "balanced_accuracy": 0.8888888888888888,
+                "choice_accuracy": 0.8888888888888888,
+                "mean_regret_pp": 0.18518516666666685,
+                "n": 18,
+                "signed_agreement": 0.8888888888888888,
+                "spearman": 0.8301498266843199
+              }
+            },
+            {
+              "held_out": {
+                "auprc": 1.0,
+                "balanced_accuracy": null,
+                "choice_accuracy": 1.0,
+                "mean_regret_pp": 0.0,
+                "n": 6,
+                "signed_agreement": 1.0,
+                "spearman": 0.5428571428571428
+              },
+              "held_out_value": "TwoRoom",
+              "remaining_after_deletion": {
+                "auprc": 0.967452300785634,
+                "balanced_accuracy": 0.8888888888888888,
+                "choice_accuracy": 0.8888888888888888,
+                "mean_regret_pp": 0.18518516666666685,
+                "n": 18,
+                "signed_agreement": 0.8888888888888888,
+                "spearman": 0.8972639295879029
+              }
+            }
+          ],
+          "group_field": "task",
+          "interpretation": "deletion stability of the fixed zero-threshold rule; not fitted cross-validation",
+          "remaining_metric_range": {
+            "auprc": [
+              0.9278138528138528,
+              1.0
+            ],
+            "balanced_accuracy": [
+              0.6666666666666666,
+              1.0
+            ],
+            "choice_accuracy": [
+              0.8888888888888888,
+              1.0
+            ],
+            "mean_regret_pp": [
+              0.0,
+              0.18518516666666685
+            ],
+            "signed_agreement": [
+              0.8888888888888888,
+              1.0
+            ],
+            "spearman": [
+              0.74754785387991,
+              0.8972639295879029
+            ]
+          }
+        },
+        "leave_one_training_seed_out": {
+          "folds": [
+            {
+              "held_out": {
+                "auprc": 0.9666666666666667,
+                "balanced_accuracy": 0.8333333333333333,
+                "choice_accuracy": 0.875,
+                "mean_regret_pp": 0.125,
+                "n": 8,
+                "signed_agreement": 0.875,
+                "spearman": 0.8809523809523809
+              },
+              "held_out_value": "lewm_seed3072",
+              "remaining_after_deletion": {
+                "auprc": 0.9697979797979799,
+                "balanced_accuracy": 0.9166666666666667,
+                "choice_accuracy": 0.9375,
+                "mean_regret_pp": 0.1458333125000002,
+                "n": 16,
+                "signed_agreement": 0.9375,
+                "spearman": 0.7529411764705882
+              }
+            },
+            {
+              "held_out": {
+                "auprc": 1.0,
+                "balanced_accuracy": 1.0,
+                "choice_accuracy": 0.875,
+                "mean_regret_pp": 0.2916666250000004,
+                "n": 8,
+                "signed_agreement": 0.875,
+                "spearman": 0.7619047619047619
+              },
+              "held_out_value": "lewm_seed3073",
+              "remaining_after_deletion": {
+                "auprc": 0.9797979797979798,
+                "balanced_accuracy": 0.8571428571428572,
+                "choice_accuracy": 0.9375,
+                "mean_regret_pp": 0.0625,
+                "n": 16,
+                "signed_agreement": 0.9375,
+                "spearman": 0.9403976055841533
+              }
+            },
+            {
+              "held_out": {
+                "auprc": 1.0,
+                "balanced_accuracy": 0.875,
+                "choice_accuracy": 1.0,
+                "mean_regret_pp": 0.0,
+                "n": 8,
+                "signed_agreement": 1.0,
+                "spearman": 0.9047619047619048
+              },
+              "held_out_value": "lewm_seed3074",
+              "remaining_after_deletion": {
+                "auprc": 0.9841597796143251,
+                "balanced_accuracy": 0.9,
+                "choice_accuracy": 0.875,
+                "mean_regret_pp": 0.2083333125000002,
+                "n": 16,
+                "signed_agreement": 0.875,
+                "spearman": 0.8735294117647059
+              }
+            }
+          ],
+          "group_field": "training_seed_or_family_id",
+          "interpretation": "deletion stability of the fixed zero-threshold rule; not fitted cross-validation",
+          "remaining_metric_range": {
+            "auprc": [
+              0.9697979797979799,
+              0.9841597796143251
+            ],
+            "balanced_accuracy": [
+              0.8571428571428572,
+              0.9166666666666667
+            ],
+            "choice_accuracy": [
+              0.875,
+              0.9375
+            ],
+            "mean_regret_pp": [
+              0.0625,
+              0.2083333125000002
+            ],
+            "signed_agreement": [
+              0.875,
+              0.9375
+            ],
+            "spearman": [
+              0.7529411764705882,
+              0.9403976055841533
+            ]
+          }
+        }
+      },
+      "exact_randomization": {
+        "block_count": 12,
+        "enumerated_assignments": 4096,
+        "null_hypothesis": "joint diagnostic-change signs are blockwise sign-symmetric relative to behavior changes",
+        "null_spearman_ci95": [
+          -0.6329637027213226,
+          0.6329637027213226
+        ],
+        "observed_spearman": 0.8641009119252958,
+        "one_sided_p_value": 0.000244140625,
+        "primary_test": "exact task-x-training-seed block sign-flip test",
+        "row_level_signed_agreement": {
+          "dependence_warning": "row-level binomial calculation is descriptive; the block sign-flip test is primary",
+          "one_sided_exact_binomial_p_value": 1.7940998077392578e-05,
+          "successes": 22,
+          "trials": 24
+        },
+        "two_sided_p_value": 0.00048828125
+      },
+      "overall": {
+        "auprc": 0.9739334195216549,
+        "balanced_accuracy": 0.8888888888888888,
+        "decision_rule": "oriented endpoint-minus-base diagnostic change > 0",
+        "decision_threshold": 0.0,
+        "display_name": "Joint score",
+        "false_negative_rate": 0.0,
+        "false_pass_rate": 0.2222222222222222,
+        "fn": 0,
+        "fp": 2,
+        "higher_is_better_direction": 1.0,
+        "n": 24,
+        "paired_change_field": "delta_joint_score",
+        "pearson_delta_behavior_vs_oriented_delta_score": 0.8284982335880533,
+        "positive_n": 15,
+        "precision": 0.8823529411764706,
+        "predicted_positive_n": 17,
+        "recall": 1.0,
+        "signed_agreement_comparable_n": 24,
+        "signed_agreement_delta_behavior_vs_oriented_delta_score": 0.9166666666666666,
+        "spearman_delta_behavior_vs_oriented_delta_score": 0.8641009119252958,
+        "specificity": 0.7777777777777778,
+        "tn": 7,
+        "tp": 15
+      },
+      "selection": {
+        "choice_accuracy": 0.9166666666666666,
+        "comparable_n": 24,
+        "decision_rule": "select endpoint iff oriented diagnostic change > 0",
+        "display_name": "Joint score",
+        "material_change_threshold_pp": 5.0,
+        "material_choice_accuracy": 1.0,
+        "material_comparable_n": 16,
+        "max_regret_pp": 2.333333000000003,
+        "mean_regret_pp": 0.13888887500000013,
+        "median_regret_pp": 0.0,
+        "n": 24,
+        "oracle_mean_stressed_score": 72.79166675,
+        "q90_regret_pp": 0.0,
+        "selected_mean_stressed_score": 72.652777875,
+        "zero_regret_rate": 0.9166666666666666
+      }
+    },
+    "test_scope": "three LeWM seeds x four tasks x blur/resize",
+    "threshold_search_allowed": false
+  },
+  "metadata": {
+    "claims": [
+      "P1 target-aligned ACPC theory-evidence closure",
+      "P2 within-family cross-seed frozen threshold transfer",
+      "P3 Gaussian-to-blur/resize frozen transfer"
+    ],
+    "created_utc": "2026-07-13T21:27:10.855098+00:00",
+    "model_evaluation_performed": false,
+    "p1_prospective_gate_pass": true,
+    "schema_version": "paper1-three-pillar-evidence-1.0",
+    "threshold_search_allowed": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "fields": [
+    "model_family",
+    "training_family_id",
+    "training_seed",
+    "task",
+    "training_rho",
+    "stressor_family",
+    "stressor_severity",
+    "atr_horizon_v2_q90",
+    "smpr",
+    "atr_threshold_margin",
+    "smpr_threshold_margin",
+    "joint_score",
+    "frozen_gate_pass",
+    "split_name",
+    "protocol_sha256",
+    "diagnostics_sha256"
+  ],
+  "metadata": {
+    "behavior_blind": true,
+    "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+    "created_utc": "2026-07-10T11:01:41.688789+00:00",
+    "errors": [],
+    "evaluation_seed_semantics": "conditional evaluation variability, not training-run replication",
+    "missing_rows": [],
+    "model_family": [
+      "PLDM"
+    ],
+    "protocol_hash": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "schema_version": "paper1-frozen-external-blind-predictions-1.0",
+    "script_path": "paper1/scripts/frozen_external_validation.py",
+    "script_sha256": "dde3ab96d894f1591656c0d7096175fad1ef6e0a27f7502aeaeba1da5d447325",
+    "source_hashes": {
+      "blind_rows": "2578ebd0a9a5cf51ef74836a509f2e42213f413fce86e541b9443e34b3421c05",
+      "diagnostics": "d145ff6d2b7a53b5829be92c728a06a53bf0659ec87116d5bce6783add4329b4",
+      "protocol": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21"
+    },
+    "source_paths": {
+      "blind_rows": "paper1/results/external_validation/pldm_frozen_predictions_blind_v1.csv",
+      "diagnostics": "paper1/results/external_validation/pldm_canonical_diagnostic_input_v2.json",
+      "protocol": "paper1/config/frozen_diagnostic_protocol_v1.json"
+    },
+    "status": "complete",
+    "status_counts": {
+      "ok": 36
+    },
+    "threshold_search_available": false,
+    "training_seed_semantics": "one independently trained PLDM checkpoint family"
+  },
+  "row_count": 36
+}
