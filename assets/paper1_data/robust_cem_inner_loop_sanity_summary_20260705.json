@@ -1,0 +1,124 @@
+{
+  "commit_base": "30dc97c4fa260571089d7c149212a02436d2599f",
+  "decision": "Do not continue to seeds 43/44 and do not add Robust CEM to Paper1; record as bounded negative lab-note evidence only.",
+  "derived": {
+    "reacher_inner_loop_status": "not interpreted; runner was interrupted after TwoRoom no-go condition failed",
+    "required_gap_pp": 5.0,
+    "tworoom_best_inner_gap_vs_compute_pp": 2.0000000000000036,
+    "tworoom_best_inner_pct": 31.0,
+    "tworoom_compute_matched_pct": 28.999999999999996,
+    "tworoom_inner_meanstd_pct": 31.0,
+    "tworoom_inner_rankvote_elitemean_pct": 22.0
+  },
+  "protocol": {
+    "checkpoint": "origin baseline_seed3073 LeWM",
+    "condition": "pixels Gaussian std=0.08",
+    "eval_budget": 25,
+    "num_eval": 100,
+    "runner_command": "python tools/run_robust_cem_eval100x3.py --tasks tworoom reacher --seeds 42 --planners cem48_n4 cem192_n4_compute rcem_final_rankvote_elitemean rcem_inner_meanstd rcem_inner_rankvote_elitemean --num-eval 100 --eval-budget 25 --timeout-sec 2400 --cuda-visible-devices 0 --output-stem robust_cem_inner_sanity_seed42_20260705",
+    "seed": 42,
+    "stop_rule": "Stop if TwoRoom inner-loop robust CEM fails to exceed compute-matched CEM by at least +5 pp.",
+    "tasks_interpreted_for_go_no_go": [
+      "TwoRoom"
+    ],
+    "tasks_started": [
+      "TwoRoom",
+      "Reacher"
+    ],
+    "world_num_envs": 1
+  },
+  "reason": "TwoRoom seed42 inner-loop robust CEM did not beat compute-matched CEM by the required +5 pp.",
+  "results": [
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_cem48_n4_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_cem48_n4_eval100.txt",
+      "n": 100,
+      "planner": "cem48_n4",
+      "resumed": true,
+      "seed": 42,
+      "success_count": 29,
+      "success_rate_pct": 28.999999999999996,
+      "task": "TwoRoom"
+    },
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_cem192_n4_compute_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_cem192_n4_compute_eval100.txt",
+      "n": 100,
+      "planner": "cem192_n4_compute",
+      "resumed": true,
+      "seed": 42,
+      "success_count": 29,
+      "success_rate_pct": 28.999999999999996,
+      "task": "TwoRoom"
+    },
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_rcem_final_rankvote_elitemean_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_rcem_final_rankvote_elitemean_eval100.txt",
+      "n": 100,
+      "planner": "rcem_final_rankvote_elitemean",
+      "resumed": true,
+      "seed": 42,
+      "success_count": 33,
+      "success_rate_pct": 33.0,
+      "task": "TwoRoom"
+    },
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_rcem_inner_meanstd_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_rcem_inner_meanstd_eval100.txt",
+      "n": 100,
+      "planner": "rcem_inner_meanstd",
+      "resumed": false,
+      "seed": 42,
+      "success_count": 31,
+      "success_rate_pct": 31.0,
+      "task": "TwoRoom"
+    },
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_rcem_inner_rankvote_elitemean_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/robust_cem_eval100x3_tworoom_s3073_seed42_gauss008_rcem_inner_rankvote_elitemean_eval100.txt",
+      "n": 100,
+      "planner": "rcem_inner_rankvote_elitemean",
+      "resumed": false,
+      "seed": 42,
+      "success_count": 22,
+      "success_rate_pct": 22.0,
+      "task": "TwoRoom"
+    },
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_reacher_s3073_seed42_gauss008_cem48_n4_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/robust_cem_eval100x3_reacher_s3073_seed42_gauss008_cem48_n4_eval100.txt",
+      "n": 100,
+      "planner": "cem48_n4",
+      "resumed": true,
+      "seed": 42,
+      "success_count": 7,
+      "success_rate_pct": 7.000000000000001,
+      "task": "Reacher"
+    },
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_reacher_s3073_seed42_gauss008_cem192_n4_compute_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/robust_cem_eval100x3_reacher_s3073_seed42_gauss008_cem192_n4_compute_eval100.txt",
+      "n": 100,
+      "planner": "cem192_n4_compute",
+      "resumed": true,
+      "seed": 42,
+      "success_count": 7,
+      "success_rate_pct": 7.000000000000001,
+      "task": "Reacher"
+    },
+    {
+      "log_file": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/robust_cem_inner_sanity_seed42_20260705_logs/robust_cem_eval100x3_reacher_s3073_seed42_gauss008_rcem_final_rankvote_elitemean_eval100.log",
+      "metrics_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/robust_cem_eval100x3_reacher_s3073_seed42_gauss008_rcem_final_rankvote_elitemean_eval100.txt",
+      "n": 100,
+      "planner": "rcem_final_rankvote_elitemean",
+      "resumed": true,
+      "seed": 42,
+      "success_count": 6,
+      "success_rate_pct": 6.0,
+      "task": "Reacher"
+    }
+  ],
+  "schema_version": "robust-cem-inner-loop-sanity-20260705-v1",
+  "source_note": "Summary is self-contained; the runner partial JSON was an interrupted local intermediate and is not part of the paper artifact set.",
+  "status": "no_go"
+}

@@ -35,7 +35,7 @@
     "root_note": "Root is a runtime prefix; use --root to rebuild on another machine.",
     "schema_version": "paper1-unseen-perturbation-pilot-1.0",
     "source_manifest": "assets/paper1_data/unseen_origin_vs_std008_strongest_tworoom_manifest.json",
-    "status": "pilot artifact for review; do not cite in main text until manually audited",
+    "status": "audited score artifact for prospective_validation_summary three-seed unseen score aggregate; matched Phase-0 diagnostics are separate",
     "tasks": [
       "TwoRoom"
     ],

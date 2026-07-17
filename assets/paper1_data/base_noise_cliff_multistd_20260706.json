@@ -1,0 +1,401 @@
+{
+  "metadata": {
+    "schema_version": "paper1-base-noise-cliff-multistd-20260706-v1",
+    "created_utc": "2026-07-06T07:24:29.428288+00:00",
+    "scope": "LeWM-base, std_key=0.0, observation-only Gaussian evaluation noise at sigma 0/0.03/0.05/0.08 across training seeds 3072/3073/3074; each training-seed value is the mean over evaluation seeds 42/43/44.",
+    "metric_keys": {
+      "eval_sigma_0": "clean",
+      "eval_sigma_0.03": "pixels_std0.03",
+      "eval_sigma_0.05": "pixels_std0.05",
+      "eval_sigma_0.08": "pixels_std0.08",
+      "eval_sigma_0.08_obs_goal": "pixels_goal_std0.08"
+    },
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_seeds": [
+      3072,
+      3073,
+      3074
+    ]
+  },
+  "per_seed_rows": [
+    {
+      "task": "TwoRoom",
+      "training_seed": 3072,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json",
+      "eval_sigma_0": 94.0,
+      "eval_sigma_0.03": 91.0,
+      "eval_sigma_0.05": 72.33333333333333,
+      "eval_sigma_0.08": 65.66666666666667,
+      "eval_sigma_0.08_obs_goal": 50.0
+    },
+    {
+      "task": "TwoRoom",
+      "training_seed": 3073,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json",
+      "eval_sigma_0": 94.333333,
+      "eval_sigma_0.03": 92.666667,
+      "eval_sigma_0.05": 88.666667,
+      "eval_sigma_0.08": 71.666667,
+      "eval_sigma_0.08_obs_goal": 54.666667
+    },
+    {
+      "task": "TwoRoom",
+      "training_seed": 3074,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json",
+      "eval_sigma_0": 95.666667,
+      "eval_sigma_0.03": 94.0,
+      "eval_sigma_0.05": 83.0,
+      "eval_sigma_0.08": 69.0,
+      "eval_sigma_0.08_obs_goal": 56.0
+    },
+    {
+      "task": "PushT",
+      "training_seed": 3072,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json",
+      "eval_sigma_0": 86.33333333333333,
+      "eval_sigma_0.03": 59.333333333333336,
+      "eval_sigma_0.05": 17.0,
+      "eval_sigma_0.08": 4.333333333333333,
+      "eval_sigma_0.08_obs_goal": 4.666666666666667
+    },
+    {
+      "task": "PushT",
+      "training_seed": 3073,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json",
+      "eval_sigma_0": 75.0,
+      "eval_sigma_0.03": 35.666667,
+      "eval_sigma_0.05": 9.333333,
+      "eval_sigma_0.08": 2.0,
+      "eval_sigma_0.08_obs_goal": 3.0
+    },
+    {
+      "task": "PushT",
+      "training_seed": 3074,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json",
+      "eval_sigma_0": 84.0,
+      "eval_sigma_0.03": 65.666667,
+      "eval_sigma_0.05": 31.333333,
+      "eval_sigma_0.08": 15.333333,
+      "eval_sigma_0.08_obs_goal": 7.0
+    },
+    {
+      "task": "Reacher",
+      "training_seed": 3072,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json",
+      "eval_sigma_0": 58.666666666666664,
+      "eval_sigma_0.03": 39.666666666666664,
+      "eval_sigma_0.05": 33.666666666666664,
+      "eval_sigma_0.08": 18.333333333333332,
+      "eval_sigma_0.08_obs_goal": 15.0
+    },
+    {
+      "task": "Reacher",
+      "training_seed": 3073,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json",
+      "eval_sigma_0": 60.666667,
+      "eval_sigma_0.03": 41.333333,
+      "eval_sigma_0.05": 31.333333,
+      "eval_sigma_0.08": 17.666667,
+      "eval_sigma_0.08_obs_goal": 14.666667
+    },
+    {
+      "task": "Reacher",
+      "training_seed": 3074,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json",
+      "eval_sigma_0": 58.333333,
+      "eval_sigma_0.03": 46.666667,
+      "eval_sigma_0.05": 35.666667,
+      "eval_sigma_0.08": 18.666667,
+      "eval_sigma_0.08_obs_goal": 11.666667
+    },
+    {
+      "task": "Cube",
+      "training_seed": 3072,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json",
+      "eval_sigma_0": 66.66666666666667,
+      "eval_sigma_0.03": 63.666666666666664,
+      "eval_sigma_0.05": 48.666666666666664,
+      "eval_sigma_0.08": 47.0,
+      "eval_sigma_0.08_obs_goal": 46.333333333333336
+    },
+    {
+      "task": "Cube",
+      "training_seed": 3073,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3073_evals.json",
+      "eval_sigma_0": 65.0,
+      "eval_sigma_0.03": 64.0,
+      "eval_sigma_0.05": 44.0,
+      "eval_sigma_0.08": 39.0,
+      "eval_sigma_0.08_obs_goal": 44.666667
+    },
+    {
+      "task": "Cube",
+      "training_seed": 3074,
+      "source": "assets/paper1_data/training_seed_eval_manifests/lewm_seed3074_evals.json",
+      "eval_sigma_0": 64.0,
+      "eval_sigma_0.03": 61.333333,
+      "eval_sigma_0.05": 47.333333,
+      "eval_sigma_0.08": 43.333333,
+      "eval_sigma_0.08_obs_goal": 46.333333
+    }
+  ],
+  "task_summary_rows": [
+    {
+      "task": "TwoRoom",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "eval_sigma_0": {
+        "mean": 94.66666666666667,
+        "pstdev": 0.72008250556092,
+        "values": [
+          94.0,
+          94.333333,
+          95.666667
+        ]
+      },
+      "eval_sigma_0.03": {
+        "mean": 92.55555566666668,
+        "pstdev": 1.2272623453025664,
+        "values": [
+          91.0,
+          92.666667,
+          94.0
+        ]
+      },
+      "eval_sigma_0.05": {
+        "mean": 81.33333344444445,
+        "pstdev": 6.771399669306306,
+        "values": [
+          72.33333333333333,
+          88.666667,
+          83.0
+        ]
+      },
+      "eval_sigma_0.08": {
+        "mean": 68.77777788888889,
+        "pstdev": 2.4545248012599146,
+        "values": [
+          65.66666666666667,
+          71.666667,
+          69.0
+        ]
+      },
+      "eval_sigma_0.08_obs_goal": {
+        "mean": 53.55555566666666,
+        "pstdev": 2.5724082486127444,
+        "values": [
+          50.0,
+          54.666667,
+          56.0
+        ]
+      },
+      "eval_sigma_0_to_0.08_loss": {
+        "mean": 25.888888777777776,
+        "pstdev": 2.3778819551425965,
+        "values": [
+          28.33333333333333,
+          22.666665999999992,
+          26.666667000000004
+        ]
+      }
+    },
+    {
+      "task": "PushT",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "eval_sigma_0": {
+        "mean": 81.77777777777777,
+        "pstdev": 4.886362983843559,
+        "values": [
+          86.33333333333333,
+          75.0,
+          84.0
+        ]
+      },
+      "eval_sigma_0.03": {
+        "mean": 53.55555577777778,
+        "pstdev": 12.910900694403193,
+        "values": [
+          59.333333333333336,
+          35.666667,
+          65.666667
+        ]
+      },
+      "eval_sigma_0.05": {
+        "mean": 19.222222,
+        "pstdev": 9.117883634665922,
+        "values": [
+          17.0,
+          9.333333,
+          31.333333
+        ]
+      },
+      "eval_sigma_0.08": {
+        "mean": 7.222222111111111,
+        "pstdev": 5.8139889347446605,
+        "values": [
+          4.333333333333333,
+          2.0,
+          15.333333
+        ]
+      },
+      "eval_sigma_0.08_obs_goal": {
+        "mean": 4.888888888888889,
+        "pstdev": 1.640535895581489,
+        "values": [
+          4.666666666666667,
+          3.0,
+          7.0
+        ]
+      },
+      "eval_sigma_0_to_0.08_loss": {
+        "mean": 74.55555566666668,
+        "pstdev": 5.553332770886104,
+        "values": [
+          82.0,
+          73.0,
+          68.666667
+        ]
+      }
+    },
+    {
+      "task": "Reacher",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "eval_sigma_0": {
+        "mean": 59.22222222222222,
+        "pstdev": 1.0304023066648855,
+        "values": [
+          58.666666666666664,
+          60.666667,
+          58.333333
+        ]
+      },
+      "eval_sigma_0.03": {
+        "mean": 42.55555555555555,
+        "pstdev": 2.985562163495986,
+        "values": [
+          39.666666666666664,
+          41.333333,
+          46.666667
+        ]
+      },
+      "eval_sigma_0.05": {
+        "mean": 33.55555555555555,
+        "pstdev": 1.770819988620762,
+        "values": [
+          33.666666666666664,
+          31.333333,
+          35.666667
+        ]
+      },
+      "eval_sigma_0.08": {
+        "mean": 18.222222444444444,
+        "pstdev": 0.41573967994588396,
+        "values": [
+          18.333333333333332,
+          17.666667,
+          18.666667
+        ]
+      },
+      "eval_sigma_0.08_obs_goal": {
+        "mean": 13.777778,
+        "pstdev": 1.4989707497619824,
+        "values": [
+          15.0,
+          14.666667,
+          11.666667
+        ]
+      },
+      "eval_sigma_0_to_0.08_loss": {
+        "mean": 40.99999977777778,
+        "pstdev": 1.4401648053840095,
+        "values": [
+          40.33333333333333,
+          43.0,
+          39.666666000000006
+        ]
+      }
+    },
+    {
+      "task": "Cube",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "eval_sigma_0": {
+        "mean": 65.22222222222223,
+        "pstdev": 1.0999438818457425,
+        "values": [
+          66.66666666666667,
+          65.0,
+          64.0
+        ]
+      },
+      "eval_sigma_0.03": {
+        "mean": 62.99999988888889,
+        "pstdev": 1.1863421841011124,
+        "values": [
+          63.666666666666664,
+          64.0,
+          61.333333
+        ]
+      },
+      "eval_sigma_0.05": {
+        "mean": 46.66666655555556,
+        "pstdev": 1.9626134881080703,
+        "values": [
+          48.666666666666664,
+          44.0,
+          47.333333
+        ]
+      },
+      "eval_sigma_0.08": {
+        "mean": 43.111111,
+        "pstdev": 3.2697642079068436,
+        "values": [
+          47.0,
+          39.0,
+          43.333333
+        ]
+      },
+      "eval_sigma_0.08_obs_goal": {
+        "mean": 45.77777777777778,
+        "pstdev": 0.7856739656161403,
+        "values": [
+          46.333333333333336,
+          44.666667,
+          46.333333
+        ]
+      },
+      "eval_sigma_0_to_0.08_loss": {
+        "mean": 22.111111222222224,
+        "pstdev": 2.7799990540899038,
+        "values": [
+          19.66666666666667,
+          26.0,
+          20.666666999999997
+        ]
+      }
+    }
+  ]
+}

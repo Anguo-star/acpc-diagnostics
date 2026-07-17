@@ -1,0 +1,434 @@
+{
+  "created_utc": "2026-07-05T06:28:55.699713+00:00",
+  "cross_task_checks": {
+    "pusht_seed42_current_rankmeanstd": {
+      "compute_matched_cem192_n4": {
+        "n": 100,
+        "per_seed_success_rate": [
+          1.0
+        ],
+        "seeds": [
+          42
+        ],
+        "success_count": 1,
+        "success_rate": 1.0
+      },
+      "old_selected_rankmeanstd": {
+        "n": 100,
+        "per_seed_success_rate": [
+          3.0
+        ],
+        "seeds": [
+          42
+        ],
+        "success_count": 3,
+        "success_rate": 3.0
+      },
+      "standard_cem48_n4": {
+        "n": 100,
+        "per_seed_success_rate": [
+          0.0
+        ],
+        "seeds": [
+          42
+        ],
+        "success_count": 0,
+        "success_rate": 0.0
+      }
+    },
+    "reacher_seed42_best_rankvote_elitemean": {
+      "best_rankvote_elitemean": {
+        "n": 100,
+        "per_seed_success_rate": [
+          6.0
+        ],
+        "seeds": [
+          42
+        ],
+        "success_count": 6,
+        "success_rate": 6.0
+      },
+      "compute_matched_cem192_n4": {
+        "n": 100,
+        "per_seed_success_rate": [
+          7.000000000000001
+        ],
+        "seeds": [
+          42
+        ],
+        "success_count": 7,
+        "success_rate": 7.000000000000001
+      },
+      "standard_cem48_n4": {
+        "n": 100,
+        "per_seed_success_rate": [
+          7.000000000000001
+        ],
+        "seeds": [
+          42
+        ],
+        "success_count": 7,
+        "success_rate": 7.000000000000001
+      }
+    }
+  },
+  "decision": {
+    "best_method": "rcem_final_rankvote_elitemean",
+    "interpretation": "The CEM-consistent elite_mean fix produced the only positive signal, but the 100x3 gain is borderline and does not clearly beat compute-matched CEM. Reacher seed42 is negative and PushT is near floor. Current planner-side CEM reranking family should be recorded as weak/no-go for a main Paper1 method claim.",
+    "status": "weak_borderline_not_main_claim",
+    "threshold_rule": "Treat 3-seed mean gaps within roughly 3-5 pp as no clear change; require stronger gains and compute-matched separation for paper main claim.",
+    "tworoom_delta_vs_compute_matched_pp": 0.6666666666666643,
+    "tworoom_delta_vs_standard_pp": 4.333333333333332
+  },
+  "goal": "Frozen origin LeWM checkpoint; planner-side Robust CEM under Gaussian pixel corruption; validate with num_eval=100 x 3 eval seeds where promising.",
+  "main_tworoom_100x3": {
+    "best_rankvote_elitemean": {
+      "n": 300,
+      "per_seed_success_rate": [
+        33.0,
+        31.0,
+        38.0
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "success_count": 102,
+      "success_rate": 34.0
+    },
+    "compute_matched_cem192_n4": {
+      "n": 300,
+      "per_seed_success_rate": [
+        28.999999999999996,
+        33.0,
+        38.0
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "success_count": 100,
+      "success_rate": 33.33333333333333
+    },
+    "old_selected_rankmeanstd": {
+      "n": 300,
+      "per_seed_success_rate": [
+        31.0,
+        30.0,
+        28.999999999999996
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "success_count": 90,
+      "success_rate": 30.0
+    },
+    "rankvote_elitemean_v8_pool32": {
+      "n": 300,
+      "per_seed_success_rate": [
+        34.0,
+        30.0,
+        35.0
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "success_count": 99,
+      "success_rate": 33.0
+    },
+    "standard_cem48_n4": {
+      "n": 300,
+      "per_seed_success_rate": [
+        28.999999999999996,
+        28.999999999999996,
+        31.0
+      ],
+      "seeds": [
+        42,
+        43,
+        44
+      ],
+      "success_count": 89,
+      "success_rate": 29.666666666666668
+    }
+  },
+  "protocol": {
+    "checkpoint": "baseline_seed3073 origin LeWM",
+    "condition": "pixels Gaussian std=0.08",
+    "data_root": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll",
+    "eval_budget": 25,
+    "eval_num_eval": 100,
+    "eval_seeds": [
+      42,
+      43,
+      44
+    ],
+    "world_num_envs": 1
+  },
+  "schema_version": "robust-cem-eval100x3-iteration-summary-20260705-v1",
+  "seed42_variant_screen": {
+    "anchored_rank": {
+      "TwoRoom|gaussian_std0.08|rcem_final_baserankstd_b025": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 30.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          30.0
+        ],
+        "planner": "rcem_final_baserankstd_b025",
+        "seeds": [
+          42
+        ],
+        "success_count": 30,
+        "success_rate": 30.0,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_baserankstd_b05": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 28.000000000000004,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          28.000000000000004
+        ],
+        "planner": "rcem_final_baserankstd_b05",
+        "seeds": [
+          42
+        ],
+        "success_count": 28,
+        "success_rate": 28.000000000000004,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_rankmeanstd_v02": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 27.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          27.0
+        ],
+        "planner": "rcem_final_rankmeanstd_v02",
+        "seeds": [
+          42
+        ],
+        "success_count": 27,
+        "success_rate": 27.0,
+        "task": "TwoRoom"
+      }
+    },
+    "elitemean": {
+      "TwoRoom|gaussian_std0.08|rcem_final_mean_elitemean": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 32.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          32.0
+        ],
+        "planner": "rcem_final_mean_elitemean",
+        "seeds": [
+          42
+        ],
+        "success_count": 32,
+        "success_rate": 32.0,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_rankmeanstd_elitemean": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 32.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          32.0
+        ],
+        "planner": "rcem_final_rankmeanstd_elitemean",
+        "seeds": [
+          42
+        ],
+        "success_count": 32,
+        "success_rate": 32.0,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_rankvote_elitemean": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 33.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          33.0
+        ],
+        "planner": "rcem_final_rankvote_elitemean",
+        "seeds": [
+          42
+        ],
+        "success_count": 33,
+        "success_rate": 33.0,
+        "task": "TwoRoom"
+      }
+    },
+    "gated_switch": {
+      "TwoRoom|gaussian_std0.08|rcem_final_gated_sg05_rs1": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 23.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          23.0
+        ],
+        "planner": "rcem_final_gated_sg05_rs1",
+        "seeds": [
+          42
+        ],
+        "success_count": 23,
+        "success_rate": 23.0,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_gated_sg15_rs1": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 30.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          30.0
+        ],
+        "planner": "rcem_final_gated_sg15_rs1",
+        "seeds": [
+          42
+        ],
+        "success_count": 30,
+        "success_rate": 30.0,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_gated_sg1_rs1": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 25.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          25.0
+        ],
+        "planner": "rcem_final_gated_sg1_rs1",
+        "seeds": [
+          42
+        ],
+        "success_count": 25,
+        "success_rate": 25.0,
+        "task": "TwoRoom"
+      }
+    },
+    "mean_rank_mean": {
+      "TwoRoom|gaussian_std0.08|rcem_final_mean": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 28.000000000000004,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          28.000000000000004
+        ],
+        "planner": "rcem_final_mean",
+        "seeds": [
+          42
+        ],
+        "success_count": 28,
+        "success_rate": 28.000000000000004,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_meanstd_v02": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 30.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          30.0
+        ],
+        "planner": "rcem_final_meanstd_v02",
+        "seeds": [
+          42
+        ],
+        "success_count": 30,
+        "success_rate": 30.0,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_rankmean": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 28.999999999999996,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          28.999999999999996
+        ],
+        "planner": "rcem_final_rankmean",
+        "seeds": [
+          42
+        ],
+        "success_count": 29,
+        "success_rate": 28.999999999999996,
+        "task": "TwoRoom"
+      }
+    },
+    "rankvote_tuning": {
+      "TwoRoom|gaussian_std0.08|rcem_final_rankvote_elitemean_pool32": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 30.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          30.0
+        ],
+        "planner": "rcem_final_rankvote_elitemean_pool32",
+        "seeds": [
+          42
+        ],
+        "success_count": 30,
+        "success_rate": 30.0,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_rankvote_elitemean_v8": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 28.999999999999996,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          28.999999999999996
+        ],
+        "planner": "rcem_final_rankvote_elitemean_v8",
+        "seeds": [
+          42
+        ],
+        "success_count": 29,
+        "success_rate": 28.999999999999996,
+        "task": "TwoRoom"
+      },
+      "TwoRoom|gaussian_std0.08|rcem_final_rankvote_elitemean_v8_pool32": {
+        "condition": "gaussian_std0.08",
+        "n": 100,
+        "per_seed_mean": 34.0,
+        "per_seed_std": 0.0,
+        "per_seed_success_rate": [
+          34.0
+        ],
+        "planner": "rcem_final_rankvote_elitemean_v8_pool32",
+        "seeds": [
+          42
+        ],
+        "success_count": 34,
+        "success_rate": 34.0,
+        "task": "TwoRoom"
+      }
+    }
+  },
+  "source_artifacts": [
+    "assets/paper1_data/robust_cem_eval100x3_20260705_partial.json",
+    "assets/paper1_data/robust_cem_eval100x3_rankvote_elitemean_tworoom_20260705.json",
+    "assets/paper1_data/robust_cem_eval100x3_rankvote_elitemean_v8_pool32_tworoom_20260705.json",
+    "assets/paper1_data/robust_cem_eval100_elitemean_tworoom_seed42_20260705_partial.json",
+    "assets/paper1_data/robust_cem_eval100_best_reacher_seed42_20260705.json"
+  ]
+}

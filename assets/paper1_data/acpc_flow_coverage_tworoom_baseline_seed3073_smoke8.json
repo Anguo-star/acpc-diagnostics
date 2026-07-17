@@ -1,0 +1,260 @@
+{
+  "candidate_rank_metrics_computed": false,
+  "checkpoint": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3073/tworoom_lewm_baseline_seed3073_epoch_10_object.ckpt",
+  "dataset_name": "tworoom",
+  "feature_spaces": [
+    "encoder_feat",
+    "emb"
+  ],
+  "history_size": 3,
+  "num_samples": 8,
+  "overall_decisions": [
+    "no_go",
+    "low"
+  ],
+  "recommendation": {
+    "no_go_stressors": [],
+    "preferred_feature_space": "emb",
+    "reason": "At least one emb stressor is no_go; do not make broad generalization claims.",
+    "suggested_noise_std_max": 0.04,
+    "train_clean_only_latent_noise": false,
+    "worth_doing": false
+  },
+  "results": {
+    "emb": {
+      "gaussian_std0.03": {
+        "acpc_gap_mean": 0.19610841572284698,
+        "acpc_gap_q90": 0.39669862389564514,
+        "acpc_gap_q95": 0.7826256155967712,
+        "candidate_rank_metrics_computed": false,
+        "closer_to_wrong_than_pair_rate": 0.0,
+        "coverage_by_alpha": {
+          "0.01": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          },
+          "0.02": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          },
+          "0.04": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          },
+          "0.08": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          },
+          "0.12": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          }
+        },
+        "coverage_decision": "no_go",
+        "coverage_q95_by_alpha": {
+          "0.01": 0.0,
+          "0.02": 0.0,
+          "0.04": 0.0,
+          "0.08": 0.0,
+          "0.12": 0.0
+        },
+        "delta_norm_mean": 7.105353832244873,
+        "delta_norm_median": 6.631338119506836,
+        "delta_norm_q75": 8.127572059631348,
+        "delta_norm_q90": 9.033448219299316,
+        "delta_norm_q95": 9.914584159851074,
+        "delta_norm_q99": 11.546781539916992,
+        "effective_rank": 17.350582122802734,
+        "lambda_max_over_trace": 0.13876494765281677,
+        "paired_clean_rank_median": 1.0,
+        "paired_clean_rank_q90": 1.0,
+        "ratio_to_knn_mean": 0.5988807678222656,
+        "ratio_to_knn_median": 0.5296998023986816,
+        "ratio_to_knn_q75": 0.7331209182739258,
+        "ratio_to_knn_q90": 0.9506039023399353,
+        "ratio_to_knn_q95": 1.0456880331039429,
+        "ratio_to_knn_q99": 1.0632662773132324,
+        "same_label_topk_rate": 0.5062500238418579,
+        "state_proxy_missing": 0.0,
+        "synthetic_acpc_gap_by_alpha": {
+          "0.01": {
+            "mean": 2.251255682494957e-05,
+            "q90": 6.0235586715862155e-05,
+            "q95": 7.053463923512027e-05
+          },
+          "0.02": {
+            "mean": 5.391178638092242e-05,
+            "q90": 0.00011621656449278817,
+            "q95": 0.00012771575711667538
+          },
+          "0.04": {
+            "mean": 0.00022045652440283448,
+            "q90": 0.00040088975219987333,
+            "q95": 0.0008564518648199737
+          },
+          "0.08": {
+            "mean": 0.0013956782640889287,
+            "q90": 0.003196378005668521,
+            "q95": 0.003434120211750269
+          },
+          "0.12": {
+            "mean": 0.0022103379014879465,
+            "q90": 0.005387749057263136,
+            "q95": 0.006735916715115309
+          }
+        },
+        "synthetic_acpc_gap_q90_by_alpha": {
+          "0.01": 6.0235586715862155e-05,
+          "0.02": 0.00011621656449278817,
+          "0.04": 0.00040088975219987333,
+          "0.08": 0.003196378005668521,
+          "0.12": 0.005387749057263136
+        },
+        "synthetic_radius_by_alpha": {
+          "0.01": {
+            "q90": 0.16371242702007294,
+            "q95": 0.16513162851333618,
+            "q99": 0.16934044659137726
+          },
+          "0.02": {
+            "q90": 0.3260093033313751,
+            "q95": 0.33184605836868286,
+            "q99": 0.33941587805747986
+          },
+          "0.04": {
+            "q90": 0.6598094701766968,
+            "q95": 0.6683849692344666,
+            "q99": 0.6874915361404419
+          },
+          "0.08": {
+            "q90": 1.3367773294448853,
+            "q95": 1.3654292821884155,
+            "q99": 1.408179759979248
+          },
+          "0.12": {
+            "q90": 1.825930118560791,
+            "q95": 1.9492309093475342,
+            "q99": 2.0776093006134033
+          }
+        },
+        "task_alignment_mean": 0.3581724166870117,
+        "task_alignment_q90": 0.5739360451698303,
+        "task_alignment_q95": 0.6130404472351074,
+        "top1_eigen_ratio": 0.13876494765281677,
+        "top5_eigen_ratio": 0.5385880470275879,
+        "wrong_label_nn_rate": 0.0
+      }
+    },
+    "encoder_feat": {
+      "gaussian_std0.03": {
+        "acpc_gap_mean": NaN,
+        "acpc_gap_not_computed_reason": "predictor consumes post-projector emb, not encoder_feat",
+        "acpc_gap_q90": NaN,
+        "acpc_gap_q95": NaN,
+        "candidate_rank_metrics_computed": false,
+        "closer_to_wrong_than_pair_rate": 0.03125,
+        "coverage_by_alpha": {
+          "0.01": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          },
+          "0.02": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          },
+          "0.04": {
+            "q90": 0.0,
+            "q95": 0.0,
+            "q99": 0.0
+          },
+          "0.08": {
+            "q90": 0.03125,
+            "q95": 0.09375,
+            "q99": 0.09375
+          },
+          "0.12": {
+            "q90": 0.8125,
+            "q95": 0.8125,
+            "q99": 0.84375
+          }
+        },
+        "coverage_decision": "low",
+        "coverage_q95_by_alpha": {
+          "0.01": 0.0,
+          "0.02": 0.0,
+          "0.04": 0.0,
+          "0.08": 0.09375,
+          "0.12": 0.8125
+        },
+        "delta_norm_mean": 1.5590236186981201,
+        "delta_norm_median": 1.505638599395752,
+        "delta_norm_q75": 1.7384097576141357,
+        "delta_norm_q90": 1.9256693124771118,
+        "delta_norm_q95": 2.0831687450408936,
+        "delta_norm_q99": 2.222402334213257,
+        "effective_rank": 12.99923324584961,
+        "lambda_max_over_trace": 0.2393009215593338,
+        "paired_clean_rank_median": 1.0,
+        "paired_clean_rank_q90": 1.0,
+        "ratio_to_knn_mean": 0.8237357139587402,
+        "ratio_to_knn_median": 0.7363671064376831,
+        "ratio_to_knn_q75": 1.1155116558074951,
+        "ratio_to_knn_q90": 1.2845033407211304,
+        "ratio_to_knn_q95": 1.312285304069519,
+        "ratio_to_knn_q99": 1.4182909727096558,
+        "same_label_topk_rate": 0.581250011920929,
+        "state_proxy_missing": 0.0,
+        "synthetic_acpc_gap_q90_by_alpha": {},
+        "synthetic_radius_by_alpha": {
+          "0.01": {
+            "q90": 0.14428643882274628,
+            "q95": 0.14637993276119232,
+            "q99": 0.14752428233623505
+          },
+          "0.02": {
+            "q90": 0.2884816527366638,
+            "q95": 0.29624849557876587,
+            "q99": 0.30054789781570435
+          },
+          "0.04": {
+            "q90": 0.6003657579421997,
+            "q95": 0.6052571535110474,
+            "q99": 0.6185511350631714
+          },
+          "0.08": {
+            "q90": 1.1676355600357056,
+            "q95": 1.1829737424850464,
+            "q99": 1.2062968015670776
+          },
+          "0.12": {
+            "q90": 1.7807954549789429,
+            "q95": 1.7946258783340454,
+            "q99": 1.8408591747283936
+          }
+        },
+        "task_alignment_mean": 0.33420076966285706,
+        "task_alignment_q90": 0.5015740394592285,
+        "task_alignment_q95": 0.5440176129341125,
+        "top1_eigen_ratio": 0.2393009215593338,
+        "top5_eigen_ratio": 0.6746554970741272,
+        "wrong_label_nn_rate": 0.03125
+      }
+    }
+  },
+  "schema_version": "acpc-flow-coverage-core-v1",
+  "synthetic_noise_grid": [
+    0.01,
+    0.02,
+    0.04,
+    0.08,
+    0.12
+  ],
+  "task": "tworoom"
+}

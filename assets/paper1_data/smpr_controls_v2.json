@@ -1,0 +1,2284 @@
+{
+  "claim_decisions": {
+    "action_permutation_max_abs_smpr_change": 0.0,
+    "action_relevance_increment_established": false,
+    "far_neighbor_minus_near_smpr_mean": -0.013888891786336899,
+    "full_constant_collapse_correctly_rejected": true,
+    "preconstant_progressive_collapse_max_abs_smpr_change": 0.0,
+    "progressive_collapse_sensitivity_established": false,
+    "recommended_claim_scope": "proxy-level guard correctness only; task-label, action-relevance, and progressive anti-collapse increments are not established on the MVE",
+    "task_grounded_increment_established": false,
+    "task_grounded_minus_random_smpr_mean": 0.02598566934466362,
+    "task_grounded_strictly_better_than_random_all_mve_rows": false
+  },
+  "correctness_gates": {
+    "all_noncollapse_control_pair_counts_positive": true,
+    "constant_collapse_joint_passes": 0,
+    "constant_collapse_rejected_all_mve_rows": true,
+    "constant_collapse_rows": 4,
+    "identical_positive_max_tube_radius": 0.0,
+    "identical_positive_rows": 4
+  },
+  "count_contract": {
+    "rows": 44
+  },
+  "metadata": {
+    "behavior_labels_used": false,
+    "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+    "constant_collapse_expected_to_fail": true,
+    "created_utc": "2026-07-11T06:07:44.449624+00:00",
+    "errors": [],
+    "missing_rows": [],
+    "mve_checkpoints": [
+      {
+        "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_20260430/tworoom_lewm_20260430_epoch_10_object.ckpt",
+        "std_key": "0.0",
+        "task": "TwoRoom",
+        "wall_time": 15.96806656382978
+      },
+      {
+        "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1/tworoom_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+        "std_key": "0.08",
+        "task": "TwoRoom",
+        "wall_time": 8.863440623506904
+      },
+      {
+        "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_20260430/pusht_lewm_20260430_epoch_10_object.ckpt",
+        "std_key": "0.0",
+        "task": "PushT",
+        "wall_time": 15.88008813560009
+      },
+      {
+        "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1/pusht_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+        "std_key": "0.08",
+        "task": "PushT",
+        "wall_time": 12.670040352270007
+      }
+    ],
+    "mve_scope": "TwoRoom+PushT base+endpoint, 32 anchors, five fixed noise draws",
+    "protocol_hash": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "scale_counterfactuals": [
+      "fixed_original_scale",
+      "recomputed_collapsed_scale"
+    ],
+    "schema_version": "paper1-smpr-controls-v2-1.0",
+    "source_hashes": {
+      "canonical_smpr": "2585f74f01b8dbf1ab780685014e22a43fd30d9a29bb65fd7106eb23f9d1a89e",
+      "canonical_smpr_runner": "8f42f49fa4ab847437cec097cff6472a756342017dfdd4ce223051a7018c76fd",
+      "eval_manifest": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4",
+      "protocol": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+      "runner": "effbac77e5d4590018b15f86427a24a2206d4c886cf96a193d4949f94c76db52",
+      "semantic_margin": "83893f10d41f8d602aa32245792ff8ea75800106b46810c18b9cd34bd7a4cc54"
+    },
+    "source_paths": {
+      "canonical_smpr": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/smpr_calibration_lewm_seed3072_v2.json",
+      "canonical_smpr_runner": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/scripts/smpr_sensitivity.py",
+      "eval_manifest": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json",
+      "protocol": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/config/frozen_diagnostic_protocol_v1.json",
+      "runner": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/scripts/smpr_controls.py",
+      "semantic_margin": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/tools/paper1_semantic_margin.py"
+    },
+    "status": "complete",
+    "std_keys": [
+      "0.0",
+      "0.08"
+    ],
+    "tasks": [
+      "TwoRoom",
+      "PushT"
+    ],
+    "threshold_search_allowed": false,
+    "training_seed": 3072,
+    "training_seed_semantics": "one independently trained LeWM checkpoint family"
+  },
+  "rows": [
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "control": "task_grounded_default",
+      "different_state_distance_distribution": {
+        "count": 18,
+        "mean": 1.4214569330215454,
+        "q10": 1.0426182746887207,
+        "q50": 1.2784929275512695,
+        "q90": 1.9514788389205933
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "raw_margin_distribution": {
+        "count": 18,
+        "mean": -0.2734784781932831,
+        "q10": -0.652317225933075,
+        "q50": -0.4164425730705261,
+        "q90": 0.25654342770576477
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 1.1194591522216797,
+        "q10": 0.47132769227027893,
+        "q50": 1.116688847541809,
+        "q90": 1.6949354410171509
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "skipped_anchor_count": 14,
+      "smpr": 0.2222222238779068,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "control": "state_label_permutation",
+      "different_state_distance_distribution": {
+        "count": 31,
+        "mean": 1.4509773254394531,
+        "q10": 1.0990772247314453,
+        "q50": 1.3570427894592285,
+        "q90": 1.8960939645767212
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 31,
+      "raw_margin_distribution": {
+        "count": 31,
+        "mean": -0.2439582198858261,
+        "q10": -0.5958582162857056,
+        "q50": -0.33789265155792236,
+        "q90": 0.2011585235595703
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 1.1194591522216797,
+        "q10": 0.47132769227027893,
+        "q50": 1.116688847541809,
+        "q90": 1.6949354410171509
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "skipped_anchor_count": 1,
+      "smpr": 0.19354838132858276,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "control": "same_label_nearest_neighbor",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 1.372753381729126,
+        "q10": 1.0584133863449097,
+        "q50": 1.3089604377746582,
+        "q90": 1.8457788228988647
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": -0.32218196988105774,
+        "q10": -0.636522114276886,
+        "q50": -0.3859749436378479,
+        "q90": 0.15084336698055267
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 1.1194591522216797,
+        "q10": 0.47132769227027893,
+        "q50": 1.116688847541809,
+        "q90": 1.6949354410171509
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "skipped_anchor_count": 0,
+      "smpr": 0.15625,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "control": "global_far_neighbor",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 1.3311206102371216,
+        "q10": 0.9545145630836487,
+        "q50": 1.271470308303833,
+        "q90": 1.9618709087371826
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": -0.3638147711753845,
+        "q10": -0.7404208779335022,
+        "q50": -0.4234650731086731,
+        "q90": 0.26693540811538696
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 1.1194591522216797,
+        "q10": 0.47132769227027893,
+        "q50": 1.116688847541809,
+        "q90": 1.6949354410171509
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "skipped_anchor_count": 0,
+      "smpr": 0.1875,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "control": "identical_clean_noisy_positive",
+      "different_state_distance_distribution": {
+        "count": 18,
+        "mean": 1.4214569330215454,
+        "q10": 1.0426182746887207,
+        "q50": 1.2784929275512695,
+        "q90": 1.9514788389205933
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "raw_margin_distribution": {
+        "count": 18,
+        "mean": 1.4214569330215454,
+        "q10": 1.0426182746887207,
+        "q50": 1.2784929275512695,
+        "q90": 1.9514788389205933
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.0,
+        "q10": 0.0,
+        "q50": 0.0,
+        "q90": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "control": "action_permutation",
+      "different_state_distance_distribution": {
+        "count": 18,
+        "mean": 1.4636889696121216,
+        "q10": 1.1414179801940918,
+        "q50": 1.376431941986084,
+        "q90": 1.876264214515686
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "raw_margin_distribution": {
+        "count": 18,
+        "mean": -0.13514463603496552,
+        "q10": -0.4574156701564789,
+        "q50": -0.22240179777145386,
+        "q90": 0.2774304747581482
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 1.0517810583114624,
+        "q10": 0.5898410677909851,
+        "q50": 1.0581080913543701,
+        "q90": 1.598833680152893
+      },
+      "same_state_tube_radius": 1.598833680152893,
+      "skipped_anchor_count": 14,
+      "smpr": 0.2222222238779068,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "collapse_lambda": 0.0,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.4214569330215454,
+          "q10": 1.0426182746887207,
+          "q50": 1.2784929275512695,
+          "q90": 1.9514788389205933
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.2734784781932831,
+          "q10": -0.652317225933075,
+          "q50": -0.4164425730705261,
+          "q90": 0.25654342770576477
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1.1194591522216797,
+          "q10": 0.47132769227027893,
+          "q50": 1.116688847541809,
+          "q90": 1.6949354410171509
+        },
+        "same_state_tube_radius": 1.6949354410171509,
+        "smpr": 0.2222222238779068
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.4214569330215454,
+          "q10": 1.0426182746887207,
+          "q50": 1.2784929275512695,
+          "q90": 1.9514788389205933
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.2734784781932831,
+          "q10": -0.652317225933075,
+          "q50": -0.4164425730705261,
+          "q90": 0.25654342770576477
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1.1194591522216797,
+          "q10": 0.47132769227027893,
+          "q50": 1.116688847541809,
+          "q90": 1.6949354410171509
+        },
+        "same_state_tube_radius": 1.6949354410171509,
+        "smpr": 0.2222222238779068
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "skipped_anchor_count": 14,
+      "smpr": 0.2222222238779068,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "collapse_lambda": 0.25,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.0660927295684814,
+          "q10": 0.7819637656211853,
+          "q50": 0.9588696956634521,
+          "q90": 1.463609218597412
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.205109104514122,
+          "q10": -0.48923811316490173,
+          "q50": -0.3123321533203125,
+          "q90": 0.19240735471248627
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.8395944237709045,
+          "q10": 0.35349583625793457,
+          "q50": 0.8375165462493896,
+          "q90": 1.2712018489837646
+        },
+        "same_state_tube_radius": 1.2712018489837646,
+        "smpr": 0.2222222238779068
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.4214569330215454,
+          "q10": 1.0426182746887207,
+          "q50": 1.2784929275512695,
+          "q90": 1.9514788389205933
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.2734787166118622,
+          "q10": -0.6523174047470093,
+          "q50": -0.41644275188446045,
+          "q90": 0.25654318928718567
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1.1194591522216797,
+          "q10": 0.4713277220726013,
+          "q50": 1.1166887283325195,
+          "q90": 1.69493567943573
+        },
+        "same_state_tube_radius": 1.69493567943573,
+        "smpr": 0.2222222238779068
+      },
+      "same_state_tube_radius": 1.69493567943573,
+      "skipped_anchor_count": 14,
+      "smpr": 0.2222222238779068,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "collapse_lambda": 0.5,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.7107284665107727,
+          "q10": 0.5213091373443604,
+          "q50": 0.6392464637756348,
+          "q90": 0.9757394194602966
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.13673923909664154,
+          "q10": -0.3261586129665375,
+          "q50": -0.20822125673294067,
+          "q90": 0.12827171385288239
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.5597295761108398,
+          "q10": 0.23566386103630066,
+          "q50": 0.5583443641662598,
+          "q90": 0.8474677205085754
+        },
+        "same_state_tube_radius": 0.8474677205085754,
+        "smpr": 0.2222222238779068
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.4214569330215454,
+          "q10": 1.0426182746887207,
+          "q50": 1.2784929275512695,
+          "q90": 1.9514788389205933
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.2734784781932831,
+          "q10": -0.652317225933075,
+          "q50": -0.41644251346588135,
+          "q90": 0.25654342770576477
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1.1194591522216797,
+          "q10": 0.4713277220726013,
+          "q50": 1.1166887283325195,
+          "q90": 1.6949354410171509
+        },
+        "same_state_tube_radius": 1.6949354410171509,
+        "smpr": 0.2222222238779068
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "skipped_anchor_count": 14,
+      "smpr": 0.2222222238779068,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "collapse_lambda": 0.75,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.35536423325538635,
+          "q10": 0.2606545686721802,
+          "q50": 0.3196232318878174,
+          "q90": 0.4878697097301483
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.06836961954832077,
+          "q10": -0.16307930648326874,
+          "q50": -0.10411062836647034,
+          "q90": 0.06413585692644119
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.2798647880554199,
+          "q10": 0.11783192306756973,
+          "q50": 0.2791721820831299,
+          "q90": 0.4237338602542877
+        },
+        "same_state_tube_radius": 0.4237338602542877,
+        "smpr": 0.0555555559694767
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.4214569330215454,
+          "q10": 1.0426182746887207,
+          "q50": 1.2784929275512695,
+          "q90": 1.9514788389205933
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": -0.2734784781932831,
+          "q10": -0.652317225933075,
+          "q50": -0.41644251346588135,
+          "q90": 0.25654342770576477
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1.1194591522216797,
+          "q10": 0.47132769227027893,
+          "q50": 1.1166887283325195,
+          "q90": 1.6949354410171509
+        },
+        "same_state_tube_radius": 1.6949354410171509,
+        "smpr": 0.2222222238779068
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "skipped_anchor_count": 14,
+      "smpr": 0.2222222238779068,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "collapse_lambda": 1.0,
+      "control": "constant_collapsed_rollout",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 14,
+      "smpr": 0.0,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "control": "task_grounded_default",
+      "different_state_distance_distribution": {
+        "count": 18,
+        "mean": 1.5217795372009277,
+        "q10": 1.020652413368225,
+        "q50": 1.3447750806808472,
+        "q90": 2.228062629699707
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "raw_margin_distribution": {
+        "count": 18,
+        "mean": 1.4294953346252441,
+        "q10": 0.9283683896064758,
+        "q50": 1.2524909973144531,
+        "q90": 2.1357784271240234
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.05793793126940727,
+        "q10": 0.0256806593388319,
+        "q50": 0.0376126728951931,
+        "q90": 0.09228409081697464
+      },
+      "same_state_tube_radius": 0.09228409081697464,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "control": "state_label_permutation",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 1.4722375869750977,
+        "q10": 0.9421995878219604,
+        "q50": 1.383876085281372,
+        "q90": 2.021188735961914
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": 1.3799535036087036,
+        "q10": 0.8499155044555664,
+        "q50": 1.2915918827056885,
+        "q90": 1.9289045333862305
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.05793793126940727,
+        "q10": 0.0256806593388319,
+        "q50": 0.0376126728951931,
+        "q90": 0.09228409081697464
+      },
+      "same_state_tube_radius": 0.09228409081697464,
+      "skipped_anchor_count": 0,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "control": "same_label_nearest_neighbor",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 1.487117052078247,
+        "q10": 0.9795526266098022,
+        "q50": 1.382572889328003,
+        "q90": 2.1313722133636475
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": 1.394832968711853,
+        "q10": 0.8872685432434082,
+        "q50": 1.2902888059616089,
+        "q90": 2.039088010787964
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.05793793126940727,
+        "q10": 0.0256806593388319,
+        "q50": 0.0376126728951931,
+        "q90": 0.09228409081697464
+      },
+      "same_state_tube_radius": 0.09228409081697464,
+      "skipped_anchor_count": 0,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "control": "global_far_neighbor",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 1.4297617673873901,
+        "q10": 0.9768754839897156,
+        "q50": 1.3848464488983154,
+        "q90": 2.211214303970337
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": 1.3374775648117065,
+        "q10": 0.8845914006233215,
+        "q50": 1.292562484741211,
+        "q90": 2.1189301013946533
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.05793793126940727,
+        "q10": 0.0256806593388319,
+        "q50": 0.0376126728951931,
+        "q90": 0.09228409081697464
+      },
+      "same_state_tube_radius": 0.09228409081697464,
+      "skipped_anchor_count": 0,
+      "smpr": 0.96875,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "control": "identical_clean_noisy_positive",
+      "different_state_distance_distribution": {
+        "count": 18,
+        "mean": 1.5217795372009277,
+        "q10": 1.020652413368225,
+        "q50": 1.3447750806808472,
+        "q90": 2.228062629699707
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "raw_margin_distribution": {
+        "count": 18,
+        "mean": 1.5217795372009277,
+        "q10": 1.020652413368225,
+        "q50": 1.3447750806808472,
+        "q90": 2.228062629699707
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.0,
+        "q10": 0.0,
+        "q50": 0.0,
+        "q90": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "control": "action_permutation",
+      "different_state_distance_distribution": {
+        "count": 18,
+        "mean": 1.6168736219406128,
+        "q10": 1.1554921865463257,
+        "q50": 1.4933151006698608,
+        "q90": 2.376012086868286
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "raw_margin_distribution": {
+        "count": 18,
+        "mean": 1.5450376272201538,
+        "q10": 1.0836563110351562,
+        "q50": 1.4214792251586914,
+        "q90": 2.3041763305664062
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.04117448255419731,
+        "q10": 0.018060352653265,
+        "q50": 0.03147908300161362,
+        "q90": 0.07183587551116943
+      },
+      "same_state_tube_radius": 0.07183587551116943,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "collapse_lambda": 0.0,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.5217795372009277,
+          "q10": 1.020652413368225,
+          "q50": 1.3447750806808472,
+          "q90": 2.228062629699707
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 1.4294953346252441,
+          "q10": 0.9283683896064758,
+          "q50": 1.2524909973144531,
+          "q90": 2.1357784271240234
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.05793793126940727,
+          "q10": 0.0256806593388319,
+          "q50": 0.0376126728951931,
+          "q90": 0.09228409081697464
+        },
+        "same_state_tube_radius": 0.09228409081697464,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.5217795372009277,
+          "q10": 1.020652413368225,
+          "q50": 1.3447750806808472,
+          "q90": 2.228062629699707
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 1.4294953346252441,
+          "q10": 0.9283683896064758,
+          "q50": 1.2524909973144531,
+          "q90": 2.1357784271240234
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.05793793126940727,
+          "q10": 0.0256806593388319,
+          "q50": 0.0376126728951931,
+          "q90": 0.09228409081697464
+        },
+        "same_state_tube_radius": 0.09228409081697464,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.09228409081697464,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "collapse_lambda": 0.25,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.1413345336914062,
+          "q10": 0.7654893398284912,
+          "q50": 1.008581280708313,
+          "q90": 1.6710470914840698
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 1.072121500968933,
+          "q10": 0.6962762475013733,
+          "q50": 0.9393681883811951,
+          "q90": 1.6018340587615967
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.04345345124602318,
+          "q10": 0.019260495901107788,
+          "q50": 0.02820950374007225,
+          "q90": 0.06921306997537613
+        },
+        "same_state_tube_radius": 0.06921306997537613,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.5217795372009277,
+          "q10": 1.020652413368225,
+          "q50": 1.3447750806808472,
+          "q90": 2.228062868118286
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 1.4294953346252441,
+          "q10": 0.9283682703971863,
+          "q50": 1.2524909973144531,
+          "q90": 2.1357786655426025
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.057937927544116974,
+          "q10": 0.02568066120147705,
+          "q50": 0.0376126691699028,
+          "q90": 0.09228408336639404
+        },
+        "same_state_tube_radius": 0.09228408336639404,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.09228408336639404,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "collapse_lambda": 0.5,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.7608897686004639,
+          "q10": 0.5103262066841125,
+          "q50": 0.6723875403404236,
+          "q90": 1.1140313148498535
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 0.7147476673126221,
+          "q10": 0.4641841948032379,
+          "q50": 0.6262454986572266,
+          "q90": 1.0678892135620117
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.028968965634703636,
+          "q10": 0.01284032966941595,
+          "q50": 0.0188063345849514,
+          "q90": 0.04614204168319702
+        },
+        "same_state_tube_radius": 0.04614204168319702,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.5217795372009277,
+          "q10": 1.020652413368225,
+          "q50": 1.3447750806808472,
+          "q90": 2.228062629699707
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 1.4294953346252441,
+          "q10": 0.9283683896064758,
+          "q50": 1.2524909973144531,
+          "q90": 2.1357784271240234
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.05793793126940727,
+          "q10": 0.0256806593388319,
+          "q50": 0.0376126691699028,
+          "q90": 0.09228408336639404
+        },
+        "same_state_tube_radius": 0.09228408336639404,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.09228408336639404,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "collapse_lambda": 0.75,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.38044488430023193,
+          "q10": 0.2551631033420563,
+          "q50": 0.3361937701702118,
+          "q90": 0.5570156574249268
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 0.35737383365631104,
+          "q10": 0.23209209740161896,
+          "q50": 0.3131227493286133,
+          "q90": 0.5339446067810059
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.014484482817351818,
+          "q10": 0.006420164369046688,
+          "q50": 0.0094031672924757,
+          "q90": 0.02307102270424366
+        },
+        "same_state_tube_radius": 0.02307102270424366,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 1.5217795372009277,
+          "q10": 1.020652413368225,
+          "q50": 1.3447750806808472,
+          "q90": 2.228062629699707
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 1.4294953346252441,
+          "q10": 0.9283683896064758,
+          "q50": 1.2524909973144531,
+          "q90": 2.1357784271240234
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.05793793126940727,
+          "q10": 0.025680657476186752,
+          "q50": 0.0376126691699028,
+          "q90": 0.09228409081697464
+        },
+        "same_state_tube_radius": 0.09228409081697464,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.09228409081697464,
+      "skipped_anchor_count": 14,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "collapse_lambda": 1.0,
+      "control": "constant_collapsed_rollout",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "joint_gate_pass": false,
+      "label_rule": "agent doorway/room-side split from local x-coordinate",
+      "pair_count": 18,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 18,
+        "raw_margin_distribution": {
+          "count": 18,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 14,
+      "smpr": 0.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "control": "task_grounded_default",
+      "different_state_distance_distribution": {
+        "count": 30,
+        "mean": 3.7183547019958496,
+        "q10": 2.357494831085205,
+        "q50": 3.243189811706543,
+        "q90": 5.6995625495910645
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "raw_margin_distribution": {
+        "count": 30,
+        "mean": -0.33985984325408936,
+        "q10": -1.7007198333740234,
+        "q50": -0.815024733543396,
+        "q90": 1.6413480043411255
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 31532972.0,
+        "q10": 2.0495800971984863,
+        "q50": 2.525785446166992,
+        "q90": 4.0582146644592285
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 2,
+      "smpr": 0.3333333432674408,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "control": "state_label_permutation",
+      "different_state_distance_distribution": {
+        "count": 31,
+        "mean": 3.371950626373291,
+        "q10": 1.9494712352752686,
+        "q50": 2.9283976554870605,
+        "q90": 5.251551151275635
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 31,
+      "raw_margin_distribution": {
+        "count": 31,
+        "mean": -0.6862640380859375,
+        "q10": -2.10874342918396,
+        "q50": -1.129817008972168,
+        "q90": 1.1933364868164062
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 31532972.0,
+        "q10": 2.0495800971984863,
+        "q50": 2.525785446166992,
+        "q90": 4.0582146644592285
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 1,
+      "smpr": 0.25806450843811035,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "control": "same_label_nearest_neighbor",
+      "different_state_distance_distribution": {
+        "count": 26,
+        "mean": 3.2805871963500977,
+        "q10": 2.1178829669952393,
+        "q50": 2.9018752574920654,
+        "q90": 5.436488151550293
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 26,
+      "raw_margin_distribution": {
+        "count": 26,
+        "mean": -0.7776275873184204,
+        "q10": -1.9403316974639893,
+        "q50": -1.156339406967163,
+        "q90": 1.3782732486724854
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 31532972.0,
+        "q10": 2.0495800971984863,
+        "q50": 2.525785446166992,
+        "q90": 4.0582146644592285
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 6,
+      "smpr": 0.19230769574642181,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "control": "global_far_neighbor",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 65225320.0,
+        "q10": 2.3488636016845703,
+        "q50": 2.9454903602600098,
+        "q90": 6.228819370269775
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": 65225316.0,
+        "q10": -1.7093511819839478,
+        "q50": -1.1127241849899292,
+        "q90": 2.170604944229126
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 31532972.0,
+        "q10": 2.0495800971984863,
+        "q50": 2.525785446166992,
+        "q90": 4.0582146644592285
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 0,
+      "smpr": 0.34375,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "control": "identical_clean_noisy_positive",
+      "different_state_distance_distribution": {
+        "count": 30,
+        "mean": 3.7183547019958496,
+        "q10": 2.357494831085205,
+        "q50": 3.243189811706543,
+        "q90": 5.6995625495910645
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "raw_margin_distribution": {
+        "count": 30,
+        "mean": 3.7183547019958496,
+        "q10": 2.357494831085205,
+        "q50": 3.243189811706543,
+        "q90": 5.6995625495910645
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.0,
+        "q10": 0.0,
+        "q50": 0.0,
+        "q90": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "control": "action_permutation",
+      "different_state_distance_distribution": {
+        "count": 30,
+        "mean": 3.581820249557495,
+        "q10": 2.2390384674072266,
+        "q50": 3.1537628173828125,
+        "q90": 5.662878036499023
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "raw_margin_distribution": {
+        "count": 30,
+        "mean": 0.21189041435718536,
+        "q10": -1.1308914422988892,
+        "q50": -0.21616685390472412,
+        "q90": 2.2929482460021973
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 32005864.0,
+        "q10": 1.1331335306167603,
+        "q50": 1.8914142847061157,
+        "q90": 3.369929790496826
+      },
+      "same_state_tube_radius": 3.369929790496826,
+      "skipped_anchor_count": 2,
+      "smpr": 0.3333333432674408,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "collapse_lambda": 0.0,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7183547019958496,
+          "q10": 2.357494831085205,
+          "q50": 3.243189811706543,
+          "q90": 5.6995625495910645
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.33985984325408936,
+          "q10": -1.7007198333740234,
+          "q50": -0.815024733543396,
+          "q90": 1.6413480043411255
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 31532972.0,
+          "q10": 2.0495800971984863,
+          "q50": 2.525785446166992,
+          "q90": 4.0582146644592285
+        },
+        "same_state_tube_radius": 4.0582146644592285,
+        "smpr": 0.3333333432674408
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7183547019958496,
+          "q10": 2.357494831085205,
+          "q50": 3.243189811706543,
+          "q90": 5.6995625495910645
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.33985984325408936,
+          "q10": -1.7007198333740234,
+          "q50": -0.815024733543396,
+          "q90": 1.6413480043411255
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 31532972.0,
+          "q10": 2.0495800971984863,
+          "q50": 2.525785446166992,
+          "q90": 4.0582146644592285
+        },
+        "same_state_tube_radius": 4.0582146644592285,
+        "smpr": 0.3333333432674408
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 2,
+      "smpr": 0.3333333432674408,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "collapse_lambda": 0.25,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 2.7887661457061768,
+          "q10": 1.7681210041046143,
+          "q50": 2.4323925971984863,
+          "q90": 4.274672031402588
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.2548947036266327,
+          "q10": -1.2755398750305176,
+          "q50": -0.6112684011459351,
+          "q90": 1.231011152267456
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 23649730.0,
+          "q10": 1.5371849536895752,
+          "q50": 1.8943390846252441,
+          "q90": 3.043660879135132
+        },
+        "same_state_tube_radius": 3.043660879135132,
+        "smpr": 0.3333333432674408
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7183547019958496,
+          "q10": 2.357494592666626,
+          "q50": 3.243189811706543,
+          "q90": 5.6995625495910645
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.33985984325408936,
+          "q10": -1.7007200717926025,
+          "q50": -0.815024733543396,
+          "q90": 1.6413480043411255
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 23649730.0,
+          "q10": 2.0495798587799072,
+          "q50": 2.525785446166992,
+          "q90": 4.0582146644592285
+        },
+        "same_state_tube_radius": 4.0582146644592285,
+        "smpr": 0.3333333432674408
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 2,
+      "smpr": 0.3333333432674408,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "collapse_lambda": 0.5,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 1.8591773509979248,
+          "q10": 1.1787474155426025,
+          "q50": 1.6215949058532715,
+          "q90": 2.8497812747955322
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.16992992162704468,
+          "q10": -0.8503599166870117,
+          "q50": -0.407512366771698,
+          "q90": 0.8206740021705627
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 15766488.0,
+          "q10": 1.0247900485992432,
+          "q50": 1.262892723083496,
+          "q90": 2.0291073322296143
+        },
+        "same_state_tube_radius": 2.0291073322296143,
+        "smpr": 0.3333333432674408
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7183547019958496,
+          "q10": 2.357494831085205,
+          "q50": 3.243189811706543,
+          "q90": 5.6995625495910645
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.33985984325408936,
+          "q10": -1.7007198333740234,
+          "q50": -0.815024733543396,
+          "q90": 1.6413480043411255
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 15766489.0,
+          "q10": 2.0495800971984863,
+          "q50": 2.525785446166992,
+          "q90": 4.0582146644592285
+        },
+        "same_state_tube_radius": 4.0582146644592285,
+        "smpr": 0.3333333432674408
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 2,
+      "smpr": 0.3333333432674408,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "collapse_lambda": 0.75,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 0.9295886754989624,
+          "q10": 0.5893737077713013,
+          "q50": 0.8107974529266357,
+          "q90": 1.4248906373977661
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.08496496081352234,
+          "q10": -0.42517995834350586,
+          "q50": -0.203756183385849,
+          "q90": 0.41033700108528137
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 7883243.0,
+          "q10": 0.5123950242996216,
+          "q50": 0.631446361541748,
+          "q90": 1.0145536661148071
+        },
+        "same_state_tube_radius": 1.0145536661148071,
+        "smpr": 0.3333333432674408
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7183547019958496,
+          "q10": 2.357494831085205,
+          "q50": 3.243189811706543,
+          "q90": 5.6995625495910645
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": -0.33985984325408936,
+          "q10": -1.7007198333740234,
+          "q50": -0.815024733543396,
+          "q90": 1.6413480043411255
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 7883245.5,
+          "q10": 2.0495800971984863,
+          "q50": 2.525785446166992,
+          "q90": 4.0582146644592285
+        },
+        "same_state_tube_radius": 4.0582146644592285,
+        "smpr": 0.3333333432674408
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "skipped_anchor_count": 2,
+      "smpr": 0.3333333432674408,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "collapse_lambda": 1.0,
+      "control": "constant_collapsed_rollout",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 2,
+      "smpr": 0.0,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "control": "task_grounded_default",
+      "different_state_distance_distribution": {
+        "count": 30,
+        "mean": 3.7480037212371826,
+        "q10": 2.3443892002105713,
+        "q50": 3.4195666313171387,
+        "q90": 5.649550437927246
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "raw_margin_distribution": {
+        "count": 30,
+        "mean": 3.4140400886535645,
+        "q10": 2.010425329208374,
+        "q50": 3.0856027603149414,
+        "q90": 5.315586566925049
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 2034951.75,
+        "q10": 0.08752870559692383,
+        "q50": 0.1311054676771164,
+        "q90": 0.3339637815952301
+      },
+      "same_state_tube_radius": 0.3339637815952301,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "control": "state_label_permutation",
+      "different_state_distance_distribution": {
+        "count": 31,
+        "mean": 3.3384227752685547,
+        "q10": 1.9395785331726074,
+        "q50": 3.1102023124694824,
+        "q90": 5.153623104095459
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 31,
+      "raw_margin_distribution": {
+        "count": 31,
+        "mean": 3.0044586658477783,
+        "q10": 1.6056147813796997,
+        "q50": 2.776238441467285,
+        "q90": 4.819659233093262
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 2034951.75,
+        "q10": 0.08752870559692383,
+        "q50": 0.1311054676771164,
+        "q90": 0.3339637815952301
+      },
+      "same_state_tube_radius": 0.3339637815952301,
+      "skipped_anchor_count": 1,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "control": "same_label_nearest_neighbor",
+      "different_state_distance_distribution": {
+        "count": 26,
+        "mean": 3.2385873794555664,
+        "q10": 2.121741771697998,
+        "q50": 3.013747215270996,
+        "q90": 4.980441093444824
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 26,
+      "raw_margin_distribution": {
+        "count": 26,
+        "mean": 2.9046237468719482,
+        "q10": 1.7877780199050903,
+        "q50": 2.679783344268799,
+        "q90": 4.646477222442627
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 2034951.75,
+        "q10": 0.08752870559692383,
+        "q50": 0.1311054676771164,
+        "q90": 0.3339637815952301
+      },
+      "same_state_tube_radius": 0.3339637815952301,
+      "skipped_anchor_count": 6,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "control": "global_far_neighbor",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 65489080.0,
+        "q10": 2.54079532623291,
+        "q50": 3.19710373878479,
+        "q90": 6.287161827087402
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": 65489080.0,
+        "q10": 2.206831455230713,
+        "q50": 2.8631398677825928,
+        "q90": 5.953197956085205
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 2034951.75,
+        "q10": 0.08752870559692383,
+        "q50": 0.1311054676771164,
+        "q90": 0.3339637815952301
+      },
+      "same_state_tube_radius": 0.3339637815952301,
+      "skipped_anchor_count": 0,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "control": "identical_clean_noisy_positive",
+      "different_state_distance_distribution": {
+        "count": 30,
+        "mean": 3.7480037212371826,
+        "q10": 2.3443892002105713,
+        "q50": 3.4195666313171387,
+        "q90": 5.649550437927246
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "raw_margin_distribution": {
+        "count": 30,
+        "mean": 3.7480037212371826,
+        "q10": 2.3443892002105713,
+        "q50": 3.4195666313171387,
+        "q90": 5.649550437927246
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.0,
+        "q10": 0.0,
+        "q50": 0.0,
+        "q90": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "control": "action_permutation",
+      "different_state_distance_distribution": {
+        "count": 30,
+        "mean": 3.6578519344329834,
+        "q10": 2.282431125640869,
+        "q50": 3.372462272644043,
+        "q90": 5.595364570617676
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "raw_margin_distribution": {
+        "count": 30,
+        "mean": 3.39388370513916,
+        "q10": 2.018462896347046,
+        "q50": 3.108494281768799,
+        "q90": 5.331396102905273
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 2073096.0,
+        "q10": 0.07569025456905365,
+        "q50": 0.10569829493761063,
+        "q90": 0.2639683187007904
+      },
+      "same_state_tube_radius": 0.2639683187007904,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "collapse_lambda": 0.0,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7480037212371826,
+          "q10": 2.3443892002105713,
+          "q50": 3.4195666313171387,
+          "q90": 5.649550437927246
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 3.4140400886535645,
+          "q10": 2.010425329208374,
+          "q50": 3.0856027603149414,
+          "q90": 5.315586566925049
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 2034951.75,
+          "q10": 0.08752870559692383,
+          "q50": 0.1311054676771164,
+          "q90": 0.3339637815952301
+        },
+        "same_state_tube_radius": 0.3339637815952301,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7480037212371826,
+          "q10": 2.3443892002105713,
+          "q50": 3.4195666313171387,
+          "q90": 5.649550437927246
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 3.4140400886535645,
+          "q10": 2.010425329208374,
+          "q50": 3.0856027603149414,
+          "q90": 5.315586566925049
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 2034951.75,
+          "q10": 0.08752870559692383,
+          "q50": 0.1311054676771164,
+          "q90": 0.3339637815952301
+        },
+        "same_state_tube_radius": 0.3339637815952301,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.3339637815952301,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "collapse_lambda": 0.25,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 2.8110032081604004,
+          "q10": 1.7582919597625732,
+          "q50": 2.5646753311157227,
+          "q90": 4.2371625900268555
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 2.560530424118042,
+          "q10": 1.5078191757202148,
+          "q50": 2.314202308654785,
+          "q90": 3.986689805984497
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1526214.0,
+          "q10": 0.06564653664827347,
+          "q50": 0.098329097032547,
+          "q90": 0.2504728138446808
+        },
+        "same_state_tube_radius": 0.2504728138446808,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7480037212371826,
+          "q10": 2.3443892002105713,
+          "q50": 3.4195668697357178,
+          "q90": 5.649549961090088
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 3.4140400886535645,
+          "q10": 2.010425329208374,
+          "q50": 3.0856029987335205,
+          "q90": 5.315586090087891
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1526214.0,
+          "q10": 0.08752870559692383,
+          "q50": 0.1311054527759552,
+          "q90": 0.3339637517929077
+        },
+        "same_state_tube_radius": 0.3339637517929077,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.3339637517929077,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "collapse_lambda": 0.5,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 1.8740018606185913,
+          "q10": 1.1721946001052856,
+          "q50": 1.7097834348678589,
+          "q90": 2.824775218963623
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 1.7070200443267822,
+          "q10": 1.005212664604187,
+          "q50": 1.5428014993667603,
+          "q90": 2.6577932834625244
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1017475.875,
+          "q10": 0.043764352798461914,
+          "q50": 0.0655527263879776,
+          "q90": 0.16698189079761505
+        },
+        "same_state_tube_radius": 0.16698189079761505,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7480037212371826,
+          "q10": 2.3443892002105713,
+          "q50": 3.4195668697357178,
+          "q90": 5.649550437927246
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 3.4140400886535645,
+          "q10": 2.010425329208374,
+          "q50": 3.0856029987335205,
+          "q90": 5.315586566925049
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 1017475.9375,
+          "q10": 0.08752870559692383,
+          "q50": 0.1311054527759552,
+          "q90": 0.3339637815952301
+        },
+        "same_state_tube_radius": 0.3339637815952301,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.3339637815952301,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "collapse_lambda": 0.75,
+      "control": "progressive_collapse",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 0.9370009303092957,
+          "q10": 0.5860973000526428,
+          "q50": 0.8548917174339294,
+          "q90": 1.4123876094818115
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 0.8535100221633911,
+          "q10": 0.5026063323020935,
+          "q50": 0.7714007496833801,
+          "q90": 1.3288966417312622
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 508737.9375,
+          "q10": 0.021882180124521255,
+          "q50": 0.0327763669192791,
+          "q90": 0.08349093794822693
+        },
+        "same_state_tube_radius": 0.08349093794822693,
+        "smpr": 1.0
+      },
+      "joint_gate_pass": true,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 3.7480037212371826,
+          "q10": 2.3443892002105713,
+          "q50": 3.4195668697357178,
+          "q90": 5.649550437927246
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 3.4140400886535645,
+          "q10": 2.010425329208374,
+          "q50": 3.0856029987335205,
+          "q90": 5.315586566925049
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 508738.0625,
+          "q10": 0.08752872049808502,
+          "q50": 0.1311054676771164,
+          "q90": 0.3339637517929077
+        },
+        "same_state_tube_radius": 0.3339637517929077,
+        "smpr": 1.0
+      },
+      "same_state_tube_radius": 0.3339637517929077,
+      "skipped_anchor_count": 2,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "collapse_lambda": 1.0,
+      "control": "constant_collapsed_rollout",
+      "fixed_original_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "joint_gate_pass": false,
+      "label_rule": "T-block pose cell from x/y/theta median splits",
+      "pair_count": 30,
+      "recomputed_collapsed_scale": {
+        "different_state_distance_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "pair_count": 30,
+        "raw_margin_distribution": {
+          "count": 30,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_radius_distribution": {
+          "count": 32,
+          "mean": 0.0,
+          "q10": 0.0,
+          "q50": 0.0,
+          "q90": 0.0
+        },
+        "same_state_tube_radius": 0.0,
+        "smpr": 0.0
+      },
+      "same_state_tube_radius": 0.0,
+      "skipped_anchor_count": 2,
+      "smpr": 0.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "correlation_rows": [
+    {
+      "method": "LeWM",
+      "metric": "Encoder radius",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.5973341700802607,
+      "spearman_vs_px08_success": 0.18845337288935943
+    },
+    {
+      "method": "LeWM",
+      "metric": "ACPC-H/trans.",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.7910363244141788,
+      "spearman_vs_px08_success": 0.45967690887151813
+    },
+    {
+      "method": "LeWM",
+      "metric": "PCC",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.7651492678841804,
+      "spearman_vs_px08_success": 0.4565875093159549
+    },
+    {
+      "method": "LeWM",
+      "metric": "CRA",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.677056000886574,
+      "spearman_vs_px08_success": 0.3124155300563356
+    },
+    {
+      "method": "LeWM",
+      "metric": "MAF",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.6514007367448178,
+      "spearman_vs_px08_success": 0.2128246386154118
+    },
+    {
+      "method": "PLDM",
+      "metric": "Encoder radius",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.34928207616594803,
+      "spearman_vs_px08_success": 0.14215814401771432
+    },
+    {
+      "method": "PLDM",
+      "metric": "ACPC-H/trans.",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.48734637765927263,
+      "spearman_vs_px08_success": 0.5310327771096502
+    },
+    {
+      "method": "PLDM",
+      "metric": "PCC",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.4538606328941006,
+      "spearman_vs_px08_success": 0.6662375336482372
+    },
+    {
+      "method": "PLDM",
+      "metric": "CRA",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.4760127409695221,
+      "spearman_vs_px08_success": 0.44965239031690074
+    },
+    {
+      "method": "PLDM",
+      "metric": "MAF",
+      "n": 36,
+      "signed_direction": "higher_is_better_after_sign",
+      "spearman_vs_negative_drop": 0.29592135668918707,
+      "spearman_vs_px08_success": 0.23398112559848294
+    }
+  ],
+  "metadata": {
+    "schema_version": "paper1-no-retrain-diagnostic-audit-0.1",
+    "scope": "existing Phase-0 full-grid artifacts only; no model loading, no retraining, no true held-out prospective split",
+    "selection_rule": "lowest aggregate rank over ACPC-H/trans low, PCC low, CRA high, MAF low among nonzero training-noise checkpoints",
+    "source_artifacts": {
+      "LeWM": "assets/paper1_data/heldout_selection_phase0_seed9101.json",
+      "PLDM": "assets/paper1_data/heldout_selection_phase0_pldm_seed9101.json"
+    }
+  },
+  "selection_rows": [
+    {
+      "base_px08_success": 50.0,
+      "closed_loop_best_px08_success": 98.66666666666667,
+      "closed_loop_best_std": "0.08",
+      "gap_to_best_pp": 0.0,
+      "method": "LeWM",
+      "selected_acpc_h_norm_by_transition": 0.041273009052478486,
+      "selected_cra_spearman_mean": 0.9968850016593933,
+      "selected_maf_flip_rate": 0.03999999910593033,
+      "selected_pcc_abs_median": 0.975677490234375,
+      "selected_px08_success": 98.66666666666667,
+      "selected_rank_score": 2.0,
+      "selected_std": "0.08",
+      "task": "TwoRoom"
+    },
+    {
+      "base_px08_success": 4.666666666666667,
+      "closed_loop_best_px08_success": 87.0,
+      "closed_loop_best_std": "0.06",
+      "gap_to_best_pp": 1.6666666666666714,
+      "method": "LeWM",
+      "selected_acpc_h_norm_by_transition": 0.11287221576188135,
+      "selected_cra_spearman_mean": 0.9963735938072205,
+      "selected_maf_flip_rate": 0.019999999552965164,
+      "selected_pcc_abs_median": 1.864837646484375,
+      "selected_px08_success": 85.33333333333333,
+      "selected_rank_score": 0.0,
+      "selected_std": "0.08",
+      "task": "PushT"
+    },
+    {
+      "base_px08_success": 15.0,
+      "closed_loop_best_px08_success": 85.66666666666667,
+      "closed_loop_best_std": "0.02",
+      "gap_to_best_pp": 0.0,
+      "method": "LeWM",
+      "selected_acpc_h_norm_by_transition": 0.02859689512559197,
+      "selected_cra_spearman_mean": 0.9992958307266235,
+      "selected_maf_flip_rate": 0.009999999776482582,
+      "selected_pcc_abs_median": 0.5315093994140625,
+      "selected_px08_success": 85.66666666666667,
+      "selected_rank_score": 2.0,
+      "selected_std": "0.02",
+      "task": "Reacher"
+    },
+    {
+      "base_px08_success": 46.333333333333336,
+      "closed_loop_best_px08_success": 68.0,
+      "closed_loop_best_std": "0.07",
+      "gap_to_best_pp": 8.333333333333336,
+      "method": "LeWM",
+      "selected_acpc_h_norm_by_transition": 0.01367515339034509,
+      "selected_cra_spearman_mean": 0.9994959831237793,
+      "selected_maf_flip_rate": 0.0,
+      "selected_pcc_abs_median": 0.3953094482421875,
+      "selected_px08_success": 59.666666666666664,
+      "selected_rank_score": 1.0,
+      "selected_std": "0.05",
+      "task": "Cube"
+    },
+    {
+      "base_px08_success": 51.666666666666664,
+      "closed_loop_best_px08_success": 98.33333333333333,
+      "closed_loop_best_std": "0.05",
+      "gap_to_best_pp": 1.6666666666666572,
+      "method": "PLDM",
+      "selected_acpc_h_norm_by_transition": 0.04149051011923692,
+      "selected_cra_spearman_mean": 0.993582546710968,
+      "selected_maf_flip_rate": 0.07000000029802322,
+      "selected_pcc_abs_median": 0.6218109130859375,
+      "selected_px08_success": 96.66666666666667,
+      "selected_rank_score": 3.0,
+      "selected_std": "0.07",
+      "task": "TwoRoom"
+    },
+    {
+      "base_px08_success": 10.0,
+      "closed_loop_best_px08_success": 72.0,
+      "closed_loop_best_std": "0.03",
+      "gap_to_best_pp": 5.666666666666671,
+      "method": "PLDM",
+      "selected_acpc_h_norm_by_transition": 0.05540082465795651,
+      "selected_cra_spearman_mean": 0.9924128651618958,
+      "selected_maf_flip_rate": 0.05000000074505806,
+      "selected_pcc_abs_median": 1.2219085693359375,
+      "selected_px08_success": 66.33333333333333,
+      "selected_rank_score": 4.0,
+      "selected_std": "0.08",
+      "task": "PushT"
+    },
+    {
+      "base_px08_success": 79.33333333333333,
+      "closed_loop_best_px08_success": 81.33333333333333,
+      "closed_loop_best_std": "0.04",
+      "gap_to_best_pp": 0.6666666666666572,
+      "method": "PLDM",
+      "selected_acpc_h_norm_by_transition": 0.04254604474142109,
+      "selected_cra_spearman_mean": 0.9973031878471375,
+      "selected_maf_flip_rate": 0.03999999910593033,
+      "selected_pcc_abs_median": 1.068756103515625,
+      "selected_px08_success": 80.66666666666667,
+      "selected_rank_score": 3.0,
+      "selected_std": "0.08",
+      "task": "Reacher"
+    },
+    {
+      "base_px08_success": 48.333333333333336,
+      "closed_loop_best_px08_success": 56.333333333333336,
+      "closed_loop_best_std": "0.08",
+      "gap_to_best_pp": 0.0,
+      "method": "PLDM",
+      "selected_acpc_h_norm_by_transition": 0.04211948144258224,
+      "selected_cra_spearman_mean": 0.9984522461891174,
+      "selected_maf_flip_rate": 0.029999999329447746,
+      "selected_pcc_abs_median": 0.861907958984375,
+      "selected_px08_success": 56.333333333333336,
+      "selected_rank_score": 2.0,
+      "selected_std": "0.08",
+      "task": "Cube"
+    }
+  ],
+  "summary": {
+    "exact_best_hits": 3,
+    "max_gap_to_closed_loop_best_pp": 8.333333333333336,
+    "mean_gap_to_closed_loop_best_pp": 2.249999999999999,
+    "selection_rows": 8,
+    "within_2pp_hits": 6,
+    "within_6pp_hits": 7
+  }
+}

@@ -39,7 +39,7 @@
       "phase0_aux_pxgoal_adm_ratio_best_over_base": 0.9968313358677763,
       "phase0_aux_pxgoal_sprr_base": 1.1830878645429825,
       "phase0_aux_pxgoal_sprr_best": 26.260566825244137,
-      "readable_conclusion": "same-state encoder/predictor radii contract; auxiliary ADM is preserved."
+      "readable_conclusion": "same-state encoder/rollout radii contract; auxiliary ADM is preserved."
     },
     {
       "task": "PushT",
@@ -69,7 +69,7 @@
       "phase0_aux_pxgoal_adm_ratio_best_over_base": 0.9957156009656067,
       "phase0_aux_pxgoal_sprr_base": 1.26092103973051,
       "phase0_aux_pxgoal_sprr_best": 12.901875413625527,
-      "readable_conclusion": "same-state encoder/predictor radii contract; auxiliary ADM is preserved."
+      "readable_conclusion": "same-state encoder/rollout radii contract; auxiliary ADM is preserved."
     },
     {
       "task": "Reacher",
@@ -99,7 +99,7 @@
       "phase0_aux_pxgoal_adm_ratio_best_over_base": 0.9936569333896539,
       "phase0_aux_pxgoal_sprr_base": 18.598819901929485,
       "phase0_aux_pxgoal_sprr_best": 27.54116869856618,
-      "readable_conclusion": "same-state encoder/predictor radii contract; auxiliary ADM is preserved."
+      "readable_conclusion": "same-state encoder/rollout radii contract; auxiliary ADM is preserved."
     },
     {
       "task": "Cube",
@@ -129,7 +129,7 @@
       "phase0_aux_pxgoal_adm_ratio_best_over_base": 1.0035405136169024,
       "phase0_aux_pxgoal_sprr_base": 1.3477450043580816,
       "phase0_aux_pxgoal_sprr_best": 9.168249285636856,
-      "readable_conclusion": "same-state encoder/predictor radii contract; auxiliary ADM is preserved."
+      "readable_conclusion": "same-state encoder/rollout radii contract; auxiliary ADM is preserved."
     }
   ]
 }

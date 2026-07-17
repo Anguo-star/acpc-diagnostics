@@ -1,0 +1,797 @@
+{
+  "metadata": {
+    "schema_version": "paper1-selector-incremental-audit-0.1",
+    "source_artifact": "assets/paper1_data/acpc_phase0_lewm_three_seed.json",
+    "scope": "No-retraining incremental explanatory audit over the 96 nonzero LeWM Gaussian rows: 4 tasks x 3 training seeds x 8 nonzero std_max checkpoints.",
+    "row_unit": "task-training-seed-checkpoint",
+    "controls": [
+      "std_max",
+      "std_max^2",
+      "task fixed effects",
+      "training-seed fixed effects"
+    ],
+    "rank_transform": true,
+    "block_permutation": "permutes residual metric blocks across the 12 task-training-seed blocks, preserving each 8-row std grid within a block",
+    "n_block_permutations": 2000,
+    "random_seed": 20260704,
+    "interpretation": "Tests residual diagnostic signal beyond training-noise-level, task, and training-seed controls; not a selector dominance or closed-loop guarantee claim."
+  },
+  "compact_rows": [
+    {
+      "metric": "Aggregate ACPC/PCC/CRA/MAF",
+      "reduced_drop_partial_r": 0.15915559360752926,
+      "reduced_drop_partial_r2": 0.02533050297656501,
+      "reduced_drop_incremental_r2": 0.012861061744829816,
+      "reduced_drop_block_permutation_p": 0.07446276861569215,
+      "obs008_success_partial_r": 0.1140457143752115,
+      "obs008_success_partial_r2": 0.01300642496735232,
+      "obs008_success_incremental_r2": 0.0019769439272870892,
+      "obs008_success_block_permutation_p": 0.42128935532233885
+    },
+    {
+      "metric": "ACPC-H/trans.",
+      "reduced_drop_partial_r": 0.12084307975803946,
+      "reduced_drop_partial_r2": 0.014603049925407886,
+      "reduced_drop_incremental_r2": 0.0074144096912430735,
+      "reduced_drop_block_permutation_p": 0.15792103948025987,
+      "obs008_success_partial_r": -0.0785721604803591,
+      "obs008_success_partial_r2": 0.006173584402551305,
+      "obs008_success_incremental_r2": 0.0009383693232269952,
+      "obs008_success_block_permutation_p": 0.5702148925537232
+    },
+    {
+      "metric": "PCC",
+      "reduced_drop_partial_r": 0.13349126010730045,
+      "reduced_drop_partial_r2": 0.017819916525034944,
+      "reduced_drop_incremental_r2": 0.00904771006435301,
+      "reduced_drop_block_permutation_p": 0.1199400299850075,
+      "obs008_success_partial_r": -0.0387695709133391,
+      "obs008_success_partial_r2": 0.0015030796288044294,
+      "obs008_success_incremental_r2": 0.0002284643283493315,
+      "obs008_success_block_permutation_p": 0.7956021989005497
+    },
+    {
+      "metric": "CRA",
+      "reduced_drop_partial_r": 0.22969569678742968,
+      "reduced_drop_partial_r2": 0.052760113122662836,
+      "reduced_drop_incremental_r2": 0.026787903626016796,
+      "reduced_drop_block_permutation_p": 0.004997501249375313,
+      "obs008_success_partial_r": 0.10233702063668015,
+      "obs008_success_partial_r2": 0.0104728657927923,
+      "obs008_success_incremental_r2": 0.001591849296199821,
+      "obs008_success_block_permutation_p": 0.45377311344327836
+    },
+    {
+      "metric": "MAF",
+      "reduced_drop_partial_r": 0.15215913758989172,
+      "reduced_drop_partial_r2": 0.0231524031520996,
+      "reduced_drop_incremental_r2": 0.011755174650729061,
+      "reduced_drop_block_permutation_p": 0.11894052973513243,
+      "obs008_success_partial_r": 0.1528721419115465,
+      "obs008_success_partial_r2": 0.02336989177262401,
+      "obs008_success_incremental_r2": 0.003552164852157258,
+      "obs008_success_block_permutation_p": 0.23288355822088955
+    },
+    {
+      "metric": "Elite overlap",
+      "reduced_drop_partial_r": 0.12841601850542314,
+      "reduced_drop_partial_r2": 0.01649067380878518,
+      "reduced_drop_incremental_r2": 0.008372813373064392,
+      "reduced_drop_block_permutation_p": 0.18340829585207397,
+      "obs008_success_partial_r": -0.005632116834213399,
+      "obs008_success_partial_r2": 3.172074003422996e-05,
+      "obs008_success_incremental_r2": 4.821472813332228e-06,
+      "obs008_success_block_permutation_p": 0.968015992003998
+    }
+  ],
+  "metric_rows": [
+    {
+      "metric": "Aggregate ACPC/PCC/CRA/MAF",
+      "metric_key": "aggregate_quality",
+      "outcome": "obs0.08 success",
+      "outcome_key": "pixels_std0.08_success",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.1140457143752115,
+      "partial_r2": 0.01300642496735232,
+      "base_r2": 0.8480025116625307,
+      "full_r2": 0.8499794555898178,
+      "incremental_r2": 0.0019769439272870892,
+      "block_permutation_p_two_sided": 0.42128935532233885,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.24709160353175239
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.0589569892925449
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": -0.06282837619131953
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.16753878945002088
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.18049885047021713
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.10406406418839377
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.13159730736455008
+        }
+      ]
+    },
+    {
+      "metric": "Aggregate ACPC/PCC/CRA/MAF",
+      "metric_key": "aggregate_quality",
+      "outcome": "reduced drop",
+      "outcome_key": "reduced_drop",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.15915559360752926,
+      "partial_r2": 0.02533050297656501,
+      "base_r2": 0.49226978411253286,
+      "full_r2": 0.5051308458573627,
+      "incremental_r2": 0.012861061744829816,
+      "block_permutation_p_two_sided": 0.07446276861569215,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.12285819336708506
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.1391961623529809
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": 0.111693055212756
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.2811515632464755
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.0455253650440576
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.17477109550513695
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.17773458924690255
+        }
+      ]
+    },
+    {
+      "metric": "ACPC-H/trans.",
+      "metric_key": "acpc_h_norm_by_transition",
+      "outcome": "obs0.08 success",
+      "outcome_key": "pixels_std0.08_success",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": -0.0785721604803591,
+      "partial_r2": 0.006173584402551305,
+      "base_r2": 0.8480025116625307,
+      "full_r2": 0.8489408809857577,
+      "incremental_r2": 0.0009383693232269952,
+      "block_permutation_p_two_sided": 0.5702148925537232,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": -0.0352711844089305
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": -0.002389324161774688
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": -0.34583818431549795
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.01374150177407372
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": -0.19453208057278812
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": -0.07185400369445892
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": -0.03722491799416293
+        }
+      ]
+    },
+    {
+      "metric": "ACPC-H/trans.",
+      "metric_key": "acpc_h_norm_by_transition",
+      "outcome": "reduced drop",
+      "outcome_key": "reduced_drop",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.12084307975803946,
+      "partial_r2": 0.014603049925407886,
+      "base_r2": 0.49226978411253286,
+      "full_r2": 0.49968419380377593,
+      "incremental_r2": 0.0074144096912430735,
+      "block_permutation_p_two_sided": 0.15792103948025987,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.07834563593042669
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.09776707760808435
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": 0.06363152321746023
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.24727634639244034
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.16106935319405366
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.09136275669926071
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.1532945757396806
+        }
+      ]
+    },
+    {
+      "metric": "PCC",
+      "metric_key": "pcc_abs_median",
+      "outcome": "obs0.08 success",
+      "outcome_key": "pixels_std0.08_success",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": -0.0387695709133391,
+      "partial_r2": 0.0015030796288044294,
+      "base_r2": 0.8480025116625307,
+      "full_r2": 0.84823097599088,
+      "incremental_r2": 0.0002284643283493315,
+      "block_permutation_p_two_sided": 0.7956021989005497,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.013647045005685548
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.09004572478001589
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": -0.30029812118288773
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.0049609106950368725
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": -0.1041369440069793
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": -0.02761783733146571
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": -0.009239659308611986
+        }
+      ]
+    },
+    {
+      "metric": "PCC",
+      "metric_key": "pcc_abs_median",
+      "outcome": "reduced drop",
+      "outcome_key": "reduced_drop",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.13349126010730045,
+      "partial_r2": 0.017819916525034944,
+      "base_r2": 0.49226978411253286,
+      "full_r2": 0.5013174941768859,
+      "incremental_r2": 0.00904771006435301,
+      "block_permutation_p_two_sided": 0.1199400299850075,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.08726291805708068
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.11667181560979394
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": 0.07043495955444475
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.24839541253214556
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.19211922423063674
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.08913600294520886
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.17950820377778673
+        }
+      ]
+    },
+    {
+      "metric": "CRA",
+      "metric_key": "cra_spearman_mean",
+      "outcome": "obs0.08 success",
+      "outcome_key": "pixels_std0.08_success",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.10233702063668015,
+      "partial_r2": 0.0104728657927923,
+      "base_r2": 0.8480025116625307,
+      "full_r2": 0.8495943609587305,
+      "incremental_r2": 0.001591849296199821,
+      "block_permutation_p_two_sided": 0.45377311344327836,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.2215880598412049
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.22280134419785858
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": -0.12259009493963494
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.007246777901500326
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.1464531087497179
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.09151702040672165
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.0807404218553311
+        }
+      ]
+    },
+    {
+      "metric": "CRA",
+      "metric_key": "cra_spearman_mean",
+      "outcome": "reduced drop",
+      "outcome_key": "reduced_drop",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.22969569678742968,
+      "partial_r2": 0.052760113122662836,
+      "base_r2": 0.49226978411253286,
+      "full_r2": 0.5190576877385497,
+      "incremental_r2": 0.026787903626016796,
+      "block_permutation_p_two_sided": 0.004997501249375313,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.23347681685540905
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.22402887977599062
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": 0.16007511310140854
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.24713667935460842
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.3075304167393226
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.17676977068986785
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.23556272429343209
+        }
+      ]
+    },
+    {
+      "metric": "MAF",
+      "metric_key": "maf_flip_rate",
+      "outcome": "obs0.08 success",
+      "outcome_key": "pixels_std0.08_success",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.1528721419115465,
+      "partial_r2": 0.02336989177262401,
+      "base_r2": 0.8480025116625307,
+      "full_r2": 0.851554676514688,
+      "incremental_r2": 0.003552164852157258,
+      "block_permutation_p_two_sided": 0.23288355822088955,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.2776378751999818
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.2446211352406785
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": -0.00971887596942931
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": -0.001733402427375864
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.11747528802744525
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.1551313423167156
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.18737629032762182
+        }
+      ]
+    },
+    {
+      "metric": "MAF",
+      "metric_key": "maf_flip_rate",
+      "outcome": "reduced drop",
+      "outcome_key": "reduced_drop",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.15215913758989172,
+      "partial_r2": 0.0231524031520996,
+      "base_r2": 0.49226978411253286,
+      "full_r2": 0.5040249587632619,
+      "incremental_r2": 0.011755174650729061,
+      "block_permutation_p_two_sided": 0.11894052973513243,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.15671214583101187
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.1587142271812289
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": 0.07664070848335044
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.10878030884279788
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.1341913739576682
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.13822233342505635
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.19590555117808012
+        }
+      ]
+    },
+    {
+      "metric": "Elite overlap",
+      "metric_key": "elite_overlap_mean",
+      "outcome": "obs0.08 success",
+      "outcome_key": "pixels_std0.08_success",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": -0.005632116834213399,
+      "partial_r2": 3.172074003422996e-05,
+      "base_r2": 0.8480025116625307,
+      "full_r2": 0.848007333135344,
+      "incremental_r2": 4.821472813332228e-06,
+      "block_permutation_p_two_sided": 0.968015992003998,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.06600774810683378
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.11902605293251627
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": -0.2429853482599992
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.007783967873235213
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": -0.03628623730123102
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.00511845263613442
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.007242947824144113
+        }
+      ]
+    },
+    {
+      "metric": "Elite overlap",
+      "metric_key": "elite_overlap_mean",
+      "outcome": "reduced drop",
+      "outcome_key": "reduced_drop",
+      "direction": "higher signed metric is better",
+      "n": 96,
+      "controls": [
+        "std_max",
+        "std_max^2",
+        "task fixed effects",
+        "training-seed fixed effects"
+      ],
+      "partial_r": 0.12841601850542314,
+      "partial_r2": 0.01649067380878518,
+      "base_r2": 0.49226978411253286,
+      "full_r2": 0.5006425974855973,
+      "incremental_r2": 0.008372813373064392,
+      "block_permutation_p_two_sided": 0.18340829585207397,
+      "leave_one_task_out": [
+        {
+          "held_out": "Cube",
+          "n": 72,
+          "partial_r": 0.07834651979721437
+        },
+        {
+          "held_out": "PushT",
+          "n": 72,
+          "partial_r": 0.12432679384130811
+        },
+        {
+          "held_out": "Reacher",
+          "n": 72,
+          "partial_r": 0.03249216109834921
+        },
+        {
+          "held_out": "TwoRoom",
+          "n": 72,
+          "partial_r": 0.22108148441129502
+        }
+      ],
+      "leave_one_training_seed_out": [
+        {
+          "held_out": 3072,
+          "n": 64,
+          "partial_r": 0.10838524809164178
+        },
+        {
+          "held_out": 3073,
+          "n": 64,
+          "partial_r": 0.07622268251830541
+        },
+        {
+          "held_out": 3074,
+          "n": 64,
+          "partial_r": 0.16799472006058838
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": "paper1-selective-contraction-cluster-point-counts-0.1",
+  "figure": "fig_acpc_basin_tsne.png",
+  "task": "PushT",
+  "method": "LeWM",
+  "n_sequences": 128,
+  "view_stds": [
+    0.0,
+    0.01,
+    0.04,
+    0.08
+  ],
+  "expanded_view_stds": [
+    0.0,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.08,
+    0.08,
+    0.08,
+    0.08,
+    0.08,
+    0.08
+  ],
+  "perturb_repeats": 6,
+  "rollout_horizon": 8,
+  "seed": 3072,
+  "anchor_indices": [
+    0,
+    1,
+    18,
+    19,
+    32,
+    51,
+    71,
+    81,
+    85,
+    96,
+    101,
+    110,
+    118,
+    119,
+    124,
+    127
+  ],
+  "anchor_selection": {
+    "strategy": "fixed_seed_random",
+    "seed": 4081,
+    "selected": [
+      0,
+      1,
+      18,
+      19,
+      32,
+      51,
+      71,
+      81,
+      85,
+      96,
+      101,
+      110,
+      118,
+      119,
+      124,
+      127
+    ],
+    "note": "Paper-facing anchors are a fixed-seed random subset; t-SNE and high-D statistics are not used for selection."
+  },
+  "paper_facing": true,
+  "metric_annotations": {
+    "task": "PushT",
+    "source": "assets/paper1_data/compressed_metrics_summary_20260706.json",
+    "ATR_base": {
+      "mean": 3.5801502993462258,
+      "pstdev": 0.2600041231471354
+    },
+    "ATR_std0.08": {
+      "mean": 0.2465848808762392,
+      "pstdev": 0.01730877132588809
+    },
+    "SMPR_base": {
+      "mean": 0.43877550462881726,
+      "pstdev": 0.17095009086174295
+    },
+    "SMPR_std0.08": {
+      "mean": 1.0,
+      "pstdev": 0.0
+    }
+  },
+  "panels": [
+    {
+      "panel": "base:encoder",
+      "row_label": "base",
+      "feature": "encoder",
+      "view_count_per_state": 19,
+      "sampled_state_count": 128,
+      "background_origin_points": 128,
+      "background_perturbed_points": 2304,
+      "background_total_points": 2432,
+      "colored_anchor_count": 16,
+      "colored_anchor_origin_points": 16,
+      "colored_anchor_perturbed_points": 288,
+      "colored_anchor_total_points": 304
+    },
+    {
+      "panel": "base:predictor",
+      "row_label": "base",
+      "feature": "predictor",
+      "view_count_per_state": 19,
+      "sampled_state_count": 128,
+      "background_origin_points": 128,
+      "background_perturbed_points": 2304,
+      "background_total_points": 2432,
+      "colored_anchor_count": 16,
+      "colored_anchor_origin_points": 16,
+      "colored_anchor_perturbed_points": 288,
+      "colored_anchor_total_points": 304
+    },
+    {
+      "panel": "fullseq_robust:encoder",
+      "row_label": "fullseq_robust",
+      "feature": "encoder",
+      "view_count_per_state": 19,
+      "sampled_state_count": 128,
+      "background_origin_points": 128,
+      "background_perturbed_points": 2304,
+      "background_total_points": 2432,
+      "colored_anchor_count": 16,
+      "colored_anchor_origin_points": 16,
+      "colored_anchor_perturbed_points": 288,
+      "colored_anchor_total_points": 304
+    },
+    {
+      "panel": "fullseq_robust:predictor",
+      "row_label": "fullseq_robust",
+      "feature": "predictor",
+      "view_count_per_state": 19,
+      "sampled_state_count": 128,
+      "background_origin_points": 128,
+      "background_perturbed_points": 2304,
+      "background_total_points": 2432,
+      "colored_anchor_count": 16,
+      "colored_anchor_origin_points": 16,
+      "colored_anchor_perturbed_points": 288,
+      "colored_anchor_total_points": 304
+    }
+  ],
+  "panel_high_d_stats": [
+    {
+      "panel": "base:encoder",
+      "row_label": "base",
+      "feature": "encoder",
+      "median_radius_over_nn": 1.4079947471618652,
+      "frac_radius_lt_nn": 0.171875,
+      "frac_nonoverlap_balls": 0.0,
+      "median_radius": 15.192461013793945,
+      "median_nearest_origin": 11.017219543457031
+    },
+    {
+      "panel": "base:predictor",
+      "row_label": "base",
+      "feature": "predictor",
+      "median_radius_over_nn": 1.862708330154419,
+      "frac_radius_lt_nn": 0.0546875,
+      "frac_nonoverlap_balls": 0.0,
+      "median_radius": 19.681686401367188,
+      "median_nearest_origin": 10.271793365478516
+    },
+    {
+      "panel": "fullseq_robust:encoder",
+      "row_label": "fullseq_robust",
+      "feature": "encoder",
+      "median_radius_over_nn": 0.09578736126422882,
+      "frac_radius_lt_nn": 0.9765625,
+      "frac_nonoverlap_balls": 0.953125,
+      "median_radius": 1.0015218257904053,
+      "median_nearest_origin": 10.393660545349121
+    },
+    {
+      "panel": "fullseq_robust:predictor",
+      "row_label": "fullseq_robust",
+      "feature": "predictor",
+      "median_radius_over_nn": 0.19360597431659698,
+      "frac_radius_lt_nn": 0.953125,
+      "frac_nonoverlap_balls": 0.84375,
+      "median_radius": 1.7495732307434082,
+      "median_nearest_origin": 10.484732627868652
+    }
+  ],
+  "note": "All four cluster panels must have identical view_count_per_state and sampled_state_count. Colored anchor points are overlaid on the same background sample, so contraction can make the lower-row points visually overlap even when the counts match. In paper-facing mode, only compact ATR/SMPR panel insets are visible; high-dimensional cluster-isolation statistics are retained here only as sidecar audit metadata and are not visible panel annotations."
+}

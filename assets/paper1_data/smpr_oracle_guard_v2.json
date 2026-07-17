@@ -1,0 +1,282 @@
+{
+  "count_contract": {
+    "expected_rows": 4,
+    "observed_rows": 4
+  },
+  "metadata": {
+    "behavior_labels_used": false,
+    "claim_scope": "TwoRoom environment-geometry oracle proxy and PushT sequence-goal state-derived oracle proxy; not a four-task simulator-oracle result",
+    "code_commit": "c943fdf75cd71bc08e5466e1700676069728b7d2",
+    "created_utc": "2026-07-11T06:07:44.449624+00:00",
+    "errors": [],
+    "missing_rows": [],
+    "mve_checkpoints": [
+      {
+        "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_20260430/tworoom_lewm_20260430_epoch_10_object.ckpt",
+        "std_key": "0.0",
+        "task": "TwoRoom",
+        "wall_time": 15.96806656382978
+      },
+      {
+        "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1/tworoom_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+        "std_key": "0.08",
+        "task": "TwoRoom",
+        "wall_time": 8.863440623506904
+      },
+      {
+        "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_20260430/pusht_lewm_20260430_epoch_10_object.ckpt",
+        "std_key": "0.0",
+        "task": "PushT",
+        "wall_time": 15.88008813560009
+      },
+      {
+        "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+        "embedding_space": "normalized",
+        "model_file": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1/pusht_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+        "std_key": "0.08",
+        "task": "PushT",
+        "wall_time": 12.670040352270007
+      }
+    ],
+    "mve_scope": "TwoRoom+PushT base+endpoint, 32 anchors, five fixed noise draws",
+    "protocol_hash": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+    "pusht_simulator_goal_state_available_in_hdf5": false,
+    "schema_version": "paper1-smpr-oracle-guard-v2-1.0",
+    "source_hashes": {
+      "canonical_smpr": "2585f74f01b8dbf1ab780685014e22a43fd30d9a29bb65fd7106eb23f9d1a89e",
+      "canonical_smpr_runner": "8f42f49fa4ab847437cec097cff6472a756342017dfdd4ce223051a7018c76fd",
+      "eval_manifest": "0f34532e78bf228eaa3f470b5728fb28fc88d34f47b40e728c7aadab6b4397c4",
+      "protocol": "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21",
+      "runner": "effbac77e5d4590018b15f86427a24a2206d4c886cf96a193d4949f94c76db52",
+      "semantic_margin": "83893f10d41f8d602aa32245792ff8ea75800106b46810c18b9cd34bd7a4cc54"
+    },
+    "source_paths": {
+      "canonical_smpr": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/smpr_calibration_lewm_seed3072_v2.json",
+      "canonical_smpr_runner": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/scripts/smpr_sensitivity.py",
+      "eval_manifest": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/assets/paper1_data/training_seed_eval_manifests/lewm_seed3072_evals.json",
+      "protocol": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/config/frozen_diagnostic_protocol_v1.json",
+      "runner": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/paper1/scripts/smpr_controls.py",
+      "semantic_margin": "/opt/workspace/explorer-env/dataset/ag_data/code/wm_exp/tools/paper1_semantic_margin.py"
+    },
+    "status": "complete",
+    "std_keys": [
+      "0.0",
+      "0.08"
+    ],
+    "tasks": [
+      "TwoRoom",
+      "PushT"
+    ],
+    "threshold_search_allowed": false,
+    "training_seed": 3072,
+    "training_seed_semantics": "one independently trained LeWM checkpoint family"
+  },
+  "rows": [
+    {
+      "checkpoint_sha256": "81a8ad466420eeec7d79d59338c8da2e3b551c56e8ff154ae8409efade6bad02",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 1.3753814697265625,
+        "q10": 0.9797534942626953,
+        "q50": 1.3002375364303589,
+        "q90": 1.8457788228988647
+      },
+      "joint_gate_pass": false,
+      "oracle_rule": "environment-geometry shortest-path proxy via fixed wall center 112 and door center (112,49)",
+      "oracle_scope": "environment_geometry_oracle_proxy",
+      "oracle_value_delta_threshold": 0.1,
+      "oracle_value_distribution": {
+        "count": 32,
+        "mean": 0.4598950743675232,
+        "q10": 0.17985716462135315,
+        "q50": 0.4617007374763489,
+        "q90": 0.8104462623596191
+      },
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": -0.31955406069755554,
+        "q10": -0.7151819467544556,
+        "q50": -0.394697904586792,
+        "q90": 0.15084336698055267
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 1.1194591522216797,
+        "q10": 0.47132769227027893,
+        "q50": 1.116688847541809,
+        "q90": 1.6949354410171509
+      },
+      "same_state_tube_radius": 1.6949354410171509,
+      "selected_state_distance_distribution": {
+        "count": 32,
+        "mean": 0.35712283849716187,
+        "q10": 0.10253980755805969,
+        "q50": 0.29729706048965454,
+        "q90": 0.6677624583244324
+      },
+      "skipped_anchor_count": 0,
+      "smpr": 0.15625,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "a1b2c7804e5b8a1db3e992a51c5938cfebdd1aa9da66fa7dfa413da583cf45ed",
+      "different_state_distance_distribution": {
+        "count": 32,
+        "mean": 1.4812748432159424,
+        "q10": 0.9421995878219604,
+        "q50": 1.382572889328003,
+        "q90": 2.1313722133636475
+      },
+      "joint_gate_pass": true,
+      "oracle_rule": "environment-geometry shortest-path proxy via fixed wall center 112 and door center (112,49)",
+      "oracle_scope": "environment_geometry_oracle_proxy",
+      "oracle_value_delta_threshold": 0.1,
+      "oracle_value_distribution": {
+        "count": 32,
+        "mean": 0.4598950743675232,
+        "q10": 0.17985716462135315,
+        "q50": 0.4617007374763489,
+        "q90": 0.8104462623596191
+      },
+      "pair_count": 32,
+      "raw_margin_distribution": {
+        "count": 32,
+        "mean": 1.3889906406402588,
+        "q10": 0.8499155044555664,
+        "q50": 1.2902888059616089,
+        "q90": 2.039088010787964
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 0.05793793126940727,
+        "q10": 0.0256806593388319,
+        "q50": 0.0376126728951931,
+        "q90": 0.09228409081697464
+      },
+      "same_state_tube_radius": 0.09228409081697464,
+      "selected_state_distance_distribution": {
+        "count": 32,
+        "mean": 0.35712283849716187,
+        "q10": 0.10253980755805969,
+        "q50": 0.29729706048965454,
+        "q90": 0.6677624583244324
+      },
+      "skipped_anchor_count": 0,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "8e64200a2572860504b2c8827a8a01eb905731befe81ae2cb6177c4da7cbbf25",
+      "different_state_distance_distribution": {
+        "count": 29,
+        "mean": 3.640869617462158,
+        "q10": 2.378213405609131,
+        "q50": 3.0141985416412354,
+        "q90": 5.797850608825684
+      },
+      "joint_gate_pass": false,
+      "oracle_rule": "sequence-goal object-pose cost plus pusher-object distance; HDF5 lacks simulator goal_state",
+      "oracle_scope": "sequence_goal_state_derived_oracle_proxy",
+      "oracle_value_delta_threshold": 0.1,
+      "oracle_value_distribution": {
+        "count": 32,
+        "mean": 0.24706202745437622,
+        "q10": 0.09775879979133606,
+        "q50": 0.22173097729682922,
+        "q90": 0.3297053873538971
+      },
+      "pair_count": 29,
+      "raw_margin_distribution": {
+        "count": 29,
+        "mean": -0.41734522581100464,
+        "q10": -1.6800012588500977,
+        "q50": -1.0440161228179932,
+        "q90": 1.739635944366455
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 31532972.0,
+        "q10": 2.0495800971984863,
+        "q50": 2.525785446166992,
+        "q90": 4.0582146644592285
+      },
+      "same_state_tube_radius": 4.0582146644592285,
+      "selected_state_distance_distribution": {
+        "count": 29,
+        "mean": 1.7065967321395874,
+        "q10": 1.280613899230957,
+        "q50": 1.6126673221588135,
+        "q90": 2.276580810546875
+      },
+      "skipped_anchor_count": 3,
+      "smpr": 0.27586206793785095,
+      "status": "ok",
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "checkpoint_sha256": "6681c42b53d16c5382d783b2482b1c6ef3ce5c82c4d6ef6c4ec050e017bd2522",
+      "different_state_distance_distribution": {
+        "count": 29,
+        "mean": 3.6584160327911377,
+        "q10": 2.300793409347534,
+        "q50": 3.188955545425415,
+        "q90": 5.673792362213135
+      },
+      "joint_gate_pass": true,
+      "oracle_rule": "sequence-goal object-pose cost plus pusher-object distance; HDF5 lacks simulator goal_state",
+      "oracle_scope": "sequence_goal_state_derived_oracle_proxy",
+      "oracle_value_delta_threshold": 0.1,
+      "oracle_value_distribution": {
+        "count": 32,
+        "mean": 0.24706202745437622,
+        "q10": 0.09775879979133606,
+        "q50": 0.22173097729682922,
+        "q90": 0.3297053873538971
+      },
+      "pair_count": 29,
+      "raw_margin_distribution": {
+        "count": 29,
+        "mean": 3.3244521617889404,
+        "q10": 1.9668296575546265,
+        "q50": 2.8549916744232178,
+        "q90": 5.3398284912109375
+      },
+      "same_state_radius_distribution": {
+        "count": 32,
+        "mean": 2034951.75,
+        "q10": 0.08752870559692383,
+        "q50": 0.1311054676771164,
+        "q90": 0.3339637815952301
+      },
+      "same_state_tube_radius": 0.3339637815952301,
+      "selected_state_distance_distribution": {
+        "count": 29,
+        "mean": 1.7065967321395874,
+        "q10": 1.280613899230957,
+        "q50": 1.6126673221588135,
+        "q90": 2.276580810546875
+      },
+      "skipped_anchor_count": 3,
+      "smpr": 1.0,
+      "status": "ok",
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    }
+  ]
+}

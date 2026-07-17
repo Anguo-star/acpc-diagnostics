@@ -1,0 +1,4862 @@
+{
+  "Cube": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 64.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            63.0,
+            65.0,
+            64.0
+          ]
+        },
+        "origin": {
+          "mean": 64.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            63.0,
+            65.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 60.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            56.0,
+            64.0,
+            60.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 50.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.311037,
+          "std": 5.734884,
+          "values": [
+            51.0,
+            43.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 46.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.68052,
+          "std": 4.642796,
+          "values": [
+            48.0,
+            40.0,
+            51.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 61.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            61.0,
+            58.0,
+            65.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 47.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.177324,
+          "std": 3.771236,
+          "values": [
+            50.0,
+            42.0,
+            50.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 43.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.410224,
+          "std": 5.906682,
+          "values": [
+            48.0,
+            35.0,
+            47.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_baseline_seed3074",
+      "subdir": "cube_lewm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 65.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            66.0,
+            65.0,
+            66.0
+          ]
+        },
+        "origin": {
+          "mean": 65.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            66.0,
+            65.0,
+            66.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 66.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            66.0,
+            69.0,
+            65.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 56.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            58.0,
+            51.0,
+            59.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 49.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.699673,
+          "std": 2.94392,
+          "values": [
+            48.0,
+            46.0,
+            53.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 65.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.544331,
+          "std": 0.942809,
+          "values": [
+            64.0,
+            66.0,
+            66.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 65.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.544331,
+          "std": 0.942809,
+          "values": [
+            66.0,
+            64.0,
+            66.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 49.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            51.0,
+            44.0,
+            52.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to001_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 65.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            61.0,
+            69.0,
+            65.0
+          ]
+        },
+        "origin": {
+          "mean": 65.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            61.0,
+            69.0,
+            65.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 63.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            61.0,
+            66.0,
+            63.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 62.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            63.0,
+            59.0,
+            66.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 57.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.160247,
+          "std": 3.741657,
+          "values": [
+            61.0,
+            52.0,
+            58.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 63.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.414214,
+          "std": 2.44949,
+          "values": [
+            60.0,
+            63.0,
+            66.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 64.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.632993,
+          "std": 2.828427,
+          "values": [
+            68.0,
+            62.0,
+            62.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 52.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.962614,
+          "std": 3.399346,
+          "values": [
+            51.0,
+            49.0,
+            57.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to002_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 62.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            59.0,
+            63.0,
+            65.0
+          ]
+        },
+        "origin": {
+          "mean": 62.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            59.0,
+            63.0,
+            65.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 64.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.596294,
+          "std": 4.496913,
+          "values": [
+            59.0,
+            70.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 63.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            62.0,
+            63.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            55.0,
+            50.0,
+            54.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 62.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.942809,
+          "std": 1.632993,
+          "values": [
+            60.0,
+            62.0,
+            64.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 64.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.177324,
+          "std": 3.771236,
+          "values": [
+            62.0,
+            70.0,
+            62.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 65.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            65.0,
+            68.0,
+            63.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to003_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 66.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            67.0,
+            67.0,
+            66.0
+          ]
+        },
+        "origin": {
+          "mean": 66.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            67.0,
+            67.0,
+            66.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 65.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            64.0,
+            68.0,
+            63.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 65.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            65.0,
+            68.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 64.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            65.0,
+            64.0,
+            65.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 65.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.632993,
+          "std": 2.828427,
+          "values": [
+            63.0,
+            69.0,
+            63.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 64.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            67.0,
+            62.0,
+            65.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 63.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            60.0,
+            68.0,
+            61.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to004_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 61.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            61.0,
+            60.0,
+            63.0
+          ]
+        },
+        "origin": {
+          "mean": 61.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            61.0,
+            60.0,
+            63.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 62.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            64.0,
+            61.0,
+            62.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 64.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            66.0,
+            63.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 68.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.544331,
+          "std": 0.942809,
+          "values": [
+            67.0,
+            69.0,
+            69.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 64.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            63.0,
+            64.0,
+            66.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 63.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.962614,
+          "std": 3.399346,
+          "values": [
+            68.0,
+            60.0,
+            62.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 65.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.816497,
+          "std": 1.414214,
+          "values": [
+            64.0,
+            67.0,
+            64.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to005_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 67.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            66.0,
+            67.0,
+            68.0
+          ]
+        },
+        "origin": {
+          "mean": 67.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            66.0,
+            67.0,
+            68.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 66.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.125681,
+          "std": 3.681787,
+          "values": [
+            62.0,
+            71.0,
+            66.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 63.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            61.0,
+            65.0,
+            65.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 64.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            62.0,
+            66.0,
+            66.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 67.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            65.0,
+            69.0,
+            68.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 63.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            62.0,
+            63.0,
+            65.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 62.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            59.0,
+            65.0,
+            63.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to006_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 62.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            61.0,
+            63.0,
+            64.0
+          ]
+        },
+        "origin": {
+          "mean": 62.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            61.0,
+            63.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 65.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            67.0,
+            64.0,
+            65.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 65.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            66.0,
+            65.0,
+            66.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 63.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.784709,
+          "std": 3.091206,
+          "values": [
+            68.0,
+            61.0,
+            62.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 63.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            65.0,
+            61.0,
+            64.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 63.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            65.0,
+            58.0,
+            66.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 63.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            63.0,
+            66.0,
+            62.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to007_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 57.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            54.0,
+            58.0,
+            59.0
+          ]
+        },
+        "origin": {
+          "mean": 57.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            54.0,
+            58.0,
+            59.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 60.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.596294,
+          "std": 4.496913,
+          "values": [
+            55.0,
+            66.0,
+            60.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 59.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.942809,
+          "std": 1.632993,
+          "values": [
+            57.0,
+            61.0,
+            59.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 59.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            61.0,
+            57.0,
+            60.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 57.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            56.0,
+            56.0,
+            60.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 59.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.160247,
+          "std": 3.741657,
+          "values": [
+            55.0,
+            64.0,
+            58.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 61.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            56.0,
+            64.0,
+            63.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_lewm_noise_0to008_p1_seed3074",
+      "subdir": "cube_lewm_noise_0to008_p1_seed3074"
+    }
+  },
+  "PushT": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 84.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.867442,
+          "std": 4.966555,
+          "values": [
+            87.0,
+            77.0,
+            88.0
+          ]
+        },
+        "origin": {
+          "mean": 84.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.867442,
+          "std": 4.966555,
+          "values": [
+            87.0,
+            77.0,
+            88.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 65.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            69.0,
+            61.0,
+            65.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 28.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            23.0,
+            31.0,
+            30.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 7.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            9.0,
+            2.0,
+            10.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 65.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.344426,
+          "std": 5.792716,
+          "values": [
+            58.0,
+            67.0,
+            72.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 31.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            29.0,
+            32.0,
+            33.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 15.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            16.0,
+            12.0,
+            18.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_baseline_seed3074",
+      "subdir": "pusht_lewm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 85.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.867442,
+          "std": 4.966555,
+          "values": [
+            88.0,
+            78.0,
+            89.0
+          ]
+        },
+        "origin": {
+          "mean": 85.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.867442,
+          "std": 4.966555,
+          "values": [
+            88.0,
+            78.0,
+            89.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 81.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.44949,
+          "std": 4.242641,
+          "values": [
+            84.0,
+            75.0,
+            84.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 66.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.325383,
+          "std": 4.027682,
+          "values": [
+            72.0,
+            63.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 30.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.839367,
+          "std": 6.649979,
+          "values": [
+            27.0,
+            25.0,
+            40.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.721655,
+          "std": 4.714045,
+          "values": [
+            87.0,
+            77.0,
+            87.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 71.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.880329,
+          "std": 4.988877,
+          "values": [
+            77.0,
+            65.0,
+            73.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 40.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.596294,
+          "std": 4.496913,
+          "values": [
+            43.0,
+            44.0,
+            34.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to001_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 86.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.41906,
+          "std": 4.189935,
+          "values": [
+            88.0,
+            81.0,
+            91.0
+          ]
+        },
+        "origin": {
+          "mean": 86.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.41906,
+          "std": 4.189935,
+          "values": [
+            88.0,
+            81.0,
+            91.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 86.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 4.320494,
+          "std": 7.483315,
+          "values": [
+            88.0,
+            76.0,
+            94.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 76.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.94392,
+          "std": 5.09902,
+          "values": [
+            78.0,
+            69.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 66.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.265986,
+          "std": 5.656854,
+          "values": [
+            62.0,
+            62.0,
+            74.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 84.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.138766,
+          "std": 5.436502,
+          "values": [
+            89.0,
+            77.0,
+            88.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 80.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 4.8151,
+          "std": 8.339997,
+          "values": [
+            85.0,
+            69.0,
+            88.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 68.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.474777,
+          "std": 6.01849,
+          "values": [
+            71.0,
+            60.0,
+            74.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to002_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 89.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            88.0,
+            88.0,
+            93.0
+          ]
+        },
+        "origin": {
+          "mean": 89.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            88.0,
+            88.0,
+            93.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 87.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            89.0,
+            85.0,
+            89.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 88.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            88.0,
+            84.0,
+            92.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 78.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.596294,
+          "std": 4.496913,
+          "values": [
+            75.0,
+            76.0,
+            85.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 90.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            92.0,
+            85.0,
+            93.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 91.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            90.0,
+            89.0,
+            94.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 84.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            84.0,
+            83.0,
+            87.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to003_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 90.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            92.0,
+            87.0,
+            91.0
+          ]
+        },
+        "origin": {
+          "mean": 90.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            92.0,
+            87.0,
+            91.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 90.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            91.0,
+            89.0,
+            92.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 88.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.544331,
+          "std": 0.942809,
+          "values": [
+            89.0,
+            87.0,
+            89.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 86.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.311037,
+          "std": 5.734884,
+          "values": [
+            87.0,
+            79.0,
+            93.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 89.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            89.0,
+            86.0,
+            93.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 88.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.515354,
+          "std": 2.624669,
+          "values": [
+            87.0,
+            86.0,
+            92.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 86.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            84.0,
+            86.0,
+            89.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to004_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 83.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            80.0,
+            83.0,
+            87.0
+          ]
+        },
+        "origin": {
+          "mean": 83.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            80.0,
+            83.0,
+            87.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            81.0,
+            83.0,
+            87.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 84.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            80.0,
+            84.0,
+            88.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 74.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            75.0,
+            70.0,
+            78.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 81.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            81.0,
+            80.0,
+            84.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 82.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            81.0,
+            81.0,
+            86.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 79.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            80.0,
+            76.0,
+            83.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to005_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 89.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            88.0,
+            87.0,
+            92.0
+          ]
+        },
+        "origin": {
+          "mean": 89.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            88.0,
+            87.0,
+            92.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 87.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            84.0,
+            87.0,
+            92.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 88.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            89.0,
+            85.0,
+            92.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 90.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.632993,
+          "std": 2.828427,
+          "values": [
+            88.0,
+            88.0,
+            94.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 90.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            92.0,
+            88.0,
+            91.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 87.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            88.0,
+            84.0,
+            89.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 86.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.515354,
+          "std": 2.624669,
+          "values": [
+            85.0,
+            84.0,
+            90.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to006_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 87.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            85.0,
+            87.0,
+            91.0
+          ]
+        },
+        "origin": {
+          "mean": 87.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            85.0,
+            87.0,
+            91.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 84.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.515354,
+          "std": 2.624669,
+          "values": [
+            83.0,
+            82.0,
+            88.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 84.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.160247,
+          "std": 3.741657,
+          "values": [
+            85.0,
+            79.0,
+            88.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 85.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.44949,
+          "std": 4.242641,
+          "values": [
+            88.0,
+            79.0,
+            88.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 85.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            83.0,
+            82.0,
+            90.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 84.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.962614,
+          "std": 3.399346,
+          "values": [
+            88.0,
+            80.0,
+            86.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            83.0,
+            81.0,
+            87.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to007_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 87.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.538152,
+          "std": 6.128259,
+          "values": [
+            88.0,
+            80.0,
+            95.0
+          ]
+        },
+        "origin": {
+          "mean": 87.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.538152,
+          "std": 6.128259,
+          "values": [
+            88.0,
+            80.0,
+            95.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 86.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.538152,
+          "std": 6.128259,
+          "values": [
+            87.0,
+            79.0,
+            94.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 87.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.699673,
+          "std": 2.94392,
+          "values": [
+            86.0,
+            84.0,
+            91.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 87.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.962614,
+          "std": 3.399346,
+          "values": [
+            86.0,
+            84.0,
+            92.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 87.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.94392,
+          "std": 5.09902,
+          "values": [
+            89.0,
+            80.0,
+            92.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 86.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            86.0,
+            82.0,
+            90.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 87.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.841492,
+          "std": 4.921608,
+          "values": [
+            88.0,
+            81.0,
+            93.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1_seed3074",
+      "subdir": "pusht_lewm_noise_0to008_p1_seed3074"
+    }
+  },
+  "Reacher": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 58.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            55.0,
+            58.0,
+            62.0
+          ]
+        },
+        "origin": {
+          "mean": 58.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            55.0,
+            58.0,
+            62.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 44.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.138766,
+          "std": 5.436502,
+          "values": [
+            39.0,
+            52.0,
+            43.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 28.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.41906,
+          "std": 4.189935,
+          "values": [
+            27.0,
+            34.0,
+            24.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 11.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.544331,
+          "std": 0.942809,
+          "values": [
+            11.0,
+            13.0,
+            11.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 46.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.600411,
+          "std": 6.236096,
+          "values": [
+            45.0,
+            55.0,
+            40.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 35.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.177324,
+          "std": 3.771236,
+          "values": [
+            41.0,
+            33.0,
+            33.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 18.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            18.0,
+            22.0,
+            16.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_baseline_seed3074",
+      "subdir": "reacher_lewm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 64.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            64.0,
+            63.0,
+            66.0
+          ]
+        },
+        "origin": {
+          "mean": 64.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            64.0,
+            63.0,
+            66.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 61.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            58.0,
+            63.0,
+            63.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 59.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.94392,
+          "std": 5.09902,
+          "values": [
+            54.0,
+            66.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 39.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            41.0,
+            41.0,
+            37.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 62.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            62.0,
+            63.0,
+            61.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.160247,
+          "std": 3.741657,
+          "values": [
+            51.0,
+            60.0,
+            54.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 41.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.299832,
+          "std": 5.715476,
+          "values": [
+            38.0,
+            49.0,
+            36.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to001_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 71.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            69.0,
+            74.0,
+            72.0
+          ]
+        },
+        "origin": {
+          "mean": 71.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            69.0,
+            74.0,
+            72.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 73.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            78.0,
+            71.0,
+            71.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 69.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.160247,
+          "std": 3.741657,
+          "values": [
+            64.0,
+            73.0,
+            70.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 61.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.325383,
+          "std": 4.027682,
+          "values": [
+            58.0,
+            67.0,
+            59.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 67.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            67.0,
+            71.0,
+            65.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 72.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.474777,
+          "std": 6.01849,
+          "values": [
+            81.0,
+            70.0,
+            67.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 64.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.372684,
+          "std": 4.109609,
+          "values": [
+            60.0,
+            70.0,
+            64.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to002_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 80.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            80.0,
+            81.0,
+            79.0
+          ]
+        },
+        "origin": {
+          "mean": 80.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            80.0,
+            81.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            83.0,
+            88.0,
+            80.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 79.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.699673,
+          "std": 2.94392,
+          "values": [
+            75.0,
+            82.0,
+            80.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 77.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.544331,
+          "std": 0.942809,
+          "values": [
+            78.0,
+            76.0,
+            78.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 79.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            79.0,
+            80.0,
+            78.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 80.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            84.0,
+            77.0,
+            80.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 80.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            80.0,
+            85.0,
+            77.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to003_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 80.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            82.0,
+            80.0,
+            79.0
+          ]
+        },
+        "origin": {
+          "mean": 80.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            82.0,
+            80.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            84.0,
+            86.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 75.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.372684,
+          "std": 4.109609,
+          "values": [
+            81.0,
+            71.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 82.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.600411,
+          "std": 6.236096,
+          "values": [
+            89.0,
+            84.0,
+            74.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 84.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.471405,
+          "std": 0.816497,
+          "values": [
+            85.0,
+            84.0,
+            83.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 77.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.325383,
+          "std": 4.027682,
+          "values": [
+            81.0,
+            72.0,
+            80.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 80.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            81.0,
+            82.0,
+            77.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to004_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 80.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            80.0,
+            84.0,
+            76.0
+          ]
+        },
+        "origin": {
+          "mean": 80.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            80.0,
+            84.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            86.0,
+            82.0,
+            83.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 82.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.160247,
+          "std": 3.741657,
+          "values": [
+            87.0,
+            81.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 79.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.515354,
+          "std": 2.624669,
+          "values": [
+            81.0,
+            82.0,
+            76.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 82.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.880329,
+          "std": 4.988877,
+          "values": [
+            88.0,
+            76.0,
+            84.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 81.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.515354,
+          "std": 2.624669,
+          "values": [
+            80.0,
+            85.0,
+            79.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 83.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            84.0,
+            85.0,
+            81.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to005_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 81.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            81.0,
+            82.0,
+            81.0
+          ]
+        },
+        "origin": {
+          "mean": 81.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.272166,
+          "std": 0.471405,
+          "values": [
+            81.0,
+            82.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 81.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.841492,
+          "std": 4.921608,
+          "values": [
+            87.0,
+            82.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 80.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.942809,
+          "std": 1.632993,
+          "values": [
+            80.0,
+            78.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 81.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.699673,
+          "std": 2.94392,
+          "values": [
+            84.0,
+            82.0,
+            77.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 76.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.0,
+          "std": 0.0,
+          "values": [
+            76.0,
+            76.0,
+            76.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 79.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.68052,
+          "std": 4.642796,
+          "values": [
+            86.0,
+            78.0,
+            75.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 79.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.414214,
+          "std": 2.44949,
+          "values": [
+            79.0,
+            82.0,
+            76.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to006_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.784709,
+          "std": 3.091206,
+          "values": [
+            88.0,
+            81.0,
+            82.0
+          ]
+        },
+        "origin": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.784709,
+          "std": 3.091206,
+          "values": [
+            88.0,
+            81.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 82.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.962614,
+          "std": 3.399346,
+          "values": [
+            87.0,
+            81.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 81.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.515354,
+          "std": 2.624669,
+          "values": [
+            83.0,
+            84.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 79.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            76.0,
+            84.0,
+            79.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 83.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            83.0,
+            88.0,
+            80.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 80.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.721655,
+          "std": 4.714045,
+          "values": [
+            84.0,
+            74.0,
+            84.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 82.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.699673,
+          "std": 2.94392,
+          "values": [
+            83.0,
+            85.0,
+            78.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to007_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 78.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.596294,
+          "std": 4.496913,
+          "values": [
+            73.0,
+            78.0,
+            84.0
+          ]
+        },
+        "origin": {
+          "mean": 78.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.596294,
+          "std": 4.496913,
+          "values": [
+            73.0,
+            78.0,
+            84.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 80.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            83.0,
+            78.0,
+            80.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 83.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            82.0,
+            86.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 79.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            81.0,
+            82.0,
+            74.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 80.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 3.810317,
+          "std": 6.599663,
+          "values": [
+            73.0,
+            89.0,
+            79.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 82.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.962614,
+          "std": 3.399346,
+          "values": [
+            81.0,
+            87.0,
+            79.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 80.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.125681,
+          "std": 3.681787,
+          "values": [
+            85.0,
+            80.0,
+            76.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_lewm_noise_0to008_p1_seed3074",
+      "subdir": "reacher_lewm_noise_0to008_p1_seed3074"
+    }
+  },
+  "TwoRoom": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 95.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            93.0,
+            96.0,
+            98.0
+          ]
+        },
+        "origin": {
+          "mean": 95.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            93.0,
+            96.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 92.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            94.0,
+            92.0,
+            91.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 78.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            79.0,
+            75.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 56.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            58.0,
+            51.0,
+            59.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 94.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.054805,
+          "std": 3.559026,
+          "values": [
+            91.0,
+            92.0,
+            99.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 83.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.624669,
+          "std": 4.546061,
+          "values": [
+            84.0,
+            77.0,
+            88.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 69.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            69.0,
+            65.0,
+            73.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_baseline_seed3074",
+      "subdir": "tworoom_lewm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 94.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            92.0,
+            94.0,
+            98.0
+          ]
+        },
+        "origin": {
+          "mean": 94.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            92.0,
+            94.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 93.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.125681,
+          "std": 3.681787,
+          "values": [
+            89.0,
+            93.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 92.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            89.0,
+            93.0,
+            96.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 78.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            77.0,
+            77.0,
+            81.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 95.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            93.0,
+            94.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 94.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            93.0,
+            94.0,
+            97.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 90.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            87.0,
+            90.0,
+            95.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to001_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 97.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            96.0,
+            96.0,
+            100.0
+          ]
+        },
+        "origin": {
+          "mean": 97.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            96.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 97.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            96.0,
+            97.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            94.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            96.0,
+            95.0,
+            98.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 97.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            97.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 97.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            95.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 97.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            97.0,
+            96.0,
+            100.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to002_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 94.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.125681,
+          "std": 3.681787,
+          "values": [
+            90.0,
+            95.0,
+            99.0
+          ]
+        },
+        "origin": {
+          "mean": 94.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.125681,
+          "std": 3.681787,
+          "values": [
+            90.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 95.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            91.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 94.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            91.0,
+            94.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 93.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            90.0,
+            93.0,
+            98.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 94.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            90.0,
+            94.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 94.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            90.0,
+            95.0,
+            98.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 94.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 2.160247,
+          "std": 3.741657,
+          "values": [
+            90.0,
+            93.0,
+            99.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to003_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            94.0,
+            95.0,
+            99.0
+          ]
+        },
+        "origin": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            94.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            95.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 95.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            93.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            95.0,
+            96.0,
+            98.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            94.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            93.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 95.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            94.0,
+            95.0,
+            98.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to004_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.816497,
+          "std": 1.414214,
+          "values": [
+            96.0,
+            99.0,
+            99.0
+          ]
+        },
+        "origin": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.816497,
+          "std": 1.414214,
+          "values": [
+            96.0,
+            99.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 97.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            95.0,
+            99.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.816497,
+          "std": 1.414214,
+          "values": [
+            96.0,
+            99.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 98.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            96.0,
+            99.0,
+            100.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 98.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            96.0,
+            99.0,
+            100.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.942809,
+          "std": 1.632993,
+          "values": [
+            96.0,
+            98.0,
+            100.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            95.0,
+            99.0,
+            100.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to005_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 93.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            92.0,
+            92.0,
+            97.0
+          ]
+        },
+        "origin": {
+          "mean": 93.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            92.0,
+            92.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 93.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            92.0,
+            92.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 92.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            90.0,
+            90.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 93.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.905159,
+          "std": 3.299832,
+          "values": [
+            91.0,
+            91.0,
+            98.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 93.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.247219,
+          "std": 2.160247,
+          "values": [
+            92.0,
+            91.0,
+            96.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 93.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            91.0,
+            93.0,
+            97.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 93.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.360828,
+          "std": 2.357023,
+          "values": [
+            92.0,
+            92.0,
+            97.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to006_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.414214,
+          "std": 2.44949,
+          "values": [
+            93.0,
+            96.0,
+            99.0
+          ]
+        },
+        "origin": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.414214,
+          "std": 2.44949,
+          "values": [
+            93.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 95.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            92.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 95.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.440165,
+          "std": 2.494438,
+          "values": [
+            92.0,
+            96.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.699673,
+          "std": 2.94392,
+          "values": [
+            92.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 95.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.655518,
+          "std": 2.867442,
+          "values": [
+            92.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 95.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.186342,
+          "std": 2.054805,
+          "values": [
+            93.0,
+            95.0,
+            98.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.885618,
+          "std": 3.265986,
+          "values": [
+            92.0,
+            96.0,
+            100.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to007_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            94.0,
+            97.0,
+            98.0
+          ]
+        },
+        "origin": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            94.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            94.0,
+            98.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            94.0,
+            98.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 96.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 1.088662,
+          "std": 1.885618,
+          "values": [
+            94.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            94.0,
+            98.0,
+            97.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 96.666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.720082,
+          "std": 1.247219,
+          "values": [
+            95.0,
+            98.0,
+            97.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 96.333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "sem": 0.981307,
+          "std": 1.699673,
+          "values": [
+            94.0,
+            98.0,
+            97.0
+          ]
+        }
+      },
+      "path": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_lewm_noise_0to008_p1_seed3074",
+      "subdir": "tworoom_lewm_noise_0to008_p1_seed3074"
+    }
+  },
+  "_metadata": {
+    "data_root": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll",
+    "required_metrics": [
+      "clean",
+      "pixels_std0.08",
+      "pixels_goal_std0.08"
+    ],
+    "schema_version": "paper1-training-seed-eval-manifest-0.1",
+    "source": "checkpoint eval_results/eval_summary.csv",
+    "std_keys": [
+      "0.0",
+      "0.01",
+      "0.02",
+      "0.03",
+      "0.04",
+      "0.05",
+      "0.06",
+      "0.07",
+      "0.08"
+    ],
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_seed": 3074
+  }
+}

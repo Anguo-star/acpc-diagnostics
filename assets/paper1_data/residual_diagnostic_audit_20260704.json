@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "bootstrap": "95% CI uses task-seed block bootstrap over 12 blocks, preserving the 8 std rows within each block.",
+    "controls": "Partial Spearman is computed by rank-transforming metric and outcome, then residualizing both on std_max, task fixed effects, and training-seed fixed effects.",
+    "created_utc": "2026-07-04T00:00:00Z",
+    "interpretation": "Residual correlations test whether ACPC-family readouts contain signal beyond training-noise level, task, and seed. They do not establish a superior selector or causal mechanism.",
+    "schema_version": "paper1-residual-diagnostic-audit-0.1",
+    "scope": "No retraining. Nonzero LeWM Gaussian-grid checkpoints only: 3 training seeds x 4 tasks x 8 nonzero std levels = 96 rows.",
+    "source_artifact": "assets/paper1_data/acpc_phase0_lewm_three_seed.json"
+  },
+  "metric_rows": [
+    {
+      "block_bootstrap_ci95": [
+        -0.220433,
+        0.299245
+      ],
+      "direction": "lower is better",
+      "field": "acpc_h_norm_by_transition",
+      "metric": "ACPC-H/trans.",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": 0.407725,
+      "outcome": "obs0.08 success",
+      "partial_spearman_signed_controlling_std_task_seed": 0.068906,
+      "signed_direction": "larger signed value is better"
+    },
+    {
+      "block_bootstrap_ci95": [
+        0.058525,
+        0.358656
+      ],
+      "direction": "lower is better",
+      "field": "acpc_h_norm_by_transition",
+      "metric": "ACPC-H/trans.",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": 0.624652,
+      "outcome": "reduced drop",
+      "partial_spearman_signed_controlling_std_task_seed": 0.189643,
+      "signed_direction": "larger signed value is better"
+    },
+    {
+      "block_bootstrap_ci95": [
+        -0.164389,
+        0.334782
+      ],
+      "direction": "lower is better",
+      "field": "pcc_abs_median",
+      "metric": "PCC",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": 0.377288,
+      "outcome": "obs0.08 success",
+      "partial_spearman_signed_controlling_std_task_seed": 0.091548,
+      "signed_direction": "larger signed value is better"
+    },
+    {
+      "block_bootstrap_ci95": [
+        0.059826,
+        0.367338
+      ],
+      "direction": "lower is better",
+      "field": "pcc_abs_median",
+      "metric": "PCC",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": 0.597967,
+      "outcome": "reduced drop",
+      "partial_spearman_signed_controlling_std_task_seed": 0.195895,
+      "signed_direction": "larger signed value is better"
+    },
+    {
+      "block_bootstrap_ci95": [
+        -0.070532,
+        0.467145
+      ],
+      "direction": "higher is better",
+      "field": "cra_spearman_mean",
+      "metric": "CRA",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": 0.154019,
+      "outcome": "obs0.08 success",
+      "partial_spearman_signed_controlling_std_task_seed": 0.230647,
+      "signed_direction": "larger signed value is better"
+    },
+    {
+      "block_bootstrap_ci95": [
+        0.14336,
+        0.453088
+      ],
+      "direction": "higher is better",
+      "field": "cra_spearman_mean",
+      "metric": "CRA",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": 0.536927,
+      "outcome": "reduced drop",
+      "partial_spearman_signed_controlling_std_task_seed": 0.293113,
+      "signed_direction": "larger signed value is better"
+    },
+    {
+      "block_bootstrap_ci95": [
+        0.069885,
+        0.483583
+      ],
+      "direction": "lower is better",
+      "field": "maf_flip_rate",
+      "metric": "MAF",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": -0.018445,
+      "outcome": "obs0.08 success",
+      "partial_spearman_signed_controlling_std_task_seed": 0.295154,
+      "signed_direction": "larger signed value is better"
+    },
+    {
+      "block_bootstrap_ci95": [
+        0.112221,
+        0.335633
+      ],
+      "direction": "lower is better",
+      "field": "maf_flip_rate",
+      "metric": "MAF",
+      "n_bootstrap_valid": 2000,
+      "n_rows": 96,
+      "n_task_seed_blocks": 12,
+      "ordinary_spearman_signed": 0.452576,
+      "outcome": "reduced drop",
+      "partial_spearman_signed_controlling_std_task_seed": 0.233311,
+      "signed_direction": "larger signed value is better"
+    }
+  ]
+}

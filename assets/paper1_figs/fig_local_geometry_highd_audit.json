@@ -1,0 +1,208 @@
+{
+  "schema_version": "paper1-local-geometry-highd-audit-1.0",
+  "figure": "assets/paper1_figs/fig_local_geometry_highd_audit.pdf",
+  "feature_cache": "pusht_lewm_fullseq_features_d82fffb5ef90.npz",
+  "feature_cache_sha256": "d06bbb8b6c49dbf74a4bbcb32a8d603a0af3f0b06a9aa3162add45b37331f25f",
+  "source_sidecar": "assets/paper1_figs/fig_acpc_basin_tsne_point_counts.json",
+  "task": "PushT",
+  "method": "LeWM",
+  "seed": 3072,
+  "rollout_horizon": 8,
+  "n_states": 128,
+  "n_perturbation_views_per_state": 18,
+  "view_stds": [
+    0.0,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.01,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.04,
+    0.08,
+    0.08,
+    0.08,
+    0.08,
+    0.08,
+    0.08
+  ],
+  "anchor_indices": [
+    0,
+    1,
+    18,
+    19,
+    32,
+    51,
+    71,
+    81,
+    85,
+    96,
+    101,
+    110,
+    118,
+    119,
+    124,
+    127
+  ],
+  "tsne": {
+    "perplexity": 35.0,
+    "max_iter": 650,
+    "fit": "independent per panel, matching the original Appendix visualization",
+    "panel_seeds": {
+      "base:encoder": 3089,
+      "base:predictor": 3106,
+      "fullseq_robust:encoder": 3123,
+      "fullseq_robust:predictor": 3140
+    },
+    "purpose": "qualitative visualization only"
+  },
+  "panels": [
+    {
+      "panel": "base:encoder",
+      "condition": "Unaugmented LeWM",
+      "representation": "Encoder features",
+      "n_states": 128,
+      "n_views": 19,
+      "median_radius_over_nn": 1.4079948194681327,
+      "radius_lt_nn_count": 22,
+      "radius_lt_nn_fraction": 0.171875,
+      "fully_disjoint_count": 0,
+      "fully_disjoint_fraction": 0.0,
+      "category_counts": [
+        106,
+        22,
+        0
+      ],
+      "category_fractions": [
+        0.828125,
+        0.171875,
+        0.0
+      ]
+    },
+    {
+      "panel": "base:predictor",
+      "condition": "Unaugmented LeWM",
+      "representation": "8-step rollout predictions",
+      "n_states": 128,
+      "n_views": 19,
+      "median_radius_over_nn": 1.8627083417690424,
+      "radius_lt_nn_count": 7,
+      "radius_lt_nn_fraction": 0.0546875,
+      "fully_disjoint_count": 0,
+      "fully_disjoint_fraction": 0.0,
+      "category_counts": [
+        121,
+        7,
+        0
+      ],
+      "category_fractions": [
+        0.9453125,
+        0.0546875,
+        0.0
+      ]
+    },
+    {
+      "panel": "fullseq_robust:encoder",
+      "condition": "Noise-trained LeWM",
+      "representation": "Encoder features",
+      "n_states": 128,
+      "n_views": 19,
+      "median_radius_over_nn": 0.09578736701805869,
+      "radius_lt_nn_count": 125,
+      "radius_lt_nn_fraction": 0.9765625,
+      "fully_disjoint_count": 122,
+      "fully_disjoint_fraction": 0.953125,
+      "category_counts": [
+        3,
+        3,
+        122
+      ],
+      "category_fractions": [
+        0.0234375,
+        0.0234375,
+        0.953125
+      ]
+    },
+    {
+      "panel": "fullseq_robust:predictor",
+      "condition": "Noise-trained LeWM",
+      "representation": "8-step rollout predictions",
+      "n_states": 128,
+      "n_views": 19,
+      "median_radius_over_nn": 0.19360597603070212,
+      "radius_lt_nn_count": 122,
+      "radius_lt_nn_fraction": 0.953125,
+      "fully_disjoint_count": 108,
+      "fully_disjoint_fraction": 0.84375,
+      "category_counts": [
+        6,
+        14,
+        108
+      ],
+      "category_fractions": [
+        0.046875,
+        0.109375,
+        0.84375
+      ]
+    }
+  ],
+  "note": "All metrics and category counts are computed in the original high-dimensional arrays; t-SNE coordinates are used only for display.",
+  "cache_metadata": {
+    "acpc_basin": "assets/paper1_data/acpc_basin_diagnostics.json",
+    "branch": "fullseq",
+    "frameskip": 5,
+    "img_size": 224,
+    "method": "LeWM",
+    "n_sequences": 128,
+    "rollout_horizon": 8,
+    "schema_version": "paper1-selective-contraction-features-0.1",
+    "seed": 3072,
+    "specs": [
+      {
+        "label": "base",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_20260430/pusht_lewm_20260430_epoch_10_object.ckpt",
+        "model_mtime_ns": 1777554901170077057,
+        "model_size": 72357549,
+        "std_key": "0.0",
+        "subdir": "pusht_lewm_20260430",
+        "task": "PushT"
+      },
+      {
+        "label": "fullseq_robust",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_lewm_noise_0to008_p1/pusht_lewm_noise_0to008_p1_epoch_10_object.ckpt",
+        "model_mtime_ns": 1778062892347488517,
+        "model_size": 72359712,
+        "std_key": "0.08",
+        "subdir": "pusht_lewm_noise_0to008_p1",
+        "task": "PushT"
+      }
+    ],
+    "task": "PushT",
+    "view_stds": [
+      0.0,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.01,
+      0.04,
+      0.04,
+      0.04,
+      0.04,
+      0.04,
+      0.04,
+      0.08,
+      0.08,
+      0.08,
+      0.08,
+      0.08,
+      0.08
+    ]
+  }
+}

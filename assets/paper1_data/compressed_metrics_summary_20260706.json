@@ -1,0 +1,464 @@
+{
+  "metadata": {
+    "atr_definition": "ATR_q90 = acpc_h_l2_p90 / clean_transition_l2_median at each task/training-seed/std row; table reports population mean/std across training seeds.",
+    "created_utc": "2026-07-06T02:54:04.458074+00:00",
+    "metric_version": "compressed_v1",
+    "notes": "ATR/SMPR are paper-facing; PCC/CRA/MAF/CEM/rank/ID remain legacy audits outside the Paper1 PDF.",
+    "same_state_metric": "ATR_q90",
+    "schema_version": "paper1-compressed-selective-acpc-20260706-v1",
+    "selective_metric": "SMPR_m0",
+    "smpr_definition": "SMPR_m0 = task-grounded near-boundary pass rate with margin_delta=0.0 from semantic_task_grounded_margin_lewm_three_seed.json.",
+    "source_artifacts": [
+      "assets/paper1_data/acpc_phase0_lewm_three_seed.json",
+      "assets/paper1_data/semantic_task_grounded_margin_lewm_three_seed.json",
+      "assets/paper1_data/training_seed_gaussian_lockbox.json"
+    ],
+    "std_keys": [
+      "0.0",
+      "0.08"
+    ],
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_seeds": [
+      3072,
+      3073,
+      3074
+    ]
+  },
+  "rows": [
+    {
+      "ATR_q90": 1.5144974763039856,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.31147539615631104,
+      "clean_success": 94.0,
+      "obs008_success": 65.66666666666667,
+      "proxy_diff_l2_median": 15.24356460571289,
+      "same_state_noisy_radius_median": 17.86842918395996,
+      "semantic_margin_median": -2.7326622009277344,
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 1.5172889279112693,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.2950819432735443,
+      "clean_success": 94.333333,
+      "obs008_success": 71.666667,
+      "proxy_diff_l2_median": 15.461257934570312,
+      "same_state_noisy_radius_median": 17.20374870300293,
+      "semantic_margin_median": -2.367532730102539,
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 1.4947153046014692,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.4098360538482666,
+      "clean_success": 95.666667,
+      "obs008_success": 69.0,
+      "proxy_diff_l2_median": 15.475909233093262,
+      "same_state_noisy_radius_median": 16.404375076293945,
+      "semantic_margin_median": -1.390131950378418,
+      "std_key": "0.0",
+      "task": "TwoRoom",
+      "training_seed": 3074
+    },
+    {
+      "ATR_q90": 0.09345786316418216,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.9999999403953552,
+      "clean_success": 98.33333333333333,
+      "obs008_success": 97.66666666666667,
+      "proxy_diff_l2_median": 15.379831314086914,
+      "same_state_noisy_radius_median": 0.8886994123458862,
+      "semantic_margin_median": 14.791108131408691,
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 0.1321221251210847,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.9836065173149109,
+      "clean_success": 97.0,
+      "obs008_success": 97.333333,
+      "proxy_diff_l2_median": 16.525049209594727,
+      "same_state_noisy_radius_median": 0.7477059364318848,
+      "semantic_margin_median": 16.02686882019043,
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 0.1080286071798046,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.9836065173149109,
+      "clean_success": 96.333333,
+      "obs008_success": 96.333333,
+      "proxy_diff_l2_median": 15.506891250610352,
+      "same_state_noisy_radius_median": 0.6617761254310608,
+      "semantic_margin_median": 14.987125396728516,
+      "std_key": "0.08",
+      "task": "TwoRoom",
+      "training_seed": 3074
+    },
+    {
+      "ATR_q90": 3.4252009231417477,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.4285714328289032,
+      "clean_success": 86.33333333333333,
+      "obs008_success": 4.333333333333333,
+      "proxy_diff_l2_median": 17.375560760498047,
+      "same_state_noisy_radius_median": 18.202964782714844,
+      "semantic_margin_median": -0.8763599395751953,
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 3.9464090489730728,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.23469386994838715,
+      "clean_success": 75.0,
+      "obs008_success": 2.0,
+      "proxy_diff_l2_median": 17.51644515991211,
+      "same_state_noisy_radius_median": 19.992938995361328,
+      "semantic_margin_median": -2.244981288909912,
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 3.368840925923857,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.6530612111091614,
+      "clean_success": 84.0,
+      "obs008_success": 15.333333,
+      "proxy_diff_l2_median": 17.87258529663086,
+      "same_state_noisy_radius_median": 16.96990203857422,
+      "semantic_margin_median": 1.3760385513305664,
+      "std_key": "0.0",
+      "task": "PushT",
+      "training_seed": 3074
+    },
+    {
+      "ATR_q90": 0.22418129709450388,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 88.33333333333333,
+      "obs008_success": 89.0,
+      "proxy_diff_l2_median": 17.60802459716797,
+      "same_state_noisy_radius_median": 0.7771425247192383,
+      "semantic_margin_median": 16.227333068847656,
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 0.2663277454467475,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 84.666667,
+      "obs008_success": 81.0,
+      "proxy_diff_l2_median": 17.464778900146484,
+      "same_state_noisy_radius_median": 0.7010137438774109,
+      "semantic_margin_median": 16.346954345703125,
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 0.24924560008746618,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 87.666667,
+      "obs008_success": 87.333333,
+      "proxy_diff_l2_median": 17.537567138671875,
+      "same_state_noisy_radius_median": 0.6220362782478333,
+      "semantic_margin_median": 16.24110984802246,
+      "std_key": "0.08",
+      "task": "PushT",
+      "training_seed": 3074
+    },
+    {
+      "ATR_q90": 2.612153470267934,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.7699999809265137,
+      "clean_success": 58.666666666666664,
+      "obs008_success": 18.333333333333332,
+      "proxy_diff_l2_median": 18.70722770690918,
+      "same_state_noisy_radius_median": 14.782209396362305,
+      "semantic_margin_median": 3.1312713623046875,
+      "std_key": "0.0",
+      "task": "Reacher",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 2.693261122041363,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.699999988079071,
+      "clean_success": 60.666667,
+      "obs008_success": 17.666667,
+      "proxy_diff_l2_median": 18.88134002685547,
+      "same_state_noisy_radius_median": 16.021183013916016,
+      "semantic_margin_median": 2.8028578758239746,
+      "std_key": "0.0",
+      "task": "Reacher",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 2.5791641540531067,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.7299999594688416,
+      "clean_success": 58.333333,
+      "obs008_success": 18.666667,
+      "proxy_diff_l2_median": 18.78811264038086,
+      "same_state_noisy_radius_median": 15.50346565246582,
+      "semantic_margin_median": 2.203559398651123,
+      "std_key": "0.0",
+      "task": "Reacher",
+      "training_seed": 3074
+    },
+    {
+      "ATR_q90": 0.08880907729496679,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 84.0,
+      "obs008_success": 82.0,
+      "proxy_diff_l2_median": 18.744281768798828,
+      "same_state_noisy_radius_median": 0.2903764247894287,
+      "semantic_margin_median": 18.475008010864258,
+      "std_key": "0.08",
+      "task": "Reacher",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 0.07983325670074502,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.9899999499320984,
+      "clean_success": 81.666667,
+      "obs008_success": 82.333333,
+      "proxy_diff_l2_median": 18.781494140625,
+      "same_state_noisy_radius_median": 0.24963852763175964,
+      "semantic_margin_median": 18.58181381225586,
+      "std_key": "0.08",
+      "task": "Reacher",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 0.07801434049559372,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 78.333333,
+      "obs008_success": 80.333333,
+      "proxy_diff_l2_median": 18.933528900146484,
+      "same_state_noisy_radius_median": 0.2837485074996948,
+      "semantic_margin_median": 18.448070526123047,
+      "std_key": "0.08",
+      "task": "Reacher",
+      "training_seed": 3074
+    },
+    {
+      "ATR_q90": 2.2742336070066784,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.4899999797344208,
+      "clean_success": 66.66666666666667,
+      "obs008_success": 47.0,
+      "proxy_diff_l2_median": 19.119104385375977,
+      "same_state_noisy_radius_median": 19.304704666137695,
+      "semantic_margin_median": -0.11974334716796875,
+      "std_key": "0.0",
+      "task": "Cube",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 2.3036574016869658,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.41999998688697815,
+      "clean_success": 65.0,
+      "obs008_success": 39.0,
+      "proxy_diff_l2_median": 18.91353988647461,
+      "same_state_noisy_radius_median": 19.532798767089844,
+      "semantic_margin_median": -0.41057491302490234,
+      "std_key": "0.0",
+      "task": "Cube",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 2.3820318136256216,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 0.44999998807907104,
+      "clean_success": 64.0,
+      "obs008_success": 43.333333,
+      "proxy_diff_l2_median": 19.19805908203125,
+      "same_state_noisy_radius_median": 19.159801483154297,
+      "semantic_margin_median": -0.26813793182373047,
+      "std_key": "0.0",
+      "task": "Cube",
+      "training_seed": 3074
+    },
+    {
+      "ATR_q90": 0.09119283847319774,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 62.333333333333336,
+      "obs008_success": 62.0,
+      "proxy_diff_l2_median": 19.330080032348633,
+      "same_state_noisy_radius_median": 0.46777892112731934,
+      "semantic_margin_median": 18.855880737304688,
+      "std_key": "0.08",
+      "task": "Cube",
+      "training_seed": 3072
+    },
+    {
+      "ATR_q90": 0.10161935750323704,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 65.666667,
+      "obs008_success": 64.666667,
+      "proxy_diff_l2_median": 19.18606948852539,
+      "same_state_noisy_radius_median": 0.43552595376968384,
+      "semantic_margin_median": 18.66754722595215,
+      "std_key": "0.08",
+      "task": "Cube",
+      "training_seed": 3073
+    },
+    {
+      "ATR_q90": 0.107951619452755,
+      "ATR_source": "acpc_h_l2_p90 / clean_transition_l2_median from acpc_phase0_lewm_three_seed.json",
+      "SMPR": 1.0,
+      "clean_success": 57.0,
+      "obs008_success": 61.0,
+      "proxy_diff_l2_median": 19.20611572265625,
+      "same_state_noisy_radius_median": 0.5603379011154175,
+      "semantic_margin_median": 18.54102325439453,
+      "std_key": "0.08",
+      "task": "Cube",
+      "training_seed": 3074
+    }
+  ],
+  "summary_rows": [
+    {
+      "ATR_drop": 1.397631037783884,
+      "ATR_q90_0.0": {
+        "mean": 1.508833902938908,
+        "pstdev": 0.010048189381820661
+      },
+      "ATR_q90_0.08": {
+        "mean": 0.11120286515502383,
+        "pstdev": 0.015943404559836595
+      },
+      "SMPR_0.0": {
+        "mean": 0.33879779775937396,
+        "pstdev": 0.05067551476777314
+      },
+      "SMPR_0.08": {
+        "mean": 0.989070991675059,
+        "pstdev": 0.007727933751361501
+      },
+      "SMPR_gain": 0.6502731939156849,
+      "obs008_success_0.0": {
+        "mean": 68.77777788888889,
+        "pstdev": 2.4545248012599146
+      },
+      "obs008_success_0.08": {
+        "mean": 97.11111088888889,
+        "pstdev": 0.5665578326859542
+      },
+      "task": "TwoRoom"
+    },
+    {
+      "ATR_drop": 3.3335654184699868,
+      "ATR_q90_0.0": {
+        "mean": 3.5801502993462258,
+        "pstdev": 0.2600041231471354
+      },
+      "ATR_q90_0.08": {
+        "mean": 0.2465848808762392,
+        "pstdev": 0.01730877132588809
+      },
+      "SMPR_0.0": {
+        "mean": 0.43877550462881726,
+        "pstdev": 0.17095009086174295
+      },
+      "SMPR_0.08": {
+        "mean": 1.0,
+        "pstdev": 0.0
+      },
+      "SMPR_gain": 0.5612244953711827,
+      "obs008_success_0.0": {
+        "mean": 7.222222111111111,
+        "pstdev": 5.8139889347446605
+      },
+      "obs008_success_0.08": {
+        "mean": 85.77777766666667,
+        "pstdev": 3.4462360430181724
+      },
+      "task": "PushT"
+    },
+    {
+      "ATR_drop": 2.5459740239570325,
+      "ATR_q90_0.0": {
+        "mean": 2.6281929154541346,
+        "pstdev": 0.04794077858802557
+      },
+      "ATR_q90_0.08": {
+        "mean": 0.08221889149710185,
+        "pstdev": 0.004718758712354066
+      },
+      "SMPR_0.0": {
+        "mean": 0.7333333094914755,
+        "pstdev": 0.028674415616719486
+      },
+      "SMPR_0.08": {
+        "mean": 0.9966666499773661,
+        "pstdev": 0.004714068810145483
+      },
+      "SMPR_gain": 0.26333334048589063,
+      "obs008_success_0.0": {
+        "mean": 18.222222444444444,
+        "pstdev": 0.41573967994588396
+      },
+      "obs008_success_0.08": {
+        "mean": 81.55555533333332,
+        "pstdev": 0.874889820223604
+      },
+      "task": "Reacher"
+    },
+    {
+      "ATR_drop": 2.2197196689633585,
+      "ATR_q90_0.0": {
+        "mean": 2.3199742741064218,
+        "pstdev": 0.04549574032609863
+      },
+      "ATR_q90_0.08": {
+        "mean": 0.10025460514306327,
+        "pstdev": 0.006909466777962075
+      },
+      "SMPR_0.0": {
+        "mean": 0.45333331823349,
+        "pstdev": 0.02867441446190051
+      },
+      "SMPR_0.08": {
+        "mean": 1.0,
+        "pstdev": 0.0
+      },
+      "SMPR_gain": 0.54666668176651,
+      "obs008_success_0.0": {
+        "mean": 43.111111,
+        "pstdev": 3.2697642079068436
+      },
+      "obs008_success_0.08": {
+        "mean": 62.55555566666667,
+        "pstdev": 1.547598849033849
+      },
+      "task": "Cube"
+    }
+  ]
+}

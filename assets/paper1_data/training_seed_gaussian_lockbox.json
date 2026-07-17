@@ -1,0 +1,247 @@
+{
+  "metadata": {
+    "schema_version": "paper1-training-seed-gaussian-lockbox-0.1",
+    "scope": "LeWM Gaussian sweep, observation-only Gaussian endpoint pixels_std0.08, training seeds 3072/3073/3074; each point is the three-evaluation-seed mean from seeds 42/43/44 with 100 episodes per eval seed",
+    "source_artifacts": [
+      "assets/paper1_data/canonical_evals_20260517.json",
+      "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    ],
+    "note": "Seed 3072 is computed from the canonical JSON; seeds 3073/3074 are parsed from the completed lockbox note."
+  },
+  "per_seed_rows": [
+    {
+      "task": "TwoRoom",
+      "training_seed": 3072,
+      "baseline_obs_0p08": 65.66666666666667,
+      "best_obs_0p08": 97.66666666666667,
+      "best_std": "0.08",
+      "std_0p08_obs_0p08": 97.66666666666667,
+      "std_0p08_gain_over_baseline": 32.0,
+      "std_0p08_regret_to_best": 0.0,
+      "source": "assets/paper1_data/canonical_evals_20260517.json"
+    },
+    {
+      "task": "TwoRoom",
+      "training_seed": 3073,
+      "baseline_obs_0p08": 71.67,
+      "best_obs_0p08": 97.33,
+      "best_std": "0.06",
+      "std_0p08_obs_0p08": 97.33,
+      "std_0p08_gain_over_baseline": 25.67,
+      "std_0p08_regret_to_best": 0.0,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    },
+    {
+      "task": "TwoRoom",
+      "training_seed": 3074,
+      "baseline_obs_0p08": 69.0,
+      "best_obs_0p08": 98.0,
+      "best_std": "0.05",
+      "std_0p08_obs_0p08": 96.33,
+      "std_0p08_gain_over_baseline": 27.33,
+      "std_0p08_regret_to_best": 1.6700000000000017,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    },
+    {
+      "task": "PushT",
+      "training_seed": 3072,
+      "baseline_obs_0p08": 4.333333333333333,
+      "best_obs_0p08": 89.0,
+      "best_std": "0.08",
+      "std_0p08_obs_0p08": 89.0,
+      "std_0p08_gain_over_baseline": 84.66666666666667,
+      "std_0p08_regret_to_best": 0.0,
+      "source": "assets/paper1_data/canonical_evals_20260517.json"
+    },
+    {
+      "task": "PushT",
+      "training_seed": 3073,
+      "baseline_obs_0p08": 2.0,
+      "best_obs_0p08": 86.67,
+      "best_std": "0.04",
+      "std_0p08_obs_0p08": 81.0,
+      "std_0p08_gain_over_baseline": 79.0,
+      "std_0p08_regret_to_best": 5.670000000000002,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    },
+    {
+      "task": "PushT",
+      "training_seed": 3074,
+      "baseline_obs_0p08": 15.33,
+      "best_obs_0p08": 87.33,
+      "best_std": "0.08",
+      "std_0p08_obs_0p08": 87.33,
+      "std_0p08_gain_over_baseline": 72.0,
+      "std_0p08_regret_to_best": 0.0,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    },
+    {
+      "task": "Reacher",
+      "training_seed": 3072,
+      "baseline_obs_0p08": 18.333333333333332,
+      "best_obs_0p08": 84.66666666666667,
+      "best_std": "0.07",
+      "std_0p08_obs_0p08": 82.0,
+      "std_0p08_gain_over_baseline": 63.66666666666667,
+      "std_0p08_regret_to_best": 2.6666666666666714,
+      "source": "assets/paper1_data/canonical_evals_20260517.json"
+    },
+    {
+      "task": "Reacher",
+      "training_seed": 3073,
+      "baseline_obs_0p08": 17.67,
+      "best_obs_0p08": 83.33,
+      "best_std": "0.07",
+      "std_0p08_obs_0p08": 82.33,
+      "std_0p08_gain_over_baseline": 64.67,
+      "std_0p08_regret_to_best": 1.0,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    },
+    {
+      "task": "Reacher",
+      "training_seed": 3074,
+      "baseline_obs_0p08": 18.67,
+      "best_obs_0p08": 83.33,
+      "best_std": "0.05",
+      "std_0p08_obs_0p08": 80.33,
+      "std_0p08_gain_over_baseline": 61.67,
+      "std_0p08_regret_to_best": 3.0,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    },
+    {
+      "task": "Cube",
+      "training_seed": 3072,
+      "baseline_obs_0p08": 47.0,
+      "best_obs_0p08": 68.33333333333333,
+      "best_std": "0.03",
+      "std_0p08_obs_0p08": 62.0,
+      "std_0p08_gain_over_baseline": 15.0,
+      "std_0p08_regret_to_best": 6.333333333333329,
+      "source": "assets/paper1_data/canonical_evals_20260517.json"
+    },
+    {
+      "task": "Cube",
+      "training_seed": 3073,
+      "baseline_obs_0p08": 39.0,
+      "best_obs_0p08": 65.67,
+      "best_std": "0.05",
+      "std_0p08_obs_0p08": 64.67,
+      "std_0p08_gain_over_baseline": 25.67,
+      "std_0p08_regret_to_best": 1.0,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    },
+    {
+      "task": "Cube",
+      "training_seed": 3074,
+      "baseline_obs_0p08": 43.33,
+      "best_obs_0p08": 65.33,
+      "best_std": "0.03",
+      "std_0p08_obs_0p08": 61.0,
+      "std_0p08_gain_over_baseline": 17.67,
+      "std_0p08_regret_to_best": 4.329999999999998,
+      "source": "paper1/docs/LOCKBOX_RESULTS_20260703.md"
+    }
+  ],
+  "task_summary_rows": [
+    {
+      "task": "TwoRoom",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "baseline_obs_0p08_mean": 68.77888888888889,
+      "baseline_obs_0p08_pstdev": 2.4558325635610636,
+      "std_0p08_obs_0p08_mean": 97.10888888888888,
+      "std_0p08_obs_0p08_pstdev": 0.5676483870830843,
+      "std_0p08_gain_over_baseline_mean": 28.333333333333332,
+      "std_0p08_gain_over_baseline_pstdev": 2.6798300111926663,
+      "best_obs_0p08_mean": 97.66555555555556,
+      "best_obs_0p08_pstdev": 0.2735274829895849,
+      "std_0p08_regret_to_best_mean": 0.5566666666666672,
+      "std_0p08_regret_to_best_pstdev": 0.7872455497210237,
+      "best_std_values": [
+        "0.08",
+        "0.06",
+        "0.05"
+      ],
+      "best_std_range": "0.05--0.08"
+    },
+    {
+      "task": "PushT",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "baseline_obs_0p08_mean": 7.221111111111111,
+      "baseline_obs_0p08_pstdev": 5.812438981493075,
+      "std_0p08_obs_0p08_mean": 85.77666666666666,
+      "std_0p08_obs_0p08_pstdev": 3.445734883720581,
+      "std_0p08_gain_over_baseline_mean": 78.55555555555556,
+      "std_0p08_gain_over_baseline_pstdev": 5.18068587861101,
+      "best_obs_0p08_mean": 87.66666666666667,
+      "best_obs_0p08_pstdev": 0.9805553981743654,
+      "std_0p08_regret_to_best_mean": 1.8900000000000006,
+      "std_0p08_regret_to_best_pstdev": 2.6728636328851505,
+      "best_std_values": [
+        "0.08",
+        "0.04",
+        "0.08"
+      ],
+      "best_std_range": "0.04--0.08"
+    },
+    {
+      "task": "Reacher",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "baseline_obs_0p08_mean": 18.224444444444444,
+      "baseline_obs_0p08_pstdev": 0.41544561825634274,
+      "std_0p08_obs_0p08_mean": 81.55333333333333,
+      "std_0p08_obs_0p08_pstdev": 0.8754554370281921,
+      "std_0p08_gain_over_baseline_mean": 63.33555555555555,
+      "std_0p08_gain_over_baseline_pstdev": 1.246923126720576,
+      "best_obs_0p08_mean": 83.77555555555556,
+      "best_obs_0p08_pstdev": 0.6301107094573487,
+      "std_0p08_regret_to_best_mean": 2.2222222222222237,
+      "std_0p08_regret_to_best_pstdev": 0.8748897637790909,
+      "best_std_values": [
+        "0.07",
+        "0.07",
+        "0.05"
+      ],
+      "best_std_range": "0.05--0.07"
+    },
+    {
+      "task": "Cube",
+      "training_seeds": [
+        3072,
+        3073,
+        3074
+      ],
+      "n_training_seeds": 3,
+      "baseline_obs_0p08_mean": 43.10999999999999,
+      "baseline_obs_0p08_pstdev": 3.269689077980759,
+      "std_0p08_obs_0p08_mean": 62.55666666666667,
+      "std_0p08_obs_0p08_pstdev": 1.549114442368787,
+      "std_0p08_gain_over_baseline_mean": 19.44666666666667,
+      "std_0p08_gain_over_baseline_pstdev": 4.533551465340269,
+      "best_obs_0p08_mean": 66.44444444444444,
+      "best_obs_0p08_pstdev": 1.3428392621422014,
+      "std_0p08_regret_to_best_mean": 3.887777777777776,
+      "std_0p08_regret_to_best_pstdev": 2.19966383514716,
+      "best_std_values": [
+        "0.03",
+        "0.05",
+        "0.03"
+      ],
+      "best_std_range": "0.03--0.05"
+    }
+  ]
+}
