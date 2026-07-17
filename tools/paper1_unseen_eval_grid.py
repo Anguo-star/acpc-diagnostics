@@ -22,6 +22,7 @@ substantially more expensive than the eval sweep.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import shlex
@@ -109,6 +110,117 @@ def _load_json(path: Path) -> Any:
         return json.load(f)
 
 
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _is_within(path: Path, directory: Path) -> bool:
+    try:
+        path.relative_to(directory)
+    except ValueError:
+        return False
+    return True
+
+
+def _entry_path(entry: dict[str, Any], root: Path) -> Path | None:
+    raw = entry.get("path")
+    if raw is None or not str(raw).strip():
+        return None
+    path = Path(str(raw)).expanduser()
+    if not path.is_absolute():
+        path = root / path
+    return path.resolve()
+
+
+def _resolve_checkpoint(
+    *,
+    entry: dict[str, Any],
+    root: Path,
+    dataset_dir: str,
+    subdir: str,
+    epoch: int,
+) -> tuple[Path, str]:
+    """Resolve one checkpoint without guessing when candidates disagree.
+
+    New canonical manifests bind a checkpoint explicitly with ``model_file``.
+    That binding is authoritative: an invalid explicit path is an error and
+    never falls back to filename discovery. Legacy manifests may omit the
+    field; for those, exactly one matching epoch checkpoint must be present.
+    """
+
+    run_path = _entry_path(entry, root)
+    if "model_file" in entry:
+        raw_model = entry.get("model_file")
+        if raw_model is None or not str(raw_model).strip():
+            raise ValueError(f"{subdir}: canonical model_file is empty")
+        if run_path is None:
+            raise ValueError(f"{subdir}: canonical model_file requires entry path")
+
+        model_file = Path(str(raw_model)).expanduser()
+        if not model_file.is_absolute():
+            # A bare filename is naturally relative to the entry run path;
+            # a longer portable path is relative to the runtime data root.
+            model_file = (
+                run_path / model_file
+                if model_file.parent == Path(".")
+                else root / model_file
+            )
+        model_file = model_file.resolve()
+        if not _is_within(model_file, run_path):
+            raise ValueError(
+                f"{subdir}: canonical model_file escapes entry path: "
+                f"model_file={model_file}, path={run_path}"
+            )
+        if not model_file.is_file():
+            raise FileNotFoundError(
+                f"{subdir}: canonical model_file does not exist: {model_file}"
+            )
+        return model_file, "canonical_model_file"
+
+    candidate_dirs = [(root / dataset_dir / "ckpt" / subdir).resolve()]
+    if run_path is not None:
+        candidate_dirs.append(run_path)
+    candidate_dirs = list(dict.fromkeys(candidate_dirs))
+
+    matches: list[Path] = []
+    pattern = f"*epoch_{epoch}_object.ckpt"
+    for directory in candidate_dirs:
+        if not directory.exists():
+            continue
+        if not directory.is_dir():
+            raise ValueError(
+                f"{subdir}: legacy checkpoint path is not a directory: {directory}"
+            )
+        directory_matches = sorted(
+            path.resolve() for path in directory.glob(pattern) if path.is_file()
+        )
+        if any(not _is_within(path, directory) for path in directory_matches):
+            raise ValueError(
+                f"{subdir}: legacy checkpoint symlink escapes run path: {directory}"
+            )
+        if len(directory_matches) > 1:
+            rendered = ", ".join(str(path) for path in directory_matches)
+            raise ValueError(f"{subdir}: ambiguous legacy checkpoints: {rendered}")
+        matches.extend(directory_matches)
+
+    matches = list(dict.fromkeys(matches))
+    if len(matches) > 1:
+        rendered = ", ".join(str(path) for path in matches)
+        raise ValueError(
+            f"{subdir}: conflicting legacy checkpoint directories: {rendered}"
+        )
+    if not matches:
+        searched = ", ".join(str(path / pattern) for path in candidate_dirs)
+        raise FileNotFoundError(
+            f"{subdir}: no legacy checkpoint found; searched: {searched}"
+        )
+    return matches[0], "legacy_unique_epoch_match"
+
+
 def _slug(value: str) -> str:
     return value.replace(".", "p").replace("-", "m")
 
@@ -156,6 +268,14 @@ def _portable(path: Path, root: Path) -> str:
         return path.as_posix()
 
 
+def _template_path(path: Path, root: Path) -> str:
+    try:
+        relative = path.relative_to(root)
+    except ValueError:
+        return str(path)
+    return "$DATA_ROOT/" + relative.as_posix()
+
+
 def _quote_env(env: dict[str, str]) -> str:
     return " ".join(f"{k}={shlex.quote(v)}" for k, v in sorted(env.items()))
 
@@ -184,10 +304,123 @@ def _eval_summary_has_rows(path: Path) -> bool:
         return sum(1 for _ in f) > 1
 
 
+def _normalize_apply_modes(raw: str) -> tuple[str, ...]:
+    compact = str(raw or "1").replace(" ", "")
+    presets = {
+        "": ("pixels",),
+        "1": ("pixels",),
+        "pixel": ("pixels",),
+        "pixels": ("pixels",),
+        "obs": ("pixels",),
+        "observation": ("pixels",),
+        "2": ("goal",),
+        "goal": ("goal",),
+        "3": ("pixels+goal",),
+        "both": ("pixels+goal",),
+        "pixels+goal": ("pixels+goal",),
+        "pixels_goal": ("pixels+goal",),
+        "pixels-goal": ("pixels+goal",),
+        "pixelsgoal": ("pixels+goal",),
+        "all_streams": ("pixels+goal",),
+        "4": ("pixels", "pixels+goal"),
+        "primary_aux": ("pixels", "pixels+goal"),
+        "primary+aux": ("pixels", "pixels+goal"),
+        "primary_auxiliary": ("pixels", "pixels+goal"),
+        "5": ("pixels", "goal", "pixels+goal"),
+        "all": ("pixels", "goal", "pixels+goal"),
+    }
+    if compact in presets:
+        return presets[compact]
+
+    single = {
+        "1": "pixels",
+        "pixel": "pixels",
+        "pixels": "pixels",
+        "obs": "pixels",
+        "observation": "pixels",
+        "2": "goal",
+        "goal": "goal",
+        "3": "pixels+goal",
+        "both": "pixels+goal",
+        "pixels+goal": "pixels+goal",
+        "pixels_goal": "pixels+goal",
+        "pixels-goal": "pixels+goal",
+        "pixelsgoal": "pixels+goal",
+        "all_streams": "pixels+goal",
+    }
+    tokens = compact.split(",")
+    try:
+        return tuple(single[token] for token in tokens)
+    except KeyError as exc:
+        raise ValueError(f"invalid eval corruption apply_to value: {raw!r}") from exc
+
+
+def _expected_eval_labels(
+    *,
+    family: str,
+    magnitudes: tuple[str, ...],
+    apply_to: str,
+    eval_seeds: int,
+    eval_base_seed: int,
+) -> list[str]:
+    modes = _normalize_apply_modes(apply_to)
+    family_spec = {
+        "gaussian_noise": ("std", 0.0),
+        "gaussian_blur": ("blur_ks", 1.0),
+        "resize": ("rs_factor", 1.0),
+    }
+    tag, origin_magnitude = family_spec[family]
+    labels: list[str] = []
+    for magnitude in magnitudes:
+        is_origin = float(magnitude) == origin_magnitude
+        for offset in range(eval_seeds):
+            seed = eval_base_seed + offset
+            suffix = f"_seed{seed}" if eval_seeds > 1 else ""
+            if is_origin:
+                labels.append(f"origin{suffix}")
+                continue
+            for mode in modes:
+                labels.append(
+                    f"{mode.replace('+', '_')}_{tag}{magnitude}{suffix}"
+                )
+    return labels
+
+
+def _metrics_file_complete(path: Path) -> bool:
+    if not path.is_file() or path.stat().st_size == 0:
+        return False
+    text = path.read_text(encoding="utf-8", errors="replace")
+    return "==== RESULTS ====" in text and "evaluation_time:" in text
+
+
+def _eval_job_complete(
+    *,
+    result_dir: Path,
+    family: str,
+    magnitudes: tuple[str, ...],
+    apply_to: str,
+    eval_seeds: int,
+    eval_base_seed: int,
+) -> bool:
+    if not _eval_summary_has_rows(result_dir / "eval_summary.csv"):
+        return False
+    labels = _expected_eval_labels(
+        family=family,
+        magnitudes=magnitudes,
+        apply_to=apply_to,
+        eval_seeds=eval_seeds,
+        eval_base_seed=eval_base_seed,
+    )
+    return all(
+        _metrics_file_complete(result_dir / f"{label}_metrics.txt")
+        for label in labels
+    )
+
+
 def build_jobs(args: argparse.Namespace) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     canonical_path = _resolve_repo_path(args.canonical)
     canonical = _load_json(canonical_path)
-    root = Path(args.root).expanduser()
+    root = Path(args.root).expanduser().resolve()
     family_magnitudes = _parse_family_magnitudes(args.family_magnitudes)
 
     tasks = [_normalize_task(t, canonical) for t in args.tasks]
@@ -199,14 +432,24 @@ def build_jobs(args: argparse.Namespace) -> tuple[dict[str, Any], list[dict[str,
     output_prefix = args.output_prefix or f"paper1_unseen_s{args.train_seed}"
 
     jobs: list[dict[str, Any]] = []
+    checkpoint_hashes: dict[Path, str] = {}
     for task in tasks:
         meta = TASK_META[task]
         std_keys = _normalize_std_keys(args.std_keys, task, canonical)
         for std_key in std_keys:
             entry = canonical[task][std_key]
             subdir = entry["subdir"]
-            ckpt_rel = Path(meta["dataset_dir"]) / "ckpt" / subdir / f"{subdir}_epoch_{args.epoch}_object.ckpt"
-            ckpt_path = root / ckpt_rel
+            ckpt_path, checkpoint_resolution = _resolve_checkpoint(
+                entry=entry,
+                root=root,
+                dataset_dir=meta["dataset_dir"],
+                subdir=subdir,
+                epoch=args.epoch,
+            )
+            ckpt_rel = Path(_portable(ckpt_path, root))
+            if ckpt_path not in checkpoint_hashes:
+                checkpoint_hashes[ckpt_path] = _sha256(ckpt_path)
+            model_sha256 = checkpoint_hashes[ckpt_path]
             for family in families:
                 output_suffix = f"{output_prefix}_{family}_std{_slug(std_key)}"
                 final_output_model_name = f"{meta['dataset_name']}_{output_suffix}"
@@ -248,11 +491,18 @@ def build_jobs(args: argparse.Namespace) -> tuple[dict[str, Any], list[dict[str,
                     env[key] = value
                 template_env = dict(env)
                 template_env["STABLEWM_HOME"] = "$DATA_ROOT"
-                template_env["ckpt_override"] = "$DATA_ROOT/" + ckpt_rel.as_posix()
+                template_env["ckpt_override"] = _template_path(ckpt_path, root)
 
                 eval_summary = result_dir / "eval_summary.csv"
                 diagnostics_summary = diag_dir / "diagnostics_summary.json"
-                complete = _eval_summary_has_rows(eval_summary) and (
+                complete = _eval_job_complete(
+                    result_dir=result_dir,
+                    family=family,
+                    magnitudes=magnitudes,
+                    apply_to=str(args.apply_to),
+                    eval_seeds=int(args.eval_seeds),
+                    eval_base_seed=int(args.eval_base_seed),
+                ) and (
                     not args.diagnostics or diagnostics_summary.is_file()
                 )
                 jobs.append(
@@ -262,7 +512,10 @@ def build_jobs(args: argparse.Namespace) -> tuple[dict[str, Any], list[dict[str,
                         "family": family,
                         "subdir": subdir,
                         "checkpoint_rel": ckpt_rel.as_posix(),
-                        "checkpoint_exists": ckpt_path.is_file(),
+                        "checkpoint_exists": True,
+                        "checkpoint_resolution": checkpoint_resolution,
+                        "model_file": str(ckpt_path),
+                        "model_sha256": model_sha256,
                         "output_model_name_arg": output_suffix,
                         "final_output_model_name": final_output_model_name,
                         "result_dir_rel": result_dir_rel.as_posix(),
@@ -289,7 +542,7 @@ def build_jobs(args: argparse.Namespace) -> tuple[dict[str, Any], list[dict[str,
 
     manifest = {
         "metadata": {
-            "schema_version": "paper1-unseen-eval-grid-manifest-1.0",
+            "schema_version": "paper1-unseen-eval-grid-manifest-1.1",
             "canonical_artifact": str(Path(args.canonical).as_posix()),
             "root": None,
             "root_env_order": ["PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"],
@@ -306,6 +559,10 @@ def build_jobs(args: argparse.Namespace) -> tuple[dict[str, Any], list[dict[str,
             "eval_base_seed": int(args.eval_base_seed),
             "num_eval": int(args.num_eval),
             "launcher": "tools.paper1_unseen_eval_grid",
+            "checkpoint_binding": (
+                "entry.model_file is authoritative when present; legacy entries require "
+                "exactly one *epoch_<epoch>_object.ckpt candidate"
+            ),
         },
         "jobs": jobs,
     }

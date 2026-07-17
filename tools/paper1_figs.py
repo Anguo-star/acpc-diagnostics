@@ -9,20 +9,18 @@ by ``paper1/main.tex``:
 
     fig2_sweep.png      — unperturbed / observation-noise 0.08 vs sigma_max
 
-    fig5_scatter.png    — PushT n=9 LeWM scatter: fragility ratio
-                          vs unperturbed / corruption-drop
-
-    (fig3_pareto, fig4_radar, and fig6_mechanism were pruned from the paper
-    after the figure-density audit. Their generator functions are kept below
-    for reference but are no longer in the default render set.)
+    The older pareto, radar, scatter, and mechanism generators are kept below
+    for archival reproduction via ``--only`` but are no longer in the default
+    render set or the main manuscript.
 
 Figures are produced without an in-PNG ``Fig. N. ...'' suptitle so that the
 LaTeX caption is the single source of truth and figure numbers cannot drift.
 
 Data sources (no new computation needed):
 
-- Eval tables (§4.2, §4.3): assets/paper1_data/canonical_evals_20260517.json
-- Diagnostic tables / scatter predictor metrics:
+- Main sweep figure (§5.2): assets/paper1_data/three_seed_gaussian_sweep_summary_20260706.json
+- Legacy eval tables / archival figures: assets/paper1_data/canonical_evals_20260517.json
+- Diagnostic tables / scatter rollout metrics:
   assets/paper1_data/canonical_diagnostics_20260517.json
 """
 from __future__ import annotations
@@ -36,8 +34,6 @@ from typing import Dict, List, Tuple
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle
-from matplotlib.transforms import Affine2D
 import numpy as np
 
 
@@ -48,6 +44,10 @@ import numpy as np
 SWEEP_STDS = [0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08]
 ROBUST_EVAL_METRIC = "pixels_std0.08"
 ROBUST_EVAL_LABEL = r"Eval: observation noise $\sigma=0.08$ (unperturbed goal)"
+THREE_SEED_SWEEP_SUMMARY = (
+    Path(__file__).resolve().parent.parent
+    / "assets" / "paper1_data" / "three_seed_gaussian_sweep_summary_20260706.json"
+)
 
 # §4.4 Table 3 — 6 diagnostic metrics × {base, fixed 0.08} × 4 tasks
 # Metric order chosen so "compression" metrics group on one side of the radar.
@@ -80,6 +80,21 @@ _CANONICAL_EVALS_CACHE: Dict[str, Dict] = {}
 _CANONICAL_TABLES_CACHE: Dict[str, Dict] = {}
 _CANONICAL_DIAGNOSTICS_CACHE: Dict[str, Dict] = {}
 _CANONICAL_DIAG_TABLES_CACHE: Dict[str, Dict] = {}
+_THREE_SEED_SWEEP_CACHE: Dict[str, Dict] = {}
+
+
+def _load_three_seed_sweep_summary() -> Dict:
+    """Load the three-training-seed Gaussian sweep summary artifact."""
+    if _THREE_SEED_SWEEP_CACHE:
+        return _THREE_SEED_SWEEP_CACHE
+    if not THREE_SEED_SWEEP_SUMMARY.exists():
+        raise FileNotFoundError(
+            f"Missing three-seed sweep summary: {THREE_SEED_SWEEP_SUMMARY}. "
+            "Run `python -m tools.paper1_three_seed_gaussian_sweep` first."
+        )
+    with THREE_SEED_SWEEP_SUMMARY.open("r", encoding="utf-8") as f:
+        _THREE_SEED_SWEEP_CACHE.update(json.load(f))
+    return _THREE_SEED_SWEEP_CACHE
 
 
 def _load_canonical_evals() -> Dict:
@@ -196,219 +211,96 @@ def _canonical_diag_tables() -> Dict[str, Dict]:
 
 
 # ============================================================================
-# Figure 1 — Conceptual schematic: action-conditioned predictive consistency
-# ============================================================================
-
-def _box(ax, xy, w, h, fc, ec="#333333", lw=1.0, radius=0.018):
-    patch = FancyBboxPatch(
-        xy, w, h,
-        boxstyle=f"round,pad=0.012,rounding_size={radius}",
-        linewidth=lw, edgecolor=ec, facecolor=fc,
-    )
-    ax.add_patch(patch)
-    return patch
-
-
-def _arrow(ax, start, end, color="#555555", lw=1.6, style="-|>"):
-    ax.add_patch(FancyArrowPatch(
-        start, end, arrowstyle=style, mutation_scale=13,
-        linewidth=lw, color=color, shrinkA=0, shrinkB=0,
-    ))
-
-
-def _draw_tworoom_card(ax, x, y, w, h, mode, label):
-    _box(ax, (x, y), w, h, "#FFFFFF", "#9AA5B1", 0.9, radius=0.012)
-    if mode == "noise":
-        rng = np.random.default_rng(7)
-        pts_x = x + rng.uniform(0.02 * w, 0.98 * w, 420)
-        pts_y = y + rng.uniform(0.10 * h, 0.90 * h, 420)
-        cols = rng.choice(["#6AAED6", "#E56B6F", "#7FB069", "#AAAAAA"], 420)
-        ax.scatter(pts_x, pts_y, s=1.0, c=cols, alpha=0.35, linewidths=0)
-    elif mode == "lighting":
-        ax.add_patch(Rectangle((x, y), w, h, facecolor="#E9F2FF", edgecolor="none", alpha=0.8))
-        ax.add_patch(Rectangle((x, y), w, 0.45 * h, facecolor="#D7E7F7", edgecolor="none", alpha=0.8))
-    else:
-        ax.add_patch(Rectangle((x, y), w, h, facecolor="#F7F7F4", edgecolor="none", alpha=0.9))
-    # Room walls and doorway.
-    ax.plot([x + 0.08*w, x + 0.92*w], [y + 0.82*h, y + 0.82*h], color="#111111", lw=1.2)
-    ax.plot([x + 0.08*w, x + 0.92*w], [y + 0.18*h, y + 0.18*h], color="#111111", lw=1.2)
-    ax.plot([x + 0.08*w, x + 0.08*w], [y + 0.18*h, y + 0.82*h], color="#111111", lw=1.2)
-    ax.plot([x + 0.92*w, x + 0.92*w], [y + 0.18*h, y + 0.82*h], color="#111111", lw=1.2)
-    ax.plot([x + 0.50*w, x + 0.50*w], [y + 0.18*h, y + 0.43*h], color="#111111", lw=1.5)
-    ax.plot([x + 0.50*w, x + 0.50*w], [y + 0.57*h, y + 0.82*h], color="#111111", lw=1.5)
-    ax.add_patch(Circle((x + 0.35*w, y + 0.50*h), 0.055*h, fc="#D62828", ec="#8B0000", lw=0.8))
-    ax.add_patch(Circle((x + 0.78*w, y + 0.50*h), 0.040*h, fc="#2A9D8F", ec="#106B5F", lw=0.8))
-    ax.text(x + 0.5*w, y + h + 0.012, label, ha="center", va="bottom", fontsize=8.2, color="#204B84")
-
-
-def _draw_pusht_card(ax, x, y, w, h, angle, contact_dx, label, color):
-    _box(ax, (x, y), w, h, "#FFFFFF", "#9AA5B1", 0.9, radius=0.012)
-    ax.add_patch(Rectangle((x + 0.08*w, y + 0.10*h), 0.84*w, 0.80*h,
-                           facecolor="#F7FAFC", edgecolor="#DEE2E6", lw=0.5))
-    # Goal slot.
-    goal = Rectangle((x + 0.55*w, y + 0.53*h), 0.26*w, 0.12*h,
-                     facecolor="#B7E4A8", edgecolor="#5E9D55", lw=0.6)
-    goal.set_transform(Affine2D().rotate_deg_around(x + 0.68*w, y + 0.59*h, angle) + ax.transData)
-    ax.add_patch(goal)
-    # T-block: stem + bar.
-    cx, cy = x + 0.48*w, y + 0.45*h
-    stem = Rectangle((cx - 0.035*w, cy - 0.16*h), 0.07*w, 0.26*h,
-                     facecolor="#9FB3C8", edgecolor="#4A5568", lw=0.7)
-    bar = Rectangle((cx - 0.15*w, cy + 0.08*h), 0.30*w, 0.075*h,
-                    facecolor="#CBD5E0", edgecolor="#4A5568", lw=0.7)
-    tr = Affine2D().rotate_deg_around(cx, cy, angle) + ax.transData
-    stem.set_transform(tr)
-    bar.set_transform(tr)
-    ax.add_patch(stem)
-    ax.add_patch(bar)
-    ax.add_patch(Circle((x + (0.50 + contact_dx)*w, y + 0.30*h), 0.055*h,
-                        fc=color, ec="#2B2B2B", lw=0.6))
-    ax.text(x + 0.5*w, y + h - 0.006, label, ha="center", va="top", fontsize=7.8, color=color)
-
-
-def _draw_latent_axes(ax, origin, size, label_color="#4A5568"):
-    ox, oy = origin
-    sx, sy = size
-    ax.plot([ox, ox + sx], [oy, oy], color="#111111", lw=1.1)
-    ax.plot([ox, ox], [oy, oy + sy], color="#111111", lw=1.1)
-    _arrow(ax, (ox + sx, oy), (ox + sx + 0.02, oy), "#111111", 1.0)
-    _arrow(ax, (ox, oy + sy), (ox, oy + sy + 0.02), "#111111", 1.0)
-    ax.text(ox + sx + 0.030, oy - 0.006, r"$\hat z_1$", fontsize=10, color=label_color)
-    ax.text(ox - 0.010, oy + sy + 0.030, r"$\hat z_2$", fontsize=10, color=label_color)
-
-
-def fig1_concept(out_path: Path):
-    """Conceptual schematic for action-conditioned predictive consistency."""
-    fig, ax = plt.subplots(figsize=(13.2, 7.0))
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.axis("off")
-
-    ax.text(0.5, 0.965, "Action-Conditioned Predictive Consistency",
-            ha="center", va="top", fontsize=19, fontweight="bold", color="#1A202C")
-    ax.text(
-        0.5, 0.925,
-        "Same-state visual perturbations should agree after prediction; action-relevant differences must remain separable.",
-        ha="center", va="top", fontsize=11.2, color="#4A5568"
-    )
-
-    # Panel A.
-    _box(ax, (0.035, 0.365), 0.45, 0.50, "#F8FBFF", "#2B6CB0", 1.2, radius=0.025)
-    ax.text(0.060, 0.835, "A. Same-state predictive consistency",
-            fontsize=12.5, fontweight="bold", color="#1E4E8C")
-    ax.text(0.060, 0.784, "Clean/noisy views may encode differently;\n"
-            "the same action should predict the same future",
-            fontsize=7.7, color="#1E4E8C", linespacing=1.05)
-    card_x, card_w, card_h = 0.070, 0.135, 0.090
-    _draw_tworoom_card(ax, card_x, 0.625, card_w, card_h, "original", "original")
-    _draw_tworoom_card(ax, card_x, 0.500, card_w, card_h, "noise", "Gaussian pixel noise")
-    _draw_tworoom_card(ax, card_x, 0.375, card_w, card_h, "lighting", "lighting / texture shift")
-    _draw_latent_axes(ax, (0.305, 0.470), (0.115, 0.170), "#1E4E8C")
-    cluster = [(0.352, 0.565), (0.365, 0.595), (0.377, 0.550), (0.390, 0.580)]
-    for p in cluster:
-        ax.add_patch(Circle(p, 0.008, fc="#5B8DEF", ec="#1D4ED8", lw=0.8))
-    ax.add_patch(Circle((0.371, 0.573), 0.060, fill=False, ec="#1E4E8C", ls=(0, (4, 4)), lw=1.1))
-    for y in [0.670, 0.545, 0.420]:
-        _arrow(ax, (0.215, y), (0.292, 0.572), "#2B6CB0", 1.5)
-    ax.text(0.305, 0.415, "same state + same action\n-> consistent predictions",
-            ha="center", va="top", fontsize=10, color="#1E4E8C", fontweight="bold")
-
-    # Panel B.
-    _box(ax, (0.515, 0.365), 0.45, 0.50, "#FAFFF8", "#2F855A", 1.2, radius=0.025)
-    ax.text(0.540, 0.835, "B. Action-relevant discriminability",
-            fontsize=12.5, fontweight="bold", color="#276749")
-    ax.text(0.540, 0.784, "State differences that change transition, cost, or action\n"
-            "stay separable after prediction",
-            fontsize=7.7, color="#276749", linespacing=1.05)
-    px, py = 0.545, 0.675
-    state_specs = [
-        ("state A: contact left", -18, -0.11, "#2F855A", 0.625),
-        ("state B: centered", -5, 0.00, "#C53030", 0.500),
-        ("state C: contact right", 10, 0.10, "#805AD5", 0.375),
-    ]
-    for label, angle, dx, color, y in state_specs:
-        _draw_pusht_card(ax, px, y, card_w, card_h, angle, dx, label, color)
-    _draw_latent_axes(ax, (0.785, 0.470), (0.115, 0.170), "#276749")
-    clusters = [
-        ((0.838, 0.620), "#2F855A"),
-        ((0.835, 0.555), "#C53030"),
-        ((0.865, 0.490), "#805AD5"),
-    ]
-    for center, color in clusters:
-        cx, cy = center
-        pts = [(cx - 0.016, cy + 0.005), (cx + 0.006, cy + 0.020), (cx + 0.018, cy - 0.012)]
-        for p in pts:
-            ax.add_patch(Circle(p, 0.008, fc=color, ec="#2B2B2B", lw=0.5, alpha=0.75))
-        ax.add_patch(Circle(center, 0.045, fill=False, ec=color, ls=(0, (4, 4)), lw=1.0))
-    for _, _, _, color, y in state_specs:
-        _arrow(ax, (0.690, y + 0.045), (0.770, y + 0.005), color, 1.5)
-    ax.text(0.920, 0.610, "different transition /\ncost / action\n-> separated predictions",
-            ha="center", va="center", fontsize=8.8, color="#276749", fontweight="bold",
-            bbox=dict(boxstyle="round,pad=0.25", facecolor="#FAFFF8", edgecolor="none", alpha=0.92))
-
-    # Panel C.
-    _box(ax, (0.035, 0.070), 0.93, 0.225, "#FBFBFA", "#A0AEC0", 1.0, radius=0.025)
-    ax.text(0.500, 0.262, "C. Task-dependent selective-consistency demand",
-            fontsize=13.5, fontweight="bold", ha="center", color="#1A202C")
-    x0, x1, y = 0.175, 0.825, 0.185
-    ax.plot([x0, x1], [y, y], color="#4A5568", lw=1.4)
-    _arrow(ax, (0.500, y), (x0, y), "#B91C1C", 2.0)
-    _arrow(ax, (0.500, y), (x1, y), "#1B7F3A", 2.0)
-    ax.text(x0 - 0.014, y + 0.040, "Needs stronger\ndiscriminability\nguard",
-            ha="right", va="center", fontsize=9.5, color="#B91C1C", fontweight="bold")
-    ax.text(x1 + 0.014, y + 0.040, "Tolerates stronger\nsame-state\nconsistency",
-            ha="left", va="center", fontsize=9.5, color="#1B7F3A", fontweight="bold")
-    task_pos = [
-        ("PushT", 0.245, "#B91C1C", "contact precision"),
-        ("Reacher", 0.430, "#2B6CB0", "moderate resolution"),
-        ("Cube", 0.575, "#6B46C1", "structured manipulation"),
-        ("TwoRoom", 0.745, "#1B7F3A", "coarse topological\nresolution sufficient"),
-    ]
-    for name, x, color, sub in task_pos:
-        ax.add_patch(Circle((x, y), 0.0095, fc=color, ec="white", lw=0.7, zorder=3))
-        ax.text(x, y - 0.030, name, ha="center", va="top",
-                fontsize=10.8, color=color, fontweight="bold")
-        ax.text(x, y - 0.060, sub, ha="center", va="top", fontsize=8.3, color="#4A5568")
-
-    fig.savefig(out_path)
-    plt.close(fig)
-    print(f"  wrote {out_path}")
-
-
-# ============================================================================
 # Figure 2 — Sweep curves: unperturbed and corrupted eval vs sigma_max, per task
 # ============================================================================
 
 def fig2_sweep(out_path: Path):
-    tables = _canonical_eval_tables()
-    sweep = tables["sweep"]
-    tasks = tables["tasks"]
-    fig, axes = plt.subplots(1, 4, figsize=(13, 3.7), sharey=True)
-    for ax, t in zip(axes, tasks):
-        ax.errorbar(SWEEP_STDS, sweep[t]["clean"], yerr=sweep[t]["clean_std"],
-                    fmt="o-", color="#4477AA",
-                    label="Eval: unperturbed images",
-                    linewidth=1.7, markersize=4.5, capsize=2.2, elinewidth=0.85)
-        ax.errorbar(SWEEP_STDS, sweep[t]["px08"], yerr=sweep[t]["px08_std"],
-                    fmt="s-", color="#EE6677",
-                    label=ROBUST_EVAL_LABEL,
-                    linewidth=1.7, markersize=4.5, capsize=2.2, elinewidth=0.85)
-        ax.set_title(t, fontsize=11)
-        ax.set_xlabel(r"Train-time noise level $\sigma_{\max}$", fontsize=10)
-        ax.set_xticks([0, 0.02, 0.04, 0.06, 0.08])
-        ax.set_xticklabels(["0", "0.02", "0.04", "0.06", "0.08"])
-        ax.set_ylim(0, 105)
-        ax.grid(alpha=0.3, linewidth=0.5)
-        ax.tick_params(labelsize=9.5)
-    axes[0].set_ylabel("Success rate (%)", fontsize=10.5)
-    # Shared legend above the panels so the two evaluation curves are unambiguous.
-    handles, labels = axes[0].get_legend_handles_labels()
-    fig.legend(handles, labels, loc="upper center",
-               bbox_to_anchor=(0.5, 1.04), ncol=2,
-               frameon=False, fontsize=10)
-    fig.tight_layout(rect=[0, 0, 1, 0.92])
-    fig.savefig(out_path)
-    plt.close(fig)
+    payload = _load_three_seed_sweep_summary()
+    tasks = payload["metadata"].get("tasks", ["TwoRoom", "PushT", "Reacher", "Cube"])
+    rows_by_task = {task: {} for task in tasks}
+    for row in payload["summary_rows"]:
+        rows_by_task[row["task"]][float(row["stdmax"])] = row
+
+    style = {
+        "font.size": 7.25,
+        "axes.titlesize": 8.0,
+        "axes.labelsize": 7.5,
+        "xtick.labelsize": 7.0,
+        "ytick.labelsize": 7.0,
+        "legend.fontsize": 7.25,
+        "savefig.bbox": None,
+    }
+    with plt.rc_context(style):
+        # Keep the four-task comparison in one scan line while rendering at
+        # the manuscript's native text width (rather than downscaling a wide
+        # 13-inch canvas and its labels).
+        fig, axes = plt.subplots(1, 4, figsize=(6.7, 2.45), sharex=True, sharey=True)
+        for index, (ax, task) in enumerate(zip(axes, tasks)):
+            rows = rows_by_task[task]
+            clean = [rows[std]["metrics"]["clean"]["mean"] for std in SWEEP_STDS]
+            clean_std = [rows[std]["metrics"]["clean"]["pstdev"] for std in SWEEP_STDS]
+            px08 = [rows[std]["metrics"]["obs_sigma_0.08"]["mean"] for std in SWEEP_STDS]
+            px08_std = [rows[std]["metrics"]["obs_sigma_0.08"]["pstdev"] for std in SWEEP_STDS]
+            ax.errorbar(
+                SWEEP_STDS,
+                clean,
+                yerr=clean_std,
+                fmt="o-",
+                color="#4477AA",
+                label="Eval: unperturbed images",
+                linewidth=1.35,
+                markersize=3.5,
+                capsize=1.8,
+                capthick=0.85,
+                elinewidth=0.85,
+                zorder=3,
+            )
+            ax.errorbar(
+                SWEEP_STDS,
+                px08,
+                yerr=px08_std,
+                fmt="s-",
+                color="#EE6677",
+                label=ROBUST_EVAL_LABEL,
+                linewidth=1.35,
+                markersize=3.5,
+                capsize=1.8,
+                capthick=0.85,
+                elinewidth=0.85,
+                zorder=3,
+            )
+            ax.set_title(f"({chr(97 + index)}) {task}", loc="left", fontweight="semibold")
+            ax.set_xlim(-0.003, 0.083)
+            ax.set_xticks([0, 0.02, 0.04, 0.06, 0.08])
+            ax.set_xticklabels(["0", "0.02", "0.04", "0.06", "0.08"])
+            ax.set_ylim(0, 105)
+            ax.set_yticks([0, 25, 50, 75, 100])
+            ax.grid(color="#c7c7c7", alpha=0.42, linewidth=0.55)
+            ax.set_axisbelow(True)
+            ax.tick_params(length=2.5, color="#666666", pad=2.0)
+
+        handles, labels = axes[0].get_legend_handles_labels()
+        fig.legend(
+            handles,
+            labels,
+            loc="upper center",
+            bbox_to_anchor=(0.5, 0.99),
+            ncol=2,
+            frameon=False,
+            handletextpad=0.55,
+            columnspacing=1.45,
+        )
+        fig.supxlabel(r"Train-time noise level $\sigma_{\max}$", y=0.035)
+        fig.supylabel("Success rate (%)", x=0.012)
+        fig.subplots_adjust(
+            left=0.075,
+            right=0.992,
+            bottom=0.25,
+            top=0.78,
+            wspace=0.12,
+        )
+        fig.savefig(out_path, dpi=300, facecolor="white")
+        plt.close(fig)
     print(f"  wrote {out_path}")
 
 
@@ -608,7 +500,7 @@ def fig5_mechanism(out_path: Path):
     box_hw, box_hh = 0.085, 0.07
     box_y = 0.50
     box_centers = [0.10, 0.36, 0.62, 0.88]
-    box_labels = ["pixels\n(noise +)", "encoder $f$", "predictor $g$", "CEM /\nplanner"]
+    box_labels = ["pixels\n(noise +)", "encoder $f$", "rollout\nreadout", "CEM /\nplanner"]
     box_colors = ["#FDE7E9", "#E7F0FA", "#FCEFD8", "#E8F4EA"]
 
     for x, lab, color in zip(box_centers, box_labels, box_colors):
@@ -626,7 +518,7 @@ def fig5_mechanism(out_path: Path):
 
     layer_labels = [
         "encoder shift",
-        "predictor drift",
+        "multi-step rollout drift",
         "planning-time action selection",
     ]
     layer_x = [
@@ -649,7 +541,7 @@ def fig5_mechanism(out_path: Path):
 
     ax.text(
         0.50, 0.20,
-        "Quantitative attribution in §4.6.2 uses the two full-coverage LeWM n=9 predictor metrics.\n"
+        "Quantitative attribution in §4.6.2 uses the two full-coverage LeWM n=9 rollout metrics.\n"
         "After conditioning on std_max, Reacher's multi-step drift is the only non-trivial residual signal.",
         ha="center", va="center", fontsize=8.8,
         bbox=dict(boxstyle="round,pad=0.4", facecolor="#F5F5F5",
@@ -658,7 +550,7 @@ def fig5_mechanism(out_path: Path):
 
     ax.text(
         0.50, 0.06,
-        "Interpretation: the common qualitative path is encoder shift transduced by the predictor;\n"
+        "Interpretation: the common qualitative path is encoder shift visible in rollout readouts;\n"
         "the cost function alone is unlikely to explain the collapse.",
         ha="center", va="center", fontsize=9.2
     )
@@ -727,8 +619,8 @@ def main():
     ap.add_argument("--data-root",
                     default="dataset/ag_data/data/world_model/quentinll",
                     help="legacy relative path under the local dataset prefix; no longer required once assets/paper1_data/canonical_diagnostics_20260517.json is present")
-    ap.add_argument("--only", nargs="+", choices=["1", "2", "3", "4", "5", "6"],
-                    help="render only these figures (default: all)")
+    ap.add_argument("--only", nargs="+", choices=["2", "3", "4", "5", "6"],
+                    help="render only these archival figure slots (default: current main-text generated figure)")
     args = ap.parse_args()
 
     repo_root = Path(__file__).resolve().parent.parent
@@ -741,10 +633,8 @@ def main():
     print(f"Data root:  {data_root} (legacy, relative to the configured dataset prefix)")
     # Default renders only the script-generated figures used in the paper.
     # Pruned slots remain callable via --only for archival reproduction.
-    selected = set(args.only or ["2", "5"])
+    selected = set(args.only or ["2"])
 
-    if "1" in selected:
-        print("  skip fig1_concept.png (not generated by this script)")
     if "2" in selected:
         fig2_sweep(out_dir / "fig2_sweep.png")
     if "3" in selected:

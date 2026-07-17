@@ -8,7 +8,7 @@ base-vs-representative table used by Appendix F.
 Run::
 
     python3 -m tools.build_canonical_full_diagnostics_pldm \\
-        --root "$PAPER1_DATA_ROOT" \\
+        --root /home/ag/dataset/ag_data/data/world_model/quentinll \\
         --out assets/paper1_data/canonical_full_diagnostics_pldm_20260523.json
 """
 
@@ -20,8 +20,6 @@ import math
 import re
 from pathlib import Path
 from typing import Any
-
-from tools.paper1_paths import paper1_data_root, portable_path
 
 
 TASKS = ("TwoRoom", "PushT", "Reacher", "Cube")
@@ -107,7 +105,7 @@ def build(root: Path, out_path: Path, schema_path: Path | None = None) -> dict:
             if previous is not None and ckpt_dir.name <= previous["subdir"]:
                 continue
             diagnostics[task][std_key] = {
-                "path": portable_path(ckpt_dir, root),
+                "path": str(ckpt_dir.resolve()),
                 "subdir": ckpt_dir.name,
                 "diagnostics_summary": row,
             }
@@ -180,7 +178,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--root",
-        default=str(paper1_data_root()),
+        default="/home/ag/dataset/ag_data/data/world_model/quentinll",
     )
     ap.add_argument(
         "--out",

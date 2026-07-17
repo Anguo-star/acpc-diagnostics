@@ -8,7 +8,7 @@ JSON artifact consumed by Appendix G.
 Run::
 
     python3 -m tools.build_canonical_blur_baselines \\
-        --root "$PAPER1_DATA_ROOT" \\
+        --root /home/ag/dataset/ag_data/data/world_model/quentinll \\
         --out assets/paper1_data/canonical_blur_baselines_20260523.json
 """
 
@@ -20,8 +20,6 @@ import json
 import re
 import statistics
 from pathlib import Path
-
-from tools.paper1_paths import paper1_data_root, portable_path
 
 
 TASKS = ("TwoRoom", "PushT", "Reacher", "Cube")
@@ -128,7 +126,7 @@ def build(root: Path, out_path: Path, schema_path: Path | None = None) -> dict:
                     blur[condition] = _read_condition(eval_results, condition)
             worst = _worst_pixels_goal_blur(blur)
             baselines[method][task] = {
-                "path": portable_path(ckpt_dir, root),
+                "path": str(ckpt_dir.resolve()),
                 "subdir": ckpt_dir.name,
                 "clean": clean,
                 "blur": blur,
@@ -177,7 +175,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--root",
-        default=str(paper1_data_root()),
+        default="/home/ag/dataset/ag_data/data/world_model/quentinll",
         help="dataset root containing lewm-{cube,pusht,reacher,tworooms}/",
     )
     ap.add_argument(

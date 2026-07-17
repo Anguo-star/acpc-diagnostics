@@ -9,7 +9,7 @@ perturbed-target checkpoints:
 
 The default path only reads released JSON artifacts and writes a compact branch
 table.  The optional plotting paths load checkpoints and dataset windows to
-render real encoder/predictor feature clouds, so they are eval-only but not
+render real encoder/rollout feature clouds, so they are eval-only but not
 artifact-only.  Cluster envelopes are visualization summaries in a 2-D
 projection; the printed panel statistics remain the high-D evidence.
 """
@@ -18,8 +18,10 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 import json
 import math
+import statistics
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
@@ -271,7 +273,7 @@ def _readable_conclusion(
     adm_best: float,
 ) -> str:
     same_state = (
-        "same-state encoder/predictor radii contract"
+        "same-state encoder/rollout radii contract"
         if re_best < re_base and rf_best < rf_base
         else "same-state radius contraction is not monotone"
     )
@@ -304,7 +306,7 @@ def write_markdown(path: Path, payload: Mapping[str, Any]) -> None:
         "",
         f"Scope: existing {method_label} sweep. This is a branch diagnostic, not a new main claim.",
         "",
-        "| Task | best std | obs-noise 0.08 success | encoder radius R_E | prediction radius R_F | original NN L2 | transition L2 | aux ADM | aux SPRR | read |",
+        "| Task | best std | obs-noise 0.08 success | encoder radius | rollout radius | original NN L2 | transition L2 | aux ADM | aux SPRR | read |",
         "|---|---:|---:|---:|---:|---:|---:|---:|---:|---|",
     ]
     metric = payload["metadata"]["robust_metric"]
@@ -334,7 +336,7 @@ def write_markdown(path: Path, payload: Mapping[str, Any]) -> None:
     lines.extend(
         [
             "",
-            "Reading: lower R_E/R_F means smaller same-state perturbation spread "
+            "Reading: lower same-state radii mean smaller same-state perturbation spread "
             "in the reported feature space. "
             "Higher SPRR means the auxiliary action-distance margin is larger relative "
             "to paired rollout disagreement. ADM/SPRR come from the exploratory observation+goal "
@@ -415,14 +417,14 @@ def _display_labels(summary: Mapping[str, Any], robust_std_key: str) -> dict[str
     method = str(meta.get("method", "LeWM"))
     method_label = str(meta.get("method_label") or method)
     if method == "LeWM":
-        robust = str(meta.get("robust_label") or f"noise-trained {method_label} {robust_std_key}")
+        robust = str(meta.get("robust_label") or f"Noise-trained {method_label}")
         return {
-            "base": f"no-noise {method_label}",
+            "base": f"Origin {method_label}",
             "fullseq_robust": robust,
         }
-    robust = str(meta.get("robust_label") or f"noise-trained {method_label} {robust_std_key}")
+    robust = str(meta.get("robust_label") or f"Noise-trained {method_label}")
     return {
-        "base": f"no-noise {method_label}",
+        "base": f"Origin {method_label}",
         "fullseq_robust": robust,
     }
 
@@ -710,7 +712,7 @@ def _cluster_isolation_stats(array: np.ndarray) -> dict[str, float]:
     return {
         "median_radius_over_nn": float(np.nanmedian(ratio)),
         "frac_radius_lt_nn": float(np.nanmean(ratio < 1.0)),
-        "frac_disjoint_balls": float(np.nanmean(max_pair_ratio < 1.0)),
+        "frac_nonoverlap_balls": float(np.nanmean(max_pair_ratio < 1.0)),
         "median_radius": float(np.nanmedian(radius)),
         "median_nearest_origin": float(np.nanmedian(nearest_origin)),
     }
@@ -718,9 +720,9 @@ def _cluster_isolation_stats(array: np.ndarray) -> dict[str, float]:
 
 def _cluster_stats_title(stats: Mapping[str, float]) -> str:
     return (
-        f"r/NN {stats['median_radius_over_nn']:.2f}; "
-        f"r<NN {100.0 * stats['frac_radius_lt_nn']:.0f}%; "
-        f"disjoint {100.0 * stats['frac_disjoint_balls']:.0f}%"
+        f"radius/nearest {stats['median_radius_over_nn']:.2f}; "
+        f"radius<nearest {100.0 * stats['frac_radius_lt_nn']:.0f}%; "
+        f"non-overlap {100.0 * stats['frac_nonoverlap_balls']:.0f}%"
     )
 
 
@@ -739,6 +741,57 @@ def _cluster_point_counts(array: np.ndarray, anchor_count: int) -> dict[str, int
         "colored_anchor_perturbed_points": max(0, view_count - 1) * anchors,
         "colored_anchor_total_points": view_count * anchors,
     }
+
+def _metric_mean(values: Sequence[float]) -> float:
+    return float(statistics.fmean(float(v) for v in values))
+
+
+def _metric_pstdev(values: Sequence[float]) -> float:
+    vals = [float(v) for v in values]
+    return float(statistics.pstdev(vals)) if len(vals) > 1 else 0.0
+
+
+def _paper_metric_annotations(metric_summary_path: Path, task: str) -> dict[str, Any]:
+    payload = _load_json(metric_summary_path)
+    rows = [r for r in payload.get("rows", []) if r.get("task") == task]
+    if not rows:
+        raise ValueError(f"metric summary has no rows for task {task!r}: {metric_summary_path}")
+    by_std: dict[str, list[Mapping[str, Any]]] = {"0.0": [], "0.08": []}
+    for row in rows:
+        std_key = str(row.get("std_key"))
+        if std_key in by_std:
+            by_std[std_key].append(row)
+    missing = [std for std, items in by_std.items() if not items]
+    if missing:
+        raise ValueError(f"metric summary missing {task} std rows: {missing}")
+
+    def block(std_key: str, metric: str) -> dict[str, float]:
+        values = [float(row[metric]) for row in by_std[std_key]]
+        return {"mean": _metric_mean(values), "pstdev": _metric_pstdev(values)}
+
+    return {
+        "task": task,
+        "source": _artifact_path(metric_summary_path),
+        "ATR_base": block("0.0", "ATR_q90"),
+        "ATR_std0.08": block("0.08", "ATR_q90"),
+        "SMPR_base": block("0.0", "SMPR"),
+        "SMPR_std0.08": block("0.08", "SMPR"),
+    }
+
+
+def _fmt_metric_annotation(value: float, digits: int = 2) -> str:
+    return f"{float(value):.{digits}f}"
+
+
+def _panel_metric_text(metric_annotations: Mapping[str, Any] | None, label: str) -> str | None:
+    if metric_annotations is None:
+        return None
+    suffix = "base" if label == "base" else "std0.08"
+    return (
+        f"ATR={_fmt_metric_annotation(metric_annotations[f'ATR_{suffix}']['mean'])}\n"
+        f"SMPR={_fmt_metric_annotation(metric_annotations[f'SMPR_{suffix}']['mean'])}"
+    )
+
 
 
 def _expanded_view_stds(view_stds: Sequence[float], perturb_repeats: int) -> list[float]:
@@ -891,6 +944,95 @@ def _extract_view_features(
     return np.stack(encoder_views, axis=0), np.stack(predictor_views, axis=0)
 
 
+def _feature_cache_metadata(
+    *,
+    task: str,
+    summary: Mapping[str, Any],
+    acpc_basin_path: Path,
+    specs: Sequence[CkptSpec],
+    n_sequences: int,
+    view_stds: Sequence[float],
+    rollout_horizon: int,
+    seed: int,
+    img_size: int,
+    frameskip: int,
+) -> dict[str, Any]:
+    spec_meta = []
+    for spec in specs:
+        stat = spec.model_file.stat() if spec.model_file.exists() else None
+        spec_meta.append(
+            {
+                "label": spec.label,
+                "task": spec.task,
+                "std_key": spec.std_key,
+                "subdir": spec.subdir,
+                "model_file": str(spec.model_file),
+                "model_size": None if stat is None else int(stat.st_size),
+                "model_mtime_ns": None if stat is None else int(stat.st_mtime_ns),
+            }
+        )
+    return {
+        "schema_version": "paper1-selective-contraction-features-0.1",
+        "task": task,
+        "method": str(summary.get("metadata", {}).get("method", "LeWM")),
+        "branch": _branch_slug(summary),
+        "acpc_basin": _artifact_path(acpc_basin_path),
+        "n_sequences": int(n_sequences),
+        "view_stds": [float(x) for x in view_stds],
+        "rollout_horizon": int(rollout_horizon),
+        "seed": int(seed),
+        "img_size": int(img_size),
+        "frameskip": int(frameskip),
+        "specs": spec_meta,
+    }
+
+
+def _feature_cache_path(cache_dir: Path, metadata: Mapping[str, Any]) -> Path:
+    payload = json.dumps(metadata, sort_keys=True, separators=(",", ":"))
+    digest = hashlib.sha1(payload.encode("utf-8")).hexdigest()[:12]
+    task = str(metadata["task"]).lower()
+    method = str(metadata["method"]).lower()
+    branch = str(metadata["branch"]).lower()
+    return cache_dir / f"{task}_{method}_{branch}_features_{digest}.npz"
+
+
+def _load_feature_cache(
+    path: Path, metadata: Mapping[str, Any]
+) -> dict[str, dict[str, np.ndarray]] | None:
+    if not path.exists():
+        return None
+    with np.load(path, allow_pickle=False) as data:
+        stored = json.loads(str(data["metadata"].item()))
+        if stored != dict(metadata):
+            return None
+        return {
+            "base": {
+                "encoder": np.asarray(data["base_encoder"]),
+                "predictor": np.asarray(data["base_predictor"]),
+            },
+            "fullseq_robust": {
+                "encoder": np.asarray(data["fullseq_robust_encoder"]),
+                "predictor": np.asarray(data["fullseq_robust_predictor"]),
+            },
+        }
+
+
+def _write_feature_cache(
+    path: Path,
+    metadata: Mapping[str, Any],
+    encoded: Mapping[str, Mapping[str, np.ndarray]],
+) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    np.savez_compressed(
+        path,
+        metadata=np.asarray(json.dumps(metadata, sort_keys=True)),
+        base_encoder=np.asarray(encoded["base"]["encoder"]),
+        base_predictor=np.asarray(encoded["base"]["predictor"]),
+        fullseq_robust_encoder=np.asarray(encoded["fullseq_robust"]["encoder"]),
+        fullseq_robust_predictor=np.asarray(encoded["fullseq_robust"]["predictor"]),
+    )
+
+
 def _load_task_features(
     *,
     task: str,
@@ -903,10 +1045,33 @@ def _load_task_features(
     device: str | None,
     img_size: int,
     frameskip: int,
+    feature_cache_dir: Path | None,
+    refresh_feature_cache: bool,
 ) -> tuple[dict[str, dict[str, np.ndarray]], list[CkptSpec]]:
-    phase0 = _ensure_runtime_deps()
     device_value = device or "cpu"
     specs = _checkpoint_specs(task=task, summary=summary, acpc_basin_path=acpc_basin_path)
+    cache_path: Path | None = None
+    if feature_cache_dir is not None:
+        metadata = _feature_cache_metadata(
+            task=task,
+            summary=summary,
+            acpc_basin_path=acpc_basin_path,
+            specs=specs,
+            n_sequences=n_sequences,
+            view_stds=view_stds,
+            rollout_horizon=rollout_horizon,
+            seed=seed,
+            img_size=img_size,
+            frameskip=frameskip,
+        )
+        cache_path = _feature_cache_path(feature_cache_dir, metadata)
+        if not refresh_feature_cache:
+            cached = _load_feature_cache(cache_path, metadata)
+            if cached is not None:
+                print(f"[selective-contraction] loaded feature cache {cache_path}")
+                return cached, specs
+
+    phase0 = _ensure_runtime_deps()
 
     encoded: dict[str, dict[str, np.ndarray]] = {}
     batch_cache: dict[tuple[int, int], Mapping[str, Any]] = {}
@@ -942,6 +1107,9 @@ def _load_task_features(
                 embedding_space=embedding_space,
             )
             encoded[spec.label] = {"encoder": enc, "predictor": pred}
+    if cache_path is not None:
+        _write_feature_cache(cache_path, metadata, encoded)
+        print(f"[selective-contraction] wrote feature cache {cache_path}")
     return encoded, specs
 
 
@@ -958,6 +1126,8 @@ def render_2d_task(
     device: str | None,
     img_size: int,
     frameskip: int,
+    feature_cache_dir: Path | None,
+    refresh_feature_cache: bool,
     anchor_count: int,
 ) -> Path:
     plt = _ensure_plot_deps()
@@ -972,6 +1142,8 @@ def render_2d_task(
         device=device,
         img_size=img_size,
         frameskip=frameskip,
+        feature_cache_dir=feature_cache_dir,
+        refresh_feature_cache=refresh_feature_cache,
     )
 
     enc_pca = _pca_fit_transform_2d([encoded["base"]["encoder"], encoded["fullseq_robust"]["encoder"]])
@@ -993,9 +1165,9 @@ def render_2d_task(
     fig, axes = plt.subplots(2, 2, figsize=(13.5, 10.5), sharex="col", sharey="col")
     panels = [
         ("base", "encoder_2d", "Encoder features"),
-        ("base", "predictor_2d", "Predictor H8 features"),
+        ("base", "predictor_2d", "8-step rollout predicted features"),
         ("fullseq_robust", "encoder_2d", "Encoder features"),
-        ("fullseq_robust", "predictor_2d", "Predictor H8 features"),
+        ("fullseq_robust", "predictor_2d", "8-step rollout predicted features"),
     ]
     for ax, (label, feature, title) in zip(axes.reshape(-1), panels):
         arr = encoded[label][feature]
@@ -1051,6 +1223,8 @@ def render_atlas_task(
     device: str | None,
     img_size: int,
     frameskip: int,
+    feature_cache_dir: Path | None,
+    refresh_feature_cache: bool,
     anchor_count: int,
     neighbor_count: int,
 ) -> Path:
@@ -1066,6 +1240,8 @@ def render_atlas_task(
         device=device,
         img_size=img_size,
         frameskip=frameskip,
+        feature_cache_dir=feature_cache_dir,
+        refresh_feature_cache=refresh_feature_cache,
     )
 
     anchors = _select_spread_anchors(encoded["fullseq_robust"]["predictor"][0], anchor_count)
@@ -1073,7 +1249,7 @@ def render_atlas_task(
     label_by_spec = _display_labels(summary, specs[1].std_key)
     feature_by_name = {
         "encoder": "Encoder",
-        "predictor": "Predictor H8",
+        "predictor": "8-step rollout predicted features",
     }
 
     fig, axes = plt.subplots(2, 2, figsize=(7.4, 7.2))
@@ -1129,6 +1305,8 @@ def render_cluster_task(
     device: str | None,
     img_size: int,
     frameskip: int,
+    feature_cache_dir: Path | None,
+    refresh_feature_cache: bool,
     anchor_count: int,
     perplexity: float,
     tsne_max_iter: int,
@@ -1136,6 +1314,8 @@ def render_cluster_task(
     envelope: str,
     envelope_coverage: float,
     anchor_selection: str,
+    metric_summary_path: Path | None,
+    paper_facing: bool,
 ) -> Path:
     plt = _ensure_plot_deps()
     cluster_view_stds = _expanded_view_stds(view_stds, perturb_repeats)
@@ -1150,13 +1330,20 @@ def render_cluster_task(
         device=device,
         img_size=img_size,
         frameskip=frameskip,
+        feature_cache_dir=feature_cache_dir,
+        refresh_feature_cache=refresh_feature_cache,
     )
 
     label_by_spec = _display_labels(summary, specs[1].std_key)
     feature_by_name = {
         "encoder": "Encoder features",
-        "predictor": "Predictor H8 features",
+        "predictor": "8-step rollout predicted features",
     }
+    metric_annotations = (
+        _paper_metric_annotations(metric_summary_path, task)
+        if paper_facing and metric_summary_path is not None
+        else None
+    )
     panels = [
         ("base", "encoder"),
         ("base", "predictor"),
@@ -1180,7 +1367,7 @@ def render_cluster_task(
         anchor_selection_meta = {
             "strategy": "spread",
             "selected": [int(x) for x in anchors.tolist()],
-            "note": "Legacy farthest-point anchor selection in robust predictor high-D space.",
+            "note": "Legacy farthest-point anchor selection in robust rollout-readout high-D space.",
         }
     else:
         raise ValueError(f"Unknown cluster anchor selection: {anchor_selection}")
@@ -1194,6 +1381,7 @@ def render_cluster_task(
     if len(set(sample_shapes.values())) != 1:
         raise ValueError(f"cluster panels use inconsistent sample counts: {sample_shapes}")
     panel_point_counts = []
+    panel_high_d_stats = []
     for panel_idx, (ax, (label, feature)) in enumerate(zip(axes.reshape(-1), panels)):
         arr = encoded[label][feature]
         panel_point_counts.append(
@@ -1211,6 +1399,14 @@ def render_cluster_task(
             max_iter=tsne_max_iter,
         )
         stats = _cluster_isolation_stats(arr)
+        panel_high_d_stats.append(
+            {
+                "panel": f"{label}:{feature}",
+                "row_label": label,
+                "feature": feature,
+                **stats,
+            }
+        )
         origin = projected[0]
         perturbed = projected[1:]
         xlim, ylim = _axis_limits_2d_single(projected)
@@ -1260,12 +1456,17 @@ def render_cluster_task(
                 zorder=4,
             )
 
-        ax.set_title(
-            f"{label_by_spec[label]}: {feature_by_name[feature]}\n"
-            f"high-D: {_cluster_stats_title(stats)}",
-            fontsize=7.8,
-            pad=4,
-        )
+        if paper_facing:
+            checkpoint_name = {
+                "base": "No-noise checkpoint",
+                "fullseq_robust": "Noise-trained checkpoint",
+            }[label]
+            feature_name = {"encoder": "Encoder", "predictor": "8-step rollout"}[feature]
+            title = f"({chr(97 + panel_idx)}) {checkpoint_name} · {feature_name}"
+        else:
+            title = f"{label_by_spec[label]}: {feature_by_name[feature]}"
+            title = f"{title}\nhigh-D: {_cluster_stats_title(stats)}"
+        ax.set_title(title, fontsize=7.8, pad=4)
         ax.set_xlim(*xlim)
         ax.set_ylim(*ylim)
         ax.set_xlabel("t-SNE 1", fontsize=7.4)
@@ -1273,33 +1474,88 @@ def render_cluster_task(
         ax.tick_params(labelsize=6.8, pad=1)
         ax.grid(True, color="#EEEEEE", linewidth=0.45)
         ax.set_aspect("equal", adjustable="box")
-    fig.suptitle(
-        f"{task}: same-state perturbation clusters in encoder and H8 predictor spaces",
-        y=0.975,
-        fontsize=9.2,
-    )
-    envelope_note = {
-        "ellipse": (
-            f"colored ellipses are {100.0 * envelope_coverage:.0f}% covariance envelopes "
-            "in the t-SNE plane"
-        ),
-        "hull": "colored hulls are sample convex hulls in the t-SNE plane",
-        "circle": "colored circles use the legacy max-distance envelope in the t-SNE plane",
-        "none": "no colored envelope is drawn",
-    }[envelope]
-    fig.text(
-        0.5,
-        0.012,
-        "t-SNE is visualization only; panel annotations are computed in high-D space.\n"
-        f"Gray dots show sampled views; {envelope_note}.",
-        ha="center",
-        va="bottom",
-        fontsize=6.6,
-        linespacing=1.18,
-    )
-    fig.tight_layout(rect=(0, 0.075, 1, 0.945), h_pad=2.0, w_pad=0.9)
+        if paper_facing:
+            metric_text = _panel_metric_text(metric_annotations, label)
+            if metric_text:
+                ax.text(
+                    0.025,
+                    0.975,
+                    metric_text,
+                    transform=ax.transAxes,
+                    ha="left",
+                    va="top",
+                    fontsize=6.7,
+                    linespacing=1.05,
+                    color="#222222",
+                    bbox={
+                        "boxstyle": "round,pad=0.22",
+                        "facecolor": "white",
+                        "edgecolor": "#D9D9D9",
+                        "linewidth": 0.45,
+                        "alpha": 0.76,
+                    },
+                    zorder=8,
+                )
+    if paper_facing:
+        from matplotlib.lines import Line2D
+
+        legend_color = "#4C78A8"
+        legend_handles = [
+            Line2D([], [], marker="o", linestyle="none", markersize=4.2, markerfacecolor="#999999", markeredgecolor="none", label="Unselected states/views"),
+            Line2D([], [], marker="o", linestyle="none", markersize=6.2, markerfacecolor=legend_color, markeredgecolor="#111111", markeredgewidth=0.6, label="Selected anchor"),
+            Line2D([], [], marker="o", linestyle="none", markersize=4.2, markerfacecolor=legend_color, markeredgecolor="white", markeredgewidth=0.35, label="Perturbed view"),
+        ]
+        envelope_label = {
+            "ellipse": f"{100.0 * envelope_coverage:.0f}% covariance envelope",
+            "hull": "Convex hull",
+            "circle": "Max-distance envelope",
+            "none": None,
+        }[envelope]
+        if envelope_label:
+            legend_handles.append(Line2D([], [], color=legend_color, linewidth=1.2, label=envelope_label))
+        fig.legend(
+            handles=legend_handles,
+            loc="lower center",
+            ncol=len(legend_handles),
+            frameon=False,
+            fontsize=6.5,
+            columnspacing=1.0,
+            handletextpad=0.4,
+            bbox_to_anchor=(0.5, 0.008),
+        )
+    else:
+        fig.suptitle(
+            f"{task}: same-state perturbation clusters in encoder and ACPC rollout-readout spaces",
+            y=0.975,
+            fontsize=9.2,
+        )
+        envelope_note = {
+            "ellipse": (
+                f"colored ellipses are {100.0 * envelope_coverage:.0f}% covariance envelopes "
+                "in the t-SNE plane"
+            ),
+            "hull": "colored hulls are sample convex hulls in the t-SNE plane",
+            "circle": "colored circles use the legacy max-distance envelope in the t-SNE plane",
+            "none": "no colored envelope is drawn",
+        }[envelope]
+        fig.text(
+            0.5,
+            0.012,
+            "t-SNE is visualization only; panel annotations are computed in high-D space.\n"
+            f"Gray dots show sampled views; {envelope_note}.",
+            ha="center",
+            va="bottom",
+            fontsize=6.6,
+            linespacing=1.18,
+        )
+    layout_rect = (0, 0.055, 1, 0.985) if paper_facing else (0, 0.075, 1, 0.945)
+    fig.tight_layout(rect=layout_rect, h_pad=2.0, w_pad=0.9)
     out_dir.mkdir(parents=True, exist_ok=True)
-    out = out_dir / f"{task.lower()}_{_method_slug(summary)}{_branch_slug(summary)}_selective_contraction_clusters.png"
+    if paper_facing:
+        out_name = "fig_acpc_basin_tsne.png" if task == "PushT" else f"fig_{task.lower()}_acpc_basin_tsne.png"
+        out = out_dir / out_name
+    else:
+        out = out_dir / f"{task.lower()}_{_method_slug(summary)}{_branch_slug(summary)}_selective_contraction_clusters.png"
     fig.savefig(out, dpi=320)
     point_counts_out = out.with_name(f"{out.stem}_point_counts.json")
     _write_json(
@@ -1317,12 +1573,18 @@ def render_cluster_task(
             "seed": int(seed),
             "anchor_indices": [int(x) for x in anchors.tolist()],
             "anchor_selection": anchor_selection_meta,
+            "paper_facing": bool(paper_facing),
+            "metric_annotations": metric_annotations,
             "panels": panel_point_counts,
+            "panel_high_d_stats": panel_high_d_stats,
             "note": (
                 "All four cluster panels must have identical view_count_per_state "
                 "and sampled_state_count. Colored anchor points are overlaid on the "
                 "same background sample, so contraction can make the lower-row points "
-                "visually overlap even when the counts match."
+                "visually overlap even when the counts match. In paper-facing mode, "
+                "only compact ATR/SMPR panel insets are visible; high-dimensional "
+                "cluster-isolation statistics are retained here only as sidecar audit "
+                "metadata and are not visible panel annotations."
             ),
         },
     )
@@ -1343,6 +1605,8 @@ def render_3d_task(
     device: str | None,
     img_size: int,
     frameskip: int,
+    feature_cache_dir: Path | None,
+    refresh_feature_cache: bool,
     anchor_count: int,
 ) -> Path:
     plt = _ensure_plot_deps()
@@ -1357,6 +1621,8 @@ def render_3d_task(
         device=device,
         img_size=img_size,
         frameskip=frameskip,
+        feature_cache_dir=feature_cache_dir,
+        refresh_feature_cache=refresh_feature_cache,
     )
 
     enc_pca = _pca_fit_transform([encoded["base"]["encoder"], encoded["fullseq_robust"]["encoder"]])
@@ -1396,9 +1662,9 @@ def render_3d_task(
     fig = plt.figure(figsize=(12, 9))
     panels = [
         ("base", "encoder_3d", "Encoder"),
-        ("base", "predictor_3d", "Predictor H8"),
+        ("base", "predictor_3d", "8-step rollout predicted features"),
         ("fullseq_robust", "encoder_3d", "Encoder"),
-        ("fullseq_robust", "predictor_3d", "Predictor H8"),
+        ("fullseq_robust", "predictor_3d", "8-step rollout predicted features"),
     ]
     for i, (label, feature, title) in enumerate(panels, start=1):
         ax = fig.add_subplot(2, 2, i, projection="3d")
@@ -1490,6 +1756,20 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--device", default=None, help="Default: cpu, to avoid interfering with active training.")
     p.add_argument("--img-size", type=int, default=224)
     p.add_argument("--frameskip", type=int, default=5)
+    p.add_argument(
+        "--feature-cache-dir",
+        type=Path,
+        default=None,
+        help=(
+            "Optional directory for cached encoder/rollout feature arrays. "
+            "Use this for label/style-only redraws without reloading checkpoints."
+        ),
+    )
+    p.add_argument(
+        "--refresh-feature-cache",
+        action="store_true",
+        help="Recompute and overwrite feature cache entries instead of reusing them.",
+    )
     p.add_argument("--anchor-count", type=int, default=8)
     p.add_argument("--cluster-anchor-count", type=int, default=24)
     p.add_argument("--cluster-perplexity", type=float, default=35.0)
@@ -1498,6 +1778,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--cluster-envelope", choices=["ellipse", "hull", "circle", "none"], default="ellipse")
     p.add_argument("--cluster-envelope-coverage", type=float, default=0.90)
     p.add_argument("--cluster-anchor-selection", choices=["random", "spread"], default="random")
+    p.add_argument("--metric-summary", type=Path, default=DEFAULT_DATA_DIR / "compressed_metrics_summary_20260706.json")
+    p.add_argument("--cluster-paper-facing", action="store_true", help="Render canonical paper-facing cluster figure with only ATR/SMPR visible annotations.")
     p.add_argument("--atlas-anchor-count", type=int, default=24)
     p.add_argument("--atlas-neighbor-count", type=int, default=8)
     return p
@@ -1533,6 +1815,8 @@ def main() -> None:
                 device=args.device,
                 img_size=args.img_size,
                 frameskip=args.frameskip,
+                feature_cache_dir=args.feature_cache_dir,
+                refresh_feature_cache=args.refresh_feature_cache,
                 anchor_count=args.anchor_count,
             )
             print(f"[selective-contraction] wrote {out}")
@@ -1551,6 +1835,8 @@ def main() -> None:
                 device=args.device,
                 img_size=args.img_size,
                 frameskip=args.frameskip,
+                feature_cache_dir=args.feature_cache_dir,
+                refresh_feature_cache=args.refresh_feature_cache,
                 anchor_count=args.atlas_anchor_count,
                 neighbor_count=args.atlas_neighbor_count,
             )
@@ -1570,6 +1856,8 @@ def main() -> None:
                 device=args.device,
                 img_size=args.img_size,
                 frameskip=args.frameskip,
+                feature_cache_dir=args.feature_cache_dir,
+                refresh_feature_cache=args.refresh_feature_cache,
                 anchor_count=args.cluster_anchor_count,
                 perplexity=args.cluster_perplexity,
                 tsne_max_iter=args.cluster_tsne_max_iter,
@@ -1577,6 +1865,8 @@ def main() -> None:
                 envelope=args.cluster_envelope,
                 envelope_coverage=args.cluster_envelope_coverage,
                 anchor_selection=args.cluster_anchor_selection,
+                metric_summary_path=args.metric_summary,
+                paper_facing=args.cluster_paper_facing,
             )
             print(f"[selective-contraction] wrote {out}")
 
@@ -1594,6 +1884,8 @@ def main() -> None:
                 device=args.device,
                 img_size=args.img_size,
                 frameskip=args.frameskip,
+                feature_cache_dir=args.feature_cache_dir,
+                refresh_feature_cache=args.refresh_feature_cache,
                 anchor_count=args.anchor_count,
             )
             print(f"[selective-contraction] wrote {out}")

@@ -300,7 +300,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--raw-dir", default="assets/paper1_data/unseen_phase0_acpc_subset_raw")
     p.add_argument("--out", default="assets/paper1_data/unseen_phase0_acpc_subset.json")
     p.add_argument("--schema-out", default="assets/paper1_data/unseen_phase0_acpc_subset.schema.json")
-    p.add_argument("--seeds", nargs="+", type=int, default=[3073, 3074])
+    p.add_argument("--seeds", nargs="+", type=int, default=[3072, 3073, 3074])
     p.add_argument("--cases", nargs="+", default=list(DEFAULT_CASES))
     p.add_argument(
         "--unseen-template",

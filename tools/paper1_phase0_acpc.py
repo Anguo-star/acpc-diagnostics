@@ -12,14 +12,15 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 import json
 import math
 import re
+import subprocess
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence, TYPE_CHECKING
-
-from tools.paper1_paths import default_model_roots
 
 if TYPE_CHECKING:
     import torch
@@ -39,6 +40,9 @@ _clean_nn_dist = None
 _open_loop_target_shift = None
 _shift_stats = None
 make_eval_corruption = None
+compute_acpc_horizon_metrics = None
+horizon_weighted_stacked_l2 = None
+per_anchor_clean_transition_scale = None
 
 
 def _ensure_runtime_deps() -> None:
@@ -53,6 +57,8 @@ def _ensure_runtime_deps() -> None:
     global sample_random_future_actions, spearman_corr
     global _autoregressive_rollout, _clean_nn_dist, _open_loop_target_shift, _shift_stats
     global make_eval_corruption
+    global compute_acpc_horizon_metrics, horizon_weighted_stacked_l2
+    global per_anchor_clean_transition_scale
 
     if torch is not None:
         return
@@ -60,6 +66,11 @@ def _ensure_runtime_deps() -> None:
     import torch as torch_mod
     import torch.nn.functional as functional_mod
 
+    from tools.paper1_acpc_metrics import (
+        compute_acpc_horizon_metrics as compute_acpc_horizon_metrics_fn,
+        horizon_weighted_stacked_l2 as horizon_weighted_stacked_l2_fn,
+        per_anchor_clean_transition_scale as per_anchor_clean_transition_scale_fn,
+    )
     from tools.repr_analysis.analyze_repr import (
         encode_sequences as encode_sequences_fn,
         get_embedding_space as get_embedding_space_fn,
@@ -93,6 +104,9 @@ def _ensure_runtime_deps() -> None:
     _open_loop_target_shift = open_loop_target_shift_fn
     _shift_stats = shift_stats_fn
     make_eval_corruption = make_eval_corruption_fn
+    compute_acpc_horizon_metrics = compute_acpc_horizon_metrics_fn
+    horizon_weighted_stacked_l2 = horizon_weighted_stacked_l2_fn
+    per_anchor_clean_transition_scale = per_anchor_clean_transition_scale_fn
 
 
 TASK_DATASETS = {
@@ -103,10 +117,34 @@ TASK_DATASETS = {
 }
 TASKS = tuple(TASK_DATASETS)
 STD_KEYS = ("0.0", "0.01", "0.02", "0.03", "0.04", "0.05", "0.06", "0.07", "0.08")
+ROOT = Path(__file__).resolve().parents[1]
 METHOD_EVALS = {
     "LeWM": "assets/paper1_data/canonical_evals_20260517.json",
     "PLDM": "assets/paper1_data/canonical_evals_pldm_20260522.json",
 }
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def _git_commit() -> str:
+    try:
+        proc = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            check=False,
+            capture_output=True,
+            text=True,
+            timeout=15,
+        )
+    except (OSError, subprocess.TimeoutExpired):
+        return "unknown"
+    return proc.stdout.strip() if proc.returncode == 0 else "unknown"
 
 
 def _load_json(path: Path) -> Any:
@@ -116,13 +154,15 @@ def _load_json(path: Path) -> Any:
 
 def _jsonable(obj: Any) -> Any:
     if torch is not None and torch.is_tensor(obj):
-        return obj.detach().cpu().tolist()
+        return _jsonable(obj.detach().cpu().tolist())
     if isinstance(obj, Path):
         return str(obj)
     if isinstance(obj, dict):
         return {str(k): _jsonable(v) for k, v in obj.items()}
     if isinstance(obj, (list, tuple)):
         return [_jsonable(v) for v in obj]
+    if isinstance(obj, float) and not math.isfinite(obj):
+        return None
     return obj
 
 
@@ -176,8 +216,6 @@ def _candidate_model_files(directory: Path) -> list[Path]:
 def _alternate_dirs(run_path: Path, subdir: str, model_roots: Sequence[Path]) -> list[Path]:
     dirs = [run_path]
     for root in model_roots:
-        if not run_path.is_absolute():
-            dirs.append(root / run_path)
         dirs.extend([root / subdir, root / "ckpt" / subdir, root / "checkpoints" / subdir])
     # Canonical eval paths point at <task-root>/ckpt/<subdir>. Some PLDM
     # training runs keep weights under the sibling <task-root>/checkpoints/.
@@ -250,34 +288,131 @@ def _transition_l2_reference(clean_emb: torch.Tensor, history_size: int, horizon
 def compute_acpc_prediction_metrics(
     model,
     clean_outputs: Mapping[str, torch.Tensor],
-    noisy_outputs: Mapping[str, torch.Tensor],
+    noisy_outputs: Mapping[str, torch.Tensor] | Sequence[Mapping[str, torch.Tensor]],
     *,
     history_size: int,
     rollout_horizon: int,
     embedding_space: str,
-) -> dict[str, float]:
-    clean_emb = get_embedding_space(clean_outputs, embedding_space).detach()
-    noisy_emb = get_embedding_space(noisy_outputs, embedding_space).detach()
-    act_emb = clean_outputs["act_emb"].detach()
+    eps: float = 1e-8,
+) -> dict[str, Any]:
+    if isinstance(noisy_outputs, Mapping):
+        noisy_draws = [noisy_outputs]
+    else:
+        noisy_draws = list(noisy_outputs)
+    if not noisy_draws or not all(isinstance(draw, Mapping) for draw in noisy_draws):
+        raise ValueError("noisy_outputs must contain at least one output Mapping")
 
-    epd = _shift_stats(clean_emb[:, :history_size], noisy_emb[:, :history_size])
+    clean_emb = get_embedding_space(clean_outputs, embedding_space).detach()
+    noisy_embs = [
+        get_embedding_space(draw, embedding_space).detach()
+        for draw in noisy_draws
+    ]
+    if any(noisy_emb.shape != clean_emb.shape for noisy_emb in noisy_embs):
+        raise ValueError("all noisy embedding draws must match clean embedding shape")
+
+    act_emb = clean_outputs["act_emb"].detach()
+    n_draws = len(noisy_embs)
+
+    def repeat_draw_axis(value: torch.Tensor) -> torch.Tensor:
+        return value.unsqueeze(1).expand(-1, n_draws, *value.shape[1:])
+
+    noisy_emb_stack = torch.stack(noisy_embs, dim=1)
+    epd = _shift_stats(
+        repeat_draw_axis(clean_emb[:, :history_size]),
+        noisy_emb_stack[:, :, :history_size],
+    )
     nn_ref = _clean_nn_dist(clean_emb[:, :history_size])
 
-    one_step = _open_loop_target_shift(model, clean_emb, noisy_emb, act_emb, history_size)
-    one_step_stats = _shift_stats(one_step["clean_pred"], one_step["noisy_pred"])
+    clean_one_step = _open_loop_target_shift(
+        model, clean_emb, clean_emb, act_emb, history_size
+    )["clean_pred"]
+    noisy_one_step_stack = torch.stack(
+        [
+            _open_loop_target_shift(
+                model, clean_emb, noisy_emb, act_emb, history_size
+            )["noisy_pred"]
+            for noisy_emb in noisy_embs
+        ],
+        dim=1,
+    )
+    one_step_stats = _shift_stats(
+        repeat_draw_axis(clean_one_step), noisy_one_step_stack
+    )
 
-    max_steps = min(rollout_horizon, max(0, act_emb.size(1) - history_size + 1))
+    max_steps = min(
+        int(rollout_horizon),
+        max(0, act_emb.size(1) - history_size + 1),
+        max(0, clean_emb.size(1) - history_size),
+    )
+    if max_steps < 1:
+        raise ValueError("rollout_horizon_actual must be at least one")
+
     chain_clean = _autoregressive_rollout(
         model, clean_emb[:, :history_size], act_emb, history_size, max_steps
     )
-    chain_noisy = _autoregressive_rollout(
-        model, noisy_emb[:, :history_size], act_emb, history_size, max_steps
-    )
     pred_clean = chain_clean[:, history_size : history_size + max_steps]
-    pred_noisy = chain_noisy[:, history_size : history_size + max_steps]
-    rollout_stats = _shift_stats(pred_clean, pred_noisy)
+    pred_noisy = torch.stack(
+        [
+            _autoregressive_rollout(
+                model,
+                noisy_emb[:, :history_size],
+                act_emb,
+                history_size,
+                max_steps,
+            )[:, history_size : history_size + max_steps]
+            for noisy_emb in noisy_embs
+        ],
+        dim=1,
+    )
 
-    final_stats = _shift_stats(pred_clean[:, -1:], pred_noisy[:, -1:]) if max_steps else {}
+    # These compatibility statistics still pool draw x anchor x step tokens.
+    rollout_stats = _shift_stats(repeat_draw_axis(pred_clean), pred_noisy)
+    final_stats = _shift_stats(
+        repeat_draw_axis(pred_clean[:, -1:]), pred_noisy[:, :, -1:]
+    )
+
+    observed_clean_future = clean_emb[
+        :, history_size : history_size + max_steps
+    ]
+    clean_transition_scale = per_anchor_clean_transition_scale(
+        observed_clean_future,
+        initial_clean_state=clean_emb[:, history_size - 1],
+        transition_quantile=0.50,
+    )
+    canonical = compute_acpc_horizon_metrics(
+        pred_clean,
+        pred_noisy,
+        clean_transition_scale=clean_transition_scale,
+        noise_draw_dim=1,
+        noise_draw_aggregation="mean",
+        atr_quantile=0.90,
+        transition_quantile=0.50,
+        eps=eps,
+    )
+    raw_per_draw = horizon_weighted_stacked_l2(
+        repeat_draw_axis(pred_clean), pred_noisy, weights=canonical["horizon_weights"]
+    )
+    raw_per_anchor = raw_per_draw.mean(dim=1)
+    canonical_json = _jsonable(canonical)
+    canonical_json.pop("initial_clean_state_included", None)
+    canonical_json.update(
+        {
+            "atr_horizon_v2_q90": float(canonical["atr"].detach().cpu()),
+            "horizon_radius_v2_unnormalized_q90": _safe_quantile(
+                raw_per_anchor, 0.90
+            ),
+            "horizon_radius_v2_unnormalized_per_anchor": _jsonable(
+                raw_per_anchor
+            ),
+            "normalization_source": (
+                "observed_clean_embedding_transitions_including_"
+                "history_future_boundary"
+            ),
+            "normalization_initial_clean_state_included": True,
+            "canonical_scale_computed_externally": True,
+        }
+    )
+
     transition_ref = _transition_l2_reference(clean_emb, history_size, max_steps)
     one_step_transition_ref = _transition_l2_reference(clean_emb, history_size, 1)
 
@@ -288,25 +423,38 @@ def compute_acpc_prediction_metrics(
         "history_size": float(history_size),
         "rollout_horizon_requested": float(rollout_horizon),
         "rollout_horizon_actual": float(max_steps),
+        "num_noise_draws": n_draws,
         "encoder_shift_l2_median": epd["l2_median"],
         "encoder_shift_cos_median": epd["cos_dist_median"],
-        "encoder_shift_to_nn_l2": epd["l2_median"] / nn_ref["l2"] if nn_ref["l2"] > 0 else float("nan"),
+        "encoder_shift_to_nn_l2": (
+            epd["l2_median"] / nn_ref["l2"]
+            if nn_ref["l2"] > 0
+            else float("nan")
+        ),
         "acpc_1_l2_median": acpc_1_l2,
         "acpc_1_cos_median": one_step_stats["cos_dist_median"],
         "acpc_1_norm_by_transition": (
-            acpc_1_l2 / one_step_transition_ref if one_step_transition_ref > 0 else float("nan")
+            acpc_1_l2 / one_step_transition_ref
+            if one_step_transition_ref > 0
+            else float("nan")
         ),
         "acpc_h_l2_median": acpc_h_l2,
-        "acpc_h_l2_p90": rollout_stats["l2_p90"],
+        "acpc_h_l2_p90_legacy": rollout_stats["l2_p90"],
+        "stepwise_rollout_q90": rollout_stats["l2_p90"],
+        "stepwise_rollout_q90_is_atr": False,
+        "legacy_stepwise_statistics_are_atr": False,
         "acpc_h_cos_median": rollout_stats["cos_dist_median"],
-        "acpc_h_final_l2_median": final_stats.get("l2_median", float("nan")),
-        "acpc_h_final_cos_median": final_stats.get("cos_dist_median", float("nan")),
+        "acpc_h_final_l2_median": final_stats["l2_median"],
+        "acpc_h_final_cos_median": final_stats["cos_dist_median"],
         "acpc_h_norm_by_transition": (
-            acpc_h_l2 / transition_ref if transition_ref > 0 else float("nan")
+            acpc_h_l2 / transition_ref
+            if transition_ref > 0
+            else float("nan")
         ),
         "clean_transition_l2_median": transition_ref,
         "clean_nn_l2_median": nn_ref["l2"],
         "clean_nn_cos_median": nn_ref["cos"],
+        **canonical_json,
     }
 
 
@@ -527,6 +675,31 @@ def compute_adm_proxy(
     }
 
 
+def _mean_numeric_draw_metrics(
+    draws: Sequence[Mapping[str, Any]],
+) -> dict[str, Any]:
+    if not draws:
+        raise ValueError("at least one draw metric mapping is required")
+    result: dict[str, Any] = {}
+    for key in draws[0]:
+        values = [draw[key] for draw in draws]
+        if all(
+            isinstance(value, (int, float)) and not isinstance(value, bool)
+            for value in values
+        ):
+            result[key] = sum(float(value) for value in values) / len(values)
+        elif all(value == values[0] for value in values[1:]):
+            result[key] = values[0]
+        else:
+            result[key] = list(values)
+    return result
+
+
+def _cuda_sync(device: str) -> None:
+    if str(device).startswith("cuda") and torch.cuda.is_available():
+        torch.cuda.synchronize(torch.device(device))
+
+
 def run_checkpoint(
     *,
     method: str,
@@ -536,10 +709,23 @@ def run_checkpoint(
     model_file: Path,
     args: argparse.Namespace,
 ) -> dict[str, Any]:
+    wall_started = time.perf_counter()
+    runtime_setup_started = time.perf_counter()
     _ensure_runtime_deps()
+    runtime_dependency_setup_time = time.perf_counter() - runtime_setup_started
     device = args.device or ("cuda" if torch.cuda.is_available() else "cpu")
+    uses_cuda = str(device).startswith("cuda") and torch.cuda.is_available()
+    if uses_cuda:
+        _cuda_sync(device)
+        torch.cuda.reset_peak_memory_stats(torch.device(device))
+
     with torch.no_grad():
+        model_load_started = time.perf_counter()
         model = load_model(str(model_file), device)
+        _cuda_sync(device)
+        model_load_time = time.perf_counter() - model_load_started
+
+        data_io_started = time.perf_counter()
         history_size = infer_history_size(model)
         future_steps = max(args.future_steps, args.rollout_horizon + 1)
         batch = load_dataset_samples(
@@ -553,19 +739,32 @@ def run_checkpoint(
             seed=args.seed,
             device=device,
         )
-        noisy_batch = make_paired_noisy_batch(
-            batch,
-            history_size=history_size,
-            noise_std=args.noise_std,
-            seed=args.seed + 1009,
-            corruption_type=args.corruption_type,
-            corrupt_goal=args.corrupt_goal,
-        )
+        draw_seeds = [
+            args.seed + 1009 + 7919 * draw
+            for draw in range(args.num_noise_draws)
+        ]
+        noisy_batches = [
+            make_paired_noisy_batch(
+                batch,
+                history_size=history_size,
+                noise_std=args.noise_std,
+                seed=draw_seed,
+                corruption_type=args.corruption_type,
+                corrupt_goal=args.corrupt_goal,
+            )
+            for draw_seed in draw_seeds
+        ]
+        _cuda_sync(device)
+        data_io_time = time.perf_counter() - data_io_started
 
+        prediction_started = time.perf_counter()
         spaces = get_model_spaces(model)
         embedding_space = args.embedding_space or spaces["inference_cost_space"]
         clean_outputs = encode_sequences(model, _clone_batch(batch))
-        noisy_outputs = encode_sequences(model, _clone_batch(noisy_batch))
+        noisy_outputs = [
+            encode_sequences(model, _clone_batch(noisy_batch))
+            for noisy_batch in noisy_batches
+        ]
         pred_metrics = compute_acpc_prediction_metrics(
             model,
             clean_outputs,
@@ -573,21 +772,34 @@ def run_checkpoint(
             history_size=history_size,
             rollout_horizon=args.rollout_horizon,
             embedding_space=embedding_space,
+            eps=args.eps,
         )
+        _cuda_sync(device)
+        prediction_time = time.perf_counter() - prediction_started
 
-        cost_metrics = compute_cost_metrics(
-            model,
-            batch,
-            noisy_batch,
-            method=method,
-            history_size=history_size,
-            future_steps=args.future_steps,
-            random_action_trials=args.random_action_trials,
-            topk=args.elite_topk,
-            margin_delta=args.margin_delta,
-            seed=args.seed + 2027,
+        fixed_pool_started = time.perf_counter()
+        fixed_pool_seed = args.seed + 2027
+        cost_metrics = _mean_numeric_draw_metrics(
+            [
+                compute_cost_metrics(
+                    model,
+                    batch,
+                    noisy_batch,
+                    method=method,
+                    history_size=history_size,
+                    future_steps=args.future_steps,
+                    random_action_trials=args.random_action_trials,
+                    topk=args.elite_topk,
+                    margin_delta=args.margin_delta,
+                    seed=fixed_pool_seed,
+                )
+                for noisy_batch in noisy_batches
+            ]
         )
+        _cuda_sync(device)
+        fixed_pool_time = time.perf_counter() - fixed_pool_started
 
+        adm_started = time.perf_counter()
         clean_emb = get_embedding_space(clean_outputs, embedding_space).detach()
         clean_chain = _autoregressive_rollout(
             model,
@@ -607,9 +819,18 @@ def run_checkpoint(
             acpc_h_l2=pred_metrics["acpc_h_l2_median"],
             eps=args.eps,
         )
+        _cuda_sync(device)
+        adm_time = time.perf_counter() - adm_started
 
         clean_success = _mean_metric(entry, "clean")
-        corrupted_success = _mean_metric(entry, "pixels_goal_std0.08")
+        pixels_success = _mean_metric(entry, "pixels_std0.08")
+        pixels_goal_success = _mean_metric(entry, "pixels_goal_std0.08")
+        peak_gpu_memory = (
+            int(torch.cuda.max_memory_allocated(torch.device(device)))
+            if uses_cuda
+            else None
+        )
+        wall_time = time.perf_counter() - wall_started
         return {
             "status": "ok",
             "method": method,
@@ -619,12 +840,29 @@ def run_checkpoint(
             "run_path": entry.get("path"),
             "model_file": str(model_file),
             "clean_success": clean_success,
-            "pixels_goal_std0.08_success": corrupted_success,
-            "corruption_drop": clean_success - corrupted_success,
+            "pixels_std0.08_success": pixels_success,
+            "pixels_goal_std0.08_success": pixels_goal_success,
+            "corruption_drop": clean_success - pixels_success,
+            "pixels_goal_corruption_drop": clean_success - pixels_goal_success,
             "noise_std": float(args.noise_std),
             "corruption_type": args.corruption_type,
             "corrupt_goal": bool(args.corrupt_goal),
             "n_sequences": int(args.n_sequences),
+            "noise_draw_seeds": draw_seeds,
+            "noise_draw_seed_rule": "seed+1009+7919*draw_index",
+            "fixed_pool_candidate_seed": fixed_pool_seed,
+            "fixed_pool_noise_draw_aggregation": "arithmetic_mean",
+            "runtime_dependency_setup_time": runtime_dependency_setup_time,
+            "model_load_time": model_load_time,
+            "data_io_time": data_io_time,
+            "prediction_time": prediction_time,
+            "fixed_pool_time": fixed_pool_time,
+            "adm_time": adm_time,
+            "jvp_time": None,
+            "wall_time_per_row": wall_time,
+            "timing_unit": "seconds",
+            "peak_gpu_memory": peak_gpu_memory,
+            "peak_gpu_memory_unit": "bytes",
             **pred_metrics,
             **cost_metrics,
             **adm_metrics,
@@ -647,6 +885,13 @@ def iter_manifest_rows(
                     yield method, task, std_key, task_block[std_key]
 
 
+def _positive_int(value: str) -> int:
+    parsed = int(value)
+    if parsed < 1:
+        raise argparse.ArgumentTypeError("value must be a positive integer")
+    return parsed
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Run Paper 1 Phase-0 ACPC diagnostics.")
     p.add_argument("--methods", nargs="+", default=["LeWM"], choices=sorted(METHOD_EVALS))
@@ -654,17 +899,16 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--std-keys", nargs="+", default=list(STD_KEYS))
     p.add_argument("--evals-lewm", default=METHOD_EVALS["LeWM"])
     p.add_argument("--evals-pldm", default=METHOD_EVALS["PLDM"])
+    p.add_argument("--model-root", action="append", default=[], help="Additional root to search for model files.")
     p.add_argument(
-        "--model-root",
-        action="append",
-        default=[str(path) for path in default_model_roots()],
-        help="Root containing lewm-{task}/ckpt/<subdir> checkpoint directories. Defaults to PAPER1_DATA_ROOT or STABLEWM_HOME when set.",
+        "--out",
+        default="assets/paper1_data/acpc_phase0_diagnostics_v2.json",
     )
-    p.add_argument("--out", default="assets/paper1_data/acpc_phase0_diagnostics.json")
     p.add_argument("--dry-run", action="store_true", help="Resolve manifests and model files without loading models.")
     p.add_argument("--limit", type=int, default=None, help="Maximum number of manifest rows to process.")
 
     p.add_argument("--n-sequences", type=int, default=100)
+    p.add_argument("--num-noise-draws", type=_positive_int, default=1)
     p.add_argument("--future-steps", type=int, default=9)
     p.add_argument("--rollout-horizon", type=int, default=8)
     p.add_argument("--random-action-trials", type=int, default=64)
@@ -730,6 +974,7 @@ def main() -> None:
                     "model_file": str(model_file) if model_file else None,
                     "model_search_dirs": tried,
                     "clean_success": _mean_metric(entry, "clean"),
+                    "pixels_std0.08_success": _mean_metric(entry, "pixels_std0.08"),
                     "pixels_goal_std0.08_success": _mean_metric(entry, "pixels_goal_std0.08"),
                 }
             )
@@ -759,14 +1004,71 @@ def main() -> None:
                 }
             )
 
+    counts: dict[str, int] = {}
+    for row in rows:
+        counts[row["status"]] = counts.get(row["status"], 0) + 1
+    source_paths = {method: str(path) for method, path in eval_files.items()}
+    source_hashes = {
+        method: _sha256(path)
+        for method, path in eval_files.items()
+        if path.is_file()
+    }
+    metric_path = ROOT / "tools/paper1_acpc_metrics.py"
     payload = {
         "metadata": {
-            "schema_version": "paper1-acpc-phase0-0.1",
+            "schema_version": "paper1-acpc-phase0-0.2",
             "created_utc": datetime.now(timezone.utc).isoformat(),
+            "code_commit": _git_commit(),
+            "script_path": str(Path(__file__).resolve().relative_to(ROOT)),
+            "script_sha256": _sha256(Path(__file__).resolve()),
+            "metric_implementation_path": str(metric_path.relative_to(ROOT)),
+            "metric_implementation_sha256": _sha256(metric_path),
+            "source_paths": source_paths,
+            "source_hashes": source_hashes,
             "methods": list(args.methods),
             "tasks": list(args.tasks),
             "std_keys": list(args.std_keys),
+            "model_roots": [str(path) for path in model_roots],
             "dry_run": bool(args.dry_run),
+            "status_counts": counts,
+            "missing_rows": [
+                {
+                    "method": row.get("method"),
+                    "task": row.get("task"),
+                    "std_key": row.get("std_key"),
+                    "status": row.get("status"),
+                }
+                for row in rows
+                if row.get("status") == "skipped_missing_model"
+            ],
+            "errors": [
+                {
+                    "method": row.get("method"),
+                    "task": row.get("task"),
+                    "std_key": row.get("std_key"),
+                    "error": row.get("error"),
+                }
+                for row in rows
+                if row.get("status") == "error"
+            ],
+            "protocol": {
+                "radius_metric": "horizon_weighted_stacked_l2_v2",
+                "rollout_horizon": int(args.rollout_horizon),
+                "horizon_weights": "uniform_1_over_H",
+                "atr_quantile": 0.90,
+                "normalization": (
+                    "per_anchor_observed_clean_transition_l2_q50_"
+                    "including_history_future_boundary"
+                ),
+                "num_noise_draws": int(args.num_noise_draws),
+                "noise_draw_aggregation": (
+                    "per_anchor_mean_then_checkpoint_quantile"
+                ),
+                "legacy_stepwise_field": "stepwise_rollout_q90",
+                "legacy_stepwise_field_is_atr": False,
+                "anchor_seed": int(args.seed),
+                "fixed_pool_candidate_seed_rule": "seed+2027",
+            },
             "note": (
                 "ADM uses an action-distance latent proxy; it is a Phase-0 "
                 "diagnostic and should not be treated as a task-oracle result."
@@ -777,11 +1079,9 @@ def main() -> None:
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("w", encoding="utf-8") as f:
-        json.dump(_jsonable(payload), f, indent=2)
+        json.dump(_jsonable(payload), f, indent=2, allow_nan=False)
+        f.write(chr(10))
 
-    counts: dict[str, int] = {}
-    for row in rows:
-        counts[row["status"]] = counts.get(row["status"], 0) + 1
     print(f"[paper1_phase0_acpc] wrote {out}")
     print("[paper1_phase0_acpc] status counts:", counts)
 
