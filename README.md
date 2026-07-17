@@ -1,5 +1,5 @@
-# LeWorldModel ACPC Diagnostics
-### Paper companion fork of LeWorldModel
+# ACPC Diagnostics
+### Action-conditioned predictive diagnostics for JEPA world models (paper companion fork of LeWorldModel)
 
 This repository is a fork of [LeWorldModel](https://github.com/lucas-maes/le-wm), extended with the ACPC/Gaussian-noise robustness diagnostics, evaluation artifacts, and scripts used by the companion diagnostic study. The original LeWM model, citation, and upstream links are retained below for attribution.
 
@@ -37,6 +37,10 @@ This branch also contains the code-facing Paper 1 robustness study release:
 - canonical result artifacts: `assets/paper1_data/`
 - generated reference figures: `assets/paper1_figs/`
 - training, eval, and diagnostics scripts: `run_trainer.sh`, `eval.py`, and `tools/`
+- deterministic figure/table rebuild pipeline: `paper1/scripts/`
+  (documented in `paper1/scripts/README.md`), frozen protocol contracts in
+  `paper1/config/`, and the curated machine-readable inputs in
+  `paper1/results/`
 - unseen-perturbation reproduction launchers:
   `run_paper1_unseen_origin_vs_std008_eval.sh`,
   `run_paper1_unseen_origin_vs_std008_seeded.sh`, and
@@ -52,10 +56,15 @@ source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
 
-**Released artifact checks:**
+**Rebuild the summary figures and tables (CPU-only):**
 ```bash
-python -m tools.check_paper1_consistency
+python -m paper1.scripts.build_future_drift_reader_display
+python -m paper1.scripts.cross_task_selective_rule
+python -m paper1.scripts.build_cross_stressor_selective_transfer
+python paper1/scripts/build_acpc_submission_assets.py
 ```
+Artifact provenance (sources, seeds, and hashes) is documented in
+`DATA_MANIFEST.md`.
 
 **Unseen perturbation eval reproduction:**
 ```bash
