@@ -42,6 +42,8 @@ paper1/tables/*
 !paper1/tables/.gitkeep
 paper1/results/target_aligned_acpc_dev/cache/
 paper1/results/acpc_planner_stability_v1/
+paper1/results/acpc_planner_stability_v2/formal/
+paper1/results/acpc_planner_stability_v4/formal/
 paper1/results/acpc_planner_stability_v3/
 paper2/
 assets/diagnostics/
