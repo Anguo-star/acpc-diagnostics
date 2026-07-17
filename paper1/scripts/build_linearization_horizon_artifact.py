@@ -401,7 +401,7 @@ def write_horizon_table(path: Path, rows: Sequence[Mapping[str, Any]]) -> None:
         for row in rows
     }
     lines = [
-        r"\begin{table*}[t]",
+        r"\begin{table}[H]",
         r"\centering",
         r"\caption{Horizon/quantile sensitivity at fixed pixel-noise $\sigma=0.08$. Each entry is the median endpoint/base horizon-v2 ATR ratio over three training seeds (lower is a larger endpoint reduction). Horizon and quantile effects are descriptive; they do not retune the frozen gate.}",
         r"\label{tab:horizon-quantile-sensitivity}",
@@ -418,7 +418,7 @@ def write_horizon_table(path: Path, rows: Sequence[Mapping[str, Any]]) -> None:
         h_values = [_fmt(by[(task, horizon, 0.90)]["endpoint_to_base_ratio"]) for horizon in audit.HORIZONS]
         q_values = [_fmt(by[(task, 8, quantile)]["endpoint_to_base_ratio"]) for quantile in audit.QUANTILES]
         lines.append(f"{task} & " + " & ".join(h_values + q_values) + r" \\")
-    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table*}", ""])
+    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}", ""])
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text("\n".join(lines), encoding="utf-8")
 
