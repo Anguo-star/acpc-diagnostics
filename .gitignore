@@ -29,8 +29,6 @@ paper1/*.log
 paper1/*.out
 paper1/*.synctex.gz
 
-# Manuscript packaging and internal planning notes are intentionally excluded
-# from the public reproducibility code branch.
 # Manuscript, packaging, and internal paper materials stay out of the
 # public code branch; only the reproduction subdirectories are tracked.
 paper1/*
@@ -40,6 +38,7 @@ paper1/*
 !paper1/tables/
 paper1/tables/*
 !paper1/tables/.gitkeep
+!paper1/tables/*.tex
 paper1/results/target_aligned_acpc_dev/cache/
 paper1/results/acpc_planner_stability_v1/
 paper1/results/acpc_planner_stability_v2/formal/

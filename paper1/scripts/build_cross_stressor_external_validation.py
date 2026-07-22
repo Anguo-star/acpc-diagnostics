@@ -2101,19 +2101,12 @@ def _plot(path: Path, rows: Sequence[Mapping[str, Any]], *, force: bool) -> None
     plt.close(figure)
 
 
-def _default_data_root() -> Path:
+def _default_data_root() -> Path | None:
     for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
         value = os.environ.get(name)
         if value:
             return Path(value).expanduser()
-    candidates = (
-        Path("/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll"),
-        Path("/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll"),
-    )
-    for path in candidates:
-        if path.is_dir():
-            return path
-    return candidates[-1]
+    return None
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -2205,7 +2198,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> int:
-    args = build_parser().parse_args()
+    parser = build_parser()
+    args = parser.parse_args()
+    if args.data_root is None:
+        parser.error(
+            "--data-root is required unless PAPER1_DATA_ROOT, DATA_ROOT, "
+            "or STABLEWM_HOME is set"
+        )
     protocol, protocol_bytes, protocol_mtime_ns = _load_protocol(args.protocol)
     source_paths: dict[str, str] = {"protocol": str(args.protocol)}
     source_hashes: dict[str, str] = {"protocol": FROZEN_PROTOCOL_SHA256}

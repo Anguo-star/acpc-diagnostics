@@ -20,6 +20,7 @@ import ast
 import hashlib
 import json
 import math
+import os
 import re
 import statistics
 import subprocess
@@ -49,9 +50,17 @@ TASK_LAYOUT = {
 }
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DATA_ROOT = Path(
-    "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll"
-)
+
+
+def _default_data_root() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
+
+
+DEFAULT_DATA_ROOT = _default_data_root()
 DEFAULT_LEGACY_MANIFEST = (
     ROOT
     / "assets"
@@ -766,7 +775,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    args = build_parser().parse_args(argv)
+    parser = build_parser()
+    args = parser.parse_args(argv)
+    if args.data_root is None:
+        parser.error(
+            "--data-root is required unless PAPER1_DATA_ROOT, DATA_ROOT, "
+            "or STABLEWM_HOME is set"
+        )
     legacy_manifest = None if args.no_legacy_compare else args.legacy_manifest
     try:
         payload = build_manifest(

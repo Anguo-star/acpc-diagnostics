@@ -1,0 +1,37 @@
+\begin{table*}[t]
+\centering
+\caption{All 24 LeWM checkpoint pairs evaluated under blur and resize. IR$_{\rm rel}$ and DR are measured for the checkpoint trained with Gaussian-noise augmentation ($\stdmax{}=0.08$); $\Delta P$ and $\Delta S$ are its success-rate and IR--DR score changes relative to the unaugmented checkpoint. A pair is positive when $\Delta P\geq5$ percentage points with at most a five-point clean loss. Daggers mark the two discordant pairs.}
+\label{tab:cross-stressor-ir-dr-all-pairs}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrlrrrrrl}
+\toprule
+Task & Seed & Shift & IR$_{\rm rel}$ & DR & $\Delta P$ & $\Delta S$ & Outcome (success / IR--DR) \\
+\midrule
+TwoRoom & 3072 & blur & 0.499 & 0.885 & 55.7 & 1.670 & positive / positive \\
+TwoRoom & 3072 & resize & 0.336 & 0.967 & 52.3 & 2.214 & positive / positive \\
+TwoRoom & 3073 & blur & 0.781 & 0.262 & 36.0 & 0.729 & positive / positive \\
+TwoRoom & 3073 & resize & 0.691 & 0.361 & 40.0 & 1.030 & positive / positive \\
+TwoRoom & 3074 & blur & 0.636 & 0.541 & 37.7 & 1.212 & positive / positive \\
+TwoRoom & 3074 & resize & 0.617 & 0.656 & 34.3 & 1.277 & positive / positive \\
+PushT & 3072 & blur & 0.943 & 0.939 & 10.7 & 0.189 & positive / positive \\
+PushT & 3072 & resize & 0.814 & 0.969 & 4.0 & 0.620 & nonpositive / positive$^\dag$ \\
+PushT & 3073 & blur & 0.846 & 0.918 & 7.3 & 0.515 & positive / positive \\
+PushT & 3073 & resize & 0.682 & 0.969 & 24.3 & 1.060 & positive / positive \\
+PushT & 3074 & blur & 0.781 & 0.959 & 4.0 & 0.729 & nonpositive / positive$^\dag$ \\
+PushT & 3074 & resize & 1.173 & 0.939 & -19.7 & -0.577 & nonpositive / nonpositive \\
+Reacher & 3072 & blur & 0.155 & 0.990 & 50.7 & 2.375 & positive / positive \\
+Reacher & 3072 & resize & 0.210 & 0.990 & 29.7 & 2.375 & positive / positive \\
+Reacher & 3073 & blur & 0.176 & 0.990 & 52.3 & 2.375 & positive / positive \\
+Reacher & 3073 & resize & 0.207 & 0.990 & 40.0 & 2.375 & positive / positive \\
+Reacher & 3074 & blur & 0.190 & 0.990 & 44.7 & 2.375 & positive / positive \\
+Reacher & 3074 & resize & 0.195 & 0.990 & 33.3 & 2.375 & positive / positive \\
+Cube & 3072 & blur & 1.447 & 0.330 & -2.7 & -1.488 & nonpositive / nonpositive \\
+Cube & 3072 & resize & 1.166 & 0.530 & 1.0 & -0.552 & nonpositive / nonpositive \\
+Cube & 3073 & blur & 1.577 & 0.260 & 2.3 & -1.923 & nonpositive / nonpositive \\
+Cube & 3073 & resize & 1.218 & 0.560 & -1.3 & -0.728 & nonpositive / nonpositive \\
+Cube & 3074 & blur & 1.220 & 0.660 & -3.0 & -0.735 & nonpositive / nonpositive \\
+Cube & 3074 & resize & 1.040 & 0.770 & -2.3 & -0.134 & nonpositive / nonpositive \\
+\bottomrule
+\end{tabular}
+\end{table*}

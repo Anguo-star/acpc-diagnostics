@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-root="/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll"
+root="${PAPER1_DATA_ROOT:-${DATA_ROOT:-${STABLEWM_HOME:-}}}"
+: "${root:?Set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root}"
 canonical="assets/paper1_data/canonical_evals_pldm_v2.json"
 source_root="paper1/results/remediation_phase2_external_sources/cross_stressor/pldm_canonical"
 max_parallel_jobs="${PAPER1_MAX_PARALLEL_EVAL_JOBS:-1}"

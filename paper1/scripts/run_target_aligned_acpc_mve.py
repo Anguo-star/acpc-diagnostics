@@ -45,7 +45,7 @@ from tools import paper1_phase0_acpc as phase0  # noqa: E402
 from tools.paper1_acpc_metrics import (  # noqa: E402
     horizon_weighted_stacked_l2,
 )
-from tools.paper1_operational_decision_audit import (  # noqa: E402
+from tools.paper1_trajectory_blocks import (  # noqa: E402
     load_trajectory_blocks,
 )
 from tools.paper1_target_aligned_acpc import (  # noqa: E402

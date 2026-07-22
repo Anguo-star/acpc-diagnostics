@@ -1,4 +1,3 @@
-import math
 import os
 import numpy as np
 import torch
@@ -360,45 +359,6 @@ class AddResize:
         return out.reshape(*x.shape)
 
 
-def build_eval_corruption(cfg):
-    """Build an eval-time image-corruption transform from
-    ``cfg.eval.corruption``.
-
-    Dispatches on ``cfg.type``; returns ``None`` if the corruption is
-    disabled or has a no-op-magnitude parameter.
-
-    Supported types and their parameters:
-
-    - ``gaussian_noise`` (default): additive ImageNet-space noise via
-      :class:`AddNormalizedGaussianNoise`. Uses ``std``.
-    - ``gaussian_blur``: spatial Gaussian blur via :class:`AddGaussianBlur`.
-      Uses ``kernel_size`` (odd integer; sigma is auto-derived).
-    - ``resize``: bilinear downscale-then-upscale via :class:`AddResize`.
-      Uses ``factor`` (no-op at 1.0).
-    """
-    if cfg is None:
-        return None
-    ctype = _cfg_get(cfg, "type", "gaussian_noise")
-    if ctype == "gaussian_noise":
-        std = float(_cfg_get(cfg, "std", 0.0))
-        if std <= 0:
-            return None
-        return AddNormalizedGaussianNoise(std, std)
-    if ctype == "gaussian_blur":
-        ks = int(round(float(_cfg_get(cfg, "kernel_size", 0))))
-        if ks <= 1:
-            return None
-        if ks % 2 == 0:
-            ks += 1
-        return AddGaussianBlur(ks, ks)
-    if ctype == "resize":
-        factor = float(_cfg_get(cfg, "factor", 1.0))
-        if factor >= 1.0:
-            return None
-        return AddResize(factor, factor)
-    raise ValueError(f"Unsupported corruption type: {ctype}")
-
-
 def make_eval_corruption(magnitude: float, ctype: str = "gaussian_noise"):
     """Build a corruption transform from a scalar magnitude and a type
     tag, intended for diagnostic-probe injection (where we want to
@@ -430,42 +390,6 @@ def make_eval_corruption(magnitude: float, ctype: str = "gaussian_noise"):
         if magnitude >= 1.0:
             return None
         return AddResize(magnitude, magnitude)
-    raise ValueError(f"Unsupported corruption type: {ctype}")
-
-
-def corruption_tag(cfg) -> str:
-    """Build a filename-safe tag from a corruption config.
-
-    Returns an empty string for an unconfigured or no-op corruption.
-    Naming is chosen so blur / resize tags do not collide with the
-    existing Gaussian-noise tag ``std<X>`` used throughout the eval
-    summary tooling:
-
-    - ``gaussian_noise`` -> ``std<X>``      (filename unchanged from
-      pre-rename history; this keeps existing aggregators working)
-    - ``gaussian_blur``  -> ``blur_ks<X>``  (kernel size)
-    - ``resize``         -> ``rs_factor<X>``
-    """
-    if cfg is None:
-        return ""
-    ctype = _cfg_get(cfg, "type", "gaussian_noise")
-    if ctype == "gaussian_noise":
-        std = float(_cfg_get(cfg, "std", 0.0))
-        if std <= 0:
-            return ""
-        return f"std{std:g}"
-    if ctype == "gaussian_blur":
-        ks = int(round(float(_cfg_get(cfg, "kernel_size", 0))))
-        if ks <= 1:
-            return ""
-        if ks % 2 == 0:
-            ks += 1
-        return f"blur_ks{ks}"
-    if ctype == "resize":
-        factor = float(_cfg_get(cfg, "factor", 1.0))
-        if factor >= 1.0:
-            return ""
-        return f"rs_factor{factor:g}"
     raise ValueError(f"Unsupported corruption type: {ctype}")
 
 

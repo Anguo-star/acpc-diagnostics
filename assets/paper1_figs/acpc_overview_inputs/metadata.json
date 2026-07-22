@@ -1,0 +1,80 @@
+{
+  "clean": {
+    "episode": 8200,
+    "frame_sha256": "01a4daaa4aa0a2b1fea3dd373e4bcca8116f62db5f1239bbfe39f36556baa386",
+    "row": 1009793,
+    "state": [
+      317.9289245605469,
+      198.2184600830078,
+      231.5137939453125,
+      329.0260314941406,
+      3.916472911834717,
+      -53.38692855834961,
+      -83.9178237915039
+    ],
+    "state_coordinates_2_5": [
+      231.5137939453125,
+      329.0260314941406,
+      3.916472911834717
+    ],
+    "step": 48
+  },
+  "different_state": {
+    "episode": 8200,
+    "frame_sha256": "ccceef2846ff48a2b957578e98fc431dc38744d8f96829dc8ee6d1cca370e7f1",
+    "row": 1009869,
+    "state": [
+      185.22207641601562,
+      376.82989501953125,
+      217.54629516601562,
+      312.46307373046875,
+      1.0417121648788452,
+      12.172910690307617,
+      96.54263305664062
+    ],
+    "state_coordinates_2_5": [
+      217.54629516601562,
+      312.46307373046875,
+      1.0417121648788452
+    ],
+    "step": 124
+  },
+  "figure_role": "Real task input examples. The clean and noisy images depict the same state; the third image is a different state from the same recorded episode. Latent diagrams in Figure 1 are schematic.",
+  "outputs": {
+    "clean": {
+      "path": "assets/paper1_figs/acpc_overview_inputs/pusht_ep8200_step48_clean.png",
+      "sha256": "78f0dfabca82ee290a668e3434af1dd38cc4dda8c22be919bb7ac9cd05666d28"
+    },
+    "different": {
+      "path": "assets/paper1_figs/acpc_overview_inputs/pusht_ep8200_step124_different_state.png",
+      "sha256": "d795b91f64ce77116ea39e80970609214fcf36a479334ba61958b01e51fa8538"
+    },
+    "noisy": {
+      "path": "assets/paper1_figs/acpc_overview_inputs/pusht_ep8200_step48_gaussian_std008.png",
+      "sha256": "bf7437088e870a8585ad20bd477afffac5027020be50abc5f62bded8b5a8e5c2"
+    }
+  },
+  "same_state_noise": {
+    "clipping": "[0,1]",
+    "distribution": "independent Gaussian noise in display RGB [0,1]",
+    "pixel_sha256": "45f7af839adae152bdef2168490f64aa62b43bdc4b6cd5668f4022f063749d1a",
+    "seed": 10110,
+    "source_row": 1009793,
+    "standard_deviation": 0.08,
+    "uint8_conversion": "round(255*x)"
+  },
+  "schema_version": "paper1-acpc-overview-inputs-1.0",
+  "source": {
+    "dataset_name": "pusht_expert_train",
+    "h5_file_size_bytes": 46300921856,
+    "h5_filename": "pusht_expert_train.h5",
+    "pixels_dtype": "uint8",
+    "pixels_shape": [
+      2336736,
+      224,
+      224,
+      3
+    ],
+    "task": "PushT"
+  }
+}

@@ -5,7 +5,7 @@ defaults:
 
 world:
   env_name: swm/TwoRoom-v1
-  num_envs: ${eval.num_eval}
+  num_envs: ${eval.batch_size}
   max_episode_steps: ??? # make sure it's >= eval_budget
 
 seed: 42
@@ -25,6 +25,8 @@ plan_config:
 # evaluation from dataset (replay expert trajectories)
 eval:
   num_eval: 50
+  batch_size: 100
+  save_video: False
   goal_offset_steps: 25
   eval_budget: 50
   img_size: 224
@@ -36,9 +38,6 @@ eval:
     std: 0.0 # 0 disables; pixel-space std converted for ImageNet-normalized tensors
     apply_to:
       - pixels
-  inference:
-    cost_type: null # null keeps checkpoint setting; options for SWM: cosine, mse
-    cost_space: null # null keeps checkpoint setting; options for SWM: normalized, raw
   callables:
     # -- set state
     - method: _set_state

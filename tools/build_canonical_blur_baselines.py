@@ -8,7 +8,7 @@ JSON artifact consumed by Appendix G.
 Run::
 
     python3 -m tools.build_canonical_blur_baselines \\
-        --root /home/ag/dataset/ag_data/data/world_model/quentinll \\
+        --root /path/to/world_model \\
         --out assets/paper1_data/canonical_blur_baselines_20260523.json
 """
 
@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import os
 import re
 import statistics
 from pathlib import Path
@@ -46,6 +47,14 @@ METHOD_SUFFIX = {
 }
 
 _ARRAY_RE = re.compile(r"\b(?:np\.)?array\((?:[^()]|\([^()]*\))*\)", re.DOTALL)
+
+
+def _default_data_root() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
 
 
 def _parse_success_rate(metrics_path: Path) -> float:
@@ -175,7 +184,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--root",
-        default="/home/ag/dataset/ag_data/data/world_model/quentinll",
+        type=Path,
+        default=_default_data_root(),
         help="dataset root containing lewm-{cube,pusht,reacher,tworooms}/",
     )
     ap.add_argument(
@@ -187,6 +197,8 @@ def main() -> None:
         default="assets/paper1_data/canonical_blur_baselines_20260523.schema.json",
     )
     args = ap.parse_args()
+    if args.root is None:
+        ap.error("--root is required unless PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME is set")
     repo_root = Path(__file__).resolve().parents[1]
     out_path = Path(args.out)
     schema_path = Path(args.schema_out)
@@ -194,7 +206,7 @@ def main() -> None:
         out_path = repo_root / out_path
     if not schema_path.is_absolute():
         schema_path = repo_root / schema_path
-    payload = build(Path(args.root), out_path, schema_path)
+    payload = build(args.root, out_path, schema_path)
     print(f"wrote {out_path}")
     print(f"wrote {schema_path}")
     for method, by_task in payload["baselines"].items():

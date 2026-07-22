@@ -10,7 +10,8 @@ case "$mode" in
     ;;
 esac
 
-root="${PAPER1_DATA_ROOT:-/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll}"
+root="${PAPER1_DATA_ROOT:-${DATA_ROOT:-${STABLEWM_HOME:-}}}"
+: "${root:?Set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root}"
 protocol="paper1/config/paired_multiseverity_protocol_v1.json"
 protocol_hash_file="paper1/config/paired_multiseverity_protocol_v1.sha256"
 manifest_root="paper1/results/multiseverity_v1/manifests"
@@ -135,4 +136,3 @@ else
     done
   done
 fi
-

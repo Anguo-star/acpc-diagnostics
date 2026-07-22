@@ -20,14 +20,15 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
+from .ir_dr_compat import to_ir_dr
 from .utils_paper1_io import ROOT, TASKS
 
 DEFAULT_ROWS = ROOT / "paper1/results/external_validation/pldm_frozen_rows_v2.csv"
 DEFAULT_FIG = ROOT / "assets/paper1_figs/fig_pldm_sweep_diagnostics.pdf"
 
 # Shared with the LeWM sweep figure.
-COMMON_TR = 0.30
-COMMON_TM = 0.95
+COMMON_TI = 0.30
+COMMON_TD = 0.95
 RECOVERY_COLOR = "#d9ead3"
 
 PLOT_STYLE = {
@@ -50,23 +51,24 @@ PLOT_STYLE = {
 def _read_rows(path: Path) -> dict[str, list[dict[str, float | bool]]]:
     by_task: dict[str, list[dict[str, float | bool]]] = {task: [] for task in TASKS}
     with path.open(newline="", encoding="utf-8") as stream:
-        for row in csv.DictReader(stream):
-            task = row["task"]
-            if task not in by_task:
-                raise ValueError(f"unexpected task {task!r}")
-            by_task[task].append(
-                {
-                    "rho": float(row["training_rho"]),
-                    "atr": float(row["atr_horizon_v2_q90"]),
-                    "smpr": float(row["smpr"]),
-                    "stress_score": float(row["stress_score"]),
-                    "stress_seed_scores": json.loads(
-                        row["stress_score_by_evaluation_seed"]
-                    ),
-                    "base_clean": float(row["base_clean_score"]),
-                    "recovered": str(row["behavior_label"]).lower() == "true",
-                }
-            )
+        rows = to_ir_dr(list(csv.DictReader(stream)))
+    for row in rows:
+        task = row["task"]
+        if task not in by_task:
+            raise ValueError(f"unexpected task {task!r}")
+        by_task[task].append(
+            {
+                "rho": float(row["training_rho"]),
+                "ir_raw_q90": float(row["ir_raw_q90"]),
+                "dr": float(row["dr"]),
+                "stress_score": float(row["stress_score"]),
+                "stress_seed_scores": json.loads(
+                    row["stress_score_by_evaluation_seed"]
+                ),
+                "base_clean": float(row["base_clean_score"]),
+                "recovered": str(row["behavior_label"]).lower() == "true",
+            }
+        )
     for task, rows in by_task.items():
         if len(rows) != 9:
             raise ValueError(f"{task}: expected nine sweep levels")
@@ -107,9 +109,9 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
             rows = by_task[task]
             x = [row["rho"] for row in rows]
             score = [row["stress_score"] for row in rows]
-            base_atr = rows[0]["atr"]
-            atr = [row["atr"] / base_atr for row in rows]
-            smpr = [row["smpr"] for row in rows]
+            base_ir_raw = rows[0]["ir_raw_q90"]
+            ir_relative = [row["ir_raw_q90"] / base_ir_raw for row in rows]
+            dr = [row["dr"] for row in rows]
 
             clean_base = rows[0]["base_clean"]
             score_lo = [min(row["stress_seed_scores"]) for row in rows]
@@ -130,16 +132,31 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
                 capsize=1.6,
                 zorder=2,
             )
-            diagnostic_ax.plot(x, atr, color="#d95f02", marker="s", lw=1.35, ms=3.4, zorder=2)
             diagnostic_ax.plot(
-                x, smpr, color="#7570b3", marker="^", lw=1.35, ms=3.5, ls="--", zorder=2
+                x,
+                ir_relative,
+                color="#d95f02",
+                marker="s",
+                lw=1.35,
+                ms=3.4,
+                zorder=2,
             )
-            diagnostic_ax.axhline(COMMON_TR, color="#d95f02", ls=":", lw=1.0, zorder=1.6)
-            diagnostic_ax.axhline(COMMON_TM, color="#7570b3", ls=":", lw=1.0, zorder=1.6)
+            diagnostic_ax.plot(
+                x,
+                dr,
+                color="#7570b3",
+                marker="^",
+                lw=1.35,
+                ms=3.5,
+                ls="--",
+                zorder=2,
+            )
+            diagnostic_ax.axhline(COMMON_TI, color="#d95f02", ls=":", lw=1.0, zorder=1.6)
+            diagnostic_ax.axhline(COMMON_TD, color="#7570b3", ls=":", lw=1.0, zorder=1.6)
             if index == 0:
                 diagnostic_ax.annotate(
-                    r"$t_R{=}0.3$",
-                    xy=(0.081, COMMON_TR),
+                    r"$t_I{=}0.3$",
+                    xy=(0.081, COMMON_TI),
                     xytext=(0, 1.6),
                     textcoords="offset points",
                     ha="right",
@@ -148,8 +165,8 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
                     color="#d95f02",
                 )
                 diagnostic_ax.annotate(
-                    r"$t_M{=}0.95$",
-                    xy=(0.081, COMMON_TM),
+                    r"$t_D{=}0.95$",
+                    xy=(0.081, COMMON_TD),
                     xytext=(0, -1.6),
                     textcoords="offset points",
                     ha="right",
@@ -161,13 +178,15 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
             score_ax.set_title(f"({chr(97 + index)}) {task}", loc="left", fontweight="semibold")
             if index % 4 == 0:
                 score_ax.set_ylabel("Planning\nsuccess rate (%)")
-                diagnostic_ax.set_ylabel("Relative ATR\n/ SMPR")
+                diagnostic_ax.set_ylabel("Relative IR\n/ DR")
             score_span = [*score_lo, *score_hi, clean_base]
             score_ax.set_ylim(min(score_span) - 5.0, max(score_span) + 5.0)
             score_ax.tick_params(axis="x", labelbottom=False, length=0)
-            max_atr = max(atr)
-            diagnostic_ax.set_ylim(-0.05, max(1.03, max_atr + 0.1))
-            diagnostic_ax.set_yticks([0, 0.5, 1.0] + ([1.5] if max_atr > 1.25 else []))
+            max_ir_relative = max(ir_relative)
+            diagnostic_ax.set_ylim(-0.05, max(1.03, max_ir_relative + 0.1))
+            diagnostic_ax.set_yticks(
+                [0, 0.5, 1.0] + ([1.5] if max_ir_relative > 1.25 else [])
+            )
             diagnostic_ax.set_xlim(-0.003, 0.083)
             diagnostic_ax.set_xticks([0.00, 0.02, 0.04, 0.06, 0.08])
             diagnostic_ax.set_xlabel(r"$\sigma_{\max}^{\mathrm{train}}$", labelpad=1.5)
@@ -187,8 +206,8 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
                 ms=3.6,
                 label=r"Success rate ($\sigma_{\rm eval}=0.08$)",
             ),
-            Line2D([], [], color="#d95f02", marker="s", lw=1.35, ms=3.4, label=r"Relative ATR ($\downarrow$)"),
-            Line2D([], [], color="#7570b3", marker="^", lw=1.35, ms=3.5, ls="--", label=r"SMPR ($\uparrow$)"),
+            Line2D([], [], color="#d95f02", marker="s", lw=1.35, ms=3.4, label=r"Relative IR ($\downarrow$)"),
+            Line2D([], [], color="#7570b3", marker="^", lw=1.35, ms=3.5, ls="--", label=r"DR ($\uparrow$)"),
             Line2D([], [], color="#888888", ls="--", lw=0.9, label="Unaugmented baseline"),
         ]
         fig.legend(

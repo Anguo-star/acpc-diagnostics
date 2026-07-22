@@ -11,13 +11,24 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA_DIR = ROOT / "assets" / "paper1_data"
 CANONICAL_3072 = DATA_DIR / "canonical_evals_20260517.json"
-DEFAULT_DATA_ROOT = Path("/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll")
+
+
+def _default_data_root() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
+
+
+DEFAULT_DATA_ROOT = _default_data_root()
 DEFAULT_OUT_DIR = DATA_DIR / "training_seed_eval_manifests"
 SEEDS = (3072, 3073, 3074)
 STD_KEYS = ("0.0", "0.01", "0.02", "0.03", "0.04", "0.05", "0.06", "0.07", "0.08")
@@ -147,6 +158,11 @@ def main() -> None:
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--seeds", nargs="+", type=int, default=list(SEEDS))
     args = parser.parse_args()
+    if args.data_root is None:
+        parser.error(
+            "--data-root is required unless PAPER1_DATA_ROOT, DATA_ROOT, "
+            "or STABLEWM_HOME is set"
+        )
     args.out_dir.mkdir(parents=True, exist_ok=True)
     for seed in args.seeds:
         payload = build(seed, args.data_root)

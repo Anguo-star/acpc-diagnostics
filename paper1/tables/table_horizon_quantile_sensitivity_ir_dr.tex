@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\caption{Horizon and quantile sensitivity of the IR reduction at fixed evaluation noise $\sigma=0.08$. Each entry is the median, over the three training runs, of the ratio between the IR of the checkpoint trained at the highest augmentation level ($\stdmax{}=0.08$) and that of the unaugmented checkpoint; lower means a larger reduction. These values are descriptive and do not retune any threshold.}
+\label{tab:horizon-quantile-sensitivity}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lccccccc}
+\toprule
+& \multicolumn{4}{c}{$q=0.90$ by horizon} & \multicolumn{3}{c}{$H=8$ by quantile} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-8}
+Task & H1 & H2 & H4 & H8 & q80 & q90 & q95 \\
+\midrule
+TwoRoom & 0.05 & 0.04 & 0.05 & 0.06 & 0.06 & 0.06 & 0.06 \\
+PushT & 0.06 & 0.07 & 0.06 & 0.09 & 0.07 & 0.09 & 0.09 \\
+Reacher & 0.02 & 0.03 & 0.03 & 0.02 & 0.02 & 0.02 & 0.02 \\
+Cube & 0.04 & 0.03 & 0.04 & 0.04 & 0.03 & 0.04 & 0.04 \\
+\bottomrule
+\end{tabular}
+\end{table}

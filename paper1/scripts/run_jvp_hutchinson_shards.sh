@@ -2,7 +2,8 @@
 set -euo pipefail
 
 source_dir="paper1/results/remediation_phase1_jvp_sources"
-model_base="/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll"
+model_base="${PAPER1_DATA_ROOT:-${DATA_ROOT:-${STABLEWM_HOME:-}}}"
+: "${model_base:?Set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root}"
 diagnostic_home="${PAPER1_DIAGNOSTIC_HOME:-/tmp/paper1_swm_home}"
 timeout_seconds="${PAPER1_JVP_TIMEOUT_SECONDS:-7200}"
 native_threads="${PAPER1_DIAGNOSTIC_THREADS:-2}"

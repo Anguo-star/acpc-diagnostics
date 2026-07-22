@@ -1,24 +1,154 @@
-# ACPC Diagnostics
-### Action-conditioned predictive diagnostics for JEPA world models (paper companion fork of LeWorldModel)
+# Diagnosing JEPA World Models with Action-Conditioned Predictive Consistency
 
-This repository is a fork of [LeWorldModel](https://github.com/lucas-maes/le-wm), extended with the ACPC/Gaussian-noise robustness diagnostics, evaluation artifacts, and scripts used by the companion diagnostic study. The original LeWM model, citation, and upstream links are retained below for attribution.
+Official code and released artifacts for ACPC diagnostics, built on
+[LeWorldModel](https://github.com/lucas-maes/le-wm) (LeWM).
 
-[Lucas Maes*](https://x.com/lucasmaes_), [Quentin Le Lidec*](https://quentinll.github.io/), [Damien Scieur](https://scholar.google.com/citations?user=hNscQzgAAAAJ&hl=fr), [Yann LeCun](https://yann.lecun.com/) and [Randall Balestriero](https://randallbalestriero.github.io/)
+Action-Conditioned Predictive Consistency (ACPC) encodes a clean history and
+a state-preserving visual perturbation of that history, rolls both
+representations forward under the same action sequence, and measures the
+distance between their predicted futures. The checkpoint-level screen uses
+two complementary summaries:
 
-**Abstract:** Joint Embedding Predictive Architectures (JEPAs) offer a compelling framework for learning world models in compact latent spaces, yet existing methods remain fragile, relying on complex multi-term losses, exponential moving averages, pretrained encoders, or auxiliary supervision to avoid representation collapse. In this work, we introduce LeWorldModel (LeWM), the first JEPA that trains stably end-to-end from raw pixels using only two loss terms: a next-embedding prediction loss and a regularizer enforcing Gaussian-distributed latent embeddings. This reduces tunable loss hyperparameters from six to one compared to the only existing end-to-end alternative. With ~15M parameters trainable on a single GPU in a few hours, LeWM plans up to 48× faster than foundation-model-based world models while remaining competitive across diverse 2D and 3D control tasks. Beyond control, we show that LeWM's latent space encodes meaningful physical structure through probing of physical quantities. Surprise evaluation confirms that the model reliably detects physically implausible events.
+- **Invariance Radius (IR; lower is better):** an upper-tail summary of
+  normalized same-history ACPC.
+- **Distinction Rate (DR; higher is better):** the fraction of eligible nearby
+  different-state-coordinate-label pairs whose rollout separation exceeds
+  raw IR by a fixed margin.
 
-<p align="center">
-   <b>[ <a href="https://arxiv.org/pdf/2603.19312v1">Paper</a> | <a href="https://drive.google.com/drive/folders/1r31os0d4-rR0mdHc7OlY_e5nh3XT4r4e?usp=sharing">Checkpoints</a> | <a href="https://huggingface.co/collections/quentinll/lewm">Data</a> | <a href="https://le-wm.github.io/">Website</a> ]</b>
-</p>
+A checkpoint passes the screen only when both conditions hold. This is a
+diagnostic screen for a specified visual shift and state-coordinate labeling;
+it is not a robustness certification.
 
-<br>
+## Repository scope
 
-<p align="center">
-  <img src="assets/lewm.gif" width="80%">
-</p>
+This release contains:
 
-If you find this code useful, please reference it in your paper:
+- the LeWM model and the Paper 1 Gaussian-augmentation training path:
+  `jepa.py`, `module.py`, `train.py`, and `config/train/`;
+- PLDM baseline training with the same augmentation path: `train_pldm.py`;
+- clean and corrupted evaluation: `eval.py` and `config/eval/`;
+- ACPC measurement and audit tools under `tools/`;
+- frozen protocols and machine-readable results under `paper1/config/` and
+  `paper1/results/`;
+- deterministic figure/table builders under `paper1/scripts/`;
+- released figures and supporting artifacts under `assets/paper1_figs/` and
+  `assets/paper1_data/`.
+
+The manuscript source and arXiv packaging files are intentionally excluded
+from this code release. See [DATA_MANIFEST.md](DATA_MANIFEST.md) for the
+released evidence boundary and [paper1/scripts/README.md](paper1/scripts/README.md)
+for the current dependency graph.
+
+## Installation
+
+Python 3.10 is recommended.
+
+```bash
+uv venv --python=3.10
+source .venv/bin/activate
+uv pip install -r requirements.txt
 ```
+
+## Data
+
+Download the LeWM HDF5 datasets from the
+[Hugging Face collection](https://huggingface.co/collections/quentinll/lewm),
+then place the extracted `.h5` files in either of these supported layouts:
+
+```text
+$STABLEWM_HOME/<dataset>.h5
+$STABLEWM_HOME/datasets/<dataset>.h5
+```
+
+For example:
+
+```bash
+export STABLEWM_HOME=/path/to/stable-worldmodel-data
+```
+
+The four Paper 1 task configs are:
+
+| Task | Hydra data config | HDF5 dataset name |
+|---|---|---|
+| PushT | `data=pusht` | `pusht_expert_train` |
+| TwoRoom | `data=tworoom` | `tworoom` |
+| Reacher | `data=dmc` | `reacher` |
+| Cube | `data=ogb` | `ogbench/cube_single_expert` |
+
+## Training
+
+The default config reproduces the 10-epoch Paper 1 schedule. A clean LeWM run
+and a Gaussian-augmented run can be launched as follows:
+
+```bash
+python train.py data=pusht seed=3072 \
+  output_model_name=pusht_lewm_baseline_seed3072
+
+python train.py data=pusht seed=3072 \
+  output_model_name=pusht_lewm_noise_0to008_p1_seed3072 \
+  image_noise.std_min=0.0 image_noise.std_max=0.08 \
+  image_noise.noise_prob=1.0
+```
+
+`image_noise.std_min` and `std_max` are expressed in display-pixel `[0,1]`
+units and are sampled independently per frame. Set both to zero for the clean
+baseline. See [BASELINES.md](BASELINES.md) for the PLDM protocol.
+
+## Evaluation
+
+The `policy` value is the checkpoint path relative to `$STABLEWM_HOME`,
+without the `_object.ckpt` suffix. Corruption can be applied to the observed
+history only or to both history and goal:
+
+```bash
+python eval.py --config-name=pusht.yaml \
+  policy=pusht_lewm_noise_0to008_p1_seed3072/pusht_lewm_noise_0to008_p1_seed3072_epoch_10 \
+  eval.corruption.type=gaussian_noise \
+  eval.corruption.std=0.08 \
+  eval.corruption.apply_to='[pixels]'
+```
+
+`gaussian_noise`, `gaussian_blur`, and downscale/upscale `resize` are
+supported. The committed evaluation configs use `eval.save_video=false` for
+numerical sweeps; enable it explicitly when videos are needed.
+
+## Rebuild the released displays
+
+The following commands are CPU-only and rebuild the current ACPC/IR/DR
+submission assets from committed inputs:
+
+```bash
+python -m paper1.scripts.plot_acpc_ir_dr_overview
+python -m paper1.scripts.plot_full_sweep_diagnostics
+python -m paper1.scripts.build_future_drift_reader_display
+python -m paper1.scripts.cross_task_selective_rule
+python -m paper1.scripts.plot_pldm_sweep_diagnostics
+python -m paper1.scripts.build_cross_stressor_ir_dr_comparison
+python -m paper1.scripts.build_acpc_submission_assets
+python -m paper1.scripts.plot_gaussian_sensitivity_mechanism
+```
+
+The three real PushT images used in Figure 1 are already committed. To
+re-extract them from the original dataset and verify their frozen pixel
+hashes, run:
+
+```bash
+python -m paper1.scripts.build_acpc_overview_inputs \
+  --h5 /path/to/pusht_expert_train.h5
+python -m paper1.scripts.plot_acpc_ir_dr_overview
+```
+
+## Upstream LeWorldModel
+
+This repository retains the LeWM architecture and training objective from
+the original project. Environment management, planning, and evaluation use
+[stable-worldmodel](https://github.com/galilai-group/stable-worldmodel), and
+training utilities use
+[stable-pretraining](https://github.com/galilai-group/stable-pretraining).
+
+Please also cite LeWM when using the underlying model:
+
+```bibtex
 @article{maes_lelidec2026lewm,
   title={LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels},
   author={Maes, Lucas and Le Lidec, Quentin and Scieur, Damien and LeCun, Yann and Balestriero, Randall},
@@ -26,163 +156,3 @@ If you find this code useful, please reference it in your paper:
   year={2026}
 }
 ```
-
-## Using the code
-This codebase builds on [stable-worldmodel](https://github.com/galilai-group/stable-worldmodel) for environment management, planning, and evaluation, and [stable-pretraining](https://github.com/galilai-group/stable-pretraining) for training. Together they reduce this repository to its core contribution: the model architecture and training objective.
-
-## Paper 1 Reproduction
-
-This branch also contains the code-facing Paper 1 robustness study release:
-
-- canonical result artifacts: `assets/paper1_data/`
-- generated reference figures: `assets/paper1_figs/`
-- training, eval, and diagnostics scripts: `run_trainer.sh`, `eval.py`, and `tools/`
-- deterministic figure/table rebuild pipeline: `paper1/scripts/`
-  (documented in `paper1/scripts/README.md`), frozen protocol contracts in
-  `paper1/config/`, and the curated machine-readable inputs in
-  `paper1/results/`
-- unseen-perturbation reproduction launchers:
-  `run_paper1_unseen_origin_vs_std008_eval.sh`,
-  `run_paper1_unseen_origin_vs_std008_seeded.sh`, and
-  `run_paper1_unseen_phase0_acpc_subset.sh`
-
-The manuscript source, paper-facing documentation, and arXiv packaging files
-are intentionally not included in this public code branch.
-
-**Installation:**
-```bash
-uv venv --python=3.10
-source .venv/bin/activate
-uv pip install -r requirements.txt
-```
-
-**Rebuild the summary figures and tables (CPU-only):**
-```bash
-python -m paper1.scripts.build_future_drift_reader_display
-python -m paper1.scripts.cross_task_selective_rule
-python -m paper1.scripts.build_cross_stressor_selective_transfer
-python -m paper1.scripts.build_acpc_submission_assets
-```
-Artifact provenance (sources, seeds, and hashes) is documented in
-`DATA_MANIFEST.md`.
-
-**Unseen perturbation eval reproduction:**
-```bash
-export DATA_ROOT=/path/to/world_model/quentinll
-
-# Seed-specific std=0.0 vs std=0.08 strongest-only blur/resize eval.
-TRAIN_SEED=3073 DRY_RUN=1 bash run_paper1_unseen_origin_vs_std008_seeded.sh
-TRAIN_SEED=3074 DRY_RUN=1 bash run_paper1_unseen_origin_vs_std008_seeded.sh
-
-# After running real eval jobs, rebuild the compact review artifact.
-python -m tools.build_paper1_unseen_eval_artifact \
-  --manifest assets/paper1_data/unseen_origin_vs_std008_strongest_s3073_manifest.json \
-  --out assets/paper1_data/unseen_origin_vs_std008_strongest_s3073.json \
-  --schema-out assets/paper1_data/unseen_origin_vs_std008_strongest_s3073.schema.json \
-  --root "$DATA_ROOT" \
-  --allow-missing
-```
-
-**Representative unseen Phase-0 ACPC subset:**
-```bash
-export DATA_ROOT=/path/to/world_model/quentinll
-DRY_RUN=1 bash run_paper1_unseen_phase0_acpc_subset.sh
-
-# Real run, then rebuild the joined summary artifact.
-bash run_paper1_unseen_phase0_acpc_subset.sh
-python -m tools.build_paper1_unseen_phase0_acpc_subset \
-  --raw-dir assets/paper1_data/unseen_phase0_acpc_subset_raw \
-  --out assets/paper1_data/unseen_phase0_acpc_subset.json \
-  --schema-out assets/paper1_data/unseen_phase0_acpc_subset.schema.json \
-  --seeds 3073 3074
-```
-
-## Data
-
-Datasets use the HDF5 format for fast loading. Download the data from [HuggingFace](https://huggingface.co/collections/quentinll/lewm) and decompress with:
-
-```bash
-tar --zstd -xvf archive.tar.zst
-```
-
-Place the extracted `.h5` files under `$STABLEWM_HOME`. Set it explicitly:
-```bash
-export STABLEWM_HOME=/path/to/your/storage
-```
-
-Dataset names are specified without the `.h5` extension. For example, `config/train/data/pusht.yaml` references `pusht_expert_train`, which resolves to `$STABLEWM_HOME/pusht_expert_train.h5`.
-
-## Training
-
-`jepa.py` contains the PyTorch implementation of LeWM. Training is configured via [Hydra](https://hydra.cc/) config files under `config/train/`.
-
-Before training, set your WandB `entity` and `project` in `config/train/lewm.yaml`:
-```yaml
-wandb:
-  config:
-    entity: your_entity
-    project: your_project
-```
-
-To launch training:
-```bash
-python train.py data=pusht
-```
-
-Checkpoints are saved to `$STABLEWM_HOME` upon completion.
-
-For baseline scripts, see the stable-worldmodel [scripts](https://github.com/galilai-group/stable-worldmodel/tree/main/scripts/train) folder.
-
-## Planning
-
-Evaluation configs live under `config/eval/`. Set the `policy` field to the checkpoint path **relative to `$STABLEWM_HOME`**, without the `_object.ckpt` suffix:
-
-```bash
-# ✓ correct
-python eval.py --config-name=pusht.yaml policy=pusht/lewm
-
-# ✗ incorrect
-python eval.py --config-name=pusht.yaml policy=pusht/lewm_object.ckpt
-```
-
-## Pretrained Checkpoints
-
-Pre-trained checkpoints are available on [Google Drive](https://drive.google.com/drive/folders/1r31os0d4-rR0mdHc7OlY_e5nh3XT4r4e). Download the checkpoint archive and place the extracted files under `$STABLEWM_HOME/`.
-
-<div align="center">
-
-| Method | two-room | pusht | cube | reacher |
-|:---:|:---:|:---:|:---:|:---:|
-| pldm | ✓ | ✓ | ✓ | ✓ |
-| lejepa | ✓ | ✓ | ✓ | ✓ |
-| ivl | ✓ | ✓ | ✓ | — |
-| iql | ✓ | ✓ | ✓ | — |
-| gcbc | ✓ | ✓ | ✓ | — |
-| dinowm | ✓ | ✓ | — | — |
-| dinowm_noprop | ✓ | ✓ | ✓ | ✓ |
-
-</div>
-
-## Loading a checkpoint
-
-Each tar archive contains two files per checkpoint:
-- `<name>_object.ckpt` — a serialized Python object for convenient loading; this is what `eval.py` and the `stable_worldmodel` API use
-- `<name>_weight.ckpt` — a weights-only checkpoint (`state_dict`) for cases where you want to load weights into your own model instance
-
-To load the object checkpoint via the `stable_worldmodel` API:
-
-```python
-import stable_worldmodel as swm
-
-# Load the cost model (for MPC)
-cost = swm.policy.AutoCostModel('pusht/lewm')
-```
-
-This function accepts:
-- `run_name` — checkpoint path **relative to `$STABLEWM_HOME`**, without the `_object.ckpt` suffix
-- `cache_dir` — optional override for the checkpoint root (defaults to `$STABLEWM_HOME`)
-
-The returned module is in `eval` mode with its PyTorch weights accessible via `.state_dict()`.
-
-## Contact & Contributions
-Feel free to open [issues](https://github.com/lucas-maes/le-wm/issues)! For questions or collaborations, please contact `lucas.maes@mila.quebec`

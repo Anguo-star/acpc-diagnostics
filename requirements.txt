@@ -1,21 +1,28 @@
 # Base training/eval stack used by this repo.
 stable-worldmodel[train,env]
+stable-pretraining
 
 # Direct imports used by the Paper 1 training, eval, and diagnostics scripts.
 einops
 gymnasium
+h5py
+hdf5plugin
 hydra-core
+jsonschema
 lightning
 loguru
+mujoco
 numpy
 omegaconf
 pandas
+Pillow
 pre-commit
+PyYAML
 scikit-learn
+scipy
 torch
 torchvision
 transformers
 umap-learn
 matplotlib
-swanlab
 wandb

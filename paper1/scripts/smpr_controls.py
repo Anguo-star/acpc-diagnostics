@@ -29,10 +29,25 @@ from utils import resolve_h5_dataset_path
 ROOT = Path(__file__).resolve().parents[2]
 TASKS = ("TwoRoom", "PushT")
 STD_KEYS = ("0.0", "0.08")
-MODEL_ROOTS = {
-    "TwoRoom": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms",
-    "PushT": "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht",
-}
+
+
+def _default_data_root() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
+
+
+def _model_roots(data_root: Path) -> dict[str, str]:
+    return {
+        "TwoRoom": str(data_root / "lewm-tworooms"),
+        "PushT": str(data_root / "lewm-pusht"),
+    }
+
+
+_ENV_DATA_ROOT = _default_data_root()
+MODEL_ROOTS = _model_roots(_ENV_DATA_ROOT) if _ENV_DATA_ROOT is not None else {}
 FROZEN_PROTOCOL_SHA256 = (
     "edcb801c3da388e673c9b55d706a558aa01da7a281fc151e52e1cda566045a21"
 )
@@ -1026,6 +1041,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--embedding-space", choices=("raw", "normalized"), default="normalized")
     parser.add_argument("--device", default="cuda")
     parser.add_argument(
+        "--data-root",
+        type=Path,
+        default=_default_data_root(),
+        help="dataset root (or set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME)",
+    )
+    parser.add_argument(
         "--out-sensitivity",
         type=Path,
         default=ROOT / "assets/paper1_data/smpr_sensitivity_v2.json",
@@ -1059,7 +1080,15 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> int:
-    args = build_parser().parse_args()
+    parser = build_parser()
+    args = parser.parse_args()
+    if args.data_root is None:
+        parser.error(
+            "--data-root is required unless PAPER1_DATA_ROOT, DATA_ROOT, "
+            "or STABLEWM_HOME is set"
+        )
+    global MODEL_ROOTS
+    MODEL_ROOTS = _model_roots(args.data_root)
     _require(args.n_sequences >= 2, "n_sequences must be at least two")
     protocol_bytes = args.protocol.read_bytes()
     _require(hashlib.sha256(protocol_bytes).hexdigest() == FROZEN_PROTOCOL_SHA256, "frozen protocol hash mismatch")

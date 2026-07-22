@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{IR--DR scores under blur and resize. For each task, thresholds are chosen on the other three Gaussian-noise tasks and then fixed; each pair compares the $\stdmax{}=0.08$ checkpoint with its unaugmented counterpart. ``Discordant'' counts pairs whose score-change sign disagrees with the predefined success criterion (\Cref{sec:exp-cross-stressor}).}
+\label{tab:cross-stressor-ir-dr-summary}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lrrrrr}
+\toprule
+Visual shift & Pairs & BA & Precision / recall & Spearman & Discordant \\
+\midrule
+All pairs & 24 & 0.889 & 0.882 / 1.000 & 0.835 & 2 \\
+Blur & 12 & 0.875 & 0.889 / 1.000 & 0.873 & 1 \\
+Resize & 12 & 0.900 & 0.875 / 1.000 & 0.746 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}

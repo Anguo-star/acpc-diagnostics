@@ -13,7 +13,8 @@ esac
 protocol="paper1/config/paired_multiseverity_protocol_v1.json"
 protocol_hash_file="paper1/config/paired_multiseverity_protocol_v1.sha256"
 raw_root="paper1/results/multiseverity_v1/raw"
-model_base="${PAPER1_DATA_ROOT:-/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll}"
+model_base="${PAPER1_DATA_ROOT:-${DATA_ROOT:-${STABLEWM_HOME:-}}}"
+: "${model_base:?Set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root}"
 diagnostic_home="${PAPER1_DIAGNOSTIC_HOME:-/tmp/paper1_swm_home}"
 gpu="${PAPER1_DIAGNOSTIC_GPU:-0}"
 native_threads="${PAPER1_DIAGNOSTIC_THREADS:-2}"
@@ -157,4 +158,3 @@ else
     done
   done
 fi
-

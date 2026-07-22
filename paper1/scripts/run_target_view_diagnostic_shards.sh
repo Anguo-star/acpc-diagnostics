@@ -8,7 +8,8 @@ fi
 
 stage="$1"
 diagnostic_home="${PAPER1_DIAGNOSTIC_HOME:-/tmp/paper1_swm_home}"
-model_base="/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll"
+model_base="${PAPER1_DATA_ROOT:-${DATA_ROOT:-${STABLEWM_HOME:-}}}"
+: "${model_base:?Set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root}"
 source_base="paper1/results/remediation_phase2_external_sources/target_view"
 manifest="assets/paper1_data/target_view_diagnostic_manifest_v1.json"
 runner_manifest_dir="assets/paper1_data/target_view_runner_manifests"

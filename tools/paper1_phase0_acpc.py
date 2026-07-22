@@ -71,7 +71,11 @@ def _ensure_runtime_deps() -> None:
         horizon_weighted_stacked_l2 as horizon_weighted_stacked_l2_fn,
         per_anchor_clean_transition_scale as per_anchor_clean_transition_scale_fn,
     )
-    from tools.repr_analysis.analyze_repr import (
+    from tools.paper1_model_io import (
+        _autoregressive_rollout as autoregressive_rollout_fn,
+        _clean_nn_dist as clean_nn_dist_fn,
+        _open_loop_target_shift as open_loop_target_shift_fn,
+        _shift_stats as shift_stats_fn,
         encode_sequences as encode_sequences_fn,
         get_embedding_space as get_embedding_space_fn,
         get_model_spaces as get_model_spaces_fn,
@@ -80,12 +84,6 @@ def _ensure_runtime_deps() -> None:
         load_model as load_model_fn,
         sample_random_future_actions as sample_random_future_actions_fn,
         spearman_corr as spearman_corr_fn,
-    )
-    from tools.repr_analysis.predictor_sensitivity import (
-        _autoregressive_rollout as autoregressive_rollout_fn,
-        _clean_nn_dist as clean_nn_dist_fn,
-        _open_loop_target_shift as open_loop_target_shift_fn,
-        _shift_stats as shift_stats_fn,
     )
     from utils import make_eval_corruption as make_eval_corruption_fn
 

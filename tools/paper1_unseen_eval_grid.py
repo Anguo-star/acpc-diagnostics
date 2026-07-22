@@ -6,12 +6,12 @@ eval primitive with ``skip_train=1`` and an explicit ``ckpt_override``.
 
 Example dry run::
 
-    DATA_ROOT=/home/ag/dataset/ag_data/data/world_model/quentinll \
+    DATA_ROOT=/path/to/world_model \
     python -m tools.paper1_unseen_eval_grid --dry-run
 
 Example eval-only pilot::
 
-    DATA_ROOT=/home/ag/dataset/ag_data/data/world_model/quentinll \
+    DATA_ROOT=/path/to/world_model \
     python -m tools.paper1_unseen_eval_grid --only-missing
 
 Add ``--diagnostics`` only after the closed-loop pilot shows a signal worth

@@ -1,0 +1,28 @@
+\begin{table}[t]
+\centering
+\caption{Out-of-group MAE (16-fold leave-one-trajectory-group-out) for predicting the error drift $d$ on the unaugmented checkpoints; lower is better, model definitions in \Cref{sec:exp-target-aligned}. ``Selected control'' is the destroyed-action control chosen by the per-cell oracle; ``paired wins'' counts the folds (of 16) in which Base+ACPC$_8$ beats Base+Control$_8$.}
+\label{tab:target-aligned-acpc-absolute}
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{lrrrrlc}
+\toprule
+Task & \shortstack{run\\(seed)} & Base & \shortstack{Base\\$+$Control$_8$} & \shortstack{Base\\$+$ACPC$_8$} & \shortstack{selected\\control} & \shortstack{paired\\wins} \\
+\midrule
+TwoRoom & 3072 & 2.535 & 2.099 & 0.755 & shuffled actions & 15/16 \\
+TwoRoom & 3073 & 2.336 & 2.015 & 0.866 & shuffled actions & 15/16 \\
+TwoRoom & 3074 & 2.075 & 1.911 & 1.006 & swapped actions & 13/16 \\
+\addlinespace[1pt]
+PushT & 3072 & 2.068 & 2.068 & 1.762 & shuffled actions & 11/16 \\
+PushT & 3073 & 1.969 & 2.008 & 1.315 & zeroed actions & 13/16 \\
+PushT & 3074 & 1.909 & 1.833 & 1.439 & zeroed actions & 13/16 \\
+\addlinespace[1pt]
+Reacher & 3072 & 1.358 & 1.097 & 0.288 & shuffled actions & 16/16 \\
+Reacher & 3073 & 1.399 & 0.793 & 0.247 & shuffled actions & 16/16 \\
+Reacher & 3074 & 1.409 & 1.136 & 0.263 & shuffled actions & 16/16 \\
+\addlinespace[1pt]
+Cube & 3072 & 1.171 & 1.037 & 0.489 & zeroed actions & 14/16 \\
+Cube & 3073 & 1.416 & 1.212 & 0.500 & zeroed actions & 14/16 \\
+Cube & 3074 & 1.061 & 1.008 & 0.552 & shuffled actions & 14/16 \\
+\bottomrule
+\end{tabular}
+\end{table}

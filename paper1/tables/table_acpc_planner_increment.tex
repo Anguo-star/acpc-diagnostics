@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\caption{Reduction in prediction MAE after adding candidate-specific five-step ACPC. Models are fitted on three tasks and evaluated on the remaining task; higher is better.}
+\label{tab:acpc-planner-increment}
+\scriptsize
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabularx}{\linewidth}{Xcc}
+\toprule
+Prediction target & \shortstack{MAE reduction (\%) $\uparrow$\\mean $\pm$ run-to-run std. dev.} & \shortstack{Task--run evaluations\\improved (/12)} \\
+\midrule
+Largest candidate-cost change in the shared pool & 7.9 $\pm$ 1.4 & 8/12 \\
+Adaptive-CEM decision regret & 15.2 $\pm$ 2.0 & 12/12 \\
+RMS change in the first planned action & 1.1 $\pm$ 0.5 & 10/12 \\
+\bottomrule
+\end{tabularx}
+\vspace{2pt}
+
+\parbox{0.98\linewidth}{\scriptsize MAE is computed on the $\log(1+\mathrm{target})$ scale. The four evaluation tasks are weighted equally within each training run; entries then report the mean and standard deviation across three runs. The final column counts the 12 task--run evaluations separately.}
+\end{table}

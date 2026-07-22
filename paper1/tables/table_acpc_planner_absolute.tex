@@ -1,0 +1,21 @@
+\begin{table}[H]
+\centering
+\caption{CEM decision statistics at Gaussian perturbation severity 0.08. Values are mean $\pm$ standard deviation across training runs after averaging histories within each run. Reduced-budget rows use 100 histories, $K=64$, top-8 elites, and eight CEM iterations; full-budget rows use the same 16 histories per task with $K=300$, top-30 elites, and 30 iterations. Regret uses the model's squared latent goal cost, not an environment success rate.}
+\label{tab:acpc-planner-absolute}
+\scriptsize
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{2}{c}{Best candidate unchanged} & \multicolumn{2}{c}{Reduced-budget regret} & \multicolumn{2}{c}{Full-budget regret} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Task & No aug. & $\sigma_{\max}{=}0.08$ & No aug. & $\sigma_{\max}{=}0.08$ & No aug. & $\sigma_{\max}{=}0.08$ \\
+\midrule
+TwoRoom & 0.13$\pm$0.03 & 0.93$\pm$0.02 & 203.81$\pm$9.97 & 8.47$\pm$2.75 & 224.97$\pm$30.56 & 1.75$\pm$1.44 \\
+PushT & 0.13$\pm$0.09 & 0.92$\pm$0.01 & 167.50$\pm$29.53 & 4.30$\pm$0.28 & 220.14$\pm$32.97 & 7.91$\pm$4.23 \\
+Reacher & 0.07$\pm$0.01 & 0.96$\pm$0.04 & 281.12$\pm$20.24 & 0.47$\pm$0.14 & 269.44$\pm$22.21 & 0.28$\pm$0.20 \\
+Cube & 0.02$\pm$0.02 & 0.92$\pm$0.03 & 255.72$\pm$12.28 & 1.31$\pm$0.11 & 265.03$\pm$28.08 & 0.63$\pm$0.22 \\
+\midrule
+Equal-task mean & 0.09$\pm$0.03 & 0.93$\pm$0.01 & 227.04$\pm$16.92 & 3.64$\pm$0.68 & 244.89$\pm$27.08 & 2.65$\pm$1.43 \\
+\bottomrule
+\end{tabular}
+\end{table}

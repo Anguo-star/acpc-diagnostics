@@ -28,7 +28,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from tools import paper1_phase0_acpc as phase0
-from tools.paper1_operational_decision_audit import load_trajectory_blocks
+from tools.paper1_trajectory_blocks import load_trajectory_blocks
 from tools.paper1_target_aligned_acpc import (
     SCHEMA_VERSION,
     candidate_response_metrics,

@@ -9,6 +9,7 @@ import hashlib
 import itertools
 import json
 import math
+import os
 import random
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -47,6 +48,14 @@ TASK_SLUG = {
     "Reacher": "reacher",
     "Cube": "cube",
 }
+
+
+def _default_data_root() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
 FAMILY_SPEC = {
     "gaussian_blur": {
         "row_name": "blur",
@@ -845,9 +854,8 @@ def main() -> int:
     parser.add_argument(
         "--data-root",
         type=Path,
-        default=Path(
-            "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll"
-        ),
+        default=_default_data_root(),
+        help="dataset root (or set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME)",
     )
     parser.add_argument("--raw-root", type=Path, default=DEFAULT_RAW_ROOT)
     parser.add_argument("--reference-root", type=Path, default=DEFAULT_REFERENCE_ROOT)
@@ -855,6 +863,11 @@ def main() -> int:
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--rows-out", type=Path, default=DEFAULT_ROWS_OUT)
     args = parser.parse_args()
+    if args.data_root is None:
+        parser.error(
+            "--data-root is required unless PAPER1_DATA_ROOT, DATA_ROOT, "
+            "or STABLEWM_HOME is set"
+        )
     payload = build(
         protocol_path=args.protocol,
         addendum_path=args.addendum,

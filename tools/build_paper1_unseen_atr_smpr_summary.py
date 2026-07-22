@@ -23,7 +23,6 @@ DEFAULT_SUBSET = DATA_DIR / "unseen_phase0_acpc_subset.json"
 DEFAULT_BLUR_SMPR = DATA_DIR / "semantic_task_grounded_margin_unseen_blur_lewm_three_seed.json"
 DEFAULT_RESIZE_SMPR = DATA_DIR / "semantic_task_grounded_margin_unseen_resize_lewm_three_seed.json"
 DEFAULT_OUT = DATA_DIR / "unseen_atr_smpr_summary_20260707.json"
-DEFAULT_MD_OUT = DATA_DIR / "unseen_atr_smpr_summary_20260707.md"
 STD_KEYS = ("0.0", "0.08")
 
 
@@ -259,7 +258,12 @@ def main() -> None:
     parser.add_argument("--blur-smpr", type=Path, default=DEFAULT_BLUR_SMPR)
     parser.add_argument("--resize-smpr", type=Path, default=DEFAULT_RESIZE_SMPR)
     parser.add_argument("--out", type=Path, default=DEFAULT_OUT)
-    parser.add_argument("--md-out", type=Path, default=DEFAULT_MD_OUT)
+    parser.add_argument(
+        "--md-out",
+        type=Path,
+        default=None,
+        help="Optional legacy ATR/SMPR Markdown summary path (JSON is the canonical output).",
+    )
     args = parser.parse_args()
     payload = build(
         subset_path=args.subset,

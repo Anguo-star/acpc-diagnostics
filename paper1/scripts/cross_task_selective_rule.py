@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate ATR+SMPR screening across threshold-selection/test task partitions."""
+"""Evaluate joint IR/DR screening across threshold-selection/test task partitions."""
 
 from __future__ import annotations
 
@@ -17,26 +17,27 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+from .ir_dr_compat import to_ir_dr
 from .utils_paper1_io import ROOT, SEEDS, TASKS, fnum, read_csv, write_csv
 
 
 DEFAULT_DIAGNOSTICS = ROOT / "paper1/results/full_sweep_diagnostics.csv"
-DEFAULT_ROWS = ROOT / "paper1/results/cross_task_atr_smpr_all_subsets_v1.csv"
-DEFAULT_PARAMS = ROOT / "paper1/results/cross_task_atr_smpr_all_subsets_params_v1.json"
-DEFAULT_SUMMARY = ROOT / "paper1/results/cross_task_atr_smpr_all_subsets_summary_v1.json"
-DEFAULT_TABLE = ROOT / "paper1/tables/table_cross_task_atr_smpr_all_subsets_v1.tex"
-DEFAULT_FIGURE = ROOT / "assets/paper1_figs/fig_cross_task_atr_smpr_source_coverage_v1.pdf"
+DEFAULT_ROWS = ROOT / "paper1/results/cross_task_ir_dr_all_subsets_v1.csv"
+DEFAULT_PARAMS = ROOT / "paper1/results/cross_task_ir_dr_all_subsets_params_v1.json"
+DEFAULT_SUMMARY = ROOT / "paper1/results/cross_task_ir_dr_all_subsets_summary_v1.json"
+DEFAULT_TABLE = ROOT / "paper1/tables/table_cross_task_ir_dr_all_subsets_v1.tex"
+DEFAULT_FIGURE = ROOT / "assets/paper1_figs/fig_cross_task_ir_dr_source_coverage_v1.pdf"
 
-TAU_ATR = (0.05, 0.075, 0.10, 0.15, 0.20, 0.30)
-TAU_SMPR = (0.80, 0.85, 0.90, 0.95)
+IR_THRESHOLDS = (0.05, 0.075, 0.10, 0.15, 0.20, 0.30)
+DR_THRESHOLDS = (0.80, 0.85, 0.90, 0.95)
 
 DETAIL_FIELDS = [
     "partition_id",
     "source_coverage",
     "source_tasks",
     "evaluation_tasks",
-    "tau_atr",
-    "tau_smpr",
+    "ir_threshold",
+    "dr_threshold",
     "task",
     "training_seed",
     "behavioral_start",
@@ -78,10 +79,10 @@ def _truth(row: dict[str, Any]) -> bool:
     return str(row.get("recovery_label", "")).lower() == "true"
 
 
-def _pred(row: dict[str, Any], tau_atr: float, tau_smpr: float) -> bool:
+def _pred(row: dict[str, Any], ir_threshold: float, dr_threshold: float) -> bool:
     return (
-        fnum(row["atr_normalized_q90"]) <= tau_atr
-        and fnum(row["smpr_delta010"]) >= tau_smpr
+        fnum(row["ir_relative_q90"]) <= ir_threshold
+        and fnum(row["dr_delta010"]) >= dr_threshold
     )
 
 
@@ -122,12 +123,14 @@ def _json_number(value: Any) -> float | int | None:
 
 
 def _block_eval(
-    rows: list[dict[str, Any]], tau_atr: float, tau_smpr: float
+    rows: list[dict[str, Any]], ir_threshold: float, dr_threshold: float
 ) -> dict[str, Any]:
     truth = [_truth(row) for row in rows]
-    pred = [_pred(row, tau_atr, tau_smpr) for row in rows]
+    pred = [_pred(row, ir_threshold, dr_threshold) for row in rows]
     behavioral_start = _start(rows, _truth)
-    predicted_start = _start(rows, lambda row: _pred(row, tau_atr, tau_smpr))
+    predicted_start = _start(
+        rows, lambda row: _pred(row, ir_threshold, dr_threshold)
+    )
 
     if behavioral_start is None and predicted_start is None:
         start_error = 0.0
@@ -193,24 +196,24 @@ def _block_eval(
 
 def _objective(
     blocks: dict[tuple[str, int], list[dict[str, Any]]],
-    tau_atr: float,
-    tau_smpr: float,
+    ir_threshold: float,
+    dr_threshold: float,
 ) -> tuple[float, int, int, float, float, float]:
     evaluations = [
-        _block_eval(rows, tau_atr, tau_smpr) for rows in blocks.values()
+        _block_eval(rows, ir_threshold, dr_threshold) for rows in blocks.values()
     ]
     return (
         _safe_mean(item["abs_start_error"] for item in evaluations),
         sum(item["false_early"] for item in evaluations),
         sum(item["false_late"] for item in evaluations),
         -_safe_mean(item["balanced_accuracy"] for item in evaluations),
-        tau_atr,
-        -tau_smpr,
+        ir_threshold,
+        -dr_threshold,
     )
 
 
 def _candidate_thresholds() -> Iterable[tuple[float, float]]:
-    return itertools.product(TAU_ATR, TAU_SMPR)
+    return itertools.product(IR_THRESHOLDS, DR_THRESHOLDS)
 
 
 def _task_set_text(tasks: Iterable[str]) -> str:
@@ -242,7 +245,7 @@ def _validate_input(
         raise ValueError(
             f"diagnostic grid mismatch: missing={missing[:8]}, extra={extra[:8]}"
         )
-    for field in ("atr_normalized_q90", "smpr_delta010", "recovery_label"):
+    for field in ("ir_relative_q90", "dr_delta010", "recovery_label"):
         if any(row.get(field, "") == "" for row in rows):
             raise ValueError(f"missing required field {field!r}")
 
@@ -275,6 +278,7 @@ def run_all_subsets(
     *,
     expected_seeds: Iterable[int] = SEEDS,
 ) -> tuple[list[dict[str, Any]], dict[str, Any], dict[str, Any]]:
+    rows = to_ir_dr(rows)
     seeds = tuple(int(seed) for seed in expected_seeds)
     _validate_input(rows, seeds)
     all_details: list[dict[str, Any]] = []
@@ -292,8 +296,8 @@ def run_all_subsets(
                 _candidate_thresholds(),
                 key=lambda threshold: _objective(source_blocks, *threshold),
             )
-            tau_atr, tau_smpr = best
-            objective = _objective(source_blocks, tau_atr, tau_smpr)
+            ir_threshold, dr_threshold = best
+            objective = _objective(source_blocks, ir_threshold, dr_threshold)
             partition_id = _partition_id(source)
             source_text = _task_set_text(source)
             evaluation_text = _task_set_text(evaluation)
@@ -305,11 +309,11 @@ def run_all_subsets(
                     "source_coverage": coverage,
                     "source_tasks": source_text,
                     "evaluation_tasks": evaluation_text,
-                    "tau_atr": tau_atr,
-                    "tau_smpr": tau_smpr,
+                    "ir_threshold": ir_threshold,
+                    "dr_threshold": dr_threshold,
                     "task": task,
                     "training_seed": seed,
-                    **_block_eval(block, tau_atr, tau_smpr),
+                    **_block_eval(block, ir_threshold, dr_threshold),
                 }
                 details.append(record)
                 all_details.append(record)
@@ -321,8 +325,8 @@ def run_all_subsets(
                     "source_coverage": coverage,
                     "source_tasks": list(source),
                     "evaluation_tasks": list(evaluation),
-                    "tau_atr": tau_atr,
-                    "tau_smpr": tau_smpr,
+                    "ir_threshold": ir_threshold,
+                    "dr_threshold": dr_threshold,
                     **partition_metrics,
                 }
             )
@@ -337,16 +341,16 @@ def run_all_subsets(
                     "source_task_seed_blocks": len(source_blocks),
                     "evaluation_task_seed_blocks": len(_blocks(evaluation_rows)),
                     "selected_thresholds": {
-                        "tau_atr": tau_atr,
-                        "tau_smpr": tau_smpr,
+                        "ir_threshold": ir_threshold,
+                        "dr_threshold": dr_threshold,
                     },
                     "selection_objective": {
                         "mean_abs_start_error": objective[0],
                         "false_early": objective[1],
                         "false_late": objective[2],
                         "negative_macro_balanced_accuracy": objective[3],
-                        "tau_atr_tiebreak": objective[4],
-                        "negative_tau_smpr_tiebreak": objective[5],
+                        "ir_threshold_tiebreak": objective[4],
+                        "negative_dr_threshold_tiebreak": objective[5],
                     },
                 }
             )
@@ -357,7 +361,8 @@ def run_all_subsets(
         task_means = _task_means(coverage_rows)
         splits = [item for item in partition_summaries if item["source_coverage"] == coverage]
         threshold_counts = Counter(
-            (float(item["tau_atr"]), float(item["tau_smpr"])) for item in splits
+            (float(item["ir_threshold"]), float(item["dr_threshold"]))
+            for item in splits
         )
         coverage_summaries.append(
             {
@@ -379,7 +384,11 @@ def run_all_subsets(
                     max(item["mean_abs_start_error"] for item in splits),
                 ],
                 "selected_threshold_counts": [
-                    {"tau_atr": key[0], "tau_smpr": key[1], "count": count}
+                    {
+                        "ir_threshold": key[0],
+                        "dr_threshold": key[1],
+                        "count": count,
+                    }
                     for key, count in sorted(threshold_counts.items())
                 ],
                 "evaluation_task_metrics": task_means,
@@ -387,29 +396,36 @@ def run_all_subsets(
         )
 
     params = {
-        "schema_version": "paper1-cross-task-selective-rule-params-1.0",
-        "rule": "ATR_rel <= tau_atr AND SMPR >= tau_smpr",
+        "schema_version": "paper1-cross-task-ir-dr-rule-params-1.0",
+        "rule": "IR_relative <= ir_threshold AND DR >= dr_threshold",
         "task_order": TASKS,
         "training_seeds": seeds,
         "checkpoint_grid": [f"{rho / 100:.2f}" for rho in range(9)],
-        "candidate_grid": {"tau_atr": TAU_ATR, "tau_smpr": TAU_SMPR},
+        "candidate_grid": {
+            "ir_threshold": IR_THRESHOLDS,
+            "dr_threshold": DR_THRESHOLDS,
+        },
         "diagnostic_fields": {
-            "atr": "horizon-v2 q90 relative to the no-augmentation checkpoint",
-            "smpr": "horizon-v2 q90 tube with strict normalized margin 0.10",
+            "ir_relative_q90": (
+                "horizon-v2 q90 IR relative to the no-augmentation checkpoint"
+            ),
+            "dr_delta010": (
+                "horizon-v2 q90 DR with strict normalized margin 0.10"
+            ),
         },
         "selection_objective_order": [
             "mean_abs_start_error",
             "false_early",
             "false_late",
             "negative_macro_balanced_accuracy",
-            "tau_atr",
-            "negative_tau_smpr",
+            "ir_threshold",
+            "negative_dr_threshold",
         ],
         "evaluation_outcomes_used_for_selection": False,
         "splits": split_params,
     }
     summary = {
-        "schema_version": "paper1-cross-task-selective-rule-summary-1.0",
+        "schema_version": "paper1-cross-task-ir-dr-rule-summary-1.0",
         "aggregation": (
             "mean over training-seed blocks within evaluation task; mean over eligible "
             "source subsets within coverage; equal mean over four evaluation tasks"
@@ -443,13 +459,13 @@ def write_table(summary: dict[str, Any], out: Path) -> None:
     lines = [
         r"\begin{table*}[t]",
         r"\centering",
-        r"\caption{Checkpoint screening with thresholds chosen on other tasks. Thresholds are selected on the threshold-selection tasks and applied unchanged to all test tasks. Metrics first average training runs within each test task and then weight tasks equally. Recovery-onset mismatch is measured in training-augmentation grid levels (one level is $0.01$ in $\stdmax{}$).}",
+        r"\caption{Joint IR/DR checkpoint screening with thresholds chosen on other tasks. Thresholds are selected on the threshold-selection tasks and applied unchanged to all test tasks. Metrics first average training runs within each test task and then weight tasks equally. Recovery-onset mismatch is measured in training-augmentation grid levels (one level is $0.01$ in $\stdmax{}$).}",
         r"\label{tab:cross-task-all-subsets}",
         r"\small",
         r"\setlength{\tabcolsep}{3.5pt}",
         r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}rrrrr}",
         r"\toprule",
-        r"Selection tasks & Test tasks & $t_R$ & $t_M$ & BA & P / R & \shortstack{Onset mismatch\\mean / max} \\",
+        r"Selection tasks & Test tasks & $t_I$ & $t_D$ & BA & P / R & \shortstack{Onset mismatch\\mean / max} \\",
         r"\midrule",
     ]
     for item in summary["partitions"]:
@@ -458,7 +474,7 @@ def write_table(summary: dict[str, Any], out: Path) -> None:
         mean_mismatch = item["mean_abs_start_error"] / grid_step
         max_mismatch = item["max_abs_start_error"] / grid_step
         lines.append(
-            f"{source} & {evaluation} & {item['tau_atr']:.3g} & {item['tau_smpr']:.2f} & "
+            f"{source} & {evaluation} & {item['ir_threshold']:.3g} & {item['dr_threshold']:.2f} & "
             f"{item['balanced_accuracy']:.3f} & {item['precision']:.3f} / {item['recall']:.3f} & "
             f"{mean_mismatch:.1f} / {max_mismatch:.1f} \\\\"
         )

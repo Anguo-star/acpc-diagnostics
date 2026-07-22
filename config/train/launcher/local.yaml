@@ -5,7 +5,6 @@ defaults:
   - override /hydra/launcher: basic
 
 wandb:
-  enabled: True
+  enabled: False
   config:
-    project: le-wm
-    entity: le-wm
+    project: acpc-diagnostics

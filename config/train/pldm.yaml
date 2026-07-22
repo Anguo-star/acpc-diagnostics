@@ -1,16 +1,12 @@
-# PLDM training config mirrored from upstream stable-worldmodel/scripts/train/
-# config/pldm.yaml, with three local additions:
-#   1. image_noise block (matches lewm.yaml convention) used by train_pldm.py.
-#   2. logger_backend / swanlab config (LeWM-style) so logging matches the
-#      rest of this repo.
-#   3. exp_name / subdir wiring for run naming.
+# PLDM training config mirrored from stable-worldmodel, with the same optional
+# input-side Gaussian augmentation used for the Paper 1 LeWM sweep.
 
 defaults:
   - _self_
   - launcher: local
-  - data: pusht_baseline           # override with `data=tworoom_baseline` etc.
+  - data: pusht                    # override with data=tworoom/reacher/cube
 
-output_model_name: ???             # required at CLI, e.g. pusht_pldm_noise_0to006_p1
+output_model_name: pldm
 exp_name: ${output_model_name}
 subdir: ${exp_name}
 
@@ -50,8 +46,8 @@ optimizer:
 # Matches the convention used by train.py / lewm.yaml — same code path
 # (utils.AddNormalizedGaussianNoise + get_img_noise_transform).
 # Override at CLI, e.g.:
-#   python train_pldm.py exp_name=pusht_pldm_noise_0to006_p1 \
-#     image_noise.std_max=0.006 image_noise.noise_prob=1.0
+#   python train_pldm.py output_model_name=pusht_pldm_noise_0to006_p1 \
+#     image_noise.std_max=0.06 image_noise.noise_prob=1.0
 image_noise:
   type: gaussian_noise
   std_min: 0.0
@@ -59,22 +55,10 @@ image_noise:
   noise_prob: 1.0
   apply_to_val: False
 
-# Logger (LeWM convention). The wandb section is preserved so that upstream's
-# `if cfg.wandb.enabled:` path also works if someone toggles backend.
-logger_backend: swanlab            # swanlab (default) or wandb
-swanlab:
-  enabled: True
-  config:
-    project: worldmodels
-    workspace: qunteam
-    experiment_name: ${exp_name}
-    logdir: logs/swanlab
-
 wandb:
-  enabled: True
+  enabled: False
   config:
-    entity: qun-team
-    project: worldmodels
+    project: acpc-diagnostics
     name: ${exp_name}
     id: ${subdir}
     resume: allow

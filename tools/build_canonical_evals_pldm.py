@@ -18,7 +18,7 @@ Conditions covered: clean, goal/pixels/pixels_goal at std ∈ {0.03, 0.05, 0.08}
 Run::
 
     python -m tools.build_canonical_evals_pldm \\
-        --root /home/ag/dataset/ag_data/data/world_model/quentinll \\
+        --root /path/to/world_model \\
         --out  assets/paper1_data/canonical_evals_pldm_<DATE>.json
 """
 from __future__ import annotations
@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import ast
 import json
+import os
 import re
 import statistics
 from pathlib import Path
@@ -62,6 +63,14 @@ CONDITIONS = [
 SEEDS = (42, 43, 44)
 
 _ARRAY_RE = re.compile(r"\b(?:np\.)?array\((?:[^()]|\([^()]*\))*\)", re.DOTALL)
+
+
+def _default_data_root() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
 
 
 def _parse_success_rate(metrics_path: Path) -> float:
@@ -204,7 +213,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--root",
-        default="/home/ag/dataset/ag_data/data/world_model/quentinll",
+        type=Path,
+        default=_default_data_root(),
         help="dataset root that contains lewm-{cube,pusht,reacher,tworooms}/",
     )
     ap.add_argument(
@@ -213,8 +223,10 @@ def main() -> None:
         help="output JSON path (relative to repo root unless absolute)",
     )
     args = ap.parse_args()
+    if args.root is None:
+        ap.error("--root is required unless PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME is set")
     repo_root = Path(__file__).resolve().parent.parent
-    root = Path(args.root)
+    root = args.root
     out_path = Path(args.out)
     if not out_path.is_absolute():
         out_path = repo_root / out_path

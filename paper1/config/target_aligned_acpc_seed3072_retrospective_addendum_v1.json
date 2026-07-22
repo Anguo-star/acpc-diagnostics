@@ -43,3 +43,5 @@
     "minimum_informative_block_fraction": 0.75,
     "concurrency": 1,
     "native_threads": 2
+  }
+}

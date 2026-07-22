@@ -1,0 +1,188 @@
+{
+  "by_stressor": {
+    "blur": {
+      "balanced_accuracy": 0.875,
+      "discordant_n": 1,
+      "f1": 0.9411764705882353,
+      "fn": 0,
+      "fp": 1,
+      "n": 12,
+      "positive_n": 8,
+      "precision": 0.8888888888888888,
+      "predicted_positive_n": 9,
+      "recall": 1.0,
+      "signed_order_agreement": 0.9166666666666666,
+      "spearman_delta_behavior_vs_delta_ir_dr_score": 0.8732610908529583,
+      "tn": 3,
+      "tp": 8
+    },
+    "resize": {
+      "balanced_accuracy": 0.9,
+      "discordant_n": 1,
+      "f1": 0.9333333333333333,
+      "fn": 0,
+      "fp": 1,
+      "n": 12,
+      "positive_n": 7,
+      "precision": 0.875,
+      "predicted_positive_n": 8,
+      "recall": 1.0,
+      "signed_order_agreement": 0.9166666666666666,
+      "spearman_delta_behavior_vs_delta_ir_dr_score": 0.7464973841162386,
+      "tn": 4,
+      "tp": 7
+    }
+  },
+  "by_task": {
+    "Cube": {
+      "balanced_accuracy": 1.0,
+      "discordant_n": 0,
+      "f1": null,
+      "fn": 0,
+      "fp": 0,
+      "n": 6,
+      "positive_n": 0,
+      "precision": null,
+      "predicted_positive_n": 0,
+      "recall": null,
+      "signed_order_agreement": 0.6666666666666666,
+      "spearman_delta_behavior_vs_delta_ir_dr_score": -0.08571428571428572,
+      "tn": 6,
+      "tp": 0
+    },
+    "PushT": {
+      "balanced_accuracy": 0.6666666666666666,
+      "discordant_n": 2,
+      "f1": 0.7499999999999999,
+      "fn": 0,
+      "fp": 2,
+      "n": 6,
+      "positive_n": 3,
+      "precision": 0.6,
+      "predicted_positive_n": 5,
+      "recall": 1.0,
+      "signed_order_agreement": 1.0,
+      "spearman_delta_behavior_vs_delta_ir_dr_score": 0.46381682852195877,
+      "tn": 1,
+      "tp": 3
+    },
+    "Reacher": {
+      "balanced_accuracy": 1.0,
+      "discordant_n": 0,
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "n": 6,
+      "positive_n": 6,
+      "precision": 1.0,
+      "predicted_positive_n": 6,
+      "recall": 1.0,
+      "signed_order_agreement": 1.0,
+      "spearman_delta_behavior_vs_delta_ir_dr_score": null,
+      "tn": 0,
+      "tp": 6
+    },
+    "TwoRoom": {
+      "balanced_accuracy": 1.0,
+      "discordant_n": 0,
+      "f1": 1.0,
+      "fn": 0,
+      "fp": 0,
+      "n": 6,
+      "positive_n": 6,
+      "precision": 1.0,
+      "predicted_positive_n": 6,
+      "recall": 1.0,
+      "signed_order_agreement": 1.0,
+      "spearman_delta_behavior_vs_delta_ir_dr_score": 0.5428571428571428,
+      "tn": 0,
+      "tp": 6
+    }
+  },
+  "discordant_rows": [
+    {
+      "base_dr": 0.9489795565605164,
+      "base_ir_dr_score": -2.3333333333255557,
+      "base_ir_relative": 1.0,
+      "base_stressed_score": 71.666667,
+      "behavior_class": "neutral",
+      "delta_behavior": 4.0,
+      "delta_ir_dr_score": 0.620163087644757,
+      "discordance": "false_positive",
+      "dr_threshold": 0.95,
+      "endpoint_dr": 0.9693877100944519,
+      "endpoint_ir_dr_score": -1.7131702456807987,
+      "endpoint_ir_relative": 0.8139510737059528,
+      "endpoint_stressed_score": 75.666667,
+      "ir_threshold": 0.3,
+      "observed_positive": false,
+      "predicted_positive": true,
+      "stressor": "resize",
+      "task": "PushT",
+      "training_seed": 3072
+    },
+    {
+      "base_dr": 0.9591836333274841,
+      "base_ir_dr_score": -2.3333333333255557,
+      "base_ir_relative": 1.0,
+      "base_stressed_score": 66.333333,
+      "behavior_class": "neutral",
+      "delta_behavior": 4.0,
+      "delta_ir_dr_score": 0.7291482528903446,
+      "discordance": "false_positive",
+      "dr_threshold": 0.95,
+      "endpoint_dr": 0.9591836333274841,
+      "endpoint_ir_dr_score": -1.6041850804352111,
+      "endpoint_ir_relative": 0.7812555241321675,
+      "endpoint_stressed_score": 70.333333,
+      "ir_threshold": 0.3,
+      "observed_positive": false,
+      "predicted_positive": true,
+      "stressor": "blur",
+      "task": "PushT",
+      "training_seed": 3074
+    }
+  ],
+  "overall": {
+    "balanced_accuracy": 0.8888888888888888,
+    "discordant_n": 2,
+    "f1": 0.9375,
+    "fn": 0,
+    "fp": 2,
+    "n": 24,
+    "positive_n": 15,
+    "precision": 0.8823529411764706,
+    "predicted_positive_n": 17,
+    "recall": 1.0,
+    "signed_order_agreement": 0.9166666666666666,
+    "spearman_delta_behavior_vs_delta_ir_dr_score": 0.8352554296598855,
+    "tn": 7,
+    "tp": 15
+  },
+  "schema_version": "paper1-cross-stressor-ir-dr-comparison-1.0",
+  "task_thresholds": {
+    "Cube": {
+      "dr_threshold": 0.95,
+      "ir_threshold": 0.3
+    },
+    "PushT": {
+      "dr_threshold": 0.95,
+      "ir_threshold": 0.3
+    },
+    "Reacher": {
+      "dr_threshold": 0.95,
+      "ir_threshold": 0.3
+    },
+    "TwoRoom": {
+      "dr_threshold": 0.95,
+      "ir_threshold": 0.3
+    }
+  },
+  "threshold_search_on_blur_or_resize": false,
+  "threshold_source": "three Gaussian source tasks for each evaluation task",
+  "training_seeds": [
+    3072,
+    3073,
+    3074
+  ]
+}

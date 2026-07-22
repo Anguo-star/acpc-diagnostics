@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Relative reduction in out-of-group MAE from Base+ACPC$_8$ when predicting the error drift $d$ on the unaugmented checkpoints (protocol and model definitions in \Cref{sec:exp-target-aligned}). Base+Control$_8$ uses the per-cell oracle control; higher is better. The last column counts task--run cells in which Base+ACPC$_8$ is best.}
+\label{tab:target-aligned-acpc}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{lrrc}
+\toprule
+Training run (seed) & vs. Base & vs. Base+Control$_8$ & Task--run cells improved \\
+\midrule
+3072 & 55.5\% & 51.4\% & 4/4 \\
+3073 & 60.8\% & 54.8\% & 4/4 \\
+3074 & 51.4\% & 47.7\% & 4/4 \\
+\midrule
+mean $\pm$ SD & 55.9 $\pm$ 4.7\% & 51.3 $\pm$ 3.5\% & 12/12 \\
+\bottomrule
+\end{tabular}
+\end{table}

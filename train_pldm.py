@@ -6,15 +6,14 @@ This is a thin wrapper around the upstream PLDM training script
   * uses Hydra config files in ``config/train/`` (this repo), so noise sweeps
     can be expressed in the same style as ``config/train/lewm.yaml``;
   * inserts our local ``utils.AddNormalizedGaussianNoise`` transform on the
-    training split (matching ``train.py:815-819``), so the noise pipeline is
-    bit-identical to the LeWM baseline; and
+    training split, matching ``train.py``'s split-level augmentation path; and
   * defers model/loss/forward to the upstream package so we never duplicate
     model code.
 
 Use:
 
-    python train_pldm.py data=pusht exp_name=pusht_pldm
-    python train_pldm.py data=pusht exp_name=pusht_pldm_noise_0to006_p1 \\
+    python train_pldm.py data=pusht output_model_name=pusht_pldm
+    python train_pldm.py data=pusht output_model_name=pusht_pldm_noise_0to006_p1 \\
         image_noise.std_max=0.06 image_noise.noise_prob=1.0
 """
 
@@ -24,7 +23,6 @@ from pathlib import Path
 import hydra
 import lightning as pl
 import stable_pretraining as spt
-from stable_pretraining import data as dt
 import stable_worldmodel as swm
 import torch
 from lightning.pytorch.loggers import WandbLogger
@@ -32,11 +30,6 @@ from loguru import logger as logging
 from omegaconf import OmegaConf, open_dict
 from torch import nn
 from torch.utils.data import DataLoader
-
-try:
-    from swanlab.integration.pytorch_lightning import SwanLabLogger
-except ImportError:
-    SwanLabLogger = None
 
 # --- upstream PLDM components (no duplication) -----------------------------
 from stable_worldmodel.data import column_normalizer as get_column_normalizer
@@ -192,11 +185,7 @@ def run(cfg):
     logging.info(f"🫆 PLDM run dir: {run_dir}")
 
     logger_obj = None
-    backend = str(cfg.get("logger_backend", "wandb"))
-    if backend == "swanlab" and SwanLabLogger is not None and cfg.get("swanlab", {}).get("enabled", False):
-        logger_obj = SwanLabLogger(**cfg.swanlab.config)
-        logger_obj.log_hyperparams(OmegaConf.to_container(cfg))
-    elif backend == "wandb" and cfg.get("wandb", {}).get("enabled", False):
+    if cfg.get("wandb", {}).get("enabled", False):
         logger_obj = WandbLogger(**cfg.wandb.config)
         logger_obj.log_hyperparams(OmegaConf.to_container(cfg))
 

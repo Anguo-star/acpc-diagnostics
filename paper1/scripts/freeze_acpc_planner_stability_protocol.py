@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -12,9 +13,17 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA_ROOT = Path(
-    "/opt/workspace/explorer-env/dataset/ag_data/data/world_model/quentinll"
-)
+
+
+def _data_root_from_env() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
+
+
+DATA_ROOT = _data_root_from_env()
 PROTOCOL_PATH = ROOT / "paper1/config/acpc_planner_stability_protocol_v1.json"
 ADDENDUM_PATH = ROOT / "paper1/config/acpc_planner_stability_execution_v1.json"
 RESULT_ROOT = "paper1/results/acpc_planner_stability_v1/formal"
@@ -114,6 +123,10 @@ def git_head() -> str:
 
 
 def checkpoint_path(task: dict[str, str], role: str) -> Path:
+    if DATA_ROOT is None:
+        raise RuntimeError(
+            "set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root"
+        )
     return DATA_ROOT / task["root"] / "ckpt" / task[role]
 
 
@@ -251,6 +264,10 @@ def write_sidecar(path: Path) -> None:
 
 
 def main() -> int:
+    if DATA_ROOT is None:
+        raise SystemExit(
+            "set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root"
+        )
     frozen_at = datetime.now(timezone.utc).isoformat()
     source_hashes = {path: sha256(ROOT / path) for path in SOURCE_PATHS}
     checkpoints, shards = authorized_shards()

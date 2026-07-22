@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -12,9 +13,17 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DATA_ROOT = Path(
-    "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll"
-)
+
+
+def _data_root_from_env() -> Path | None:
+    for name in ("PAPER1_DATA_ROOT", "DATA_ROOT", "STABLEWM_HOME"):
+        value = os.environ.get(name)
+        if value:
+            return Path(value).expanduser()
+    return None
+
+
+DATA_ROOT = _data_root_from_env()
 REFERENCE_PROTOCOL = ROOT / "paper1/config/acpc_planner_stability_protocol_v2.json"
 REFERENCE_EXECUTION = ROOT / "paper1/config/acpc_planner_stability_execution_v2.json"
 REFERENCE_SUMMARY = ROOT / "paper1/results/acpc_planner_stability_v2/summary.json"
@@ -183,6 +192,10 @@ def git_head() -> str:
 
 
 def checkpoint_path(task: dict[str, Any], seed: int, role: str) -> Path:
+    if DATA_ROOT is None:
+        raise RuntimeError(
+            "set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root"
+        )
     return DATA_ROOT / task["root"] / "ckpt" / task["checkpoints"][seed][role]
 
 
@@ -360,6 +373,10 @@ def validate_reference_panel() -> dict[str, Any]:
 
 
 def main() -> int:
+    if DATA_ROOT is None:
+        raise SystemExit(
+            "set PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME to the dataset root"
+        )
     if PROTOCOL_PATH.exists() or EXECUTION_PATH.exists():
         raise SystemExit("v3 protocol already exists; refuse post-freeze overwrite")
     if (ROOT / RESULT_ROOT).exists():
