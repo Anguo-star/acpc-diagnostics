@@ -1,0 +1,689 @@
+{
+  "aggregation": "mean over training-seed blocks within evaluation task; mean over eligible source subsets within coverage; equal mean over four evaluation tasks",
+  "coverage": [
+    {
+      "balanced_accuracy": 0.8545304232804233,
+      "evaluation_task_incidence_count": 12,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.007777777777777778,
+          "balanced_accuracy": 0.7898148148148147,
+          "f1": 0.7982042648709315,
+          "precision": 0.7732804232804232,
+          "recall": 0.8629629629629629
+        },
+        "PushT": {
+          "abs_start_error": 0.012222222222222223,
+          "balanced_accuracy": 0.8703703703703703,
+          "f1": 0.8602693602693603,
+          "precision": 0.962962962962963,
+          "recall": 0.8148148148148149
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.02,
+          "balanced_accuracy": 0.8690476190476191,
+          "f1": 0.8347578347578347,
+          "precision": 1.0,
+          "recall": 0.7380952380952381
+        }
+      },
+      "f1": 0.8604873521540188,
+      "max_abs_start_error": 0.05,
+      "mean_abs_start_error": 0.010833333333333334,
+      "partition_balanced_accuracy_range": [
+        0.7228835978835979,
+        0.9133597883597884
+      ],
+      "partition_count": 4,
+      "partition_mean_abs_start_error_range": [
+        0.0033333333333333327,
+        0.02888888888888889
+      ],
+      "precision": 0.9102513227513227,
+      "recall": 0.853968253968254,
+      "selected_threshold_counts": [
+        {
+          "count": 1,
+          "ir_threshold": 0.1,
+          "sr_threshold": 0.95
+        },
+        {
+          "count": 3,
+          "ir_threshold": 0.3,
+          "sr_threshold": 0.95
+        }
+      ],
+      "source_coverage": 1
+    },
+    {
+      "balanced_accuracy": 0.8996031746031745,
+      "evaluation_task_incidence_count": 12,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        },
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "f1": 0.9254662004662004,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.004999999999999999,
+      "partition_balanced_accuracy_range": [
+        0.8736111111111111,
+        0.9255952380952381
+      ],
+      "partition_count": 6,
+      "partition_mean_abs_start_error_range": [
+        0.0033333333333333327,
+        0.006666666666666666
+      ],
+      "precision": 0.9126984126984127,
+      "recall": 0.9533730158730158,
+      "selected_threshold_counts": [
+        {
+          "count": 6,
+          "ir_threshold": 0.3,
+          "sr_threshold": 0.95
+        }
+      ],
+      "source_coverage": 2
+    },
+    {
+      "balanced_accuracy": 0.8996031746031745,
+      "evaluation_task_incidence_count": 4,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        },
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "f1": 0.9254662004662004,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.004999999999999999,
+      "partition_balanced_accuracy_range": [
+        0.8583333333333333,
+        0.9345238095238095
+      ],
+      "partition_count": 4,
+      "partition_mean_abs_start_error_range": [
+        0.0033333333333333327,
+        0.01
+      ],
+      "precision": 0.9126984126984127,
+      "recall": 0.9533730158730158,
+      "selected_threshold_counts": [
+        {
+          "count": 4,
+          "ir_threshold": 0.3,
+          "sr_threshold": 0.95
+        }
+      ],
+      "source_coverage": 3
+    }
+  ],
+  "detail_row_count": 84,
+  "evaluation_task_incidence_count": 28,
+  "partition_count": 14,
+  "partitions": [
+    {
+      "balanced_accuracy": 0.887962962962963,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        },
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        }
+      },
+      "evaluation_tasks": [
+        "PushT",
+        "Reacher",
+        "Cube"
+      ],
+      "f1": 0.9239834239834239,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.009999999999999998,
+      "mean_abs_start_error": 0.0033333333333333327,
+      "partition_id": "src1_tworoom",
+      "precision": 0.8835978835978836,
+      "recall": 0.9814814814814815,
+      "source_coverage": 1,
+      "source_tasks": [
+        "TwoRoom"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.8939153439153439,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "evaluation_tasks": [
+        "TwoRoom",
+        "Reacher",
+        "Cube"
+      ],
+      "f1": 0.9191401191401192,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.005555555555555555,
+      "partition_id": "src1_pusht",
+      "precision": 0.9021164021164021,
+      "recall": 0.9563492063492064,
+      "source_coverage": 1,
+      "source_tasks": [
+        "PushT"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.7228835978835979,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.01666666666666667,
+          "balanced_accuracy": 0.6527777777777778,
+          "f1": 0.6370370370370371,
+          "precision": 0.7166666666666667,
+          "recall": 0.5888888888888889
+        },
+        "PushT": {
+          "abs_start_error": 0.030000000000000002,
+          "balanced_accuracy": 0.7777777777777778,
+          "f1": 0.6919191919191919,
+          "precision": 1.0,
+          "recall": 0.5555555555555556
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.04,
+          "balanced_accuracy": 0.7380952380952381,
+          "f1": 0.6444444444444444,
+          "precision": 1.0,
+          "recall": 0.47619047619047616
+        }
+      },
+      "evaluation_tasks": [
+        "TwoRoom",
+        "PushT",
+        "Cube"
+      ],
+      "f1": 0.6578002244668911,
+      "ir_threshold": 0.1,
+      "max_abs_start_error": 0.05,
+      "mean_abs_start_error": 0.02888888888888889,
+      "partition_id": "src1_reacher",
+      "precision": 0.9055555555555556,
+      "recall": 0.5402116402116403,
+      "source_coverage": 1,
+      "source_tasks": [
+        "Reacher"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.9133597883597884,
+      "evaluation_task_metrics": {
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "evaluation_tasks": [
+        "TwoRoom",
+        "PushT",
+        "Reacher"
+      ],
+      "f1": 0.941025641025641,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.005555555555555555,
+      "partition_id": "src1_cube",
+      "precision": 0.9497354497354498,
+      "recall": 0.9378306878306878,
+      "source_coverage": 1,
+      "source_tasks": [
+        "Cube"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.8736111111111111,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        }
+      },
+      "evaluation_tasks": [
+        "Reacher",
+        "Cube"
+      ],
+      "f1": 0.9137529137529137,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.009999999999999998,
+      "mean_abs_start_error": 0.0033333333333333327,
+      "partition_id": "src2_tworoom_pusht",
+      "precision": 0.8531746031746033,
+      "recall": 1.0,
+      "source_coverage": 2,
+      "source_tasks": [
+        "TwoRoom",
+        "PushT"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.8875,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        },
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        }
+      },
+      "evaluation_tasks": [
+        "PushT",
+        "Cube"
+      ],
+      "f1": 0.9116161616161615,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.009999999999999998,
+      "mean_abs_start_error": 0.0033333333333333327,
+      "partition_id": "src2_tworoom_reacher",
+      "precision": 0.873015873015873,
+      "recall": 0.9722222222222222,
+      "source_coverage": 2,
+      "source_tasks": [
+        "TwoRoom",
+        "Reacher"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.9027777777777777,
+      "evaluation_task_metrics": {
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        },
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        }
+      },
+      "evaluation_tasks": [
+        "PushT",
+        "Reacher"
+      ],
+      "f1": 0.9465811965811965,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.009999999999999998,
+      "mean_abs_start_error": 0.0033333333333333327,
+      "partition_id": "src2_tworoom_cube",
+      "precision": 0.9246031746031746,
+      "recall": 0.9722222222222222,
+      "source_coverage": 2,
+      "source_tasks": [
+        "TwoRoom",
+        "Cube"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.8964285714285714,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "evaluation_tasks": [
+        "TwoRoom",
+        "Cube"
+      ],
+      "f1": 0.9043512043512043,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.006666666666666666,
+      "partition_id": "src2_pusht_reacher",
+      "precision": 0.9007936507936508,
+      "recall": 0.9345238095238095,
+      "source_coverage": 2,
+      "source_tasks": [
+        "PushT",
+        "Reacher"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.9117063492063492,
+      "evaluation_task_metrics": {
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "evaluation_tasks": [
+        "TwoRoom",
+        "Reacher"
+      ],
+      "f1": 0.9393162393162393,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.006666666666666666,
+      "partition_id": "src2_pusht_cube",
+      "precision": 0.9523809523809523,
+      "recall": 0.9345238095238095,
+      "source_coverage": 2,
+      "source_tasks": [
+        "PushT",
+        "Cube"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.9255952380952381,
+      "evaluation_task_metrics": {
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        },
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "evaluation_tasks": [
+        "TwoRoom",
+        "PushT"
+      ],
+      "f1": 0.9371794871794872,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.006666666666666666,
+      "partition_id": "src2_reacher_cube",
+      "precision": 0.9722222222222222,
+      "recall": 0.9067460317460317,
+      "source_coverage": 2,
+      "source_tasks": [
+        "Reacher",
+        "Cube"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.8583333333333333,
+      "evaluation_task_metrics": {
+        "Cube": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8583333333333333,
+          "f1": 0.8787878787878788,
+          "precision": 0.8015873015873016,
+          "recall": 1.0
+        }
+      },
+      "evaluation_tasks": [
+        "Cube"
+      ],
+      "f1": 0.8787878787878788,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.009999999999999998,
+      "mean_abs_start_error": 0.0033333333333333327,
+      "partition_id": "src3_tworoom_pusht_reacher",
+      "precision": 0.8015873015873016,
+      "recall": 1.0,
+      "source_coverage": 3,
+      "source_tasks": [
+        "TwoRoom",
+        "PushT",
+        "Reacher"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.8888888888888888,
+      "evaluation_task_metrics": {
+        "Reacher": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.8888888888888888,
+          "f1": 0.9487179487179487,
+          "precision": 0.9047619047619048,
+          "recall": 1.0
+        }
+      },
+      "evaluation_tasks": [
+        "Reacher"
+      ],
+      "f1": 0.9487179487179487,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.009999999999999998,
+      "mean_abs_start_error": 0.0033333333333333327,
+      "partition_id": "src3_tworoom_pusht_cube",
+      "precision": 0.9047619047619048,
+      "recall": 1.0,
+      "source_coverage": 3,
+      "source_tasks": [
+        "TwoRoom",
+        "PushT",
+        "Cube"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.9166666666666666,
+      "evaluation_task_metrics": {
+        "PushT": {
+          "abs_start_error": 0.0033333333333333327,
+          "balanced_accuracy": 0.9166666666666666,
+          "f1": 0.9444444444444444,
+          "precision": 0.9444444444444444,
+          "recall": 0.9444444444444444
+        }
+      },
+      "evaluation_tasks": [
+        "PushT"
+      ],
+      "f1": 0.9444444444444444,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.009999999999999998,
+      "mean_abs_start_error": 0.0033333333333333327,
+      "partition_id": "src3_tworoom_reacher_cube",
+      "precision": 0.9444444444444444,
+      "recall": 0.9444444444444444,
+      "source_coverage": 3,
+      "source_tasks": [
+        "TwoRoom",
+        "Reacher",
+        "Cube"
+      ],
+      "sr_threshold": 0.95
+    },
+    {
+      "balanced_accuracy": 0.9345238095238095,
+      "evaluation_task_metrics": {
+        "TwoRoom": {
+          "abs_start_error": 0.01,
+          "balanced_accuracy": 0.9345238095238095,
+          "f1": 0.9299145299145299,
+          "precision": 1.0,
+          "recall": 0.8690476190476191
+        }
+      },
+      "evaluation_tasks": [
+        "TwoRoom"
+      ],
+      "f1": 0.9299145299145299,
+      "ir_threshold": 0.3,
+      "max_abs_start_error": 0.01,
+      "mean_abs_start_error": 0.01,
+      "partition_id": "src3_pusht_reacher_cube",
+      "precision": 1.0,
+      "recall": 0.8690476190476191,
+      "source_coverage": 3,
+      "source_tasks": [
+        "PushT",
+        "Reacher",
+        "Cube"
+      ],
+      "sr_threshold": 0.95
+    }
+  ],
+  "partitions_are_independent_samples": false,
+  "schema_version": "paper1-cross-task-ir-sr-rule-summary-2.0"
+}

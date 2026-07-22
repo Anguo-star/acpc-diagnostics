@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Summary of the Gaussian-noise training sweep (nine checkpoints per task: no augmentation plus eight noise levels; \Cref{fig:full-sweep-diagnostics} shows every level). ``Best'' is the level with the highest mean planning success at evaluation noise $\sigma=0.08$; arrows give the change from the unaugmented checkpoint to that level. Relative IR is lower-is-better, and SR is higher-is-better. The last column lists levels meeting the success-rate criterion (\Cref{sec:bg}).}
+\label{tab:full-sweep-compact}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Task & No-aug. success (\%) & Best success (\%) & Best $\sigma_{\max}$ & Relative IR & SR & Levels meeting criterion \\
+\midrule
+TwoRoom & 68.8 & 97.1 & 0.08 & 1.00$\to$0.07 & 0.11$\to$0.98 & 0.01--0.08 \\
+PushT & 7.2 & 86.8 & 0.06 & 1.00$\to$0.11 & 0.28$\to$1.00 & 0.03--0.08 \\
+Reacher & 18.2 & 83.3 & 0.07 & 1.00$\to$0.03 & 0.37$\to$0.99 & 0.03--0.08 \\
+Cube & 43.1 & 66.0 & 0.03 & 1.00$\to$0.26 & 0.07$\to$0.98 & 0.03--0.07 \\
+\bottomrule
+\end{tabular}
+\end{table}

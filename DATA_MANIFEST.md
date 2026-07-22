@@ -33,24 +33,25 @@ intermediate file produced during development.
 | `paper1/results/future_drift_three_seed_v1.csv` | Pair-level recorded-action future-error-drift experiment |
 | `paper1/results/future_drift_three_seed_summary_v1.json` | Cross-validated future-drift summary |
 | `paper1/results/acpc_planner_stability_v4/summary.json` | Planner-horizon ACPC summary over the frozen v4 shards |
-| `paper1/results/cross_task_ir_dr_all_subsets_v1.csv` | All nonempty source-task calibration partitions |
-| `paper1/results/cross_task_ir_dr_all_subsets_params_v1.json` | Frozen IR/DR calibration parameters |
-| `paper1/results/cross_task_ir_dr_all_subsets_summary_v1.json` | Cross-task IR/DR summary consumed by later builders |
+| `paper1/results/cross_task_ir_sr_all_subsets_v2.csv` | All nonempty source-task calibration partitions in the current IR/SR schema |
+| `paper1/results/cross_task_ir_sr_all_subsets_params_v2.json` | Current IR/SR calibration parameters |
+| `paper1/results/cross_task_ir_sr_all_subsets_summary_v2.json` | Cross-task IR/SR summary consumed by later builders |
 | `paper1/results/external_validation/pldm_frozen_rows_v2.csv` | Complete 36-row PLDM sweep |
 | `paper1/results/external_validation/cross_stressor_all_pairs.csv` | Frozen LeWM/PLDM blur and resize pair rows |
-| `paper1/results/external_validation/cross_stressor_three_source_ir_dr_v1.csv` | Reader-facing 24-row LeWM cross-stressor IR/DR comparison |
-| `paper1/results/external_validation/cross_stressor_three_source_ir_dr_v1.json` | Machine-readable cross-stressor summary |
+| `paper1/results/external_validation/cross_stressor_three_source_ir_sr_v2.csv` | Reader-facing 24-row LeWM cross-stressor IR/SR comparison |
+| `paper1/results/external_validation/cross_stressor_three_source_ir_sr_v2.json` | Machine-readable cross-stressor summary in the current schema |
+| `paper1/results/linearization_horizon_sensitivity_ir_sr_v2.json` | Current-schema linearization/horizon aggregate migrated value-for-value from the released v1 aggregate |
 
 The corresponding generated outputs are:
 
-- `assets/paper1_figs/fig_acpc_ir_dr_overview.pdf`
+- `assets/paper1_figs/fig_acpc_ir_sr_overview.pdf`
 - `assets/paper1_figs/fig_full_sweep_diagnostics.pdf`
 - `assets/paper1_figs/fig_full_sweep_diagnostic_region.pdf`
 - `assets/paper1_figs/fig_full_sweep_planner_guard.pdf`
 - `assets/paper1_figs/fig_pldm_sweep_diagnostics.pdf`
-- `assets/paper1_figs/fig_cross_task_ir_dr_source_coverage_v1.pdf`
-- `assets/paper1_figs/fig_cross_stressor_ir_dr_comparison_v1.pdf`
-- the current `paper1/tables/*ir_dr*.tex` tables.
+- `assets/paper1_figs/fig_cross_task_ir_sr_source_coverage_v2.pdf`
+- `assets/paper1_figs/fig_cross_stressor_ir_sr_comparison_v2.pdf`
+- the current `paper1/tables/*ir_sr*.tex` tables.
 
 Rebuild commands and the active dependency graph are documented in
 `paper1/scripts/README.md`.
@@ -86,20 +87,35 @@ than a machine-specific absolute path.
 | `cross_stressor_all_pairs.csv` | `dbf26c84bb3670dd8dd00a3a535fd2beaf6157a7abdeeb23d0baea0579f07b02` |
 | `cross_stressor_three_source_ir_dr_v1.csv` | `7c5448c3d8af54de9b867c5fd2bade6b4bf7ca86c53e2bc7f16f3ba5ea5d0495` |
 | `cross_stressor_three_source_ir_dr_v1.json` | `e58cc707201aa4a3769b51910256329b91ba4c71171c5ea298302b9b86bdfd55` |
+| `cross_task_ir_sr_all_subsets_v2.csv` | `03aca8b785bb1f3df4ee227fb6f62cc52e2982a3ab546388c6b39f3c7134ad74` |
+| `cross_task_ir_sr_all_subsets_params_v2.json` | `012096b1639d4858da6e520d92377db73946bee92314366e9ea7b9ccbcce642a` |
+| `cross_task_ir_sr_all_subsets_summary_v2.json` | `ea8789a958057bca4455d128e36b0e2127741d4f9e3d846255782e65a48e11f6` |
+| `cross_stressor_three_source_ir_sr_v2.csv` | `59f09888e6820dc32609fe40c5c001c7e5270ca7b6e6093fa1388529976e295f` |
+| `cross_stressor_three_source_ir_sr_v2.json` | `3652b77c5de5ab70d53fb92b66af5ce72102c485b79f2073718b3d30be3ea6d8` |
+| `linearization_horizon_sensitivity_ir_sr_v2.json` | `39fb2cb9bbb1a9cfd9ef31575ee80970523fe86787603b6db5a625b49e5f267a` |
+| `linearization_checkpoint_rows_ir_sr_v2.csv` | `60453e5a6d97b75c3f9e6ddf9366211c12067d5965c5f4df61f153d98fbed862` |
+| `linearization_calibration_rows_ir_sr_v2.csv` | `07779e1a01e77106b7606909333e3a5d02f08d27f6d740ceaa9d5ca3bd70ea49` |
+| `horizon_quantile_sensitivity_rows_ir_sr_v2.csv` | `26e0d1ba3304c7c72944408e442bbbdc2986d232bd3e2da1e4103020c6bd6b70` |
+| `linearization_calibration_summary_ir_sr_v2.csv` | `1eb0a4ed14ce5574e001c05d497f7b94f543590d8b65dc974859d893815c5fdc` |
+| `horizon_quantile_sensitivity_summary_ir_sr_v2.csv` | `29a585a97be204926ba2f603b04d725ddcc5cc90a1dce79d55bbdc202fc6e86b` |
 
-## Frozen legacy column names
+## Frozen legacy IR/DR-v1 artifacts and column names
 
-Some immutable raw CSVs were produced before the reader-facing terminology
-was finalized. Their values are unchanged. Consumers must use
-`paper1/scripts/ir_dr_compat.py`, which applies these aliases:
+The five `*_ir_dr_*_v1` files listed and hash-recorded above remain byte-for-byte
+unchanged for reproducibility. Their SR-v2 counterparts contain the same
+values with only canonical field/schema names changed. Current consumers use
+`paper1/scripts/ir_sr_compat.py`, which applies aliases including:
 
 ```text
 atr_normalized_q90 -> ir_relative_q90
-smpr_delta010      -> dr_delta010
+smpr_delta010      -> sr_delta010
+dr_delta010        -> sr_delta010
+dr_threshold       -> sr_threshold
 ```
 
-The aliases are a schema-compatibility detail only. Current prose, scripts,
-tables, and figures use Invariance Radius (IR) and Distinction Rate (DR).
+`paper1/scripts/ir_dr_compat.py` remains only as the deprecated v1 API boundary.
+The aliases do not change stored values. Current prose, scripts, tables, and
+figures use Invariance Radius (IR) and Separation Rate (SR).
 
 ## Portability and provenance
 
@@ -113,5 +129,5 @@ tables, and figures use Invariance Radius (IR) and Distinction Rate (DR).
 - PDF binaries may differ across rebuilds because of backend metadata even
   when the plotted data and extracted text are unchanged. CSV/JSON equality
   and source hashes are the primary deterministic checks.
-- IR/DR screen outcomes do not certify closed-loop robustness, policy return,
+- IR/SR screen outcomes do not certify closed-loop robustness, policy return,
   or adaptive-CEM behavior.

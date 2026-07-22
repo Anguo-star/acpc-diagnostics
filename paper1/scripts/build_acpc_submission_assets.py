@@ -18,10 +18,10 @@ from matplotlib.lines import Line2D
 
 try:
     from .cross_task_selective_rule import run_all_subsets
-    from .ir_dr_compat import to_ir_dr
+    from .ir_sr_compat import to_ir_sr
 except ImportError:  # Support the historical direct-script entry point.
     from paper1.scripts.cross_task_selective_rule import run_all_subsets
-    from paper1.scripts.ir_dr_compat import to_ir_dr
+    from paper1.scripts.ir_sr_compat import to_ir_sr
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -30,10 +30,10 @@ DEFAULT_SWEEP = ROOT / "paper1/results/full_sweep_diagnostics_summary.csv"
 DEFAULT_PLANNER_FIG = ROOT / "assets/paper1_figs/fig_acpc_planner_evidence.pdf"
 DEFAULT_INCREMENT_TABLE = ROOT / "paper1/tables/table_acpc_planner_increment.tex"
 DEFAULT_ABSOLUTE_TABLE = ROOT / "paper1/tables/table_acpc_planner_absolute.tex"
-DEFAULT_SWEEP_TABLE = ROOT / "paper1/tables/table_full_sweep_compact_ir_dr.tex"
+DEFAULT_SWEEP_TABLE = ROOT / "paper1/tables/table_full_sweep_compact_ir_sr_v2.tex"
 DEFAULT_PLDM_ROWS = ROOT / "paper1/results/external_validation/pldm_frozen_rows_v2.csv"
-DEFAULT_CROSS_TASK_SUMMARY = ROOT / "paper1/results/cross_task_ir_dr_all_subsets_summary_v1.json"
-DEFAULT_PLDM_TABLE = ROOT / "paper1/tables/table_pldm_architecture_portability_ir_dr.tex"
+DEFAULT_CROSS_TASK_SUMMARY = ROOT / "paper1/results/cross_task_ir_sr_all_subsets_summary_v2.json"
+DEFAULT_PLDM_TABLE = ROOT / "paper1/tables/table_pldm_architecture_portability_ir_sr_v2.tex"
 
 TASKS = ("TwoRoom", "PushT", "Reacher", "Cube")
 TASK_MARKERS = {"TwoRoom": "o", "PushT": "s", "Reacher": "^", "Cube": "D"}
@@ -377,18 +377,18 @@ def build_absolute_table(summary: dict[str, Any]) -> str:
 
 
 def build_sweep_table(rows: list[dict[str, str]]) -> str:
-    rows = to_ir_dr(rows)
+    rows = to_ir_sr(rows)
     by_task = {task: [row for row in rows if row["task"] == task] for task in TASKS}
     lines = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{Summary of the Gaussian-noise training sweep (nine checkpoints per task: no augmentation plus eight noise levels; \Cref{fig:full-sweep-diagnostics} shows every level). ``Best'' is the level with the highest mean planning success at evaluation noise $\sigma=0.08$; arrows give the change from the unaugmented checkpoint to that level. Relative IR is lower-is-better, and DR is higher-is-better. The last column lists levels meeting the success-rate criterion (\Cref{sec:bg}).}",
+        r"\caption{Summary of the Gaussian-noise training sweep (nine checkpoints per task: no augmentation plus eight noise levels; \Cref{fig:full-sweep-diagnostics} shows every level). ``Best'' is the level with the highest mean planning success at evaluation noise $\sigma=0.08$; arrows give the change from the unaugmented checkpoint to that level. Relative IR is lower-is-better, and SR is higher-is-better. The last column lists levels meeting the success-rate criterion (\Cref{sec:bg}).}",
         r"\label{tab:full-sweep-compact}",
         r"\footnotesize",
         r"\setlength{\tabcolsep}{3.5pt}",
         r"\begin{tabular}{lrrrrrr}",
         r"\toprule",
-        r"Task & No-aug. success (\%) & Best success (\%) & Best $\sigma_{\max}$ & Relative IR & DR & Levels meeting criterion \\",
+        r"Task & No-aug. success (\%) & Best success (\%) & Best $\sigma_{\max}$ & Relative IR & SR & Levels meeting criterion \\",
         r"\midrule",
     ]
     for task in TASKS:
@@ -401,7 +401,7 @@ def build_sweep_table(rows: list[dict[str, str]]) -> str:
             f"{task} & {float(base['obs_sigma_008_score_mean']):.1f} & "
             f"{float(best['obs_sigma_008_score_mean']):.1f} & {float(best['rho']):.2f} & "
             f"{float(base['ir_relative_q90_mean']):.2f}$\\to${float(best['ir_relative_q90_mean']):.2f} & "
-            f"{float(base['dr_delta010_mean']):.2f}$\\to${float(best['dr_delta010_mean']):.2f} & "
+            f"{float(base['sr_delta010_mean']):.2f}$\\to${float(best['sr_delta010_mean']):.2f} & "
             f"{recovery_text} \\\\"
         )
     lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}"])
@@ -413,8 +413,8 @@ def build_pldm_table(
     lewm_cross_task_summary: dict[str, Any],
 ) -> str:
     """Compare PLDM-local calibration with score-aligned LeWM transfer."""
-    frozen_rows = to_ir_dr(frozen_rows)
-    lewm_cross_task_summary = to_ir_dr(lewm_cross_task_summary)
+    frozen_rows = to_ir_sr(frozen_rows)
+    lewm_cross_task_summary = to_ir_sr(lewm_cross_task_summary)
     if len(frozen_rows) != 36 or {
         row.get("model_family") for row in frozen_rows
     } != {"PLDM"}:
@@ -448,7 +448,7 @@ def build_pldm_table(
             "ir_relative_q90": (
                 float(row["ir_raw_q90"]) / base_ir[row["task"]]
             ),
-            "dr_delta010": float(row["dr"]),
+            "sr_delta010": float(row["sr"]),
             "recovery_label": row["behavior_label"],
         }
         for row in frozen_rows
@@ -484,18 +484,18 @@ def build_pldm_table(
             task = str(partition["evaluation_tasks"][0])
             lewm_thresholds[task] = (
                 float(partition["ir_threshold"]),
-                float(partition["dr_threshold"]),
+                float(partition["sr_threshold"]),
             )
     if set(lewm_thresholds) != set(TASKS):
         raise ValueError("LeWM three-source thresholds are incomplete")
 
     relative_lewm_confusion = {key: 0 for key in ("tp", "tn", "fp", "fn")}
     for row in local_rows:
-        ir_threshold, dr_threshold = lewm_thresholds[str(row["task"])]
+        ir_threshold, sr_threshold = lewm_thresholds[str(row["task"])]
         truth = str(row["recovery_label"]).lower() == "true"
         pred = (
             float(row["ir_relative_q90"]) <= ir_threshold
-            and float(row["dr_delta010"]) >= dr_threshold
+            and float(row["sr_delta010"]) >= sr_threshold
         )
         key = "tp" if truth and pred else "fn" if truth else "fp" if pred else "tn"
         relative_lewm_confusion[key] += 1
@@ -540,7 +540,7 @@ def build_pldm_table(
     lines = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{The same leave-task-out IR--DR screen in two model families: for each evaluation task, thresholds are selected on that family's other three tasks and applied unchanged. Chance is $0.5$; LeWM values average three training runs, whereas PLDM has one run per setting. Applying the LeWM threshold pair to PLDM after within-task IR normalization yields identical PLDM decisions.}",
+        r"\caption{The same leave-task-out IR--SR screen in two model families: for each evaluation task, thresholds are selected on that family's other three tasks and applied unchanged. Chance is $0.5$; LeWM values average three training runs, whereas PLDM has one run per setting. Applying the LeWM threshold pair to PLDM after within-task IR normalization yields identical PLDM decisions.}",
         r"\label{tab:pldm-architecture-portability}",
         r"\small",
         r"\setlength{\tabcolsep}{6pt}",
@@ -584,9 +584,9 @@ def main() -> int:
     plot_planner(planner, args.planner_figure)
     _write(args.increment_table, build_increment_table(planner))
     _write(args.absolute_table, build_absolute_table(planner))
-    sweep_rows = to_ir_dr(_read_csv(args.full_sweep_summary))
-    pldm_rows = to_ir_dr(_read_csv(args.pldm_rows))
-    cross_task_summary = to_ir_dr(_load_json(args.cross_task_summary))
+    sweep_rows = to_ir_sr(_read_csv(args.full_sweep_summary))
+    pldm_rows = to_ir_sr(_read_csv(args.pldm_rows))
+    cross_task_summary = to_ir_sr(_load_json(args.cross_task_summary))
     _write(args.sweep_table, build_sweep_table(sweep_rows))
     _write(
         args.pldm_table,

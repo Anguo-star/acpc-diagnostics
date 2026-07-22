@@ -1,9 +1,9 @@
-"""Read frozen diagnostic artifacts into the current IR/DR schema.
+"""Deprecated reader for the released IR/DR-v1 schema.
 
 Historical result files are immutable because their hashes are part of the
-experiment record. Candidate-paper code calls :func:`to_ir_dr` immediately
-after loading them; downstream analysis and generated artifacts use only the
-current IR/DR names.
+experiment record. This module remains only for exact v1 API compatibility;
+current analysis and rendering code use :mod:`ir_sr_compat` and the IR/SR-v2
+schema.
 """
 
 from __future__ import annotations
@@ -58,7 +58,9 @@ def to_ir_dr(value: Any) -> Any:
         for key, item in value.items():
             renamed = _key_to_ir_dr(str(key))
             if renamed in converted:
-                raise ValueError(f"IR/DR field collision while converting {key!r}")
+                raise ValueError(
+                    f"legacy IR/DR-v1 field collision while converting {key!r}"
+                )
             converted[renamed] = to_ir_dr(item)
         return converted
     if isinstance(value, list):

@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
-from .ir_dr_compat import to_ir_dr
+from .ir_sr_compat import to_ir_sr
 from .utils_paper1_io import ROOT, TASKS, fnum, read_csv, safe_mean
 
 DEFAULT_DIAGNOSTICS = ROOT / "paper1" / "results" / "full_sweep_diagnostics.csv"
@@ -25,7 +25,7 @@ DEFAULT_PLANNER_FIG = ROOT / "assets" / "paper1_figs" / "fig_full_sweep_planner_
 # (paper Sec. "A common threshold range across tasks"); drawn as dotted
 # reference lines on every diagnostic panel.
 COMMON_TI = 0.30
-COMMON_TD = 0.95
+COMMON_T_SR = 0.95
 
 PLOT_STYLE = {
     "font.family": "serif",
@@ -149,7 +149,7 @@ def plot_dynamics(rows: list[dict[str, str]], out_fig: Path) -> None:
     }
     with plt.rc_context(compact_style):
         # Arrange the four task blocks left to right; each block retains its
-        # success-rate axis above the joint IR--DR axis.
+        # planning-success axis above the joint IR--SR axis.
         fig = plt.figure(figsize=(6.7, 2.75))
         outer = fig.add_gridspec(
             1, 4, left=0.075, right=0.985, bottom=0.17, top=0.84, wspace=0.34
@@ -166,7 +166,7 @@ def plot_dynamics(rows: list[dict[str, str]], out_fig: Path) -> None:
             x = _task_rhos(trs)
             score = _mean_by_rho(trs, "obs_sigma_008_score")
             ir_relative = _mean_by_rho(trs, "ir_relative_q90")
-            dr = _mean_by_rho(trs, "dr_delta010")
+            sr = _mean_by_rho(trs, "sr_delta010")
             score_lo, score_hi = _range_by_rho(trs, "obs_sigma_008_score")
 
             clean_base = safe_mean(
@@ -199,7 +199,7 @@ def plot_dynamics(rows: list[dict[str, str]], out_fig: Path) -> None:
             )
             diagnostic_ax.plot(
                 x,
-                dr,
+                sr,
                 color="#7570b3",
                 marker="^",
                 lw=1.35,
@@ -208,10 +208,10 @@ def plot_dynamics(rows: list[dict[str, str]], out_fig: Path) -> None:
                 zorder=2,
             )
             diagnostic_ax.axhline(COMMON_TI, color="#d95f02", ls=":", lw=1.0, zorder=1.6)
-            diagnostic_ax.axhline(COMMON_TD, color="#7570b3", ls=":", lw=1.0, zorder=1.6)
+            diagnostic_ax.axhline(COMMON_T_SR, color="#7570b3", ls=":", lw=1.0, zorder=1.6)
             if index == 0:
                 diagnostic_ax.annotate(
-                    r"$t_I{=}0.3$",
+                    r"$t_{\rm IR}{=}0.3$",
                     xy=(0.081, COMMON_TI),
                     xytext=(0, 1.6),
                     textcoords="offset points",
@@ -221,8 +221,8 @@ def plot_dynamics(rows: list[dict[str, str]], out_fig: Path) -> None:
                     color="#d95f02",
                 )
                 diagnostic_ax.annotate(
-                    r"$t_D{=}0.95$",
-                    xy=(0.081, COMMON_TD),
+                    r"$t_{\rm SR}{=}0.95$",
+                    xy=(0.081, COMMON_T_SR),
                     xytext=(0, -1.6),
                     textcoords="offset points",
                     ha="right",
@@ -233,8 +233,8 @@ def plot_dynamics(rows: list[dict[str, str]], out_fig: Path) -> None:
 
             score_ax.set_title(f"({chr(97 + index)}) {task}", loc="left", fontweight="semibold")
             if index == 0:
-                score_ax.set_ylabel("Planning\nsuccess rate (%)")
-                diagnostic_ax.set_ylabel("Relative IR\n/ DR")
+                score_ax.set_ylabel("Planning\nsuccess (%)")
+                diagnostic_ax.set_ylabel("Relative IR\n/ SR")
             else:
                 # Score panels keep their tick labels: y-ranges adapt per task,
                 # so hiding them would leave panels (b)-(d) unreadable. The
@@ -272,10 +272,10 @@ def plot_dynamics(rows: list[dict[str, str]], out_fig: Path) -> None:
                 marker="o",
                 lw=1.6,
                 ms=3.6,
-                label=r"Success rate ($\sigma_{\rm eval}=0.08$)",
+                label=r"Planning success ($\sigma_{\rm eval}=0.08$)",
             ),
             Line2D([], [], color="#d95f02", marker="s", lw=1.35, ms=3.4, label=r"Relative IR ($\downarrow$)"),
-            Line2D([], [], color="#7570b3", marker="^", lw=1.35, ms=3.5, ls="--", label=r"DR ($\uparrow$)"),
+            Line2D([], [], color="#7570b3", marker="^", lw=1.35, ms=3.5, ls="--", label=r"SR ($\uparrow$)"),
             Line2D([], [], color="#888888", ls="--", lw=0.9, label="Unaugmented baseline"),
         ]
         fig.legend(
@@ -359,7 +359,7 @@ def plot_region(rows: list[dict[str, str]], out_fig: Path) -> None:
             marker = "o" if int(float(row["training_seed"])) == 3072 else "s" if int(float(row["training_seed"])) == 3073 else "^"
             ax.scatter(
                 fnum(row["ir_relative_q90"]),
-                fnum(row["dr_delta010"]),
+                fnum(row["sr_delta010"]),
                 s=26,
                 alpha=0.78,
                 c=color,
@@ -372,7 +372,7 @@ def plot_region(rows: list[dict[str, str]], out_fig: Path) -> None:
     for ax in axes[2:]:
         ax.set_xlabel("relative IR q90")
     for ax in axes[::2]:
-        ax.set_ylabel("DR")
+        ax.set_ylabel("SR")
     fig.tight_layout()
     fig.savefig(out_fig, dpi=220)
     plt.close(fig)
@@ -385,7 +385,7 @@ def main() -> int:
     parser.add_argument("--region-out", type=Path, default=DEFAULT_REGION_FIG)
     parser.add_argument("--planner-out", type=Path, default=DEFAULT_PLANNER_FIG)
     args = parser.parse_args()
-    rows = to_ir_dr(read_csv(args.diagnostics))
+    rows = to_ir_sr(read_csv(args.diagnostics))
     plot_dynamics(rows, args.out)
     plot_region(rows, args.region_out)
     plot_planner_guard(rows, args.planner_out)

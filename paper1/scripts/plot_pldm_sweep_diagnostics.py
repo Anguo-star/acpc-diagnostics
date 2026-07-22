@@ -20,7 +20,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-from .ir_dr_compat import to_ir_dr
+from .ir_sr_compat import to_ir_sr
 from .utils_paper1_io import ROOT, TASKS
 
 DEFAULT_ROWS = ROOT / "paper1/results/external_validation/pldm_frozen_rows_v2.csv"
@@ -28,7 +28,7 @@ DEFAULT_FIG = ROOT / "assets/paper1_figs/fig_pldm_sweep_diagnostics.pdf"
 
 # Shared with the LeWM sweep figure.
 COMMON_TI = 0.30
-COMMON_TD = 0.95
+COMMON_T_SR = 0.95
 RECOVERY_COLOR = "#d9ead3"
 
 PLOT_STYLE = {
@@ -51,7 +51,7 @@ PLOT_STYLE = {
 def _read_rows(path: Path) -> dict[str, list[dict[str, float | bool]]]:
     by_task: dict[str, list[dict[str, float | bool]]] = {task: [] for task in TASKS}
     with path.open(newline="", encoding="utf-8") as stream:
-        rows = to_ir_dr(list(csv.DictReader(stream)))
+        rows = to_ir_sr(list(csv.DictReader(stream)))
     for row in rows:
         task = row["task"]
         if task not in by_task:
@@ -60,7 +60,7 @@ def _read_rows(path: Path) -> dict[str, list[dict[str, float | bool]]]:
             {
                 "rho": float(row["training_rho"]),
                 "ir_raw_q90": float(row["ir_raw_q90"]),
-                "dr": float(row["dr"]),
+                "sr": float(row["sr"]),
                 "stress_score": float(row["stress_score"]),
                 "stress_seed_scores": json.loads(
                     row["stress_score_by_evaluation_seed"]
@@ -111,7 +111,7 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
             score = [row["stress_score"] for row in rows]
             base_ir_raw = rows[0]["ir_raw_q90"]
             ir_relative = [row["ir_raw_q90"] / base_ir_raw for row in rows]
-            dr = [row["dr"] for row in rows]
+            sr = [row["sr"] for row in rows]
 
             clean_base = rows[0]["base_clean"]
             score_lo = [min(row["stress_seed_scores"]) for row in rows]
@@ -143,7 +143,7 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
             )
             diagnostic_ax.plot(
                 x,
-                dr,
+                sr,
                 color="#7570b3",
                 marker="^",
                 lw=1.35,
@@ -152,10 +152,10 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
                 zorder=2,
             )
             diagnostic_ax.axhline(COMMON_TI, color="#d95f02", ls=":", lw=1.0, zorder=1.6)
-            diagnostic_ax.axhline(COMMON_TD, color="#7570b3", ls=":", lw=1.0, zorder=1.6)
+            diagnostic_ax.axhline(COMMON_T_SR, color="#7570b3", ls=":", lw=1.0, zorder=1.6)
             if index == 0:
                 diagnostic_ax.annotate(
-                    r"$t_I{=}0.3$",
+                    r"$t_{\rm IR}{=}0.3$",
                     xy=(0.081, COMMON_TI),
                     xytext=(0, 1.6),
                     textcoords="offset points",
@@ -165,8 +165,8 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
                     color="#d95f02",
                 )
                 diagnostic_ax.annotate(
-                    r"$t_D{=}0.95$",
-                    xy=(0.081, COMMON_TD),
+                    r"$t_{\rm SR}{=}0.95$",
+                    xy=(0.081, COMMON_T_SR),
                     xytext=(0, -1.6),
                     textcoords="offset points",
                     ha="right",
@@ -177,8 +177,8 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
 
             score_ax.set_title(f"({chr(97 + index)}) {task}", loc="left", fontweight="semibold")
             if index % 4 == 0:
-                score_ax.set_ylabel("Planning\nsuccess rate (%)")
-                diagnostic_ax.set_ylabel("Relative IR\n/ DR")
+                score_ax.set_ylabel("Planning\nsuccess (%)")
+                diagnostic_ax.set_ylabel("Relative IR\n/ SR")
             score_span = [*score_lo, *score_hi, clean_base]
             score_ax.set_ylim(min(score_span) - 5.0, max(score_span) + 5.0)
             score_ax.tick_params(axis="x", labelbottom=False, length=0)
@@ -204,10 +204,10 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
                 marker="o",
                 lw=1.6,
                 ms=3.6,
-                label=r"Success rate ($\sigma_{\rm eval}=0.08$)",
+                label=r"Planning success ($\sigma_{\rm eval}=0.08$)",
             ),
             Line2D([], [], color="#d95f02", marker="s", lw=1.35, ms=3.4, label=r"Relative IR ($\downarrow$)"),
-            Line2D([], [], color="#7570b3", marker="^", lw=1.35, ms=3.5, ls="--", label=r"DR ($\uparrow$)"),
+            Line2D([], [], color="#7570b3", marker="^", lw=1.35, ms=3.5, ls="--", label=r"SR ($\uparrow$)"),
             Line2D([], [], color="#888888", ls="--", lw=0.9, label="Unaugmented baseline"),
         ]
         fig.legend(

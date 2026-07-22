@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Evaluate joint IR/DR screening across threshold-selection/test task partitions."""
+"""Evaluate joint IR/SR screening across threshold-selection/test task partitions."""
 
 from __future__ import annotations
 
@@ -17,19 +17,19 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from .ir_dr_compat import to_ir_dr
+from .ir_sr_compat import to_ir_sr
 from .utils_paper1_io import ROOT, SEEDS, TASKS, fnum, read_csv, write_csv
 
 
 DEFAULT_DIAGNOSTICS = ROOT / "paper1/results/full_sweep_diagnostics.csv"
-DEFAULT_ROWS = ROOT / "paper1/results/cross_task_ir_dr_all_subsets_v1.csv"
-DEFAULT_PARAMS = ROOT / "paper1/results/cross_task_ir_dr_all_subsets_params_v1.json"
-DEFAULT_SUMMARY = ROOT / "paper1/results/cross_task_ir_dr_all_subsets_summary_v1.json"
-DEFAULT_TABLE = ROOT / "paper1/tables/table_cross_task_ir_dr_all_subsets_v1.tex"
-DEFAULT_FIGURE = ROOT / "assets/paper1_figs/fig_cross_task_ir_dr_source_coverage_v1.pdf"
+DEFAULT_ROWS = ROOT / "paper1/results/cross_task_ir_sr_all_subsets_v2.csv"
+DEFAULT_PARAMS = ROOT / "paper1/results/cross_task_ir_sr_all_subsets_params_v2.json"
+DEFAULT_SUMMARY = ROOT / "paper1/results/cross_task_ir_sr_all_subsets_summary_v2.json"
+DEFAULT_TABLE = ROOT / "paper1/tables/table_cross_task_ir_sr_all_subsets_v2.tex"
+DEFAULT_FIGURE = ROOT / "assets/paper1_figs/fig_cross_task_ir_sr_source_coverage_v2.pdf"
 
 IR_THRESHOLDS = (0.05, 0.075, 0.10, 0.15, 0.20, 0.30)
-DR_THRESHOLDS = (0.80, 0.85, 0.90, 0.95)
+SR_THRESHOLDS = (0.80, 0.85, 0.90, 0.95)
 
 DETAIL_FIELDS = [
     "partition_id",
@@ -37,7 +37,7 @@ DETAIL_FIELDS = [
     "source_tasks",
     "evaluation_tasks",
     "ir_threshold",
-    "dr_threshold",
+    "sr_threshold",
     "task",
     "training_seed",
     "behavioral_start",
@@ -79,10 +79,10 @@ def _truth(row: dict[str, Any]) -> bool:
     return str(row.get("recovery_label", "")).lower() == "true"
 
 
-def _pred(row: dict[str, Any], ir_threshold: float, dr_threshold: float) -> bool:
+def _pred(row: dict[str, Any], ir_threshold: float, sr_threshold: float) -> bool:
     return (
         fnum(row["ir_relative_q90"]) <= ir_threshold
-        and fnum(row["dr_delta010"]) >= dr_threshold
+        and fnum(row["sr_delta010"]) >= sr_threshold
     )
 
 
@@ -123,13 +123,13 @@ def _json_number(value: Any) -> float | int | None:
 
 
 def _block_eval(
-    rows: list[dict[str, Any]], ir_threshold: float, dr_threshold: float
+    rows: list[dict[str, Any]], ir_threshold: float, sr_threshold: float
 ) -> dict[str, Any]:
     truth = [_truth(row) for row in rows]
-    pred = [_pred(row, ir_threshold, dr_threshold) for row in rows]
+    pred = [_pred(row, ir_threshold, sr_threshold) for row in rows]
     behavioral_start = _start(rows, _truth)
     predicted_start = _start(
-        rows, lambda row: _pred(row, ir_threshold, dr_threshold)
+        rows, lambda row: _pred(row, ir_threshold, sr_threshold)
     )
 
     if behavioral_start is None and predicted_start is None:
@@ -197,10 +197,10 @@ def _block_eval(
 def _objective(
     blocks: dict[tuple[str, int], list[dict[str, Any]]],
     ir_threshold: float,
-    dr_threshold: float,
+    sr_threshold: float,
 ) -> tuple[float, int, int, float, float, float]:
     evaluations = [
-        _block_eval(rows, ir_threshold, dr_threshold) for rows in blocks.values()
+        _block_eval(rows, ir_threshold, sr_threshold) for rows in blocks.values()
     ]
     return (
         _safe_mean(item["abs_start_error"] for item in evaluations),
@@ -208,12 +208,12 @@ def _objective(
         sum(item["false_late"] for item in evaluations),
         -_safe_mean(item["balanced_accuracy"] for item in evaluations),
         ir_threshold,
-        -dr_threshold,
+        -sr_threshold,
     )
 
 
 def _candidate_thresholds() -> Iterable[tuple[float, float]]:
-    return itertools.product(IR_THRESHOLDS, DR_THRESHOLDS)
+    return itertools.product(IR_THRESHOLDS, SR_THRESHOLDS)
 
 
 def _task_set_text(tasks: Iterable[str]) -> str:
@@ -245,7 +245,7 @@ def _validate_input(
         raise ValueError(
             f"diagnostic grid mismatch: missing={missing[:8]}, extra={extra[:8]}"
         )
-    for field in ("ir_relative_q90", "dr_delta010", "recovery_label"):
+    for field in ("ir_relative_q90", "sr_delta010", "recovery_label"):
         if any(row.get(field, "") == "" for row in rows):
             raise ValueError(f"missing required field {field!r}")
 
@@ -278,7 +278,7 @@ def run_all_subsets(
     *,
     expected_seeds: Iterable[int] = SEEDS,
 ) -> tuple[list[dict[str, Any]], dict[str, Any], dict[str, Any]]:
-    rows = to_ir_dr(rows)
+    rows = to_ir_sr(rows)
     seeds = tuple(int(seed) for seed in expected_seeds)
     _validate_input(rows, seeds)
     all_details: list[dict[str, Any]] = []
@@ -296,8 +296,8 @@ def run_all_subsets(
                 _candidate_thresholds(),
                 key=lambda threshold: _objective(source_blocks, *threshold),
             )
-            ir_threshold, dr_threshold = best
-            objective = _objective(source_blocks, ir_threshold, dr_threshold)
+            ir_threshold, sr_threshold = best
+            objective = _objective(source_blocks, ir_threshold, sr_threshold)
             partition_id = _partition_id(source)
             source_text = _task_set_text(source)
             evaluation_text = _task_set_text(evaluation)
@@ -310,10 +310,10 @@ def run_all_subsets(
                     "source_tasks": source_text,
                     "evaluation_tasks": evaluation_text,
                     "ir_threshold": ir_threshold,
-                    "dr_threshold": dr_threshold,
+                    "sr_threshold": sr_threshold,
                     "task": task,
                     "training_seed": seed,
-                    **_block_eval(block, ir_threshold, dr_threshold),
+                    **_block_eval(block, ir_threshold, sr_threshold),
                 }
                 details.append(record)
                 all_details.append(record)
@@ -326,7 +326,7 @@ def run_all_subsets(
                     "source_tasks": list(source),
                     "evaluation_tasks": list(evaluation),
                     "ir_threshold": ir_threshold,
-                    "dr_threshold": dr_threshold,
+                    "sr_threshold": sr_threshold,
                     **partition_metrics,
                 }
             )
@@ -342,7 +342,7 @@ def run_all_subsets(
                     "evaluation_task_seed_blocks": len(_blocks(evaluation_rows)),
                     "selected_thresholds": {
                         "ir_threshold": ir_threshold,
-                        "dr_threshold": dr_threshold,
+                        "sr_threshold": sr_threshold,
                     },
                     "selection_objective": {
                         "mean_abs_start_error": objective[0],
@@ -350,7 +350,7 @@ def run_all_subsets(
                         "false_late": objective[2],
                         "negative_macro_balanced_accuracy": objective[3],
                         "ir_threshold_tiebreak": objective[4],
-                        "negative_dr_threshold_tiebreak": objective[5],
+                        "negative_sr_threshold_tiebreak": objective[5],
                     },
                 }
             )
@@ -361,7 +361,7 @@ def run_all_subsets(
         task_means = _task_means(coverage_rows)
         splits = [item for item in partition_summaries if item["source_coverage"] == coverage]
         threshold_counts = Counter(
-            (float(item["ir_threshold"]), float(item["dr_threshold"]))
+            (float(item["ir_threshold"]), float(item["sr_threshold"]))
             for item in splits
         )
         coverage_summaries.append(
@@ -386,7 +386,7 @@ def run_all_subsets(
                 "selected_threshold_counts": [
                     {
                         "ir_threshold": key[0],
-                        "dr_threshold": key[1],
+                        "sr_threshold": key[1],
                         "count": count,
                     }
                     for key, count in sorted(threshold_counts.items())
@@ -396,21 +396,21 @@ def run_all_subsets(
         )
 
     params = {
-        "schema_version": "paper1-cross-task-ir-dr-rule-params-1.0",
-        "rule": "IR_relative <= ir_threshold AND DR >= dr_threshold",
+        "schema_version": "paper1-cross-task-ir-sr-rule-params-2.0",
+        "rule": "IR_relative <= ir_threshold AND SR >= sr_threshold",
         "task_order": TASKS,
         "training_seeds": seeds,
         "checkpoint_grid": [f"{rho / 100:.2f}" for rho in range(9)],
         "candidate_grid": {
             "ir_threshold": IR_THRESHOLDS,
-            "dr_threshold": DR_THRESHOLDS,
+            "sr_threshold": SR_THRESHOLDS,
         },
         "diagnostic_fields": {
             "ir_relative_q90": (
                 "horizon-v2 q90 IR relative to the no-augmentation checkpoint"
             ),
-            "dr_delta010": (
-                "horizon-v2 q90 DR with strict normalized margin 0.10"
+            "sr_delta010": (
+                "horizon-v2 q90 SR with strict normalized margin 0.10"
             ),
         },
         "selection_objective_order": [
@@ -419,13 +419,13 @@ def run_all_subsets(
             "false_late",
             "negative_macro_balanced_accuracy",
             "ir_threshold",
-            "negative_dr_threshold",
+            "negative_sr_threshold",
         ],
         "evaluation_outcomes_used_for_selection": False,
         "splits": split_params,
     }
     summary = {
-        "schema_version": "paper1-cross-task-ir-dr-rule-summary-1.0",
+        "schema_version": "paper1-cross-task-ir-sr-rule-summary-2.0",
         "aggregation": (
             "mean over training-seed blocks within evaluation task; mean over eligible "
             "source subsets within coverage; equal mean over four evaluation tasks"
@@ -459,13 +459,13 @@ def write_table(summary: dict[str, Any], out: Path) -> None:
     lines = [
         r"\begin{table*}[t]",
         r"\centering",
-        r"\caption{Joint IR/DR checkpoint screening with thresholds chosen on other tasks. Thresholds are selected on the threshold-selection tasks and applied unchanged to all test tasks. Metrics first average training runs within each test task and then weight tasks equally. Recovery-onset mismatch is measured in training-augmentation grid levels (one level is $0.01$ in $\stdmax{}$).}",
+        r"\caption{Joint IR/SR checkpoint screening with thresholds chosen on other tasks. Thresholds are selected on the threshold-selection tasks and applied unchanged to all test tasks. Metrics first average training runs within each test task and then weight tasks equally. Recovery-onset mismatch is measured in training-augmentation grid levels (one level is $0.01$ in $\stdmax{}$).}",
         r"\label{tab:cross-task-all-subsets}",
         r"\small",
         r"\setlength{\tabcolsep}{3.5pt}",
         r"\begin{tabular}{>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}rrrrr}",
         r"\toprule",
-        r"Selection tasks & Test tasks & $t_I$ & $t_D$ & BA & P / R & \shortstack{Onset mismatch\\mean / max} \\",
+        r"Selection tasks & Test tasks & $t_{\mathrm{IR}}$ & $t_{\mathrm{SR}}$ & BA & P / R & \shortstack{Onset mismatch\\mean / max} \\",
         r"\midrule",
     ]
     for item in summary["partitions"]:
@@ -474,7 +474,7 @@ def write_table(summary: dict[str, Any], out: Path) -> None:
         mean_mismatch = item["mean_abs_start_error"] / grid_step
         max_mismatch = item["max_abs_start_error"] / grid_step
         lines.append(
-            f"{source} & {evaluation} & {item['ir_threshold']:.3g} & {item['dr_threshold']:.2f} & "
+            f"{source} & {evaluation} & {item['ir_threshold']:.3g} & {item['sr_threshold']:.2f} & "
             f"{item['balanced_accuracy']:.3f} & {item['precision']:.3f} / {item['recall']:.3f} & "
             f"{mean_mismatch:.1f} / {max_mismatch:.1f} \\\\"
         )

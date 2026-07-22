@@ -169,7 +169,7 @@ if [ "${skip_eval_sweep:-0}" = "1" ]; then
     exit 0
 fi
 if [ "${skip_diagnostics:-1}" != "1" ]; then
-    echo "[note] run_trainer.sh performs behavioral evaluation only; run ACPC/IR/DR diagnostics with the paper1 scripts."
+    echo "[note] run_trainer.sh performs behavioral evaluation only; run ACPC/IR/SR diagnostics with the paper1 scripts."
 fi
 
 if [ -n "${ckpt_override:-}" ]; then

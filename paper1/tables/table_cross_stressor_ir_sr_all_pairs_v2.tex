@@ -1,12 +1,12 @@
 \begin{table*}[t]
 \centering
-\caption{All 24 LeWM checkpoint pairs evaluated under blur and resize. IR$_{\rm rel}$ and DR are measured for the checkpoint trained with Gaussian-noise augmentation ($\stdmax{}=0.08$); $\Delta P$ and $\Delta S$ are its success-rate and IR--DR score changes relative to the unaugmented checkpoint. A pair is positive when $\Delta P\geq5$ percentage points with at most a five-point clean loss. Daggers mark the two discordant pairs.}
-\label{tab:cross-stressor-ir-dr-all-pairs}
+\caption{All 24 LeWM checkpoint pairs evaluated under blur and resize. IR$_{\rm rel}$ and SR are measured for the checkpoint trained with Gaussian-noise augmentation ($\stdmax{}=0.08$); $\Delta P$ and $\Delta S$ are its success-rate and IR--SR score changes relative to the unaugmented checkpoint. A pair is positive when $\Delta P\geq5$ percentage points with at most a five-point clean loss. Daggers mark the two discordant pairs.}
+\label{tab:cross-stressor-ir-sr-all-pairs}
 \footnotesize
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{lrlrrrrrl}
 \toprule
-Task & Seed & Shift & IR$_{\rm rel}$ & DR & $\Delta P$ & $\Delta S$ & Outcome (success / IR--DR) \\
+Task & Seed & Shift & IR$_{\rm rel}$ & SR & $\Delta P$ & $\Delta S$ & Outcome (success / IR--SR) \\
 \midrule
 TwoRoom & 3072 & blur & 0.499 & 0.885 & 55.7 & 1.670 & positive / positive \\
 TwoRoom & 3072 & resize & 0.336 & 0.967 & 52.3 & 2.214 & positive / positive \\

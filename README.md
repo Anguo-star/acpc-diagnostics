@@ -11,7 +11,7 @@ two complementary summaries:
 
 - **Invariance Radius (IR; lower is better):** an upper-tail summary of
   normalized same-history ACPC.
-- **Distinction Rate (DR; higher is better):** the fraction of eligible nearby
+- **Separation Rate (SR; higher is better):** the fraction of eligible nearby
   different-state-coordinate-label pairs whose rollout separation exceeds
   raw IR by a fixed margin.
 
@@ -114,16 +114,16 @@ numerical sweeps; enable it explicitly when videos are needed.
 
 ## Rebuild the released displays
 
-The following commands are CPU-only and rebuild the current ACPC/IR/DR
+The following commands are CPU-only and rebuild the current ACPC/IR/SR
 submission assets from committed inputs:
 
 ```bash
-python -m paper1.scripts.plot_acpc_ir_dr_overview
+python -m paper1.scripts.plot_acpc_ir_sr_overview
 python -m paper1.scripts.plot_full_sweep_diagnostics
 python -m paper1.scripts.build_future_drift_reader_display
 python -m paper1.scripts.cross_task_selective_rule
 python -m paper1.scripts.plot_pldm_sweep_diagnostics
-python -m paper1.scripts.build_cross_stressor_ir_dr_comparison
+python -m paper1.scripts.build_cross_stressor_ir_sr_comparison
 python -m paper1.scripts.build_acpc_submission_assets
 python -m paper1.scripts.plot_gaussian_sensitivity_mechanism
 ```
@@ -135,7 +135,7 @@ hashes, run:
 ```bash
 python -m paper1.scripts.build_acpc_overview_inputs \
   --h5 /path/to/pusht_expert_train.h5
-python -m paper1.scripts.plot_acpc_ir_dr_overview
+python -m paper1.scripts.plot_acpc_ir_sr_overview
 ```
 
 ## Upstream LeWorldModel

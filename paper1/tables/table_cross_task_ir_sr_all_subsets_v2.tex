@@ -1,12 +1,12 @@
 \begin{table*}[t]
 \centering
-\caption{Joint IR/DR checkpoint screening with thresholds chosen on other tasks. Thresholds are selected on the threshold-selection tasks and applied unchanged to all test tasks. Metrics first average training runs within each test task and then weight tasks equally. Recovery-onset mismatch is measured in training-augmentation grid levels (one level is $0.01$ in $\stdmax{}$).}
+\caption{Joint IR/SR checkpoint screening with thresholds chosen on other tasks. Thresholds are selected on the threshold-selection tasks and applied unchanged to all test tasks. Metrics first average training runs within each test task and then weight tasks equally. Recovery-onset mismatch is measured in training-augmentation grid levels (one level is $0.01$ in $\stdmax{}$).}
 \label{tab:cross-task-all-subsets}
 \small
 \setlength{\tabcolsep}{3.5pt}
 \begin{tabular}{>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.17\textwidth}rrrrr}
 \toprule
-Selection tasks & Test tasks & $t_I$ & $t_D$ & BA & P / R & \shortstack{Onset mismatch\\mean / max} \\
+Selection tasks & Test tasks & $t_{\mathrm{IR}}$ & $t_{\mathrm{SR}}$ & BA & P / R & \shortstack{Onset mismatch\\mean / max} \\
 \midrule
 TwoRoom & PushT, Reacher, Cube & 0.3 & 0.95 & 0.888 & 0.884 / 0.981 & 0.3 / 1.0 \\
 PushT & TwoRoom, Reacher, Cube & 0.3 & 0.95 & 0.894 & 0.902 / 0.956 & 0.6 / 1.0 \\

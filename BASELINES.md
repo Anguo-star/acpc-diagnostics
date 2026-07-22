@@ -69,5 +69,5 @@ python -m paper1.scripts.plot_pldm_sweep_diagnostics
 python -m paper1.scripts.build_acpc_submission_assets
 ```
 
-The same ACPC, IR, and DR definitions are used for both model families; the
+The same ACPC, IR, and SR definitions are used for both model families; the
 PLDM results test portability of the diagnostic, not architectural equality.
