@@ -2,16 +2,16 @@
 
 The layout, colors, and dotted common-threshold lines mirror
 ``plot_full_sweep_diagnostics.py`` so that readers can compare the two model
-families panel by panel. PLDM has one training run per setting; which levels
-meet the success-rate criterion is reported in the text and tables rather
-than drawn on the figure.
+families panel by panel. The current PLDM sweep has three independent
+training runs per setting; which levels meet the success-rate criterion is
+reported in the text and tables rather than drawn on the figure.
 """
 
 from __future__ import annotations
 
 import argparse
 import csv
-import json
+from collections import defaultdict
 from pathlib import Path
 
 import matplotlib
@@ -48,7 +48,7 @@ PLOT_STYLE = {
 }
 
 
-def _read_rows(path: Path) -> dict[str, list[dict[str, float | bool]]]:
+def _read_rows(path: Path) -> dict[str, list[dict[str, float | bool | int]]]:
     by_task: dict[str, list[dict[str, float | bool]]] = {task: [] for task in TASKS}
     with path.open(newline="", encoding="utf-8") as stream:
         rows = to_ir_sr(list(csv.DictReader(stream)))
@@ -59,21 +59,48 @@ def _read_rows(path: Path) -> dict[str, list[dict[str, float | bool]]]:
         by_task[task].append(
             {
                 "rho": float(row["training_rho"]),
+                "training_seed": int(float(row["training_seed"])),
                 "ir_raw_q90": float(row["ir_raw_q90"]),
+                "ir_relative": float(row["ir_relative_q90"]),
                 "sr": float(row["sr"]),
                 "stress_score": float(row["stress_score"]),
-                "stress_seed_scores": json.loads(
-                    row["stress_score_by_evaluation_seed"]
-                ),
                 "base_clean": float(row["base_clean_score"]),
                 "recovered": str(row["behavior_label"]).lower() == "true",
             }
         )
     for task, rows in by_task.items():
-        if len(rows) != 9:
-            raise ValueError(f"{task}: expected nine sweep levels")
-        rows.sort(key=lambda item: item["rho"])
+        if len(rows) != 27:
+            raise ValueError(f"{task}: expected three complete nine-level sweeps")
+        if {int(row["training_seed"]) for row in rows} != {3072, 3073, 3074}:
+            raise ValueError(f"{task}: training-seed coverage mismatch")
+        rows.sort(key=lambda item: (float(item["rho"]), int(item["training_seed"])))
     return by_task
+
+
+def _aggregate(
+    rows: list[dict[str, float | bool | int]],
+) -> list[dict[str, float]]:
+    grouped: dict[float, list[dict[str, float | bool | int]]] = defaultdict(list)
+    for row in rows:
+        grouped[float(row["rho"])].append(row)
+    output: list[dict[str, float]] = []
+    for rho in sorted(grouped):
+        block = grouped[rho]
+        if len(block) != 3:
+            raise ValueError(f"rho={rho}: expected three training runs")
+        record: dict[str, float] = {"rho": rho}
+        for source, target in (
+            ("stress_score", "score"),
+            ("ir_relative", "ir_relative"),
+            ("sr", "sr"),
+            ("base_clean", "base_clean"),
+        ):
+            values = [float(row[source]) for row in block]
+            record[target] = sum(values) / len(values)
+            record[f"{target}_lo"] = min(values)
+            record[f"{target}_hi"] = max(values)
+        output.append(record)
+    return output
 
 
 def _recovery_spans(x: list[float], recovered: list[bool]) -> list[tuple[float, float]]:
@@ -92,7 +119,10 @@ def _recovery_spans(x: list[float], recovered: list[bool]) -> list[tuple[float, 
     return spans
 
 
-def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> None:
+def plot(
+    by_task: dict[str, list[dict[str, float | bool | int]]],
+    out_fig: Path,
+) -> None:
     out_fig.parent.mkdir(parents=True, exist_ok=True)
     with plt.rc_context(PLOT_STYLE):
         fig = plt.figure(figsize=(6.7, 2.75))
@@ -106,16 +136,15 @@ def plot(by_task: dict[str, list[dict[str, float | bool]]], out_fig: Path) -> No
             )
             score_ax = fig.add_subplot(block[0])
             diagnostic_ax = fig.add_subplot(block[1], sharex=score_ax)
-            rows = by_task[task]
+            rows = _aggregate(by_task[task])
             x = [row["rho"] for row in rows]
-            score = [row["stress_score"] for row in rows]
-            base_ir_raw = rows[0]["ir_raw_q90"]
-            ir_relative = [row["ir_raw_q90"] / base_ir_raw for row in rows]
+            score = [row["score"] for row in rows]
+            ir_relative = [row["ir_relative"] for row in rows]
             sr = [row["sr"] for row in rows]
 
             clean_base = rows[0]["base_clean"]
-            score_lo = [min(row["stress_seed_scores"]) for row in rows]
-            score_hi = [max(row["stress_seed_scores"]) for row in rows]
+            score_lo = [row["score_lo"] for row in rows]
+            score_hi = [row["score_hi"] for row in rows]
             score_ax.axhline(clean_base, color="#888888", ls="--", lw=0.9, zorder=1.5)
             score_ax.errorbar(
                 x,

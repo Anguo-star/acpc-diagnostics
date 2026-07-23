@@ -1,0 +1,4597 @@
+{
+  "Cube": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 53.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.1602468994692887,
+          "values": [
+            54.0,
+            50.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 54.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197598,
+          "values": [
+            56.0,
+            52.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 50.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            49.0,
+            51.0,
+            52.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 45.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.0276819911981905,
+          "values": [
+            49.0,
+            40.0,
+            48.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 50.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            49.0,
+            50.0,
+            53.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 48.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.9428090415820634,
+          "values": [
+            49.0,
+            47.0,
+            49.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 45.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.320493798938574,
+          "values": [
+            49.0,
+            39.0,
+            47.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_baseline_seed3073/cube_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_baseline_seed3073",
+      "subdir": "cube_pldm_baseline_seed3073"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.867441755680873,
+          "values": [
+            54.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 52.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.887840577551895,
+          "values": [
+            58.0,
+            44.0,
+            54.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.449489742783175,
+          "values": [
+            58.0,
+            52.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.3570226039551585,
+          "values": [
+            54.0,
+            49.0,
+            54.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.5590260840104335,
+          "values": [
+            58.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.299831645537219,
+          "values": [
+            54.0,
+            49.0,
+            57.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 49.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            49.0,
+            48.0,
+            51.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to001_p1_seed3073/cube_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to001_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to001_p1_seed3073"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652367,
+          "values": [
+            54.0,
+            48.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.1602468994692856,
+          "values": [
+            56.0,
+            52.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.6246692913372724,
+          "values": [
+            54.0,
+            49.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            53.0,
+            54.0,
+            54.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 54.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.08248290463863,
+          "values": [
+            59.0,
+            49.0,
+            54.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.78423336480244,
+          "values": [
+            55.0,
+            46.0,
+            57.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 54.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.546060565661953,
+          "values": [
+            55.0,
+            48.0,
+            59.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to002_p1_seed3073/cube_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to002_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to002_p1_seed3073"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 52.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.2659863237109072,
+          "values": [
+            56.0,
+            48.0,
+            52.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 49.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.96655480858378,
+          "values": [
+            52.0,
+            42.0,
+            53.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 51.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.2998316455372247,
+          "values": [
+            52.0,
+            47.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.78423336480244,
+          "values": [
+            58.0,
+            47.0,
+            56.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 51.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            51.0,
+            50.0,
+            53.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 51.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.299831645537225,
+          "values": [
+            49.0,
+            49.0,
+            56.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 51.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652345,
+          "values": [
+            53.0,
+            47.0,
+            54.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to003_p1_seed3073/cube_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to003_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to003_p1_seed3073"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197598,
+          "values": [
+            52.0,
+            53.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.1602468994692856,
+          "values": [
+            57.0,
+            52.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 54.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.9439202887759475,
+          "values": [
+            55.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.867441755680873,
+          "values": [
+            57.0,
+            54.0,
+            50.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.1602468994692856,
+          "values": [
+            56.0,
+            52.0,
+            57.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 54.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.9428090415820667,
+          "values": [
+            54.0,
+            54.0,
+            56.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 54.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.054804667656323,
+          "values": [
+            55.0,
+            52.0,
+            57.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to004_p1_seed3073/cube_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to004_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to004_p1_seed3073"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.4944382578492976,
+          "values": [
+            52.0,
+            50.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 53.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.632993161855455,
+          "values": [
+            55.0,
+            51.0,
+            53.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.988876515698586,
+          "values": [
+            54.0,
+            46.0,
+            58.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 55.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.8674417556808756,
+          "values": [
+            56.0,
+            52.0,
+            59.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652367,
+          "values": [
+            54.0,
+            48.0,
+            55.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 54.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.16024689946929,
+          "values": [
+            55.0,
+            51.0,
+            56.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.4944382578492967,
+          "values": [
+            55.0,
+            49.0,
+            53.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to005_p1_seed3073/cube_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to005_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to005_p1_seed3073"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 54.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197598,
+          "values": [
+            56.0,
+            52.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 54.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652336,
+          "values": [
+            56.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.9439202887759475,
+          "values": [
+            56.0,
+            51.0,
+            58.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 51.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            52.0,
+            49.0,
+            53.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 54.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.8284271247461867,
+          "values": [
+            52.0,
+            52.0,
+            58.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 53.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.242640687119288,
+          "values": [
+            56.0,
+            47.0,
+            56.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.867441755680873,
+          "values": [
+            54.0,
+            50.0,
+            57.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to006_p1_seed3073/cube_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to006_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to006_p1_seed3073"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 50.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.494438257849294,
+          "values": [
+            51.0,
+            47.0,
+            53.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 51.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.9428090415820634,
+          "values": [
+            51.0,
+            51.0,
+            53.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197598,
+          "values": [
+            51.0,
+            52.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563283,
+          "values": [
+            56.0,
+            51.0,
+            54.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 54.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.449489742783175,
+          "values": [
+            54.0,
+            51.0,
+            57.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563283,
+          "values": [
+            53.0,
+            50.0,
+            55.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 53.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.1602468994692887,
+          "values": [
+            54.0,
+            50.0,
+            55.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to007_p1_seed3073/cube_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to007_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to007_p1_seed3073"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 54.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.16024689946929,
+          "values": [
+            56.0,
+            51.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197598,
+          "values": [
+            55.0,
+            51.0,
+            52.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 54.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.29983164553722,
+          "values": [
+            58.0,
+            50.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.2472191289246497,
+          "values": [
+            55.0,
+            52.0,
+            54.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.109609335312648,
+          "values": [
+            58.0,
+            48.0,
+            52.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 53.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.320493798938572,
+          "values": [
+            57.0,
+            47.0,
+            55.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.0276819911981905,
+          "values": [
+            56.0,
+            48.0,
+            57.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to008_p1_seed3073/cube_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to008_p1_seed3073",
+      "subdir": "cube_pldm_noise_0to008_p1_seed3073"
+    }
+  },
+  "PushT": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 74.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.109609335312651,
+          "values": [
+            69.0,
+            75.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 61.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.16024689946929,
+          "values": [
+            62.0,
+            58.0,
+            63.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 21.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.265986323710904,
+          "values": [
+            25.0,
+            17.0,
+            21.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 4.333333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.6246692913372702,
+          "values": [
+            2.0,
+            3.0,
+            8.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 62.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.4142135623730951,
+          "values": [
+            61.0,
+            61.0,
+            64.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 24.333333333333332,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            25.0,
+            26.0,
+            22.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 4.666666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.6996731711975954,
+          "values": [
+            4.0,
+            3.0,
+            7.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_baseline_seed3073/pusht_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_baseline_seed3073",
+      "subdir": "pusht_pldm_baseline_seed3073"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 75.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.988876515698588,
+          "values": [
+            74.0,
+            70.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 72.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.715476066494082,
+          "values": [
+            72.0,
+            65.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 55.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.2472191289246433,
+          "values": [
+            57.0,
+            54.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 15.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.7416573867739413,
+          "values": [
+            16.0,
+            10.0,
+            19.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 74.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 7.760297817881877,
+          "values": [
+            74.0,
+            65.0,
+            84.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 62.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.559026084010437,
+          "values": [
+            60.0,
+            59.0,
+            67.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 15.333333333333334,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.496912521077347,
+          "values": [
+            9.0,
+            19.0,
+            18.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to001_p1_seed3073/pusht_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to001_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to001_p1_seed3073"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 75.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.9216076867444665,
+          "values": [
+            75.0,
+            70.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 74.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.988876515698588,
+          "values": [
+            73.0,
+            69.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 72.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.494438257849294,
+          "values": [
+            72.0,
+            70.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 54.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.2472191289246501,
+          "values": [
+            56.0,
+            53.0,
+            54.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 73.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.784233364802441,
+          "values": [
+            69.0,
+            71.0,
+            80.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 74.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.342099196813483,
+          "values": [
+            72.0,
+            68.0,
+            83.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 61.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.496912521077344,
+          "values": [
+            62.0,
+            56.0,
+            67.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to002_p1_seed3073/pusht_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to002_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to002_p1_seed3073"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 73.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652345,
+          "values": [
+            71.0,
+            72.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 72.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.8674417556808756,
+          "values": [
+            73.0,
+            69.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.858612300930075,
+          "values": [
+            66.0,
+            73.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 68.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.436502143433364,
+          "values": [
+            64.0,
+            65.0,
+            76.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 72.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.6246692913372702,
+          "values": [
+            70.0,
+            71.0,
+            76.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 73.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.2998316455372216,
+          "values": [
+            69.0,
+            74.0,
+            77.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 71.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.943920288775949,
+          "values": [
+            70.0,
+            68.0,
+            75.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to003_p1_seed3073/pusht_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to003_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to003_p1_seed3073"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.642796092394707,
+          "values": [
+            68.0,
+            65.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 71.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.898979485566356,
+          "values": [
+            71.0,
+            65.0,
+            77.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.9216076867444665,
+          "values": [
+            69.0,
+            64.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 68.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.494438257849294,
+          "values": [
+            69.0,
+            65.0,
+            71.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 70.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.2998316455372216,
+          "values": [
+            70.0,
+            67.0,
+            75.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.39934634239519,
+          "values": [
+            71.0,
+            65.0,
+            73.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 67.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.557777333511022,
+          "values": [
+            73.0,
+            60.0,
+            70.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to004_p1_seed3073/pusht_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to004_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to004_p1_seed3073"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.436502143433364,
+          "values": [
+            66.0,
+            67.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 69.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 8.73053390247253,
+          "values": [
+            67.0,
+            60.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 69.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 7.133644853010899,
+          "values": [
+            67.0,
+            62.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 69.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 8.640987597877148,
+          "values": [
+            65.0,
+            61.0,
+            81.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.018490028422596,
+          "values": [
+            64.0,
+            67.0,
+            78.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 8.055363982396381,
+          "values": [
+            63.0,
+            65.0,
+            81.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 70.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 7.483314773547883,
+          "values": [
+            68.0,
+            62.0,
+            80.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to005_p1_seed3073/pusht_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to005_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to005_p1_seed3073"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 66.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.236095644623235,
+          "values": [
+            65.0,
+            60.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 68.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.683312551921141,
+          "values": [
+            66.0,
+            61.0,
+            77.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 68.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 7.039570693980958,
+          "values": [
+            67.0,
+            61.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 68.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.683312551921141,
+          "values": [
+            70.0,
+            59.0,
+            75.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 70.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.734883511361751,
+          "values": [
+            70.0,
+            64.0,
+            78.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 67.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.342099196813483,
+          "values": [
+            65.0,
+            61.0,
+            76.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 66.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.944222218666556,
+          "values": [
+            66.0,
+            58.0,
+            75.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to006_p1_seed3073/pusht_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to006_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to006_p1_seed3073"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 70.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.189935029992179,
+          "values": [
+            72.0,
+            65.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 72.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.320493798938574,
+          "values": [
+            76.0,
+            66.0,
+            74.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 71.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.8284271247461903,
+          "values": [
+            73.0,
+            67.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 71.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.39934634239519,
+          "values": [
+            73.0,
+            67.0,
+            75.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 72.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.354126134736337,
+          "values": [
+            78.0,
+            65.0,
+            73.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 73.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.160246899469287,
+          "values": [
+            75.0,
+            70.0,
+            74.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.642796092394707,
+          "values": [
+            73.0,
+            65.0,
+            76.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to007_p1_seed3073/pusht_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to007_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to007_p1_seed3073"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.858612300930075,
+          "values": [
+            72.0,
+            65.0,
+            74.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 71.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.557777333511022,
+          "values": [
+            74.0,
+            64.0,
+            77.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 71.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.632993161855452,
+          "values": [
+            71.0,
+            69.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 72.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.449489742783178,
+          "values": [
+            72.0,
+            69.0,
+            75.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.9216076867444665,
+          "values": [
+            71.0,
+            64.0,
+            76.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 71.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.681787005729087,
+          "values": [
+            72.0,
+            67.0,
+            76.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            71.0,
+            70.0,
+            73.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to008_p1_seed3073/pusht_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to008_p1_seed3073",
+      "subdir": "pusht_pldm_noise_0to008_p1_seed3073"
+    }
+  },
+  "Reacher": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 80.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.943920288775949,
+          "values": [
+            84.0,
+            77.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 77.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.160246899469287,
+          "values": [
+            76.0,
+            80.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 75.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.632993161855452,
+          "values": [
+            77.0,
+            75.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 67.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.96655480858378,
+          "values": [
+            71.0,
+            70.0,
+            60.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 76.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.9216076867444665,
+          "values": [
+            77.0,
+            82.0,
+            70.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 74.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.715476066494082,
+          "values": [
+            74.0,
+            81.0,
+            67.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 67.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.96655480858378,
+          "values": [
+            71.0,
+            70.0,
+            60.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_baseline_seed3073/reacher_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_baseline_seed3073",
+      "subdir": "reacher_pldm_baseline_seed3073"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 81.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.944222218666553,
+          "values": [
+            78.0,
+            91.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 78.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.8856180831641267,
+          "values": [
+            76.0,
+            80.0,
+            80.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 76.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.185449728701348,
+          "values": [
+            73.0,
+            84.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 73.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.160246899469287,
+          "values": [
+            76.0,
+            71.0,
+            72.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 77.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.3570226039551585,
+          "values": [
+            81.0,
+            76.0,
+            76.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 75.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.8856180831641267,
+          "values": [
+            78.0,
+            74.0,
+            74.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 65.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.494438257849294,
+          "values": [
+            66.0,
+            68.0,
+            62.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to001_p1_seed3073/reacher_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to001_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to001_p1_seed3073"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.681787005729084,
+          "values": [
+            48.0,
+            52.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 58.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652336,
+          "values": [
+            56.0,
+            57.0,
+            63.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.624669291337267,
+          "values": [
+            57.0,
+            51.0,
+            52.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 43.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563256,
+          "values": [
+            46.0,
+            43.0,
+            41.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 55.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.3570226039551585,
+          "values": [
+            54.0,
+            59.0,
+            54.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 52.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            51.0,
+            52.0,
+            53.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 41.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.681787005729087,
+          "values": [
+            42.0,
+            37.0,
+            46.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to002_p1_seed3073/reacher_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to002_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to002_p1_seed3073"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 64.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 7.133644853010896,
+          "values": [
+            55.0,
+            72.0,
+            67.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 66.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.265986323710904,
+          "values": [
+            70.0,
+            66.0,
+            62.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 61.333333333333336,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            62.0,
+            59.0,
+            63.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 55.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.741657386773942,
+          "values": [
+            56.0,
+            59.0,
+            50.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 63.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.377042156569666,
+          "values": [
+            58.0,
+            72.0,
+            59.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 64.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.734883511361754,
+          "values": [
+            58.0,
+            72.0,
+            64.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.299831645537225,
+          "values": [
+            56.0,
+            56.0,
+            49.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to003_p1_seed3073/reacher_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to003_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to003_p1_seed3073"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 79.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            80.0,
+            81.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 78.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.2493385826745405,
+          "values": [
+            76.0,
+            86.0,
+            74.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 83.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.559026084010437,
+          "values": [
+            80.0,
+            81.0,
+            88.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 77.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 7.760297817881877,
+          "values": [
+            87.0,
+            77.0,
+            68.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 80.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.8856180831641267,
+          "values": [
+            79.0,
+            79.0,
+            83.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 81.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.988876515698588,
+          "values": [
+            76.0,
+            80.0,
+            88.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 81.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.858612300930075,
+          "values": [
+            87.0,
+            80.0,
+            78.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to004_p1_seed3073/reacher_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to004_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to004_p1_seed3073"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 76.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.160246899469287,
+          "values": [
+            78.0,
+            77.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 78.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.559026084010437,
+          "values": [
+            73.0,
+            81.0,
+            80.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 68.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563256,
+          "values": [
+            71.0,
+            68.0,
+            66.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 70.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563256,
+          "values": [
+            71.0,
+            73.0,
+            68.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 75.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            74.0,
+            78.0,
+            75.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 72.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.08248290463863,
+          "values": [
+            72.0,
+            77.0,
+            67.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 68.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.320493798938574,
+          "values": [
+            70.0,
+            72.0,
+            62.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to005_p1_seed3073/reacher_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to005_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to005_p1_seed3073"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 70.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.436502143433364,
+          "values": [
+            65.0,
+            78.0,
+            69.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 73.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.557777333511022,
+          "values": [
+            71.0,
+            81.0,
+            68.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 76.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.9216076867444665,
+          "values": [
+            70.0,
+            82.0,
+            77.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 69.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.8856180831641267,
+          "values": [
+            68.0,
+            68.0,
+            72.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 74.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.943920288775949,
+          "values": [
+            77.0,
+            75.0,
+            70.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 74.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            76.0,
+            75.0,
+            73.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 66.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563256,
+          "values": [
+            66.0,
+            69.0,
+            64.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to006_p1_seed3073/reacher_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to006_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to006_p1_seed3073"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 68.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 5.312459150169742,
+          "values": [
+            68.0,
+            75.0,
+            62.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.494438257849294,
+          "values": [
+            72.0,
+            68.0,
+            74.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 65.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.109609335312651,
+          "values": [
+            61.0,
+            71.0,
+            65.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 68.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563256,
+          "values": [
+            69.0,
+            71.0,
+            66.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.496912521077347,
+          "values": [
+            71.0,
+            77.0,
+            66.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 68.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.4142135623730951,
+          "values": [
+            66.0,
+            69.0,
+            69.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 67.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            66.0,
+            70.0,
+            67.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to007_p1_seed3073/reacher_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to007_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to007_p1_seed3073"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 72.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            72.0,
+            71.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 72.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652345,
+          "values": [
+            71.0,
+            77.0,
+            70.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 71.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 8.286535263104035,
+          "values": [
+            80.0,
+            60.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 67.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 4.9216076867444665,
+          "values": [
+            74.0,
+            62.0,
+            67.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 75.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            73.0,
+            77.0,
+            76.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 67.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.6246692913372702,
+          "values": [
+            66.0,
+            71.0,
+            65.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 69.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.7416573867739413,
+          "values": [
+            70.0,
+            73.0,
+            64.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to008_p1_seed3073/reacher_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to008_p1_seed3073",
+      "subdir": "reacher_pldm_noise_0to008_p1_seed3073"
+    }
+  },
+  "TwoRoom": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 85.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.858612300930075,
+          "values": [
+            84.0,
+            82.0,
+            91.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 84.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.377042156569663,
+          "values": [
+            75.0,
+            89.0,
+            88.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 67.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.6246692913372702,
+          "values": [
+            64.0,
+            70.0,
+            69.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 47.666666666666664,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 6.548960901462837,
+          "values": [
+            40.0,
+            47.0,
+            56.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 86.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            85.0,
+            87.0,
+            88.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 75.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.6246692913372702,
+          "values": [
+            77.0,
+            72.0,
+            78.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 57.33333333333332,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            58.0,
+            57.0,
+            57.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_baseline_seed3073/tworoom_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_baseline_seed3073",
+      "subdir": "tworoom_pldm_baseline_seed3073"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            95.0,
+            96.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 95.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563256,
+          "values": [
+            96.0,
+            93.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 95.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            94.0,
+            96.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 90.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.9428090415820634,
+          "values": [
+            91.0,
+            91.0,
+            89.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 95.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.0548046676563256,
+          "values": [
+            96.0,
+            93.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.8856180831641267,
+          "values": [
+            95.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 95.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            94.0,
+            96.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to001_p1_seed3073/tworoom_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to001_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to001_p1_seed3073"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 93.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.39934634239519,
+          "values": [
+            90.0,
+            92.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 94.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.6246692913372702,
+          "values": [
+            93.0,
+            92.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 93.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.8856180831641267,
+          "values": [
+            92.0,
+            92.0,
+            96.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 93.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.160246899469287,
+          "values": [
+            91.0,
+            92.0,
+            96.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 93.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            93.0,
+            92.0,
+            95.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 93.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 3.0912061651652345,
+          "values": [
+            92.0,
+            91.0,
+            98.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 93.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            93.0,
+            92.0,
+            96.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to002_p1_seed3073/tworoom_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to002_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to002_p1_seed3073"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            96.0,
+            95.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 96.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            96.0,
+            95.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 95.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            97.0,
+            93.0,
+            96.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 94.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.3570226039551585,
+          "values": [
+            96.0,
+            91.0,
+            96.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.9428090415820634,
+          "values": [
+            97.0,
+            95.0,
+            97.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 95.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 2.160246899469287,
+          "values": [
+            96.0,
+            92.0,
+            97.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 95.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            97.0,
+            93.0,
+            96.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to003_p1_seed3073/tworoom_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to003_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to003_p1_seed3073"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            97.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            98.0,
+            99.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            97.0,
+            98.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            98.0,
+            98.0,
+            97.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            98.0,
+            99.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            98.0,
+            100.0,
+            97.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 98.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            99.0,
+            99.0,
+            98.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to004_p1_seed3073/tworoom_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to004_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to004_p1_seed3073"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            97.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.4142135623730951,
+          "values": [
+            97.0,
+            97.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            98.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            97.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            98.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            98.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.4142135623730951,
+          "values": [
+            97.0,
+            97.0,
+            100.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to005_p1_seed3073/tworoom_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to005_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to005_p1_seed3073"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 99.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.0,
+          "values": [
+            99.0,
+            99.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            96.0,
+            99.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 98.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            98.0,
+            99.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            98.0,
+            99.0,
+            98.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 98.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.0,
+          "values": [
+            98.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.4714045207910317,
+          "values": [
+            98.0,
+            99.0,
+            98.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            96.0,
+            99.0,
+            98.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to006_p1_seed3073/tworoom_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to006_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to006_p1_seed3073"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 97.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            96.0,
+            98.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.699673171197595,
+          "values": [
+            96.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 97.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.4142135623730951,
+          "values": [
+            96.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            96.0,
+            98.0,
+            99.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            96.0,
+            98.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 97.0,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.816496580927726,
+          "values": [
+            96.0,
+            97.0,
+            98.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to007_p1_seed3073/tworoom_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to007_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to007_p1_seed3073"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            96.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            96.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            95.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 98.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            99.0,
+            100.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 0.9428090415820634,
+          "values": [
+            96.0,
+            96.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "seeds": [
+            42,
+            43,
+            44
+          ],
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            96.0,
+            99.0
+          ]
+        }
+      },
+      "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to008_p1_seed3073/tworoom_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to008_p1_seed3073",
+      "subdir": "tworoom_pldm_noise_0to008_p1_seed3073"
+    }
+  },
+  "_metadata": {
+    "checkpoint_rows": [
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_baseline_seed3073/config.yaml",
+        "config_sha256": "1319de5cb37112389a024bfdd4224666bca74f2e8836a8843ad2bfae720c39e0",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_baseline_seed3073/tworoom_pldm_baseline_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "3ab465496e3498fadbe3cd73ab216c4d8c85fb6e1d1c0767621b18259a89ea05",
+        "std_key": "0.0",
+        "subdir": "tworoom_pldm_baseline_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to001_p1_seed3073/config.yaml",
+        "config_sha256": "2395fc4614b7c267f20695b71b3c70de1a0b67e9bc63375cefd1680cee562a71",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to001_p1_seed3073/tworoom_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "747b8376a6591f8f0c095e2af4ff587eb9295d2d9a8a75d78e1ed9d6b2240f50",
+        "std_key": "0.01",
+        "subdir": "tworoom_pldm_noise_0to001_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to002_p1_seed3073/config.yaml",
+        "config_sha256": "08b41f65ca908869e95626a857c42bd482ed2ad3bd595564d8253eae7b05559d",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to002_p1_seed3073/tworoom_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "30e79012e39acb841d303baebf3fdffdbecfa0a0ffd890e6336fbee0e1d4d040",
+        "std_key": "0.02",
+        "subdir": "tworoom_pldm_noise_0to002_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to003_p1_seed3073/config.yaml",
+        "config_sha256": "ff92215ca81000520fb3e948935fe7e69fee425a467fae6aa4de2ce477d49a2f",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to003_p1_seed3073/tworoom_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "b3aeadc8c14359a3ca59906fc669fa431880c0a27f8eac777b11e4d599cf8bb5",
+        "std_key": "0.03",
+        "subdir": "tworoom_pldm_noise_0to003_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to004_p1_seed3073/config.yaml",
+        "config_sha256": "76624e6739f2944d2ce06d2e456d969a8a444a04b69786d138e1c7400ddf5e8a",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to004_p1_seed3073/tworoom_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "c1ed45b865d745f83af288e5f11e792073666a0fa256fc54a1501396a4e8229a",
+        "std_key": "0.04",
+        "subdir": "tworoom_pldm_noise_0to004_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to005_p1_seed3073/config.yaml",
+        "config_sha256": "ca3673d706b8deb9f39ee05dc3ab24eda60e8fe36cea2a843c3b2372c57aceae",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to005_p1_seed3073/tworoom_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "54c85d4907c0d8f0958a37ed5c36d45e7f46fe3abe962a959c0a5c3caf22ebc4",
+        "std_key": "0.05",
+        "subdir": "tworoom_pldm_noise_0to005_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to006_p1_seed3073/config.yaml",
+        "config_sha256": "5c17a166f4c019bec584b292cda1575e6eafef5237497b178e5a84dda54c1290",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to006_p1_seed3073/tworoom_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "8c43a99ea53ed4f7faa96db709e7d42057ea47560b9375fff2a1cb9dad1d9c46",
+        "std_key": "0.06",
+        "subdir": "tworoom_pldm_noise_0to006_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to007_p1_seed3073/config.yaml",
+        "config_sha256": "a7897040ad2e4dc25fd1728e91123d2cf800c30ec4ce2305fc8314ed6574b226",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to007_p1_seed3073/tworoom_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "3d53ca38825b4bebd763d4b5761a5703ed2108c6e847de27ebb32b29a9d07fe6",
+        "std_key": "0.07",
+        "subdir": "tworoom_pldm_noise_0to007_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to008_p1_seed3073/config.yaml",
+        "config_sha256": "8e78dc7c8050c38da183488fc75dbf31818e1c6374b2e474c9cd5d5bc257862f",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to008_p1_seed3073/tworoom_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "dade3aa33a00a238949dd95773951ba5ffd831e880c5f6c396dff0ea258097f5",
+        "std_key": "0.08",
+        "subdir": "tworoom_pldm_noise_0to008_p1_seed3073",
+        "task": "TwoRoom",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_baseline_seed3073/config.yaml",
+        "config_sha256": "688fcce5c5dd3ab5c32b9ad5ac81ff563317c030d63454653f4a6818b7ed8dc1",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_baseline_seed3073/pusht_pldm_baseline_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "4c24674be69d17d0866dbcfdf96e28a8ed3383d9bedebf60ab64eee114aca738",
+        "std_key": "0.0",
+        "subdir": "pusht_pldm_baseline_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to001_p1_seed3073/config.yaml",
+        "config_sha256": "a6a059409107e02d6cb687b0f3c30d02cb359ffe256bba00677bb679ee58e8fb",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to001_p1_seed3073/pusht_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "12a76c9ce77598fc2fac6890aadc8e6f35f3b6c767735a497e91310076ebfa71",
+        "std_key": "0.01",
+        "subdir": "pusht_pldm_noise_0to001_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to002_p1_seed3073/config.yaml",
+        "config_sha256": "89f8ed26becd2dd40faea6d7a4ca27072192da8a1278d27cc7686ccce3a04ff1",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to002_p1_seed3073/pusht_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "6545e5378dc5f88d3b1dd2b0e672e03d9f301e49a6b8a16149960186c3f43d74",
+        "std_key": "0.02",
+        "subdir": "pusht_pldm_noise_0to002_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to003_p1_seed3073/config.yaml",
+        "config_sha256": "c23dd7cbad3bef3fa49d2cc6f91480c01d09f7bf6ed1bf38a40d15e8b38cfa1f",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to003_p1_seed3073/pusht_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "e50d02453e3d61ba99f88818f67eb490ca144a97f4d05f1906d9cadceeda9041",
+        "std_key": "0.03",
+        "subdir": "pusht_pldm_noise_0to003_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to004_p1_seed3073/config.yaml",
+        "config_sha256": "de8552804816e03844d2501401279cc74093a7c0eb4d1675de3d30712ebd789e",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to004_p1_seed3073/pusht_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "31238ed1345c98c4f70308b303a45404cf4537463f91c055f06563bb6a543978",
+        "std_key": "0.04",
+        "subdir": "pusht_pldm_noise_0to004_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to005_p1_seed3073/config.yaml",
+        "config_sha256": "88ef1a9edc1b1da7d5602ae00db9093d0a079184edcf006c2bbf2537689dfe3a",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to005_p1_seed3073/pusht_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "1f5bf284146b8fb410a94028725aedd111a489242dfb03b4a220aa397cfc0789",
+        "std_key": "0.05",
+        "subdir": "pusht_pldm_noise_0to005_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to006_p1_seed3073/config.yaml",
+        "config_sha256": "d1992ca497057b61bede6b1b7e04c3ba0ece1308259ddc02e5c2c6403dfe0f33",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to006_p1_seed3073/pusht_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "2bd263406d92e2cde945fd2173bbacd56eb544127f79421e2f170203dce8d652",
+        "std_key": "0.06",
+        "subdir": "pusht_pldm_noise_0to006_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to007_p1_seed3073/config.yaml",
+        "config_sha256": "e7fb0049068d67a214f701706d6c98f56e76300d991f541cbbc7bc2f1bb933b3",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to007_p1_seed3073/pusht_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "f570eb030a306589ec85c4213522f3e3d9a07a58bf20fa31691056bbea8006d7",
+        "std_key": "0.07",
+        "subdir": "pusht_pldm_noise_0to007_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to008_p1_seed3073/config.yaml",
+        "config_sha256": "5497e1aa4d93501ea789001bc37ec3faeb871095334c6e543dcdf8494a4b8787",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to008_p1_seed3073/pusht_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "e35b682ec67b309c0de8b43cd06a196dfa0db057464f98b1daea60b8bfe2b56e",
+        "std_key": "0.08",
+        "subdir": "pusht_pldm_noise_0to008_p1_seed3073",
+        "task": "PushT",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_baseline_seed3073/config.yaml",
+        "config_sha256": "b1e47cead1734f2342874886acfd16bd9c5d87e12a36f2cbc450cfc59f22a7e0",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_baseline_seed3073/reacher_pldm_baseline_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "34cfd4ae6daa8bfb2dab85c4bb803f03965145994f88cbee28cd01c6aa686564",
+        "std_key": "0.0",
+        "subdir": "reacher_pldm_baseline_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to001_p1_seed3073/config.yaml",
+        "config_sha256": "b4429e5cbfe2bc4e990a135916f871651b4cf8682c5be11328a730733196ae9b",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to001_p1_seed3073/reacher_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "324cd93e0a0939142cd3e869e507d5068caf6e0652d488a2d757acf0a637da2c",
+        "std_key": "0.01",
+        "subdir": "reacher_pldm_noise_0to001_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to002_p1_seed3073/config.yaml",
+        "config_sha256": "80e93304709a512a6a6faea000b7e1bfece02c0026f08ec60ba7beb53ed325fc",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to002_p1_seed3073/reacher_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "039bbf65d68d95e61c5750e9548ce6f1ef526ce1803187a8f287aa861f145b36",
+        "std_key": "0.02",
+        "subdir": "reacher_pldm_noise_0to002_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to003_p1_seed3073/config.yaml",
+        "config_sha256": "f9f44b6437a9fcb62f29f61d291726de0bf8d7a67312a372d0927cbb90623871",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to003_p1_seed3073/reacher_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "e497a04c4ca4d8a42f4a1a3e6a7d4af2e02d76d8ef39ac4ea2eebc0de15729fe",
+        "std_key": "0.03",
+        "subdir": "reacher_pldm_noise_0to003_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to004_p1_seed3073/config.yaml",
+        "config_sha256": "f063e3eecae7e00f2d7818e4df411012e7edd35e5f29151bfe4b7ee29f1daead",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to004_p1_seed3073/reacher_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "f46ffab389ebd8e61a54ea8877a8fba9e3e3ec2d77b5f93dabe09dce61a91370",
+        "std_key": "0.04",
+        "subdir": "reacher_pldm_noise_0to004_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to005_p1_seed3073/config.yaml",
+        "config_sha256": "ae35c2e71030d2bb978eb8bd50ec6a2cb7d7bb563da9b26cb779f30f6a77c04f",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to005_p1_seed3073/reacher_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "24c3a111092d15078b9bce0e41d6d22da17445c9af6c9d24d1699a48f5020e39",
+        "std_key": "0.05",
+        "subdir": "reacher_pldm_noise_0to005_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to006_p1_seed3073/config.yaml",
+        "config_sha256": "3d3146fc8221ba35d77bdc92ff386e2ddeb02e829198bea4cf3368b7f39921d6",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to006_p1_seed3073/reacher_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "dbc058a7edb7aa05ea1657baf269717405bed01151601823c3808fa651e9847b",
+        "std_key": "0.06",
+        "subdir": "reacher_pldm_noise_0to006_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to007_p1_seed3073/config.yaml",
+        "config_sha256": "6a096ecbe00005b3e77842405ffa10c410e28c3f5a40d1d09f63f24f20ca7f9e",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to007_p1_seed3073/reacher_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "060e45898c69dc51309f088227acb422188f0bf18ef3de808de8ea4786a7d978",
+        "std_key": "0.07",
+        "subdir": "reacher_pldm_noise_0to007_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to008_p1_seed3073/config.yaml",
+        "config_sha256": "7606a4f629564b5d9e99dc14ab7757b68562172fd8d34ce0a73073add18d6c58",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to008_p1_seed3073/reacher_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "ba81a2d9dab65f5c47b9be18d163aeb95ceccac14d3e7ae02f6b57d16ad2f75c",
+        "std_key": "0.08",
+        "subdir": "reacher_pldm_noise_0to008_p1_seed3073",
+        "task": "Reacher",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_baseline_seed3073/config.yaml",
+        "config_sha256": "fd29c44e9265de25b81c1989fc6bd3bc07fdf9fa9ffc8f5ea26054ff925f2230",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_baseline_seed3073/cube_pldm_baseline_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "316d71be42e63c7387193076efa03c302e122ba3a467071314c710ee374024d8",
+        "std_key": "0.0",
+        "subdir": "cube_pldm_baseline_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to001_p1_seed3073/config.yaml",
+        "config_sha256": "a844e597c610af12665addfc649bdd1e7a24b83d510003c61f96ea27e865b35a",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to001_p1_seed3073/cube_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "ce5630bf4d34d55b528f9a77fc33561d15b8ba3cecdda5010b87051ac82440da",
+        "std_key": "0.01",
+        "subdir": "cube_pldm_noise_0to001_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to002_p1_seed3073/config.yaml",
+        "config_sha256": "43fa04133f41461504fe37ced6490c0c1591622bd9506281fe815422586684e1",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to002_p1_seed3073/cube_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "427be86e43ad7fd93ae7eb997cc4f220c6a58bf9db9b5981c06bf477973db1ef",
+        "std_key": "0.02",
+        "subdir": "cube_pldm_noise_0to002_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to003_p1_seed3073/config.yaml",
+        "config_sha256": "3d25923a65de6901206a3626828ce4ff53236f684d153fc2bf2b608c69b626cb",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to003_p1_seed3073/cube_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "f7059bd43bd29833fd8a525ca40d2fe50bd2424e03e8e688752df3f8cc59d8f0",
+        "std_key": "0.03",
+        "subdir": "cube_pldm_noise_0to003_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to004_p1_seed3073/config.yaml",
+        "config_sha256": "d69fe847d5377bac99fac13e21d7fcc15bf06611f7d8773771e22ab87f74303a",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to004_p1_seed3073/cube_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "0312501df421100e4c4abf9feaacd6b00605c83165233047a7f123a0dad494a2",
+        "std_key": "0.04",
+        "subdir": "cube_pldm_noise_0to004_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to005_p1_seed3073/config.yaml",
+        "config_sha256": "e25fc02885902d4380cb1accda6a02d6fca724125a28a4a0bfc2335a9efbe187",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to005_p1_seed3073/cube_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "acd11bbbe9aba8317ace09b0ea88aae31223c580e0c74b38f457b874ee5325bc",
+        "std_key": "0.05",
+        "subdir": "cube_pldm_noise_0to005_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to006_p1_seed3073/config.yaml",
+        "config_sha256": "d98f1dc408c764f878af44c0d2f457fb938c5221ec2b90a29ce02acfa2151d35",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to006_p1_seed3073/cube_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "6046676944a35136df547bad1e83a54198c2756a0f1ba0e381c36e09899b01cf",
+        "std_key": "0.06",
+        "subdir": "cube_pldm_noise_0to006_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to007_p1_seed3073/config.yaml",
+        "config_sha256": "20228e6d043670f081accfc52da52a1f9028e996ac7de34febd8801a462118b4",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to007_p1_seed3073/cube_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "b7c32c741c0aa4d8d5326ed8ceaee0252bdb0998a6dde028fcf474ffa245a3b2",
+        "std_key": "0.07",
+        "subdir": "cube_pldm_noise_0to007_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      },
+      {
+        "config_path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to008_p1_seed3073/config.yaml",
+        "config_sha256": "ec7042564a303ffaa30f0e3ddc9c6d4c999c802e2cda94a89972274a01675b83",
+        "model_file": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to008_p1_seed3073/cube_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+        "model_sha256": "43955fbe0a80f42d48e7f92195a45ed779dd843ff08f316b664e1315c0534d50",
+        "std_key": "0.08",
+        "subdir": "cube_pldm_noise_0to008_p1_seed3073",
+        "task": "Cube",
+        "training_seed": 3073
+      }
+    ],
+    "code_commit": "0d29cd11a3cc26e16d766d4c672eebfe43a9fb72",
+    "created_utc": "2026-07-23T11:54:02.806309+00:00",
+    "errors": [],
+    "evaluation_seed_semantics": "conditional evaluation variability, not training-run replication",
+    "evaluation_seeds": [
+      42,
+      43,
+      44
+    ],
+    "missing_rows": [],
+    "model_family": "PLDM",
+    "schema_version": "paper1-pldm-canonical-eval-manifest-0.2",
+    "script_path": "paper1/scripts/build_pldm_canonical_manifest_v2.py",
+    "script_sha256": "38c793bcdbeb4da060ed6ceb09a7da4fdd4f48ae1e4bd4d8cb8ab15939210bfc",
+    "source_hashes": {
+      "checkpoint_Cube_0.0": "316d71be42e63c7387193076efa03c302e122ba3a467071314c710ee374024d8",
+      "checkpoint_Cube_0.01": "ce5630bf4d34d55b528f9a77fc33561d15b8ba3cecdda5010b87051ac82440da",
+      "checkpoint_Cube_0.02": "427be86e43ad7fd93ae7eb997cc4f220c6a58bf9db9b5981c06bf477973db1ef",
+      "checkpoint_Cube_0.03": "f7059bd43bd29833fd8a525ca40d2fe50bd2424e03e8e688752df3f8cc59d8f0",
+      "checkpoint_Cube_0.04": "0312501df421100e4c4abf9feaacd6b00605c83165233047a7f123a0dad494a2",
+      "checkpoint_Cube_0.05": "acd11bbbe9aba8317ace09b0ea88aae31223c580e0c74b38f457b874ee5325bc",
+      "checkpoint_Cube_0.06": "6046676944a35136df547bad1e83a54198c2756a0f1ba0e381c36e09899b01cf",
+      "checkpoint_Cube_0.07": "b7c32c741c0aa4d8d5326ed8ceaee0252bdb0998a6dde028fcf474ffa245a3b2",
+      "checkpoint_Cube_0.08": "43955fbe0a80f42d48e7f92195a45ed779dd843ff08f316b664e1315c0534d50",
+      "checkpoint_PushT_0.0": "4c24674be69d17d0866dbcfdf96e28a8ed3383d9bedebf60ab64eee114aca738",
+      "checkpoint_PushT_0.01": "12a76c9ce77598fc2fac6890aadc8e6f35f3b6c767735a497e91310076ebfa71",
+      "checkpoint_PushT_0.02": "6545e5378dc5f88d3b1dd2b0e672e03d9f301e49a6b8a16149960186c3f43d74",
+      "checkpoint_PushT_0.03": "e50d02453e3d61ba99f88818f67eb490ca144a97f4d05f1906d9cadceeda9041",
+      "checkpoint_PushT_0.04": "31238ed1345c98c4f70308b303a45404cf4537463f91c055f06563bb6a543978",
+      "checkpoint_PushT_0.05": "1f5bf284146b8fb410a94028725aedd111a489242dfb03b4a220aa397cfc0789",
+      "checkpoint_PushT_0.06": "2bd263406d92e2cde945fd2173bbacd56eb544127f79421e2f170203dce8d652",
+      "checkpoint_PushT_0.07": "f570eb030a306589ec85c4213522f3e3d9a07a58bf20fa31691056bbea8006d7",
+      "checkpoint_PushT_0.08": "e35b682ec67b309c0de8b43cd06a196dfa0db057464f98b1daea60b8bfe2b56e",
+      "checkpoint_Reacher_0.0": "34cfd4ae6daa8bfb2dab85c4bb803f03965145994f88cbee28cd01c6aa686564",
+      "checkpoint_Reacher_0.01": "324cd93e0a0939142cd3e869e507d5068caf6e0652d488a2d757acf0a637da2c",
+      "checkpoint_Reacher_0.02": "039bbf65d68d95e61c5750e9548ce6f1ef526ce1803187a8f287aa861f145b36",
+      "checkpoint_Reacher_0.03": "e497a04c4ca4d8a42f4a1a3e6a7d4af2e02d76d8ef39ac4ea2eebc0de15729fe",
+      "checkpoint_Reacher_0.04": "f46ffab389ebd8e61a54ea8877a8fba9e3e3ec2d77b5f93dabe09dce61a91370",
+      "checkpoint_Reacher_0.05": "24c3a111092d15078b9bce0e41d6d22da17445c9af6c9d24d1699a48f5020e39",
+      "checkpoint_Reacher_0.06": "dbc058a7edb7aa05ea1657baf269717405bed01151601823c3808fa651e9847b",
+      "checkpoint_Reacher_0.07": "060e45898c69dc51309f088227acb422188f0bf18ef3de808de8ea4786a7d978",
+      "checkpoint_Reacher_0.08": "ba81a2d9dab65f5c47b9be18d163aeb95ceccac14d3e7ae02f6b57d16ad2f75c",
+      "checkpoint_TwoRoom_0.0": "3ab465496e3498fadbe3cd73ab216c4d8c85fb6e1d1c0767621b18259a89ea05",
+      "checkpoint_TwoRoom_0.01": "747b8376a6591f8f0c095e2af4ff587eb9295d2d9a8a75d78e1ed9d6b2240f50",
+      "checkpoint_TwoRoom_0.02": "30e79012e39acb841d303baebf3fdffdbecfa0a0ffd890e6336fbee0e1d4d040",
+      "checkpoint_TwoRoom_0.03": "b3aeadc8c14359a3ca59906fc669fa431880c0a27f8eac777b11e4d599cf8bb5",
+      "checkpoint_TwoRoom_0.04": "c1ed45b865d745f83af288e5f11e792073666a0fa256fc54a1501396a4e8229a",
+      "checkpoint_TwoRoom_0.05": "54c85d4907c0d8f0958a37ed5c36d45e7f46fe3abe962a959c0a5c3caf22ebc4",
+      "checkpoint_TwoRoom_0.06": "8c43a99ea53ed4f7faa96db709e7d42057ea47560b9375fff2a1cb9dad1d9c46",
+      "checkpoint_TwoRoom_0.07": "3d53ca38825b4bebd763d4b5761a5703ed2108c6e847de27ebb32b29a9d07fe6",
+      "checkpoint_TwoRoom_0.08": "dade3aa33a00a238949dd95773951ba5ffd831e880c5f6c396dff0ea258097f5",
+      "config_Cube_0.0": "fd29c44e9265de25b81c1989fc6bd3bc07fdf9fa9ffc8f5ea26054ff925f2230",
+      "config_Cube_0.01": "a844e597c610af12665addfc649bdd1e7a24b83d510003c61f96ea27e865b35a",
+      "config_Cube_0.02": "43fa04133f41461504fe37ced6490c0c1591622bd9506281fe815422586684e1",
+      "config_Cube_0.03": "3d25923a65de6901206a3626828ce4ff53236f684d153fc2bf2b608c69b626cb",
+      "config_Cube_0.04": "d69fe847d5377bac99fac13e21d7fcc15bf06611f7d8773771e22ab87f74303a",
+      "config_Cube_0.05": "e25fc02885902d4380cb1accda6a02d6fca724125a28a4a0bfc2335a9efbe187",
+      "config_Cube_0.06": "d98f1dc408c764f878af44c0d2f457fb938c5221ec2b90a29ce02acfa2151d35",
+      "config_Cube_0.07": "20228e6d043670f081accfc52da52a1f9028e996ac7de34febd8801a462118b4",
+      "config_Cube_0.08": "ec7042564a303ffaa30f0e3ddc9c6d4c999c802e2cda94a89972274a01675b83",
+      "config_PushT_0.0": "688fcce5c5dd3ab5c32b9ad5ac81ff563317c030d63454653f4a6818b7ed8dc1",
+      "config_PushT_0.01": "a6a059409107e02d6cb687b0f3c30d02cb359ffe256bba00677bb679ee58e8fb",
+      "config_PushT_0.02": "89f8ed26becd2dd40faea6d7a4ca27072192da8a1278d27cc7686ccce3a04ff1",
+      "config_PushT_0.03": "c23dd7cbad3bef3fa49d2cc6f91480c01d09f7bf6ed1bf38a40d15e8b38cfa1f",
+      "config_PushT_0.04": "de8552804816e03844d2501401279cc74093a7c0eb4d1675de3d30712ebd789e",
+      "config_PushT_0.05": "88ef1a9edc1b1da7d5602ae00db9093d0a079184edcf006c2bbf2537689dfe3a",
+      "config_PushT_0.06": "d1992ca497057b61bede6b1b7e04c3ba0ece1308259ddc02e5c2c6403dfe0f33",
+      "config_PushT_0.07": "e7fb0049068d67a214f701706d6c98f56e76300d991f541cbbc7bc2f1bb933b3",
+      "config_PushT_0.08": "5497e1aa4d93501ea789001bc37ec3faeb871095334c6e543dcdf8494a4b8787",
+      "config_Reacher_0.0": "b1e47cead1734f2342874886acfd16bd9c5d87e12a36f2cbc450cfc59f22a7e0",
+      "config_Reacher_0.01": "b4429e5cbfe2bc4e990a135916f871651b4cf8682c5be11328a730733196ae9b",
+      "config_Reacher_0.02": "80e93304709a512a6a6faea000b7e1bfece02c0026f08ec60ba7beb53ed325fc",
+      "config_Reacher_0.03": "f9f44b6437a9fcb62f29f61d291726de0bf8d7a67312a372d0927cbb90623871",
+      "config_Reacher_0.04": "f063e3eecae7e00f2d7818e4df411012e7edd35e5f29151bfe4b7ee29f1daead",
+      "config_Reacher_0.05": "ae35c2e71030d2bb978eb8bd50ec6a2cb7d7bb563da9b26cb779f30f6a77c04f",
+      "config_Reacher_0.06": "3d3146fc8221ba35d77bdc92ff386e2ddeb02e829198bea4cf3368b7f39921d6",
+      "config_Reacher_0.07": "6a096ecbe00005b3e77842405ffa10c410e28c3f5a40d1d09f63f24f20ca7f9e",
+      "config_Reacher_0.08": "7606a4f629564b5d9e99dc14ab7757b68562172fd8d34ce0a73073add18d6c58",
+      "config_TwoRoom_0.0": "1319de5cb37112389a024bfdd4224666bca74f2e8836a8843ad2bfae720c39e0",
+      "config_TwoRoom_0.01": "2395fc4614b7c267f20695b71b3c70de1a0b67e9bc63375cefd1680cee562a71",
+      "config_TwoRoom_0.02": "08b41f65ca908869e95626a857c42bd482ed2ad3bd595564d8253eae7b05559d",
+      "config_TwoRoom_0.03": "ff92215ca81000520fb3e948935fe7e69fee425a467fae6aa4de2ce477d49a2f",
+      "config_TwoRoom_0.04": "76624e6739f2944d2ce06d2e456d969a8a444a04b69786d138e1c7400ddf5e8a",
+      "config_TwoRoom_0.05": "ca3673d706b8deb9f39ee05dc3ab24eda60e8fe36cea2a843c3b2372c57aceae",
+      "config_TwoRoom_0.06": "5c17a166f4c019bec584b292cda1575e6eafef5237497b178e5a84dda54c1290",
+      "config_TwoRoom_0.07": "a7897040ad2e4dc25fd1728e91123d2cf800c30ec4ce2305fc8314ed6574b226",
+      "config_TwoRoom_0.08": "8e78dc7c8050c38da183488fc75dbf31818e1c6374b2e474c9cd5d5bc257862f",
+      "legacy_manifest": "bbfd35e28cc77bbbfad59340648fdc393c6d47d5882e19a657db3e5c26dfe5b3",
+      "loadability_audit": "7daaa419785bf84024686ae10fbe0188f40c29a2ef0fc4f65453e8099d2a34f9"
+    },
+    "source_paths": {
+      "checkpoint_Cube_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_baseline_seed3073/cube_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to001_p1_seed3073/cube_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to002_p1_seed3073/cube_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to003_p1_seed3073/cube_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to004_p1_seed3073/cube_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to005_p1_seed3073/cube_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to006_p1_seed3073/cube_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to007_p1_seed3073/cube_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Cube_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to008_p1_seed3073/cube_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_baseline_seed3073/pusht_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to001_p1_seed3073/pusht_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to002_p1_seed3073/pusht_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to003_p1_seed3073/pusht_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to004_p1_seed3073/pusht_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to005_p1_seed3073/pusht_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to006_p1_seed3073/pusht_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to007_p1_seed3073/pusht_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_PushT_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to008_p1_seed3073/pusht_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_baseline_seed3073/reacher_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to001_p1_seed3073/reacher_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to002_p1_seed3073/reacher_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to003_p1_seed3073/reacher_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to004_p1_seed3073/reacher_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to005_p1_seed3073/reacher_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to006_p1_seed3073/reacher_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to007_p1_seed3073/reacher_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_Reacher_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to008_p1_seed3073/reacher_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_baseline_seed3073/tworoom_pldm_baseline_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to001_p1_seed3073/tworoom_pldm_noise_0to001_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to002_p1_seed3073/tworoom_pldm_noise_0to002_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to003_p1_seed3073/tworoom_pldm_noise_0to003_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to004_p1_seed3073/tworoom_pldm_noise_0to004_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to005_p1_seed3073/tworoom_pldm_noise_0to005_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to006_p1_seed3073/tworoom_pldm_noise_0to006_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to007_p1_seed3073/tworoom_pldm_noise_0to007_p1_seed3073_epoch_10_object.ckpt",
+      "checkpoint_TwoRoom_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to008_p1_seed3073/tworoom_pldm_noise_0to008_p1_seed3073_epoch_10_object.ckpt",
+      "config_Cube_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_baseline_seed3073/config.yaml",
+      "config_Cube_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to001_p1_seed3073/config.yaml",
+      "config_Cube_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to002_p1_seed3073/config.yaml",
+      "config_Cube_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to003_p1_seed3073/config.yaml",
+      "config_Cube_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to004_p1_seed3073/config.yaml",
+      "config_Cube_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to005_p1_seed3073/config.yaml",
+      "config_Cube_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to006_p1_seed3073/config.yaml",
+      "config_Cube_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to007_p1_seed3073/config.yaml",
+      "config_Cube_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to008_p1_seed3073/config.yaml",
+      "config_PushT_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_baseline_seed3073/config.yaml",
+      "config_PushT_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to001_p1_seed3073/config.yaml",
+      "config_PushT_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to002_p1_seed3073/config.yaml",
+      "config_PushT_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to003_p1_seed3073/config.yaml",
+      "config_PushT_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to004_p1_seed3073/config.yaml",
+      "config_PushT_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to005_p1_seed3073/config.yaml",
+      "config_PushT_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to006_p1_seed3073/config.yaml",
+      "config_PushT_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to007_p1_seed3073/config.yaml",
+      "config_PushT_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to008_p1_seed3073/config.yaml",
+      "config_Reacher_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_baseline_seed3073/config.yaml",
+      "config_Reacher_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to001_p1_seed3073/config.yaml",
+      "config_Reacher_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to002_p1_seed3073/config.yaml",
+      "config_Reacher_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to003_p1_seed3073/config.yaml",
+      "config_Reacher_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to004_p1_seed3073/config.yaml",
+      "config_Reacher_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to005_p1_seed3073/config.yaml",
+      "config_Reacher_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to006_p1_seed3073/config.yaml",
+      "config_Reacher_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to007_p1_seed3073/config.yaml",
+      "config_Reacher_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to008_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.0": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_baseline_seed3073/config.yaml",
+      "config_TwoRoom_0.01": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to001_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.02": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to002_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.03": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to003_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.04": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to004_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.05": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to005_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.06": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to006_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.07": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to007_p1_seed3073/config.yaml",
+      "config_TwoRoom_0.08": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to008_p1_seed3073/config.yaml",
+      "legacy_manifest": "assets/paper1_data/training_seed_eval_manifests/pldm_seed3073_evals_legacy.json",
+      "loadability_audit": "paper1/results/pldm_checkpoint_loadability_seed3073_v2.json"
+    },
+    "status": "complete",
+    "status_counts": {
+      "ok": 36
+    },
+    "std_keys": [
+      "0.0",
+      "0.01",
+      "0.02",
+      "0.03",
+      "0.04",
+      "0.05",
+      "0.06",
+      "0.07",
+      "0.08"
+    ],
+    "tasks": [
+      "TwoRoom",
+      "PushT",
+      "Reacher",
+      "Cube"
+    ],
+    "training_family_id": "pldm_canonical_seed3073",
+    "training_seed": 3073,
+    "training_seed_semantics": "one independently trained PLDM checkpoint family",
+    "training_seed_source": "all 36 checkpoint-local config.yaml files"
+  }
+}

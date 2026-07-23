@@ -412,41 +412,54 @@ def build_pldm_table(
     frozen_rows: list[dict[str, str]],
     lewm_cross_task_summary: dict[str, Any],
 ) -> str:
-    """Compare PLDM-local calibration with score-aligned LeWM transfer."""
+    """Compare leave-one-task-out screening in LeWM and PLDM."""
     frozen_rows = to_ir_sr(frozen_rows)
     lewm_cross_task_summary = to_ir_sr(lewm_cross_task_summary)
-    if len(frozen_rows) != 36 or {
+    if len(frozen_rows) != 108 or {
         row.get("model_family") for row in frozen_rows
     } != {"PLDM"}:
         raise ValueError("PLDM frozen validation is incomplete")
 
     seeds = sorted({int(float(row["training_seed"])) for row in frozen_rows})
     observed = {
-        (row["task"], int(round(100 * float(row["training_rho"]))))
+        (
+            row["task"],
+            int(float(row["training_seed"])),
+            int(round(100 * float(row["training_rho"]))),
+        )
         for row in frozen_rows
     }
-    expected = {(task, rho) for task in TASKS for rho in range(9)}
-    if len(seeds) != 1 or observed != expected:
-        raise ValueError("PLDM sweep must contain one complete four-task grid")
+    expected = {
+        (task, seed, rho)
+        for task in TASKS
+        for seed in (3072, 3073, 3074)
+        for rho in range(9)
+    }
+    if seeds != [3072, 3073, 3074] or observed != expected:
+        raise ValueError("PLDM sweep must contain three complete four-task grids")
 
-    base_ir: dict[str, float] = {}
+    base_ir: dict[tuple[str, int], float] = {}
     for task in TASKS:
-        base = [
-            row
-            for row in frozen_rows
-            if row["task"] == task and abs(float(row["training_rho"])) < 1e-12
-        ]
-        if len(base) != 1 or float(base[0]["ir_raw_q90"]) <= 0:
-            raise ValueError(f"invalid PLDM IR reference for {task}")
-        base_ir[task] = float(base[0]["ir_raw_q90"])
+        for seed in seeds:
+            base = [
+                row
+                for row in frozen_rows
+                if row["task"] == task
+                and int(float(row["training_seed"])) == seed
+                and abs(float(row["training_rho"])) < 1e-12
+            ]
+            if len(base) != 1 or float(base[0]["ir_raw_q90"]) <= 0:
+                raise ValueError(f"invalid PLDM IR reference for {task}/{seed}")
+            base_ir[(task, seed)] = float(base[0]["ir_raw_q90"])
 
     local_rows = [
         {
             "task": row["task"],
-            "training_seed": seeds[0],
+            "training_seed": int(float(row["training_seed"])),
             "rho": float(row["training_rho"]),
             "ir_relative_q90": (
-                float(row["ir_raw_q90"]) / base_ir[row["task"]]
+                float(row["ir_raw_q90"])
+                / base_ir[(row["task"], int(float(row["training_seed"])))]
             ),
             "sr_delta010": float(row["sr"]),
             "recovery_label": row["behavior_label"],
@@ -457,51 +470,8 @@ def build_pldm_table(
         local_rows, expected_seeds=seeds
     )
     local_eval = [row for row in details if row["source_coverage"] == 3]
-    if len(local_eval) != len(TASKS):
+    if len(local_eval) != len(TASKS) * len(seeds):
         raise ValueError("PLDM leave-one-task-out analysis is incomplete")
-
-    local_confusion = {
-        key: sum(int(row[key]) for row in local_eval)
-        for key in ("tp", "tn", "fp", "fn")
-    }
-
-    def pooled(confusion: dict[str, int]) -> tuple[float, float, float]:
-        tp, tn = confusion["tp"], confusion["tn"]
-        fp, fn = confusion["fp"], confusion["fn"]
-        recall = tp / (tp + fn)
-        specificity = tn / (tn + fp)
-        precision = tp / (tp + fp)
-        return 0.5 * (recall + specificity), precision, recall
-
-    local_ba, local_precision, local_recall = pooled(local_confusion)
-
-    lewm_thresholds: dict[str, tuple[float, float]] = {}
-    for partition in lewm_cross_task_summary.get("partitions", []):
-        if (
-            int(partition.get("source_coverage", -1)) == 3
-            and len(partition.get("evaluation_tasks", [])) == 1
-        ):
-            task = str(partition["evaluation_tasks"][0])
-            lewm_thresholds[task] = (
-                float(partition["ir_threshold"]),
-                float(partition["sr_threshold"]),
-            )
-    if set(lewm_thresholds) != set(TASKS):
-        raise ValueError("LeWM three-source thresholds are incomplete")
-
-    relative_lewm_confusion = {key: 0 for key in ("tp", "tn", "fp", "fn")}
-    for row in local_rows:
-        ir_threshold, sr_threshold = lewm_thresholds[str(row["task"])]
-        truth = str(row["recovery_label"]).lower() == "true"
-        pred = (
-            float(row["ir_relative_q90"]) <= ir_threshold
-            and float(row["sr_delta010"]) >= sr_threshold
-        )
-        key = "tp" if truth and pred else "fn" if truth else "fp" if pred else "tn"
-        relative_lewm_confusion[key] += 1
-    relative_ba, relative_precision, relative_recall = pooled(
-        relative_lewm_confusion
-    )
 
     if not any(
         item["source_coverage"] == 3 for item in local_summary["coverage"]
@@ -521,26 +491,21 @@ def build_pldm_table(
         raise ValueError("LeWM three-source balanced accuracies are incomplete")
 
     pldm_task_ba = {
-        str(row["task"]): float(row["balanced_accuracy"]) for row in local_eval
+        task: sum(
+            float(row["balanced_accuracy"])
+            for row in local_eval
+            if str(row["task"]) == task
+        )
+        / len(seeds)
+        for task in TASKS
     }
     if set(pldm_task_ba) != set(TASKS):
         raise ValueError("PLDM three-source balanced accuracies are incomplete")
 
-    if relative_lewm_confusion != local_confusion:
-        raise ValueError(
-            "score-aligned LeWM thresholds no longer reproduce the PLDM decisions"
-        )
-    if (local_ba, local_precision, local_recall) != (
-        relative_ba,
-        relative_precision,
-        relative_recall,
-    ):
-        raise ValueError("PLDM pooled metrics diverge between calibrations")
-
     lines = [
         r"\begin{table}[t]",
         r"\centering",
-        r"\caption{The same leave-task-out IR--SR screen in two model families: for each evaluation task, thresholds are selected on that family's other three tasks and applied unchanged. Chance is $0.5$; LeWM values average three training runs, whereas PLDM has one run per setting. Applying the LeWM threshold pair to PLDM after within-task IR normalization yields identical PLDM decisions.}",
+        r"\caption{The same leave-one-task-out IR--SR screen in two model families. For each evaluation task, thresholds are selected on that model family's other three tasks and applied unchanged. Values average three independent training runs; chance is $0.5$.}",
         r"\label{tab:pldm-architecture-portability}",
         r"\small",
         r"\setlength{\tabcolsep}{6pt}",

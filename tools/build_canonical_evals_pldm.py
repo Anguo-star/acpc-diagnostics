@@ -8,10 +8,14 @@ Walks four task directories under ``$STABLEWM_HOME``:
 
     lewm-{cube,pusht,reacher,tworooms}/ckpt/<task>_pldm_{baseline,noise_0to00*_p1}/eval_results/
 
-For each (task, std_max) checkpoint, reads every per-seed
+For each (task, training seed, std_max) checkpoint, reads every per-seed
 ``<cond>_seed{42,43,44}_metrics.txt`` file, extracts the trailing
 ``success_rate`` value from the metrics dict, and aggregates over the
 three seeds. The population std (matching LeWM's convention) is stored.
+
+The original PLDM family uses unsuffixed checkpoint directories. Later
+independent runs use ``_seed<seed>`` suffixes and write the clean condition
+as ``origin``. Pass ``--training-seed`` to select exactly one family.
 
 Conditions covered: clean, goal/pixels/pixels_goal at std ∈ {0.03, 0.05, 0.08}.
 
@@ -61,6 +65,7 @@ CONDITIONS = [
     "pixels_goal_std0.08",
 ]
 SEEDS = (42, 43, 44)
+CONDITION_FILE_STEMS = {"clean": ("clean", "origin")}
 
 _ARRAY_RE = re.compile(r"\b(?:np\.)?array\((?:[^()]|\([^()]*\))*\)", re.DOTALL)
 
@@ -136,9 +141,12 @@ def _std_key_from_subdir(subdir: str) -> str | None:
     ``..._pldm_noise_0to001_p1``           → ``"0.01"``
     ``..._pldm_noise_0to004_p1_20260522``  → ``"0.04"``
     """
-    if subdir.endswith("_pldm_baseline"):
+    if re.search(r"_pldm_baseline(?:_seed\d+)?$", subdir):
         return "0.0"
-    m = re.search(r"_pldm_noise_0to(\d+)_p1(?:_\d{8})?$", subdir)
+    m = re.search(
+        r"_pldm_noise_0to(\d+)_p1(?:_seed\d+|_\d{8})?$",
+        subdir,
+    )
     if not m:
         return None
     # Drop leading zeros, then format as 0.NN
@@ -154,9 +162,14 @@ def _collect_one_ckpt(eval_results: Path) -> dict[str, dict] | None:
     out: dict[str, dict] = {}
     for cond in CONDITIONS:
         values: list[float] = []
+        stems = CONDITION_FILE_STEMS.get(cond, (cond,))
         for s in SEEDS:
-            fp = eval_results / f"{cond}_seed{s}_metrics.txt"
-            if not fp.exists():
+            candidates = [
+                eval_results / f"{stem}_seed{s}_metrics.txt"
+                for stem in stems
+            ]
+            fp = next((path for path in candidates if path.exists()), None)
+            if fp is None:
                 continue
             try:
                 values.append(_parse_success_rate(fp))
@@ -169,7 +182,12 @@ def _collect_one_ckpt(eval_results: Path) -> dict[str, dict] | None:
     return out
 
 
-def build(root: Path, out_path: Path) -> dict:
+def _training_seed_from_subdir(subdir: str) -> int | None:
+    match = re.search(r"_seed(\d+)$", subdir)
+    return int(match.group(1)) if match else None
+
+
+def build(root: Path, out_path: Path, training_seed: int | None = None) -> dict:
     """Walk all four tasks' PLDM dirs and emit the canonical JSON."""
     canonical: dict[str, dict[str, dict]] = {t: {} for t in TASKS}
     missing: list[str] = []
@@ -184,6 +202,12 @@ def build(root: Path, out_path: Path) -> dict:
             if not ckpt_dir.is_dir():
                 continue
             if not ckpt_dir.name.startswith(f"{prefix}_pldm_"):
+                continue
+            discovered_seed = _training_seed_from_subdir(ckpt_dir.name)
+            if training_seed is None:
+                if discovered_seed is not None:
+                    continue
+            elif discovered_seed != training_seed:
                 continue
             std_key = _std_key_from_subdir(ckpt_dir.name)
             if std_key is None:
@@ -222,6 +246,15 @@ def main() -> None:
         default="assets/paper1_data/canonical_evals_pldm_20260522.json",
         help="output JSON path (relative to repo root unless absolute)",
     )
+    ap.add_argument(
+        "--training-seed",
+        type=int,
+        default=None,
+        help=(
+            "Select a suffixed PLDM training family such as 3073. "
+            "Omit to select the original unsuffixed family."
+        ),
+    )
     args = ap.parse_args()
     if args.root is None:
         ap.error("--root is required unless PAPER1_DATA_ROOT, DATA_ROOT, or STABLEWM_HOME is set")
@@ -230,7 +263,7 @@ def main() -> None:
     out_path = Path(args.out)
     if not out_path.is_absolute():
         out_path = repo_root / out_path
-    report = build(root, out_path)
+    report = build(root, out_path, args.training_seed)
     print(f"wrote {out_path}")
     for task, by_std in report["canonical"].items():
         print(f"  {task}: {len(by_std)} ckpts ({sorted(by_std.keys())})")

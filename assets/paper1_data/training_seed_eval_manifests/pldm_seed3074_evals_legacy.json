@@ -1,0 +1,2746 @@
+{
+  "Cube": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 54.666666666666664,
+          "n": 3,
+          "std": 2.867441755680873,
+          "values": [
+            58.0,
+            51.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 54.333333333333336,
+          "n": 3,
+          "std": 1.2472191289246501,
+          "values": [
+            56.0,
+            53.0,
+            54.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 52.0,
+          "n": 3,
+          "std": 1.4142135623730951,
+          "values": [
+            54.0,
+            51.0,
+            51.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 43.333333333333336,
+          "n": 3,
+          "std": 3.858612300930075,
+          "values": [
+            47.0,
+            38.0,
+            45.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 50.666666666666664,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            50.0,
+            50.0,
+            52.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 48.0,
+          "n": 3,
+          "std": 4.320493798938574,
+          "values": [
+            52.0,
+            42.0,
+            50.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 44.333333333333336,
+          "n": 3,
+          "std": 4.496912521077347,
+          "values": [
+            47.0,
+            38.0,
+            48.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_baseline_seed3074",
+      "subdir": "cube_pldm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 51.0,
+          "n": 3,
+          "std": 2.160246899469287,
+          "values": [
+            54.0,
+            49.0,
+            50.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 55.333333333333336,
+          "n": 3,
+          "std": 3.39934634239519,
+          "values": [
+            54.0,
+            52.0,
+            60.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 55.666666666666664,
+          "n": 3,
+          "std": 1.6996731711975908,
+          "values": [
+            58.0,
+            55.0,
+            54.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 51.0,
+          "n": 3,
+          "std": 4.320493798938576,
+          "values": [
+            53.0,
+            45.0,
+            55.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "std": 2.867441755680873,
+          "values": [
+            54.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "std": 4.78423336480244,
+          "values": [
+            56.0,
+            47.0,
+            58.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 51.0,
+          "n": 3,
+          "std": 2.449489742783178,
+          "values": [
+            54.0,
+            51.0,
+            48.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to001_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 55.0,
+          "n": 3,
+          "std": 2.1602468994692856,
+          "values": [
+            57.0,
+            52.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "std": 1.2472191289246497,
+          "values": [
+            55.0,
+            52.0,
+            54.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "std": 2.0548046676563287,
+          "values": [
+            53.0,
+            51.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 54.666666666666664,
+          "n": 3,
+          "std": 2.6246692913372693,
+          "values": [
+            56.0,
+            51.0,
+            57.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 55.666666666666664,
+          "n": 3,
+          "std": 1.2472191289246453,
+          "values": [
+            56.0,
+            54.0,
+            57.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 51.333333333333336,
+          "n": 3,
+          "std": 2.494438257849294,
+          "values": [
+            54.0,
+            48.0,
+            52.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "std": 1.699673171197598,
+          "values": [
+            52.0,
+            51.0,
+            55.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to002_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "std": 4.9216076867444665,
+          "values": [
+            54.0,
+            47.0,
+            59.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "std": 2.867441755680873,
+          "values": [
+            54.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 55.666666666666664,
+          "n": 3,
+          "std": 2.054804667656323,
+          "values": [
+            58.0,
+            53.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.0,
+          "n": 3,
+          "std": 3.5590260840104406,
+          "values": [
+            55.0,
+            48.0,
+            56.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 56.0,
+          "n": 3,
+          "std": 3.265986323710904,
+          "values": [
+            56.0,
+            52.0,
+            60.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 53.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            54.0,
+            52.0,
+            53.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 50.666666666666664,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            52.0,
+            51.0,
+            49.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to003_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 54.666666666666664,
+          "n": 3,
+          "std": 0.9428090415820667,
+          "values": [
+            54.0,
+            54.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 54.666666666666664,
+          "n": 3,
+          "std": 2.6246692913372693,
+          "values": [
+            57.0,
+            51.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            52.0,
+            53.0,
+            53.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 55.0,
+          "n": 3,
+          "std": 3.5590260840104335,
+          "values": [
+            58.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "std": 2.4944382578492967,
+          "values": [
+            56.0,
+            50.0,
+            54.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 53.0,
+          "n": 3,
+          "std": 1.632993161855455,
+          "values": [
+            55.0,
+            51.0,
+            53.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "std": 2.0548046676563287,
+          "values": [
+            55.0,
+            50.0,
+            52.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to004_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "std": 3.858612300930072,
+          "values": [
+            58.0,
+            49.0,
+            51.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 54.0,
+          "n": 3,
+          "std": 2.16024689946929,
+          "values": [
+            56.0,
+            51.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "std": 4.189935029992177,
+          "values": [
+            58.0,
+            48.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "std": 2.8674417556808725,
+          "values": [
+            57.0,
+            50.0,
+            53.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 52.0,
+          "n": 3,
+          "std": 3.741657386773944,
+          "values": [
+            56.0,
+            47.0,
+            53.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 54.0,
+          "n": 3,
+          "std": 2.449489742783175,
+          "values": [
+            57.0,
+            51.0,
+            54.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 51.666666666666664,
+          "n": 3,
+          "std": 1.8856180831641267,
+          "values": [
+            53.0,
+            49.0,
+            53.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to005_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "std": 2.867441755680873,
+          "values": [
+            54.0,
+            50.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 55.0,
+          "n": 3,
+          "std": 2.8284271247461867,
+          "values": [
+            57.0,
+            51.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "std": 4.496912521077347,
+          "values": [
+            56.0,
+            47.0,
+            57.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "std": 3.299831645537225,
+          "values": [
+            55.0,
+            48.0,
+            55.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 51.333333333333336,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            52.0,
+            49.0,
+            53.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 56.0,
+          "n": 3,
+          "std": 5.099019513592784,
+          "values": [
+            58.0,
+            49.0,
+            61.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 53.0,
+          "n": 3,
+          "std": 4.546060565661949,
+          "values": [
+            54.0,
+            47.0,
+            58.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to006_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 51.0,
+          "n": 3,
+          "std": 4.320493798938576,
+          "values": [
+            53.0,
+            45.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "std": 5.734883511361751,
+          "values": [
+            54.0,
+            46.0,
+            60.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 50.666666666666664,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            53.0,
+            49.0,
+            50.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.0,
+          "n": 3,
+          "std": 2.1602468994692887,
+          "values": [
+            55.0,
+            50.0,
+            54.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 53.0,
+          "n": 3,
+          "std": 2.1602468994692887,
+          "values": [
+            54.0,
+            50.0,
+            55.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 54.0,
+          "n": 3,
+          "std": 4.242640687119282,
+          "values": [
+            57.0,
+            48.0,
+            57.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 54.666666666666664,
+          "n": 3,
+          "std": 4.7140452079103135,
+          "values": [
+            58.0,
+            48.0,
+            58.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to007_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 53.333333333333336,
+          "n": 3,
+          "std": 2.0548046676563287,
+          "values": [
+            51.0,
+            56.0,
+            53.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "std": 2.4944382578492967,
+          "values": [
+            53.0,
+            49.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 52.666666666666664,
+          "n": 3,
+          "std": 1.699673171197598,
+          "values": [
+            52.0,
+            51.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 54.0,
+          "n": 3,
+          "std": 1.4142135623730983,
+          "values": [
+            56.0,
+            53.0,
+            53.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 52.333333333333336,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            54.0,
+            50.0,
+            53.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 55.666666666666664,
+          "n": 3,
+          "std": 3.399346342395189,
+          "values": [
+            59.0,
+            51.0,
+            57.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 52.0,
+          "n": 3,
+          "std": 2.160246899469287,
+          "values": [
+            54.0,
+            49.0,
+            53.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-cube/ckpt/cube_pldm_noise_0to008_p1_seed3074",
+      "subdir": "cube_pldm_noise_0to008_p1_seed3074"
+    }
+  },
+  "PushT": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 77.66666666666667,
+          "n": 3,
+          "std": 3.858612300930075,
+          "values": [
+            76.0,
+            74.0,
+            83.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 69.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            70.0,
+            68.0,
+            69.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 22.666666666666668,
+          "n": 3,
+          "std": 2.6246692913372702,
+          "values": [
+            19.0,
+            25.0,
+            24.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 5.333333333333333,
+          "n": 3,
+          "std": 1.2472191289246475,
+          "values": [
+            7.0,
+            5.0,
+            4.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "std": 6.599663291074443,
+          "values": [
+            69.0,
+            63.0,
+            79.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 28.333333333333332,
+          "n": 3,
+          "std": 0.9428090415820617,
+          "values": [
+            29.0,
+            27.0,
+            29.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 7.666666666666667,
+          "n": 3,
+          "std": 1.6996731711975948,
+          "values": [
+            7.0,
+            6.0,
+            10.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_baseline_seed3074",
+      "subdir": "pusht_pldm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 77.0,
+          "n": 3,
+          "std": 3.559026084010437,
+          "values": [
+            75.0,
+            74.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 73.66666666666667,
+          "n": 3,
+          "std": 4.988876515698588,
+          "values": [
+            75.0,
+            67.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 56.666666666666664,
+          "n": 3,
+          "std": 2.4944382578492936,
+          "values": [
+            60.0,
+            54.0,
+            56.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 18.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            18.0,
+            17.0,
+            19.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 73.33333333333333,
+          "n": 3,
+          "std": 3.39934634239519,
+          "values": [
+            72.0,
+            70.0,
+            78.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 62.0,
+          "n": 3,
+          "std": 1.632993161855452,
+          "values": [
+            62.0,
+            60.0,
+            64.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 24.0,
+          "n": 3,
+          "std": 0.0,
+          "values": [
+            24.0,
+            24.0,
+            24.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to001_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 79.33333333333333,
+          "n": 3,
+          "std": 2.494438257849294,
+          "values": [
+            80.0,
+            76.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 77.66666666666667,
+          "n": 3,
+          "std": 4.0276819911981905,
+          "values": [
+            81.0,
+            72.0,
+            80.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 77.33333333333333,
+          "n": 3,
+          "std": 3.2998316455372216,
+          "values": [
+            78.0,
+            73.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 66.33333333333333,
+          "n": 3,
+          "std": 5.185449728701348,
+          "values": [
+            70.0,
+            59.0,
+            70.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 79.0,
+          "n": 3,
+          "std": 4.320493798938574,
+          "values": [
+            83.0,
+            73.0,
+            81.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 77.66666666666667,
+          "n": 3,
+          "std": 5.436502143433364,
+          "values": [
+            81.0,
+            70.0,
+            82.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 67.0,
+          "n": 3,
+          "std": 4.242640687119285,
+          "values": [
+            64.0,
+            64.0,
+            73.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to002_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 74.0,
+          "n": 3,
+          "std": 5.715476066494082,
+          "values": [
+            74.0,
+            67.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 74.66666666666667,
+          "n": 3,
+          "std": 3.39934634239519,
+          "values": [
+            76.0,
+            70.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 73.0,
+          "n": 3,
+          "std": 4.898979485566356,
+          "values": [
+            73.0,
+            67.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 56.666666666666664,
+          "n": 3,
+          "std": 3.7712361663282534,
+          "values": [
+            54.0,
+            54.0,
+            62.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 75.66666666666667,
+          "n": 3,
+          "std": 4.9216076867444665,
+          "values": [
+            75.0,
+            70.0,
+            82.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 73.0,
+          "n": 3,
+          "std": 2.943920288775949,
+          "values": [
+            74.0,
+            69.0,
+            76.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 59.666666666666664,
+          "n": 3,
+          "std": 6.128258770283412,
+          "values": [
+            52.0,
+            60.0,
+            67.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to003_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "std": 6.649979114420001,
+          "values": [
+            66.0,
+            64.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "std": 6.128258770283412,
+          "values": [
+            70.0,
+            63.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "std": 6.342099196813483,
+          "values": [
+            68.0,
+            64.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 58.0,
+          "n": 3,
+          "std": 4.546060565661952,
+          "values": [
+            52.0,
+            59.0,
+            63.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 68.66666666666667,
+          "n": 3,
+          "std": 5.9066817155564495,
+          "values": [
+            65.0,
+            64.0,
+            77.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 69.33333333333333,
+          "n": 3,
+          "std": 6.944222218666553,
+          "values": [
+            69.0,
+            61.0,
+            78.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 58.333333333333336,
+          "n": 3,
+          "std": 5.312459150169743,
+          "values": [
+            58.0,
+            52.0,
+            65.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to004_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 71.66666666666667,
+          "n": 3,
+          "std": 4.0276819911981905,
+          "values": [
+            74.0,
+            66.0,
+            75.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "std": 4.642796092394707,
+          "values": [
+            68.0,
+            65.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "std": 4.988876515698588,
+          "values": [
+            69.0,
+            65.0,
+            77.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "std": 2.8674417556808756,
+          "values": [
+            70.0,
+            66.0,
+            73.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 72.33333333333333,
+          "n": 3,
+          "std": 3.681787005729087,
+          "values": [
+            72.0,
+            68.0,
+            77.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 69.0,
+          "n": 3,
+          "std": 6.164414002968976,
+          "values": [
+            70.0,
+            61.0,
+            76.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 69.33333333333333,
+          "n": 3,
+          "std": 6.944222218666553,
+          "values": [
+            69.0,
+            61.0,
+            78.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to005_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 71.66666666666667,
+          "n": 3,
+          "std": 8.013876853447538,
+          "values": [
+            66.0,
+            66.0,
+            83.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "std": 7.363574011458174,
+          "values": [
+            69.0,
+            61.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 68.0,
+          "n": 3,
+          "std": 8.524474568362947,
+          "values": [
+            61.0,
+            63.0,
+            80.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 67.0,
+          "n": 3,
+          "std": 5.887840577551898,
+          "values": [
+            65.0,
+            61.0,
+            75.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 69.0,
+          "n": 3,
+          "std": 6.683312551921141,
+          "values": [
+            67.0,
+            62.0,
+            78.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 69.66666666666667,
+          "n": 3,
+          "std": 8.178562764256865,
+          "values": [
+            66.0,
+            62.0,
+            81.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 72.0,
+          "n": 3,
+          "std": 9.41629792788369,
+          "values": [
+            68.0,
+            63.0,
+            85.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to006_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 67.0,
+          "n": 3,
+          "std": 4.96655480858378,
+          "values": [
+            64.0,
+            63.0,
+            74.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 67.66666666666667,
+          "n": 3,
+          "std": 7.039570693980958,
+          "values": [
+            66.0,
+            60.0,
+            77.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 68.66666666666667,
+          "n": 3,
+          "std": 6.236095644623235,
+          "values": [
+            67.0,
+            62.0,
+            77.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 68.33333333333333,
+          "n": 3,
+          "std": 4.496912521077347,
+          "values": [
+            68.0,
+            63.0,
+            74.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 68.33333333333333,
+          "n": 3,
+          "std": 4.642796092394707,
+          "values": [
+            70.0,
+            62.0,
+            73.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 68.0,
+          "n": 3,
+          "std": 6.164414002968976,
+          "values": [
+            69.0,
+            60.0,
+            75.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 69.0,
+          "n": 3,
+          "std": 4.546060565661952,
+          "values": [
+            68.0,
+            64.0,
+            75.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to007_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 69.0,
+          "n": 3,
+          "std": 6.377042156569663,
+          "values": [
+            73.0,
+            60.0,
+            74.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 68.33333333333333,
+          "n": 3,
+          "std": 5.2493385826745405,
+          "values": [
+            73.0,
+            61.0,
+            71.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 69.33333333333333,
+          "n": 3,
+          "std": 5.185449728701348,
+          "values": [
+            73.0,
+            62.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 68.66666666666667,
+          "n": 3,
+          "std": 8.498365855987977,
+          "values": [
+            77.0,
+            57.0,
+            72.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 68.66666666666667,
+          "n": 3,
+          "std": 6.847546194724712,
+          "values": [
+            73.0,
+            59.0,
+            74.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 68.0,
+          "n": 3,
+          "std": 8.831760866327844,
+          "values": [
+            77.0,
+            56.0,
+            71.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 69.0,
+          "n": 3,
+          "std": 5.0990195135927845,
+          "values": [
+            71.0,
+            62.0,
+            74.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-pusht/ckpt/pusht_pldm_noise_0to008_p1_seed3074",
+      "subdir": "pusht_pldm_noise_0to008_p1_seed3074"
+    }
+  },
+  "Reacher": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 46.333333333333336,
+          "n": 3,
+          "std": 6.342099196813486,
+          "values": [
+            44.0,
+            40.0,
+            55.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 31.666666666666668,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            31.0,
+            34.0,
+            30.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 27.333333333333332,
+          "n": 3,
+          "std": 4.0276819911981905,
+          "values": [
+            24.0,
+            25.0,
+            33.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 20.0,
+          "n": 3,
+          "std": 3.7416573867739413,
+          "values": [
+            16.0,
+            25.0,
+            19.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 27.0,
+          "n": 3,
+          "std": 5.887840577551898,
+          "values": [
+            21.0,
+            25.0,
+            35.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 22.333333333333332,
+          "n": 3,
+          "std": 3.39934634239519,
+          "values": [
+            21.0,
+            27.0,
+            19.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 11.666666666666666,
+          "n": 3,
+          "std": 1.6996731711975956,
+          "values": [
+            11.0,
+            14.0,
+            10.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_baseline_seed3074",
+      "subdir": "reacher_pldm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 81.33333333333333,
+          "n": 3,
+          "std": 8.013876853447538,
+          "values": [
+            87.0,
+            87.0,
+            70.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 75.66666666666667,
+          "n": 3,
+          "std": 2.0548046676563256,
+          "values": [
+            73.0,
+            78.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 77.66666666666667,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            77.0,
+            78.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 61.333333333333336,
+          "n": 3,
+          "std": 3.399346342395192,
+          "values": [
+            58.0,
+            66.0,
+            60.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 81.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            83.0,
+            81.0,
+            80.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 80.0,
+          "n": 3,
+          "std": 2.449489742783178,
+          "values": [
+            77.0,
+            80.0,
+            83.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 64.33333333333333,
+          "n": 3,
+          "std": 3.681787005729087,
+          "values": [
+            64.0,
+            69.0,
+            60.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to001_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 81.33333333333333,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            83.0,
+            82.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 80.0,
+          "n": 3,
+          "std": 6.531972647421808,
+          "values": [
+            80.0,
+            88.0,
+            72.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 81.0,
+          "n": 3,
+          "std": 2.943920288775949,
+          "values": [
+            77.0,
+            84.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 73.33333333333333,
+          "n": 3,
+          "std": 3.681787005729087,
+          "values": [
+            73.0,
+            78.0,
+            69.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 84.66666666666667,
+          "n": 3,
+          "std": 3.2998316455372216,
+          "values": [
+            87.0,
+            80.0,
+            87.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 81.0,
+          "n": 3,
+          "std": 3.559026084010437,
+          "values": [
+            83.0,
+            84.0,
+            76.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 82.33333333333333,
+          "n": 3,
+          "std": 2.3570226039551585,
+          "values": [
+            84.0,
+            84.0,
+            79.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to002_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 79.0,
+          "n": 3,
+          "std": 2.160246899469287,
+          "values": [
+            80.0,
+            81.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 81.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            84.0,
+            80.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 82.0,
+          "n": 3,
+          "std": 0.0,
+          "values": [
+            82.0,
+            82.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 79.66666666666667,
+          "n": 3,
+          "std": 2.6246692913372702,
+          "values": [
+            76.0,
+            81.0,
+            82.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 82.0,
+          "n": 3,
+          "std": 3.265986323710904,
+          "values": [
+            78.0,
+            86.0,
+            82.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 83.33333333333333,
+          "n": 3,
+          "std": 6.548960901462833,
+          "values": [
+            84.0,
+            91.0,
+            75.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 81.33333333333333,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            81.0,
+            82.0,
+            81.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to003_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 82.66666666666667,
+          "n": 3,
+          "std": 3.0912061651652345,
+          "values": [
+            87.0,
+            80.0,
+            81.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 80.66666666666667,
+          "n": 3,
+          "std": 6.182412330330469,
+          "values": [
+            86.0,
+            84.0,
+            72.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 83.33333333333333,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            84.0,
+            84.0,
+            82.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 80.33333333333333,
+          "n": 3,
+          "std": 3.7712361663282534,
+          "values": [
+            83.0,
+            83.0,
+            75.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 81.33333333333333,
+          "n": 3,
+          "std": 4.496912521077347,
+          "values": [
+            85.0,
+            75.0,
+            84.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 85.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            88.0,
+            84.0,
+            85.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 84.66666666666667,
+          "n": 3,
+          "std": 2.8674417556808756,
+          "values": [
+            88.0,
+            81.0,
+            85.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to004_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 59.666666666666664,
+          "n": 3,
+          "std": 3.299831645537219,
+          "values": [
+            56.0,
+            59.0,
+            64.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 59.666666666666664,
+          "n": 3,
+          "std": 1.2472191289246501,
+          "values": [
+            58.0,
+            60.0,
+            61.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 58.333333333333336,
+          "n": 3,
+          "std": 2.6246692913372693,
+          "values": [
+            56.0,
+            57.0,
+            62.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 61.0,
+          "n": 3,
+          "std": 3.2659863237109072,
+          "values": [
+            61.0,
+            57.0,
+            65.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 59.333333333333336,
+          "n": 3,
+          "std": 4.496912521077347,
+          "values": [
+            53.0,
+            62.0,
+            63.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 60.333333333333336,
+          "n": 3,
+          "std": 3.77123616632825,
+          "values": [
+            63.0,
+            63.0,
+            55.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 58.333333333333336,
+          "n": 3,
+          "std": 4.027681991198188,
+          "values": [
+            56.0,
+            64.0,
+            55.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to005_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 77.66666666666667,
+          "n": 3,
+          "std": 3.39934634239519,
+          "values": [
+            81.0,
+            73.0,
+            79.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 78.66666666666667,
+          "n": 3,
+          "std": 1.8856180831641267,
+          "values": [
+            80.0,
+            80.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 75.66666666666667,
+          "n": 3,
+          "std": 2.8674417556808756,
+          "values": [
+            79.0,
+            72.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 70.33333333333333,
+          "n": 3,
+          "std": 2.3570226039551585,
+          "values": [
+            72.0,
+            67.0,
+            72.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 77.33333333333333,
+          "n": 3,
+          "std": 8.259674462242579,
+          "values": [
+            89.0,
+            71.0,
+            72.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 76.66666666666667,
+          "n": 3,
+          "std": 2.494438257849294,
+          "values": [
+            80.0,
+            74.0,
+            76.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "std": 2.494438257849294,
+          "values": [
+            72.0,
+            74.0,
+            68.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to006_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 77.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            76.0,
+            77.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 77.33333333333333,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            77.0,
+            77.0,
+            78.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            72.0,
+            69.0,
+            73.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 78.66666666666667,
+          "n": 3,
+          "std": 2.0548046676563256,
+          "values": [
+            81.0,
+            79.0,
+            76.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 76.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            75.0,
+            79.0,
+            76.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 79.33333333333333,
+          "n": 3,
+          "std": 2.8674417556808756,
+          "values": [
+            83.0,
+            76.0,
+            79.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 81.0,
+          "n": 3,
+          "std": 3.559026084010437,
+          "values": [
+            83.0,
+            84.0,
+            76.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to007_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 74.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            73.0,
+            74.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 76.33333333333333,
+          "n": 3,
+          "std": 3.681787005729087,
+          "values": [
+            72.0,
+            81.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 74.66666666666667,
+          "n": 3,
+          "std": 3.39934634239519,
+          "values": [
+            70.0,
+            78.0,
+            76.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 70.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            70.0,
+            73.0,
+            69.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "std": 4.109609335312651,
+          "values": [
+            66.0,
+            76.0,
+            72.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 71.33333333333333,
+          "n": 3,
+          "std": 3.858612300930075,
+          "values": [
+            66.0,
+            73.0,
+            75.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 72.0,
+          "n": 3,
+          "std": 2.943920288775949,
+          "values": [
+            75.0,
+            68.0,
+            73.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-reacher/ckpt/reacher_pldm_noise_0to008_p1_seed3074",
+      "subdir": "reacher_pldm_noise_0to008_p1_seed3074"
+    }
+  },
+  "TwoRoom": {
+    "0.0": {
+      "metrics": {
+        "clean": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            96.0,
+            95.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 94.33333333333333,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            94.0,
+            94.0,
+            95.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 81.0,
+          "n": 3,
+          "std": 4.320493798938574,
+          "values": [
+            83.0,
+            75.0,
+            85.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 53.666666666666664,
+          "n": 3,
+          "std": 3.7712361663282534,
+          "values": [
+            51.0,
+            51.0,
+            59.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 1.8856180831641267,
+          "values": [
+            98.0,
+            94.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 91.0,
+          "n": 3,
+          "std": 2.160246899469287,
+          "values": [
+            88.0,
+            93.0,
+            92.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 77.0,
+          "n": 3,
+          "std": 5.656854249492381,
+          "values": [
+            81.0,
+            69.0,
+            81.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_baseline_seed3074",
+      "subdir": "tworoom_pldm_baseline_seed3074"
+    },
+    "0.01": {
+      "metrics": {
+        "clean": {
+          "mean": 95.0,
+          "n": 3,
+          "std": 2.160246899469287,
+          "values": [
+            93.0,
+            94.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 95.33333333333333,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            96.0,
+            96.0,
+            94.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 93.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            93.0,
+            94.0,
+            92.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 89.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            89.0,
+            92.0,
+            88.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 95.33333333333333,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            94.0,
+            96.0,
+            96.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 95.66666666666667,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            94.0,
+            96.0,
+            97.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 95.33333333333333,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            95.0,
+            95.0,
+            96.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to001_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to001_p1_seed3074"
+    },
+    "0.02": {
+      "metrics": {
+        "clean": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 1.632993161855452,
+          "values": [
+            98.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            98.0,
+            97.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            97.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            97.0,
+            95.0,
+            97.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.0,
+          "values": [
+            98.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            97.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            97.0,
+            97.0,
+            99.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to002_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to002_p1_seed3074"
+    },
+    "0.03": {
+      "metrics": {
+        "clean": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 1.632993161855452,
+          "values": [
+            98.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            98.0,
+            97.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            97.0,
+            96.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 97.0,
+          "n": 3,
+          "std": 2.160246899469287,
+          "values": [
+            96.0,
+            95.0,
+            100.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            96.0,
+            97.0,
+            100.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            97.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 97.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            97.0,
+            96.0,
+            98.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to003_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to003_p1_seed3074"
+    },
+    "0.04": {
+      "metrics": {
+        "clean": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 2.494438257849294,
+          "values": [
+            96.0,
+            94.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            96.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 97.0,
+          "n": 3,
+          "std": 1.632993161855452,
+          "values": [
+            97.0,
+            95.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 95.66666666666667,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            95.0,
+            95.0,
+            97.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 2.6246692913372702,
+          "values": [
+            95.0,
+            94.0,
+            100.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 2.494438257849294,
+          "values": [
+            97.0,
+            93.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 2.494438257849294,
+          "values": [
+            96.0,
+            94.0,
+            100.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to004_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to004_p1_seed3074"
+    },
+    "0.05": {
+      "metrics": {
+        "clean": {
+          "mean": 97.0,
+          "n": 3,
+          "std": 1.632993161855452,
+          "values": [
+            95.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            94.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            94.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            95.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            95.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 2.0548046676563256,
+          "values": [
+            94.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 96.33333333333333,
+          "n": 3,
+          "std": 1.699673171197595,
+          "values": [
+            94.0,
+            97.0,
+            98.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to005_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to005_p1_seed3074"
+    },
+    "0.06": {
+      "metrics": {
+        "clean": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            97.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            97.0,
+            96.0,
+            97.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            98.0,
+            97.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            97.0,
+            96.0,
+            97.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 97.66666666666667,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            97.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.0,
+          "values": [
+            98.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 97.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            98.0,
+            97.0,
+            96.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to006_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to006_p1_seed3074"
+    },
+    "0.07": {
+      "metrics": {
+        "clean": {
+          "mean": 98.66666666666667,
+          "n": 3,
+          "std": 0.4714045207910317,
+          "values": [
+            98.0,
+            99.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            98.0,
+            100.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            97.0,
+            98.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 98.33333333333333,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            99.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            96.0,
+            98.0,
+            98.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            97.0,
+            98.0,
+            99.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            97.0,
+            98.0,
+            99.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to007_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to007_p1_seed3074"
+    },
+    "0.08": {
+      "metrics": {
+        "clean": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            98.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.03": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            98.0,
+            97.0,
+            99.0
+          ]
+        },
+        "pixels_goal_std0.05": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "std": 0.9428090415820634,
+          "values": [
+            98.0,
+            96.0,
+            98.0
+          ]
+        },
+        "pixels_goal_std0.08": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.03": {
+          "mean": 97.33333333333333,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            97.0,
+            96.0,
+            99.0
+          ]
+        },
+        "pixels_std0.05": {
+          "mean": 96.66666666666667,
+          "n": 3,
+          "std": 1.247219128924647,
+          "values": [
+            98.0,
+            95.0,
+            97.0
+          ]
+        },
+        "pixels_std0.08": {
+          "mean": 98.0,
+          "n": 3,
+          "std": 0.816496580927726,
+          "values": [
+            98.0,
+            97.0,
+            99.0
+          ]
+        }
+      },
+      "path": "/opt/huawei/explorer-env/dataset/ag_data/data/world_model/quentinll/lewm-tworooms/ckpt/tworoom_pldm_noise_0to008_p1_seed3074",
+      "subdir": "tworoom_pldm_noise_0to008_p1_seed3074"
+    }
+  }
+}
