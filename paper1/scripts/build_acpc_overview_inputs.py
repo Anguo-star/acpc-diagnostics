@@ -162,9 +162,10 @@ def build(h5_path: Path, out_dir: Path) -> dict[str, Any]:
             for name, path in outputs.items()
         },
         "figure_role": (
-            "Real task input examples. The clean and noisy images depict the "
-            "same state; the third image is a different state from the same "
-            "recorded episode. Latent diagrams in Figure 1 are schematic."
+            "Real task source examples retained for Figure 1 provenance. The "
+            "clean and noisy images are the paired inputs displayed in the "
+            "figure; the different-state frame is retained as a source record "
+            "but is not displayed. Latent diagrams in Figure 1 are schematic."
         ),
     }
     metadata_path = out_dir / "metadata.json"

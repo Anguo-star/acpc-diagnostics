@@ -13,7 +13,7 @@ LeWM pair rows ───────────────> cross_task_selecti
 PLDM frozen rows ─────────────> plot_pldm_sweep_diagnostics
 IR/SR summary + stressor rows ─> build_cross_stressor_ir_sr_comparison
 planner summary + sweep rows ─> build_acpc_submission_assets
-Figure 1 input PNGs ──────────> plot_acpc_ir_sr_overview
+Figure 1 paired PNGs ─────────> plot_acpc_ir_sr_overview
 released linearization v1 ───> build_linearization_horizon_artifact ─> IR/SR v2
 ```
 
@@ -73,8 +73,10 @@ python -m paper1.scripts.build_acpc_submission_assets \
 
 ## Figure 1 inputs
 
-The three frozen PushT input PNGs and their hashes are committed under
-`assets/paper1_figs/acpc_overview_inputs/`. Re-extraction is optional and
+The clean and perturbed PushT input PNGs displayed in Figure 1 and their
+hashes are committed under `assets/paper1_figs/acpc_overview_inputs/`.
+The directory also retains a different-state source record for provenance,
+but the current figure does not display it. Re-extraction is optional and
 requires the original 46 GB PushT HDF5 file:
 
 ```bash

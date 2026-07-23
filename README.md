@@ -128,9 +128,9 @@ python -m paper1.scripts.build_acpc_submission_assets
 python -m paper1.scripts.plot_gaussian_sensitivity_mechanism
 ```
 
-The three real PushT images used in Figure 1 are already committed. To
-re-extract them from the original dataset and verify their frozen pixel
-hashes, run:
+The clean and perturbed PushT images displayed in Figure 1 are already
+committed. To re-extract the source records from the original dataset and
+verify their frozen pixel hashes, run:
 
 ```bash
 python -m paper1.scripts.build_acpc_overview_inputs \

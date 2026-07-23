@@ -39,7 +39,7 @@
     ],
     "step": 124
   },
-  "figure_role": "Real task input examples. The clean and noisy images depict the same state; the third image is a different state from the same recorded episode. Latent diagrams in Figure 1 are schematic.",
+  "figure_role": "Real task source examples retained for Figure 1 provenance. The clean and noisy images are the paired inputs displayed in the figure; the different-state frame is retained as a source record but is not displayed. Latent diagrams in Figure 1 are schematic.",
   "outputs": {
     "clean": {
       "path": "assets/paper1_figs/acpc_overview_inputs/pusht_ep8200_step48_clean.png",

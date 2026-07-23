@@ -33,7 +33,6 @@ DEFAULT_PREVIEW = ROOT / "assets" / "paper1_figs" / "fig_acpc_ir_sr_overview.png
 
 CLEAN_FILE = "pusht_ep8200_step48_clean.png"
 NOISY_FILE = "pusht_ep8200_step48_gaussian_std008.png"
-DIFFERENT_FILE = "pusht_ep8200_step124_different_state.png"
 
 BLUE = "#0072B2"
 ORANGE = "#D55E00"
@@ -47,10 +46,10 @@ LIGHT = "#D8DEE4"
 PANEL = "#F8FAFC"
 WHITE = "#FFFFFF"
 
-# Keep the three input cards at their existing rendered extent.  These values
-# match the current AnnotationBbox footprint in the fixed panel-(a) geometry.
-INPUT_CARD_WIDTH = 0.74144
-INPUT_CARD_HEIGHT = 0.21200
+# Match the enlarged two-card AnnotationBbox footprint in the fixed panel-(a)
+# geometry.  The outer three-block layout remains unchanged.
+INPUT_CARD_WIDTH = 0.83495
+INPUT_CARD_HEIGHT = 0.23874
 
 STYLE = {
     "font.family": "serif",
@@ -99,7 +98,7 @@ def _validate_inputs(input_dir: Path) -> dict[str, object]:
     metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
     if metadata.get("source", {}).get("task") != "PushT":
         raise ValueError("Figure 1 inputs must be verified PushT frames")
-    for filename in (CLEAN_FILE, NOISY_FILE, DIFFERENT_FILE):
+    for filename in (CLEAN_FILE, NOISY_FILE):
         if not (input_dir / filename).is_file():
             raise FileNotFoundError(f"missing Figure 1 input: {input_dir / filename}")
     return metadata
@@ -134,8 +133,7 @@ def _add_image(
     )
     ax.add_artist(artist)
 
-    # A short upper-right accent identifies the input without competing with
-    # the lower-left stack used to denote additional logged histories.
+    # A short upper-right accent identifies each member of the paired input.
     half_width = 0.5 * INPUT_CARD_WIDTH
     half_height = 0.5 * INPUT_CARD_HEIGHT
     right = center[0] + half_width
@@ -161,37 +159,6 @@ def _add_image(
         clip_on=False,
         zorder=7,
     )
-
-
-def _draw_hidden_input_stack(
-    ax: plt.Axes,
-    center: tuple[float, float],
-) -> None:
-    """Place a restrained stack of cards behind the shown different input."""
-    width, height = INPUT_CARD_WIDTH, INPUT_CARD_HEIGHT
-    layers = (
-        (0.090, "#F3F5F7"),
-        (0.060, "#EFF2F4"),
-        (0.030, "#EBEEF1"),
-    )
-    for layer, (offset, face) in enumerate(layers, start=1):
-        card = FancyBboxPatch(
-            (
-                center[0] - 0.5 * width - offset,
-                center[1] - 0.5 * height - 0.285 * offset,
-            ),
-            width,
-            height,
-            boxstyle="round,pad=0.001,rounding_size=0.004",
-            facecolor=face,
-            edgecolor="#B7C0C9",
-            linewidth=0.68,
-            alpha=1.0,
-            transform=ax.transAxes,
-            clip_on=False,
-            zorder=layer,
-        )
-        ax.add_patch(card)
 
 
 def _draw_input_block(ax: plt.Axes, input_dir: Path) -> None:
@@ -220,24 +187,16 @@ def _draw_input_block(ax: plt.Axes, input_dir: Path) -> None:
         fontweight="semibold",
     )
 
-    centers = ((0.50, 0.790), (0.50, 0.505), (0.50, 0.235))
-    _add_image(ax, input_dir / CLEAN_FILE, centers[0], edge=BLUE, zoom=0.222)
-    _add_image(ax, input_dir / NOISY_FILE, centers[1], edge=ORANGE, zoom=0.222)
-    _draw_hidden_input_stack(ax, centers[2])
-    _add_image(
-        ax,
-        input_dir / DIFFERENT_FILE,
-        centers[2],
-        edge=PURPLE,
-        zoom=0.222,
-    )
+    centers = ((0.50, 0.730), (0.50, 0.300))
+    _add_image(ax, input_dir / CLEAN_FILE, centers[0], edge=BLUE, zoom=0.250)
+    _add_image(ax, input_dir / NOISY_FILE, centers[1], edge=ORANGE, zoom=0.250)
 
     captions = (
         (r"clean  $h_i$", BLUE, "o"),
         (r"perturbed  $\tilde h_i^{(m)}$", ORANGE, "s"),
     )
-    for (_, y), (caption, color, marker) in zip(centers[:2], captions):
-        caption_y = y - 0.137
+    for (_, y), (caption, color, marker) in zip(centers, captions):
+        caption_y = y - 0.155
         ax.scatter(
             [0.240],
             [caption_y],
@@ -258,50 +217,6 @@ def _draw_input_block(ax: plt.Axes, input_dir: Path) -> None:
             color=color,
             fontweight="semibold",
         )
-
-    shown_y = 0.083
-    ax.scatter(
-        [0.215],
-        [shown_y],
-        s=20,
-        c=PURPLE,
-        marker="^",
-        edgecolors=INK,
-        linewidths=0.45,
-        zorder=6,
-    )
-    ax.text(
-        0.270,
-        shown_y,
-        "different state",
-        ha="left",
-        va="center",
-        fontsize=5.70,
-        color=PURPLE,
-        fontweight="semibold",
-    )
-    hidden_y = 0.036
-    ax.scatter(
-        [0.215],
-        [hidden_y],
-        s=13,
-        c=OTHER,
-        marker="o",
-        edgecolors=INK,
-        linewidths=0.40,
-        zorder=6,
-    )
-    ax.text(
-        0.270,
-        hidden_y,
-        "other states",
-        ha="left",
-        va="center",
-        fontsize=5.70,
-        color=OTHER,
-        fontweight="semibold",
-    )
-
 
 def _background_points(*, seed: int, count: int = 42) -> np.ndarray:
     """Create a sparse context cloud for the qualitative 2-D illustration."""
@@ -351,7 +266,7 @@ def _draw_soft_halo(
         )
 
 
-def _draw_three_token_panel(
+def _draw_pair_panel(
     ax: plt.Axes,
     *,
     robust: bool,
@@ -384,10 +299,8 @@ def _draw_three_token_panel(
             # encoder-to-rollout mapping visually explicit.
             clean = np.array([-0.40, -0.24])
             perturbed = np.array([-0.12, -0.12])
-            different = np.array([0.43, 0.46])
         else:
             perturbed = np.array([-0.33, 0.09])
-            different = np.array([0.35, -0.06])
         other_states = np.array(
             [
                 [0.10, 0.68],
@@ -404,14 +317,11 @@ def _draw_three_token_panel(
     else:
         if rollout:
             # Make the encoder-to-rollout remapping visible at paper scale:
-            # the perturbed view drifts into other states without implying
-            # that it must approach the single shown different state.
+            # the perturbed view drifts into the surrounding other states.
             clean = np.array([-0.82, 0.34])
             perturbed = np.array([0.18, -0.18])
-            different = np.array([0.82, 0.44])
         else:
             perturbed = np.array([-0.10, 0.06])
-            different = np.array([0.94, -0.48])
         other_states = (
             np.array(
                 [
@@ -446,9 +356,10 @@ def _draw_three_token_panel(
     # Equal-scale soft halos communicate neighborhoods without hard radii.
     halo_width, halo_height = 0.58, 0.40
     if robust:
-        # Keep every contextual state outside all three robust neighborhoods.
+        # Keep every contextual state outside both robust paired-view
+        # neighborhoods.
         keep = np.ones(len(context), dtype=bool)
-        for token in (clean, perturbed, different):
+        for token in (clean, perturbed):
             normalized = (
                 ((context[:, 0] - token[0]) / 0.48) ** 2
                 + ((context[:, 1] - token[1]) / 0.34) ** 2
@@ -478,17 +389,8 @@ def _draw_three_token_panel(
         height=halo_height,
         color=ORANGE,
     )
-    _draw_soft_halo(
-        ax,
-        different,
-        width=halo_width,
-        height=halo_height,
-        color=PURPLE,
-    )
-
-    # Gray anchors stand for other, unshown states.  In fragile panels,
-    # several lie inside the displaced perturbation neighborhood; the shown
-    # purple state is only one example and need not be the overlapping state.
+    # Gray anchors stand for other states.  In fragile panels, several lie
+    # inside the displaced perturbation neighborhood.
     ax.scatter(
         other_states[:, 0],
         other_states[:, 1],
@@ -544,17 +446,6 @@ def _draw_three_token_panel(
         linewidths=0.75,
         zorder=6,
     )
-    ax.scatter(
-        [different[0]],
-        [different[1]],
-        s=52,
-        c=PURPLE,
-        marker="^",
-        edgecolors=INK,
-        linewidths=0.75,
-        zorder=6,
-    )
-
     ax.text(
         0.03,
         0.96,
@@ -575,10 +466,9 @@ def _draw_middle_header(ax: plt.Axes, *, legend_y: float) -> None:
     ax.set_ylim(0, 1)
     ax.axis("off")
     legend_items = (
-        (0.150, BLUE, "o", "clean"),
-        (0.305, ORANGE, "s", "perturbed"),
-        (0.500, PURPLE, "^", "different state"),
-        (0.735, OTHER, "o", "other states"),
+        (0.225, BLUE, "o", "clean"),
+        (0.445, ORANGE, "s", "perturbed"),
+        (0.720, OTHER, "o", "other states"),
     )
     for x, color, marker, label in legend_items:
         ax.scatter(
@@ -664,10 +554,10 @@ def _draw_pair_glyph(
         ax.scatter(
             [right_x],
             [y],
-            s=24 * marker_scale,
-            facecolors=PURPLE,
+            s=21 * marker_scale,
+            facecolors=OTHER,
             edgecolors=INK,
-            marker="^",
+            marker="o",
             linewidths=0.55,
             zorder=5,
         )
@@ -841,7 +731,7 @@ def _draw_metric_block(
         0.085,
         defs_y,
         "Invariance Radius (IR): visual sensitivity\n"
-        "Separation Rate (SR)",
+        "Separation Rate (SR): state separation",
         ha="left",
         va="center",
         multialignment="left",
@@ -1001,16 +891,16 @@ def plot(out_pdf: Path, preview_png: Path, input_dir: Path) -> None:
             header_ax,
             legend_y=(legend_fig_y - header_pos.y0) / header_pos.height,
         )
-        _draw_three_token_panel(
+        _draw_pair_panel(
             fail_encoder_ax, robust=False, rollout=False, seed=20260731
         )
-        _draw_three_token_panel(
+        _draw_pair_panel(
             fail_rollout_ax, robust=False, rollout=True, seed=20260732
         )
-        _draw_three_token_panel(
+        _draw_pair_panel(
             pass_encoder_ax, robust=True, rollout=False, seed=20260733
         )
-        _draw_three_token_panel(
+        _draw_pair_panel(
             pass_rollout_ax, robust=True, rollout=True, seed=20260734
         )
         fail_encoder_ax.set_title(
