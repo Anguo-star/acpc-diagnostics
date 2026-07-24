@@ -1,10 +1,8 @@
-"""Render the PLDM analogue of the LeWM full-sweep diagnostics figure.
+"""Render diagnostic behavior across the three-run PLDM sweep.
 
-The layout, colors, and dotted common-threshold lines mirror
-``plot_full_sweep_diagnostics.py`` so that readers can compare the two model
-families panel by panel. The current PLDM sweep has three independent
-training runs per setting; which levels meet the success-rate criterion is
-reported in the text and tables rather than drawn on the figure.
+The layout and colors mirror ``plot_full_sweep_diagnostics.py`` so readers can
+compare the measured quantities panel by panel. No screening threshold is
+applied to PLDM.
 """
 
 from __future__ import annotations
@@ -25,11 +23,6 @@ from .utils_paper1_io import ROOT, TASKS
 
 DEFAULT_ROWS = ROOT / "paper1/results/external_validation/pldm_frozen_rows_v2.csv"
 DEFAULT_FIG = ROOT / "assets/paper1_figs/fig_pldm_sweep_diagnostics.pdf"
-
-# Shared with the LeWM sweep figure.
-COMMON_TI = 0.30
-COMMON_T_SR = 0.95
-RECOVERY_COLOR = "#d9ead3"
 
 PLOT_STYLE = {
     "font.family": "serif",
@@ -60,12 +53,10 @@ def _read_rows(path: Path) -> dict[str, list[dict[str, float | bool | int]]]:
             {
                 "rho": float(row["training_rho"]),
                 "training_seed": int(float(row["training_seed"])),
-                "ir_raw_q90": float(row["ir_raw_q90"]),
                 "ir_relative": float(row["ir_relative_q90"]),
                 "sr": float(row["sr"]),
                 "stress_score": float(row["stress_score"]),
                 "base_clean": float(row["base_clean_score"]),
-                "recovered": str(row["behavior_label"]).lower() == "true",
             }
         )
     for task, rows in by_task.items():
@@ -101,22 +92,6 @@ def _aggregate(
             record[f"{target}_hi"] = max(values)
         output.append(record)
     return output
-
-
-def _recovery_spans(x: list[float], recovered: list[bool]) -> list[tuple[float, float]]:
-    edges = [x[0] - (x[1] - x[0]) / 2]
-    edges.extend((left + right) / 2 for left, right in zip(x, x[1:]))
-    edges.append(x[-1] + (x[-1] - x[-2]) / 2)
-    spans: list[tuple[float, float]] = []
-    run_start: int | None = None
-    for index, flag in enumerate(recovered):
-        if flag and run_start is None:
-            run_start = index
-        if run_start is not None and (not flag or index == len(recovered) - 1):
-            run_end = index if flag else index - 1
-            spans.append((edges[run_start], edges[run_end + 1]))
-            run_start = None
-    return spans
 
 
 def plot(
@@ -180,29 +155,6 @@ def plot(
                 ls="--",
                 zorder=2,
             )
-            diagnostic_ax.axhline(COMMON_TI, color="#d95f02", ls=":", lw=1.0, zorder=1.6)
-            diagnostic_ax.axhline(COMMON_T_SR, color="#7570b3", ls=":", lw=1.0, zorder=1.6)
-            if index == 0:
-                diagnostic_ax.annotate(
-                    r"$t_{\rm IR}{=}0.3$",
-                    xy=(0.081, COMMON_TI),
-                    xytext=(0, 1.6),
-                    textcoords="offset points",
-                    ha="right",
-                    va="bottom",
-                    fontsize=6.0,
-                    color="#d95f02",
-                )
-                diagnostic_ax.annotate(
-                    r"$t_{\rm SR}{=}0.95$",
-                    xy=(0.081, COMMON_T_SR),
-                    xytext=(0, -1.6),
-                    textcoords="offset points",
-                    ha="right",
-                    va="top",
-                    fontsize=6.0,
-                    color="#7570b3",
-                )
 
             score_ax.set_title(f"({chr(97 + index)}) {task}", loc="left", fontweight="semibold")
             if index % 4 == 0:

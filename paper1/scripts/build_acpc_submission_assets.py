@@ -17,10 +17,8 @@ import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
 try:
-    from .cross_task_selective_rule import run_all_subsets
     from .ir_sr_compat import to_ir_sr
 except ImportError:  # Support the historical direct-script entry point.
-    from paper1.scripts.cross_task_selective_rule import run_all_subsets
     from paper1.scripts.ir_sr_compat import to_ir_sr
 
 
@@ -31,9 +29,6 @@ DEFAULT_PLANNER_FIG = ROOT / "assets/paper1_figs/fig_acpc_planner_evidence.pdf"
 DEFAULT_INCREMENT_TABLE = ROOT / "paper1/tables/table_acpc_planner_increment.tex"
 DEFAULT_ABSOLUTE_TABLE = ROOT / "paper1/tables/table_acpc_planner_absolute.tex"
 DEFAULT_SWEEP_TABLE = ROOT / "paper1/tables/table_full_sweep_compact_ir_sr_v2.tex"
-DEFAULT_PLDM_ROWS = ROOT / "paper1/results/external_validation/pldm_frozen_rows_v2.csv"
-DEFAULT_CROSS_TASK_SUMMARY = ROOT / "paper1/results/cross_task_ir_sr_all_subsets_summary_v2.json"
-DEFAULT_PLDM_TABLE = ROOT / "paper1/tables/table_pldm_architecture_portability_ir_sr_v2.tex"
 
 TASKS = ("TwoRoom", "PushT", "Reacher", "Cube")
 TASK_MARKERS = {"TwoRoom": "o", "PushT": "s", "Reacher": "^", "Cube": "D"}
@@ -408,122 +403,6 @@ def build_sweep_table(rows: list[dict[str, str]]) -> str:
     return "\n".join(lines)
 
 
-def build_pldm_table(
-    frozen_rows: list[dict[str, str]],
-    lewm_cross_task_summary: dict[str, Any],
-) -> str:
-    """Compare leave-one-task-out screening in LeWM and PLDM."""
-    frozen_rows = to_ir_sr(frozen_rows)
-    lewm_cross_task_summary = to_ir_sr(lewm_cross_task_summary)
-    if len(frozen_rows) != 108 or {
-        row.get("model_family") for row in frozen_rows
-    } != {"PLDM"}:
-        raise ValueError("PLDM frozen validation is incomplete")
-
-    seeds = sorted({int(float(row["training_seed"])) for row in frozen_rows})
-    observed = {
-        (
-            row["task"],
-            int(float(row["training_seed"])),
-            int(round(100 * float(row["training_rho"]))),
-        )
-        for row in frozen_rows
-    }
-    expected = {
-        (task, seed, rho)
-        for task in TASKS
-        for seed in (3072, 3073, 3074)
-        for rho in range(9)
-    }
-    if seeds != [3072, 3073, 3074] or observed != expected:
-        raise ValueError("PLDM sweep must contain three complete four-task grids")
-
-    base_ir: dict[tuple[str, int], float] = {}
-    for task in TASKS:
-        for seed in seeds:
-            base = [
-                row
-                for row in frozen_rows
-                if row["task"] == task
-                and int(float(row["training_seed"])) == seed
-                and abs(float(row["training_rho"])) < 1e-12
-            ]
-            if len(base) != 1 or float(base[0]["ir_raw_q90"]) <= 0:
-                raise ValueError(f"invalid PLDM IR reference for {task}/{seed}")
-            base_ir[(task, seed)] = float(base[0]["ir_raw_q90"])
-
-    local_rows = [
-        {
-            "task": row["task"],
-            "training_seed": int(float(row["training_seed"])),
-            "rho": float(row["training_rho"]),
-            "ir_relative_q90": (
-                float(row["ir_raw_q90"])
-                / base_ir[(row["task"], int(float(row["training_seed"])))]
-            ),
-            "sr_delta010": float(row["sr"]),
-            "recovery_label": row["behavior_label"],
-        }
-        for row in frozen_rows
-    ]
-    details, _, local_summary = run_all_subsets(
-        local_rows, expected_seeds=seeds
-    )
-    local_eval = [row for row in details if row["source_coverage"] == 3]
-    if len(local_eval) != len(TASKS) * len(seeds):
-        raise ValueError("PLDM leave-one-task-out analysis is incomplete")
-
-    if not any(
-        item["source_coverage"] == 3 for item in local_summary["coverage"]
-    ):
-        raise ValueError("PLDM three-source summary is missing")
-
-    lewm_task_ba: dict[str, float] = {}
-    for partition in lewm_cross_task_summary.get("partitions", []):
-        if (
-            int(partition.get("source_coverage", -1)) == 3
-            and len(partition.get("evaluation_tasks", [])) == 1
-        ):
-            lewm_task_ba[str(partition["evaluation_tasks"][0])] = float(
-                partition["balanced_accuracy"]
-            )
-    if set(lewm_task_ba) != set(TASKS):
-        raise ValueError("LeWM three-source balanced accuracies are incomplete")
-
-    pldm_task_ba = {
-        task: sum(
-            float(row["balanced_accuracy"])
-            for row in local_eval
-            if str(row["task"]) == task
-        )
-        / len(seeds)
-        for task in TASKS
-    }
-    if set(pldm_task_ba) != set(TASKS):
-        raise ValueError("PLDM three-source balanced accuracies are incomplete")
-
-    lines = [
-        r"\begin{table}[t]",
-        r"\centering",
-        r"\caption{The same leave-one-task-out IR--SR screen in two model families. For each evaluation task, thresholds are selected on that model family's other three tasks and applied unchanged. Values average three independent training runs; chance is $0.5$.}",
-        r"\label{tab:pldm-architecture-portability}",
-        r"\small",
-        r"\setlength{\tabcolsep}{6pt}",
-        r"\begin{tabular}{lrr}",
-        r"\toprule",
-        r" & \multicolumn{2}{c}{Balanced accuracy} \\",
-        r"\cmidrule(lr){2-3}",
-        r"Evaluation task & LeWM & PLDM \\",
-        r"\midrule",
-    ]
-    for task in TASKS:
-        lines.append(
-            f"{task} & {lewm_task_ba[task]:.3f} & {pldm_task_ba[task]:.3f} \\\\"
-        )
-    lines.extend([r"\bottomrule", r"\end{tabular}", r"\end{table}"])
-    return "\n".join(lines)
-
-
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--planner-summary", type=Path, default=DEFAULT_PLANNER)
@@ -532,11 +411,6 @@ def main() -> int:
     parser.add_argument("--increment-table", type=Path, default=DEFAULT_INCREMENT_TABLE)
     parser.add_argument("--absolute-table", type=Path, default=DEFAULT_ABSOLUTE_TABLE)
     parser.add_argument("--sweep-table", type=Path, default=DEFAULT_SWEEP_TABLE)
-    parser.add_argument("--pldm-rows", type=Path, default=DEFAULT_PLDM_ROWS)
-    parser.add_argument(
-        "--cross-task-summary", type=Path, default=DEFAULT_CROSS_TASK_SUMMARY
-    )
-    parser.add_argument("--pldm-table", type=Path, default=DEFAULT_PLDM_TABLE)
     args = parser.parse_args()
 
     planner = _load_json(args.planner_summary)
@@ -550,22 +424,12 @@ def main() -> int:
     _write(args.increment_table, build_increment_table(planner))
     _write(args.absolute_table, build_absolute_table(planner))
     sweep_rows = to_ir_sr(_read_csv(args.full_sweep_summary))
-    pldm_rows = to_ir_sr(_read_csv(args.pldm_rows))
-    cross_task_summary = to_ir_sr(_load_json(args.cross_task_summary))
     _write(args.sweep_table, build_sweep_table(sweep_rows))
-    _write(
-        args.pldm_table,
-        build_pldm_table(
-            pldm_rows,
-            cross_task_summary,
-        ),
-    )
     for path in (
         args.planner_figure,
         args.increment_table,
         args.absolute_table,
         args.sweep_table,
-        args.pldm_table,
     ):
         print(f"wrote {path}")
     return 0

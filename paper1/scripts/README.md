@@ -24,11 +24,10 @@ The first command rebuilds Figure 1 from the committed, hash-recorded PushT
 input frames. The next three rebuild the future-drift display, all 14 LeWM
 cross-task threshold partitions, and the IR--SR blur/resize comparison
 analysis. `build_acpc_submission_assets` writes the vector planner-evidence figure,
-compact planner/full-sweep tables, and the PLDM architecture-portability
-table. Its PLDM inputs are the complete 108-row, three-training-run sweep at
-`paper1/results/external_validation/pldm_frozen_rows_v2.csv`; the IR--SR
-comparison also reads the current LeWM cross-task threshold summary. These
-steps perform no model evaluation or training.
+and compact planner/full-sweep tables. The PLDM diagnostic-behavior figure
+reads the complete 108-row, three-training-run sweep at
+`paper1/results/external_validation/pldm_frozen_rows_v2.csv`. These steps
+perform no model evaluation or training.
 
 To reproduce the two additional PLDM training families from local checkpoints,
 first build their behavior and checkpoint-bound manifests, then run the frozen
@@ -222,7 +221,7 @@ v2 runner binds every reference by seed, task, stressor, and severity.
 
 Plot output notes:
 
-- `plot_pldm_sweep_diagnostics` renders the PLDM analogue of the main sweep figure from `pldm_frozen_rows_v2.csv`, with the same dotted common-threshold lines and run means/ranges over three independent training runs.
+- `plot_pldm_sweep_diagnostics` renders PLDM planning success, relative IR, and SR from `pldm_frozen_rows_v2.csv`, with run means/ranges over three independent training runs and no checkpoint-screening threshold.
 - `plot_full_sweep_diagnostics` writes vector PDF figures by default: a main figure with separate behavior and ATR/SMPR axes per task, the diagnostic-region scatter, and a compact four-across appendix planner-guard figure; recovery shading is rendered as continuous majority-recovered ranges. The main sweep display divides ATR by each task$\times$seed no-noise value (base 1) while leaving SMPR on its original rate scale; frozen calibration uses the unrescaled ATR statistic.
 - `plot_cross_stressor_submission` reads the locked all-pairs CSV and writes the 24-pair LeWM submission scatter as a vector PDF; it does not rerun diagnostics or evaluation.
 - `plot_endpoint_atr_smpr` writes the two-panel endpoint dumbbell figure with base-to-noise-trained movement arrows.
